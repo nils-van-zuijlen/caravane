@@ -7,7 +7,7 @@ contact:
     defaults: { _controller: CoreBundle:Index:contact }
 
 links:
-    path:     /links
+    path:     /liens-utiles
     defaults: { _controller: CoreBundle:Index:links }
 
 terms:
