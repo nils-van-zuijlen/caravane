@@ -1,0 +1,3 @@
+caravane_index_homepage:
+    path:     /
+    defaults: { _controller: CaravaneIndexBundle:Default:index }
