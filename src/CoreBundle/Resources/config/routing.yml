@@ -1,3 +1,23 @@
 core_homepage:
     path:     /
-    defaults: { _controller: CoreBundle:Default:index }
+    defaults: { _controller: CoreBundle:Index:index }
+
+index:
+    path:     /
+    defaults: { _controller: CoreBundle:Index:index }
+
+contact:
+    path:     /contact
+    defaults: { _controller: CoreBundle:Index:contact }
+
+links:
+    path:     /links
+    defaults: { _controller: CoreBundle:Index:links }
+
+terms:
+    path:     /conditions-d-utilisation
+    defaults: { _controller: CoreBundle:Index:terms }
+
+credits:
+    path:     /credits
+    defaults: { _controller: CoreBundle:Index:credits }
