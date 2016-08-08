@@ -1,7 +1,1 @@
-caravane_index:
-    resource: "@CaravaneIndexBundle/Resources/config/routing.yml"
-    prefix:   /
 
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation

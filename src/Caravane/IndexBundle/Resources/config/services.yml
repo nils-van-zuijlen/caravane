@@ -1,4 +1,0 @@
-services:
-#    caravane_index.example:
-#        class: Caravane\IndexBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
