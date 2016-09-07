@@ -2,4 +2,11 @@
 
 {% block index_body %}
 <h1>Bienvenue sur le site de la Caravane</h1>
+<hr>
+<ul>
+	<li><a href="{{ path('contact') }}">Contact</a></li>
+	<li><a href="{{ path('links') }}">Liens utiles</a></li>
+	<li><a href="{{ path('terms') }}">Conditions d'utilisation</a></li>
+	<li><a href="{{ path('credits') }}">Crédits</a></li>
+</ul>
 {% endblock %}

@@ -5,8 +5,17 @@
 <head>
 	<meta charset="UTF-8">
 	<title>{% block title %}Caravane Quimper{% endblock title %}</title>
+	{% block styles %}
+		<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap-theme.min.css') }}">
+	{% endblock styles %}
 </head>
 <body>
 	{% block body %}{% endblock body %}
+
+	{% block scripts %}
+		<script type="text/javascript" src="{{ asset('bootstrap/jquery-3.1.0.min.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+	{% endblock scripts %}
 </body>
 </html>
