@@ -7,3 +7,4 @@
 /var/sessions/*
 /vendor/
 /web/bundles/
+/Sensio/*
