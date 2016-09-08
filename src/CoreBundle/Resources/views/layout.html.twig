@@ -6,7 +6,9 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<title>{% block title %}Caravane Quimper{% endblock title %}</title>
+
 	{% block styles %}
 		<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap-theme.min.css') }}">
@@ -30,9 +32,12 @@
 		}
 		</style>
 	{% endblock styles %}
-	<link rel="shortcut icon" type="image/svg" href="{{ asset("favicon.svg") }}">
-	<link rel="shortcut icon" type="image/png" href="{{ asset("favicon.png") }}">
-	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="{{ asset("favicon.ico") }}">
+
+	{% block icons %}
+		<link rel="shortcut icon" type="image/svg" href="{{ asset("favicon.svg") }}">
+		<link rel="shortcut icon" type="image/png" href="{{ asset("favicon.png") }}">
+		<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="{{ asset("favicon.ico") }}">
+	{% endblock icons %}
 </head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
@@ -40,6 +45,7 @@
 			<div class="navbar-header">
 				<a class="navbar-brand" href="{{ path('index') }}">Caravane Quimper</a>
 			</div>
+
 			<ul class="nav navbar-nav">
 				<li><a href="{{ path('contact') }}">Contact</a></li>
 				<li class="dropdown">
@@ -51,8 +57,22 @@
 				</li>
 				<li><a href="{{ path('terms') }}">Conditions d'utilisation</a></li>
 				<li><a href="{{ path('credits') }}">Crédits</a></li>
-				<li class="push-left"><a href="{{ path('fos_user_security_login') }}" class="glyphicon glyphicon-log-in"></a></li>
 			</ul>
+
+			<div class="pull-right">
+				{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+					<p class="navbar-text">
+						{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
+					</p>
+					<a class="btn btn-default navbar-btn" href="{{ path('fos_user_security_logout') }}">
+						{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+					</a>
+				{% else %}
+					<a class="btn btn-default navbar-btn" href="{{ path('fos_user_security_login') }}">
+						{{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+					</a>
+				{% endif %}
+			</div>
 		</div>
 	</div>
 
