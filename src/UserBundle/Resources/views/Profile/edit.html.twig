@@ -1,0 +1,33 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+<div class="row">
+	{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'col-lg-10 col-lg-offset-1' } }) }}
+		{{ form_errors(form) }}
+		<div class="form-group">
+			{{ form_label(form.username) }}
+			{{ form_errors(form.username) }}
+			{{ form_widget(form.username) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.email) }}
+			{{ form_errors(form.email) }}
+			{{ form_widget(form.email) }}
+		</div>
+		<div class="form-group">
+			{{ form_label(form.current_password) }}
+			{{ form_errors(form.current_password) }}
+			{{ form_widget(form.current_password) }}
+		</div>
+		{{ form_rest(form) }}
+	    <div class="form-group">
+	    	<div class="btn-group btn-group-justified">
+	    		<div class="btn-group"><input class="btn btn-primary" type="submit" value="{{ 'profile.edit.submit'|trans }}" /></div>
+	        	<div class="btn-group"><a class="btn btn-default" href="{{ path('fos_user_profile_show') }}">Annuler les modifications</a></div>
+	        </div>
+	    </div>
+	{{ form_end(form) }}
+</div>
+{% endblock fos_user_content %}
