@@ -1,0 +1,6 @@
+core_index:
+    resource: "@CoreBundle/Resources/config/routing/index.yml"
+
+core_chefs:
+    resource: "@CoreBundle/Resources/config/routing/chefs.yml"
+    prefix:   /chefs
