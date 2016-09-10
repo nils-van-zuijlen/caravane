@@ -34,7 +34,7 @@ class IndexController extends Controller
 
 			$this->get('mailer')->send($email);
 
-			$request->getSession()->getFlashBag()->add('success', 'Votre e-mail a bien été envoyé')
+			$request->getSession()->getFlashBag()->add('success', 'Votre e-mail a bien été envoyé');
 			
 			return $this->redirectToRoute('index');
 		}
