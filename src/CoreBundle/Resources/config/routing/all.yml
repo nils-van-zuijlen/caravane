@@ -4,3 +4,7 @@ core_index:
 core_chefs:
     resource: "@CoreBundle/Resources/config/routing/chefs.yml"
     prefix:   /chefs
+
+core_chat:
+    resource: "@CoreBundle/Resources/config/routing/chat.yml"
+    prefix:   /chat

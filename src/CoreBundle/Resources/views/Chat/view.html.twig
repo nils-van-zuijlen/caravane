@@ -1,0 +1,141 @@
+{% extends 'CoreBundle::layout.html.twig' %}
+
+{% block body %}
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="panel-title">
+						Chat entre PiosK
+					</div>
+				</div>
+				<ul class="list-group" id="message-list">
+					<li class="list-group-item">
+						<span class="label label-info">username</span>
+						<span class="badge">12s</span>
+						Message
+					</li>
+				</ul>
+				<div class="panel-footer">
+					<form class="input-group">
+						<span class="control-label" id="msg-error"></span>
+						<input id="message" type="text" class="form-control" autofocus required>
+						<div class="input-group-btn">
+							<button class="btn btn-default" id="btn-send" type="submit">
+								<span class="glyphicon glyphicon-send"></span>
+								<span class="sr-only">Envoyer</span>
+							</button>
+							<button class="btn btn-default" id="btn-loading" type="button">
+								<span class="glyphicon glyphicon-refresh" id="loading-icon"></span>
+								<span class="sr-only">Actualiser</span>
+							</button>
+							<!--
+								<button class="btn btn-default" type="button" id="btn-sound">
+									<span class="glyphicon glyphicon-volume-off" id="sound-icon"></span>
+									<span class="sr-only">Notification sonore</span>
+									<audio id="chat-notification" preload="auto">
+										<source src="{{ asset('bundles/core/Chat/notification.mp3') }}" type="audio/mp3">
+										<source src="{{ asset('bundles/core/Chat/notification.ogg') }}" type="audio/ogg">
+									</audio>
+								</button>
+							-->
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block styles %}
+	{{ parent() }}
+	<style>
+		#message-list {
+			margin-bottom: 0;
+		}
+	</style>
+{% endblock %}
+
+{% block scripts %}
+	{{ parent() }}
+	<script type="text/javascript">
+		$(function() {
+			var loading = false, intervalID/*, volume = 0*/;
+			afficheConversation();
+
+			$('#btn-send').on('click', function(e) {
+				e.preventDefault();
+				var message = $('#message').val();
+				if (message.length < 1) {
+					$('.panel-footer form').addClass('has-warning');
+					$('#msg-error')
+						.html('Message trop court')
+						.show('fast')
+						.delay(3000)
+						.hide('fast');
+					return;
+				}
+				$.post('{{ path("core_chat_send") }}', { 'message': message }, afficheConversation);
+				$('#message').val('');
+				$('.panel-footer form').removeClass('has-warning has-error has-success');
+				$('#message').focus();
+			});
+
+			function afficheConversation() {
+				if (loading)
+					$('#loading-icon')
+						.animate({right: '-=200'}, 2500, 'linear')
+						.animate({right: '+=200'}, 2500, 'linear');
+
+				$('#message-list').load('{{ path("core_chat_getmessages") }}');
+			}
+
+			$('#btn-loading').on('click', function(e) {
+				if (loading) {
+					loading = false;
+					clearInterval(intervalID);
+					$('#loading-icon')
+						.removeClass('glyphicon-refresh')
+						.stop(true,false)
+						.attr('style', '')
+						.addClass('glyphicon-ban-circle');
+				} else {
+					loading = true;
+					intervalID = setInterval(afficheConversation, 5000);
+					$('#loading-icon')
+						.removeClass('glyphicon-ban-circle')
+						.stop(true,false)
+						.attr('style', '')
+						.addClass('glyphicon-refresh');
+					afficheConversation();
+				}
+			});
+
+			/*
+				$('#chat-notification').get().volume = volume = 0;
+
+				$('#btn-sound').on('click', function(e) {
+					if (volume == 0) {
+						$('#chat-notification').get().volume = volume = 0.5;
+						$('#sound-icon')
+							.removeClass('glyphicon-volume-off glyphicon-volume-up')
+							.addClass('glyphicon-volume-down');
+					} else if (volume == 0.5) {
+						$('#chat-notification').get().volume = volume = 1;
+						$('#sound-icon')
+							.removeClass('glyphicon-volume-off glyphicon-volume-down')
+							.addClass('glyphicon-volume-up');
+					} else {
+						$('#chat-notification').get().volume = volume = 0;
+						$('#sound-icon')
+							.removeClass('glyphicon-volume-up glyphicon-volume-down')
+							.addClass('glyphicon-volume-off');
+					}
+				})
+			*/
+
+			loading = true;
+			intervalID = setInterval(afficheConversation, 5000);
+		});
+	</script>
+{% endblock %}

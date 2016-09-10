@@ -1,0 +1,17 @@
+core_chat_view:
+    path: /
+    defaults:
+        _controller: CoreBundle:Chat:view
+    methods: GET
+
+core_chat_send:
+    path: /send
+    defaults:
+        _controller: CoreBundle:Chat:send
+    methods: POST
+
+core_chat_getmessages:
+    path: /get
+    defaults:
+        _controller: CoreBundle:Chat:getmessages
+    methods: GET

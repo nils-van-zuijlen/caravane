@@ -1,0 +1,13 @@
+{% for message in messages %}
+	<li class="list-group-item">
+		<span class="label label-info">{{ message.username }}</span>
+		<span class="badge">{{ message.ilYA }}</span>
+		{{ message.message }}
+	</li>
+{% else %}
+	<li class="list-group-item">
+		<span class="label label-info">La Caravane</span>
+		<span class="badge">0s</span>
+		N'a pas encore utilisé son chat. Sois le premier à écrire un message.
+	</li>
+{% endfor %}
