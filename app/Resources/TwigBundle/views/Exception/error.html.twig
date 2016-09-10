@@ -1,0 +1,14 @@
+{% extends 'CoreBundle::layout.html.twig' %}
+
+{% block body %}
+	<div class="row alert alert-danger">
+		<div class="col-sm-11 col-sm-offset-1">
+			<h1>Oups!</h1>
+			<h2>Erreur {{ status_code }}</h2>
+			<h3>{{ status_text }}</h3>
+			<p>
+				<a href="{{ path('contact') }}">Contactez</a> nous si cette erreur s'affiche trop souvent en expliquant ce que vous étiez en train de faire.
+			</p>
+		</div>
+	</div>
+{% endblock %}
