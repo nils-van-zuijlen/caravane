@@ -8,3 +8,11 @@ core_chefs:
 core_chat:
     resource: "@CoreBundle/Resources/config/routing/chat.yml"
     prefix:   /chat
+
+core_actus:
+    resource: "@CoreBundle/Resources/config/routing/actus.yml"
+    prefix:   /actus
+
+core_file:
+    resource: "@CoreBundle/Resources/config/routing/file.yml"
+    prefix:   /file

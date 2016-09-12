@@ -1,0 +1,7 @@
+core_file_get:
+    path: /{id}
+    defaults:
+        _controller: CoreBundle:File:get
+    requirements:
+        id: \d*
+    methods: GET

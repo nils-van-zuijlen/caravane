@@ -9,3 +9,5 @@
 /web/bundles/
 /Sensio/*
 /web/bootstrap/docs/*
+/src/CoreBundle/Files/*
+Caravane.sublime-workspace

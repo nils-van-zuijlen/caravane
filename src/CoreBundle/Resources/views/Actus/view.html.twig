@@ -1,0 +1,48 @@
+{% extends 'CoreBundle:Actus:layout.html.twig' %}
+
+{% block actus_body %}
+	<div class="row">
+		{% for actu in listActus %}
+			<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+				<img class="image" src="{{ path('core_file_get', {id:actu.image.id}) }}" alt="{{ actu.image.originalName }}">
+				<h4>{{ actu.title }}</h4>
+				<a href="{{ path('core_actus_viewone', {slug: actu.slug}) }}" class="btn btn-default">Lire plus</a>
+				<p>Le {{ actu.datePublication|date('d/m/Y') }}</p>
+			</div>
+		{% else %}
+			<div class="col-lg-8 col-lg-offset-2">
+				<p>Il n'y a pas d'actualités publiées pour le moment.</p>
+			</div>
+		{% endfor %}
+	</div>
+	{% if nbPages != 0 %}
+		<div class="row">
+			<div class="col-lg-10 col-lg-offset-1">
+				<ul class="pagination">
+					{% for p in range(1, nbPages) %}
+						<li {% if p == page %}class="active"{% endif %}>
+							<a href="{{ path('core_actus_view', {'page': p}) }}">{{ p }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	{% endif %}
+	{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2">
+				<a href="{{ path('core_actus_add') }}" class="btn btn-primary">Publier une nouvelle actualité</a>
+			</div>
+		</div>
+	{% endif %}
+{% endblock %}
+
+{% block styles %}
+	{{ parent() }}
+	<style>
+		.image {
+			height: auto;
+			width: 100%;
+		}
+	</style>
+{% endblock %}

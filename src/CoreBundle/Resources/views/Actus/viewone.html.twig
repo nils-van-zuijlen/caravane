@@ -1,0 +1,22 @@
+{% extends 'CoreBundle:Actus:layout.html.twig' %}
+
+{% block actus_body %}
+	<div class="row">
+		<div class="col-sm-12">
+			<img src="{{ path('core_file_get', {id:actu.image.id}) }}" alt="{{ actu.image.originalName }}">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<h3>{{ actu.title }}</h3>
+			<p>{{ actu.content }}</p>
+			<p class="help-block">Le {{ actu.datePublication|date('d/m/Y') }}</p>
+			{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+				<div class="button-group">
+					<a href="{{ path('core_actus_edit', {slug:actu.slug}) }}" class="btn btn-primary">Modifier</a>
+					<a href="{{ path('core_actus_delete', {slug:actu.slug}) }}" class="btn btn-danger">Supprimer</a>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+core_actus_add:
+    path: /add
+    defaults:
+        _controller: CoreBundle:Actus:add
+    methods: GET|POST
+
+core_actus_view:
+    path: /{page}
+    defaults:
+        _controller: CoreBundle:Actus:view
+        page: 1
+    requirements:
+        page: \d*
+    methods: GET
+
+core_actus_viewone:
+    path: /{slug}
+    defaults:
+        _controller: CoreBundle:Actus:viewone
+    requirements:
+        slug: "[a-z0-9-]+"
+    methods: GET
+
+core_actus_edit:
+    path: /{slug}/edit
+    defaults:
+        _controller: CoreBundle:Actus:edit
+    requirements:
+        slug: "[a-z0-9-]+"
+    methods: GET|POST
+
+core_actus_delete:
+    path: /{slug}/delete
+    defaults:
+        _controller: CoreBundle:Actus:delete
+    requirements:
+        slug: "[a-z0-9-]+"
+    methods: GET

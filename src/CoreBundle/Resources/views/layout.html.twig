@@ -47,9 +47,11 @@
 			</div>
 
 			<ul class="nav navbar-nav">
+				<li><a href="{{ path('core_actus_view', {page:1}) }}">Actualités</a></li>
 				{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
 					<li><a href="{{ path('core_chat_view') }}">Chat</a></li>
 				{% endif %}
+				<li><a href="{{ path('credits') }}">Crédits</a></li>
 				<li class="dropdown">
 					<a href="{{ path('links') }}" data-toggle="dropdown">Liens utiles</a>
 					<ul class="dropdown-menu">
@@ -57,8 +59,6 @@
 						<li><a href="http://sgdf.fr">Le site des Scouts et Guides de France</a></li>
 					</ul>
 				</li>
-				<li><a href="{{ path('terms') }}">Conditions d'utilisation</a></li>
-				<li><a href="{{ path('credits') }}">Crédits</a></li>
 			</ul>
 
 			<div class="pull-right">
