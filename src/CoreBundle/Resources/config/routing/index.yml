@@ -1,19 +1,24 @@
 index:
     path:     /
     defaults: { _controller: CoreBundle:Index:index }
+    methods: GET
 
 contact:
     path:     /contact
     defaults: { _controller: CoreBundle:Index:contact }
+    methods: GET|POST
 
 links:
     path:     /liens-utiles
     defaults: { _controller: CoreBundle:Index:links }
+    methods: GET
 
 terms:
     path:     /conditions-d-utilisation
     defaults: { _controller: CoreBundle:Index:terms }
+    methods: GET
 
 credits:
     path:     /credits
     defaults: { _controller: CoreBundle:Index:credits }
+    methods: GET
