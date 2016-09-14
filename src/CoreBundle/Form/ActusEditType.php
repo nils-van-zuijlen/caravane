@@ -13,6 +13,6 @@ class ActusEditType extends AbstractType
 
 	public function getParent()
 	{
-		return ActusType::class
+		return ActusType::class;
 	}
 }

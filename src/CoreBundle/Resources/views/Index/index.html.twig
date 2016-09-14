@@ -1,12 +1,45 @@
 {% extends "CoreBundle:Index:layout.html.twig" %}
 
 {% block index_body %}
-<h1>Bienvenue sur le site de la Caravane</h1>
-<hr>
-<ul>
-	<li><a href="{{ path('contact') }}">Contact</a></li>
-	<li><a href="{{ path('links') }}">Liens utiles</a></li>
-	<li><a href="{{ path('terms') }}">Conditions d'utilisation</a></li>
-	<li><a href="{{ path('credits') }}">Crédits</a></li>
-</ul>
+	<h1>Bienvenue sur le site de la Caravane de Quimper</h1>
+	<hr>
+	{% if nb_actus != 0 %}
+		<div class="carousel slide" id="carousel">
+			<div class="carousel-inner">
+				{% for actu in actus %}
+					<div class="item{% if loop.index0 == 0 %} active{% endif %}">
+						<img src="{{ path('core_file_get', {id: actu.image.id}) }}" alt="{{ actu.image.originalName }}">
+						<div class="carousel-caption">
+							<h3>{{ actu.title }}</h3>
+							<a href="{{ path('core_actus_viewone', {slug: actu.slug}) }}" class="btn btn-primary">Voir plus</a>
+						</div>
+					</div>
+				{% endfor %}
+				<a class="left carousel-control" href="#carousel" data-slide="prev">
+					<span class="icon-prev"></span>
+				</a>
+				<a class="right carousel-control" href="#carousel" data-slide="next">
+					<span class="icon-next"></span>        
+				</a>
+			</div>
+		</div>
+	{% endif %}
+{% block styles %}
+	{{ parent() }}
+	<style>
+		.carousel-caption {
+			padding: 5px;
+			border-radius: 4px;
+			background-color: rgba(0,0,0,0.5);
+		}
+	</style>
+{% endblock %}
+
+{% block scripts %}
+	{{ parent() }}
+	<script type="text/javascript">
+		$(function() {
+			$('.carousel').carousel();
+		});
+	</script>
 {% endblock %}

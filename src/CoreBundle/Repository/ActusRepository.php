@@ -34,11 +34,23 @@ class ActusRepository extends EntityRepository
 		$qb = $this->createQueryBuilder('a');
 
 		$qb
-			->addWith('a.slug = :slug')
+			->where('a.slug = :slug')
 			->setParameter('slug', $slug)
 			->leftJoin('a.image', 'i')
 			->addSelect('i');
 
 		return $qb->getQuery()->getOneOrNullResult();
+	}
+
+	public function getLast($number)
+	{
+		$qb = $this->createQueryBuilder('a');
+		$query = $qb
+			->orderBy('a.id', 'DESC')
+			->leftJoin('a.image', 'i')
+			->addSelect('i')
+			->getQuery();
+		$query->setMaxResults($number);
+		return $query->getResult();
 	}
 }

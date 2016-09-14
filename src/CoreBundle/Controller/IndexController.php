@@ -10,9 +10,21 @@ use CoreBundle\Form\ContactType;
 
 class IndexController extends Controller
 {
+	const NB_ACTUS_IN_CAROUSSEL = 4;
+
 	public function indexAction()
 	{
-		return $this->render('CoreBundle:Index:index.html.twig');
+		$repository = $this->getDoctrine()->getManager()->getRepository('CoreBundle:Actus');
+
+		$actus = $repository->getLast(self::NB_ACTUS_IN_CAROUSSEL);
+
+		return $this->render(
+			'CoreBundle:Index:index.html.twig',
+			array(
+				'actus'    => $actus,
+				'nb_actus' => count($actus),
+				)
+			);
 	}
 
 	public function contactAction(Request $request)
