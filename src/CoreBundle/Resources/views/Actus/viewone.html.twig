@@ -3,13 +3,13 @@
 {% block actus_body %}
 	<div class="row">
 		<div class="col-sm-12">
-			<img src="{{ path('core_file_get', {id:actu.image.id}) }}" alt="{{ actu.image.originalName }}">
+			<img class="image" src="{{ path('core_file_get', {id:actu.image.id}) }}" alt="{{ actu.image.originalName }}">
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2">
 			<h3>{{ actu.title }}</h3>
-			<p>{{ actu.content }}</p>
+			<p>{{ actu.content|bbcode_filter('actus_filter') }}</p>
 			<p class="help-block">Le {{ actu.datePublication|date('d/m/Y') }}</p>
 			{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
 				<div class="button-group">

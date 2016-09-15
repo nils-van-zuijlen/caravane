@@ -1,0 +1,171 @@
+emoticons:
+#   my_emoticon:
+#       url:   "%fm_bbcode.emoticon.path%/my_emoticon.png"
+#       html:  "<img src="%fm_bbcode.emoticon.path%/my_emoticon.png" alt="" >"
+#       xHtml: "<img src="%fm_bbcode.emoticon.path%/my_emoticon.png" alt="" >"
+#       smilies: [ ":my_emoticon:" ]
+    banghead:
+        url:   "%fm_bbcode.emoticon.path%/banghead.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/banghead.gif" alt="bug" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/banghead.gif" alt="bug" >'
+        smilies: [ ":bug:", ":lag:", ":banghead:", ":crash:" ]
+    boulet:
+        url:   "%fm_bbcode.emoticon.path%/boulet.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/boulet.gif" alt="boulet" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/boulet.gif" alt="boulet" >'
+        smilies: [ ":boulet:" ]
+    bounce:
+        url:   "%fm_bbcode.emoticon.path%/bounce.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/bounce.gif" alt="bounce" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/bounce.gif" alt="bounce" >'
+        smilies: [ ":bounce:", ":rebond:", ":hop:" ]
+    bow:
+        url:   "%fm_bbcode.emoticon.path%/bow.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/bow.gif" alt="bow" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/bow.gif" alt="bow" >'
+        smilies: [ ":bow:", ":salut:" ]
+    champion:
+        url:   "%fm_bbcode.emoticon.path%/champion.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/champion.gif" alt="champion" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/champion.gif" alt="champion" >'
+        smilies: [ ":champ:", ":champion:" ]
+    confused:
+        url:   "%fm_bbcode.emoticon.path%/confused.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/confused.gif" alt="confused" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/confused.gif" alt="confused" >'
+        smilies: [ ":confused:", ":oops:" ]
+    cool:
+        url:   "%fm_bbcode.emoticon.path%/cool.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/cool.gif" alt="cool" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/cool.gif" alt="cool" >'
+        smilies: [ ":cool:", "8)", "8-)" ]
+    cool2:
+        url:   "%fm_bbcode.emoticon.path%/cool2.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/cool2.gif" alt="cool" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/cool2.gif" alt="cool" >'
+        smilies: [ ":cool2:", "8]", "8-]" ]
+    cry:
+        url:   "%fm_bbcode.emoticon.path%/cry.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/cry.gif" alt="cry" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/cry.gif" alt="cry" >'
+        smilies: [ ":cry:", ":pleure:", ":'(", ":'[", ";'(", ";'[" ]
+    eek:
+        url:   "%fm_bbcode.emoticon.path%/eek.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/eek.gif" alt="eek" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/eek.gif" alt="eek" >'
+        smilies: [ ":eek:", "0_0", "o_o", "O_O" ]
+    evil:
+        url:   "%fm_bbcode.emoticon.path%/evil.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/evil.gif" alt="evil" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/evil.gif" alt="evil" >'
+        smilies: [ ":evil:", ":grr:" ]
+    eyebrows:
+        url:   "%fm_bbcode.emoticon.path%/eyebrows.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/eyebrows.gif" alt="eyebrows" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/eyebrows.gif" alt="eyebrows" >'
+        smilies: [ ":eyebrows:", "^^" ]
+    grin:
+        url:   "%fm_bbcode.emoticon.path%/grin.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/grin.gif" alt="grin" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/grin.gif" alt="grin" >'
+        smilies: [ ":grin:", ":D" ]
+    hehe:
+        url:   "%fm_bbcode.emoticon.path%/hehe.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/hehe.gif" alt="hehe" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/hehe.gif" alt="hehe" >'
+        smilies: [ ":hehe:", ":p", ":P" ]
+    insults:
+        url:   "%fm_bbcode.emoticon.path%/insults.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/insults.gif" alt="insults" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/insults.gif" alt="insults" >'
+        smilies: [ ":insults:", ":argh:" ]
+    lol:
+        url:   "%fm_bbcode.emoticon.path%/lol.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/lol.gif" alt="lol" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/lol.gif" alt="lol" >'
+        smilies: [ ":lol:" ]
+    love:
+        url:   "%fm_bbcode.emoticon.path%/love.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/love.gif" alt="love" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/love.gif" alt="love" >'
+        smilies: [ ":love:" ]
+    mad:
+        url:   "%fm_bbcode.emoticon.path%/mad.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/mad.gif" alt="mad" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/mad.gif" alt="mad" >'
+        smilies: [ ":mad:", ":@" ]
+    mdr:
+        url:   "%fm_bbcode.emoticon.path%/mdr.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/mdr.gif" alt="mdr" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/mdr.gif" alt="mdr" >'
+        smilies: [ ":mdr:" ]
+    merci:
+        url:   "%fm_bbcode.emoticon.path%/merci.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/merci.gif" alt="merci" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/merci.gif" alt="merci" >'
+        smilies: [ ":merci:", ":tks:", ":thx:" ]
+    mrgreen:
+        url:   "%fm_bbcode.emoticon.path%/mrgreen.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/mrgreen.gif" alt="mrgreen" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/mrgreen.gif" alt="mrgreen" >'
+        smilies: [ ":mrgreen:", ":E" ]
+    pointer:
+        url:   "%fm_bbcode.emoticon.path%/pointer.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/pointer.gif" alt="pointer" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/pointer.gif" alt="pointer" >'
+        smilies: [ ":pointer:", ":here:" ]
+    redface:
+        url:   "%fm_bbcode.emoticon.path%/redface.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/redface.gif" alt="redface" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/redface.gif" alt="redface" >'
+        smilies: [ ":redface:", ":shy:" ]
+    rolleyes:
+        url:   "%fm_bbcode.emoticon.path%/rolleyes.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/rolleyes.gif" alt="rolleyes" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/rolleyes.gif" alt="rolleyes" >'
+        smilies: [ ":rolleyes:", ":mmm:" ]
+    sad:
+        url:   "%fm_bbcode.emoticon.path%/sad.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/sad.gif" alt="sad" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/sad.gif" alt="sad" >'
+        smilies: [ ':(', ':[', ';(', ';[', ':sad:' ]
+    shocked:
+        url:   "%fm_bbcode.emoticon.path%/shocked.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/shocked.gif" alt="shocked" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/shocked.gif" alt="shocked" >'
+        smilies: [ ":shocked:", ":O" ]
+    shocked2:
+        url:   "%fm_bbcode.emoticon.path%/shocked2.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/shocked2.gif" alt="shocked2" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/shocked2.gif" alt="shocked2" >'
+        smilies: [ ":shocked2:", "oO", ":omg:" ]
+    smile:
+        url:   "%fm_bbcode.emoticon.path%/smile.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/smile.gif" alt="smile" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/smile.gif" alt="smile" >'
+        smilies: [ ":smile:", ":)", ":]" ]
+    twisted:
+        url:   "%fm_bbcode.emoticon.path%/twisted.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/twisted.gif" alt="twisted" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/twisted.gif" alt="twisted" >'
+        smilies: [ ":twisted:", "&lt;:)", "&lt;:]", "&lt;)", "&lt;]" ]
+    waza:
+        url:   "%fm_bbcode.emoticon.path%/waza.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/waza.gif" alt="waza" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/waza.gif" alt="waza" >'
+        smilies: [ ":waza:" ]
+    welldone:
+        url:   "%fm_bbcode.emoticon.path%/welldone.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/welldone.gif" alt="welldone" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/welldone.gif" alt="welldone" >'
+        smilies: [ ":welldone:", ":good:", ":clap:" ]
+    whistle:
+        url:   "%fm_bbcode.emoticon.path%/whistle.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/whistle.gif" alt="whistle" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/whistle.gif" alt="whistle" >'
+        smilies: [ ":whistle:" ]
+    wink:
+        url:   "%fm_bbcode.emoticon.path%/wink.gif"
+        html:  '<img src="%fm_bbcode.emoticon.path%/wink.gif" alt="wink" >'
+        xHtml: '<img src="%fm_bbcode.emoticon.path%/wink.gif" alt="wink" >'
+        smilies: [ ":wink:", ";)", ";]" ]

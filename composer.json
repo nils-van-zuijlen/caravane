@@ -30,7 +30,9 @@
         "incenteev/composer-parameter-handler": "^2.0",
         "friendsofsymfony/user-bundle": "dev-master",
         "friendsofsymfony/comment-bundle": "dev-master",
-        "stof/doctrine-extensions-bundle": "^1.2.2"
+        "stof/doctrine-extensions-bundle": "^1.2.2",
+        "helios-ag/fm-bbcode-bundle": "^7.0",
+        "coresphere/console-bundle": "^0.4.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

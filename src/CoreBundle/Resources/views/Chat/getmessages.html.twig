@@ -2,7 +2,7 @@
 	<li class="list-group-item">
 		<span class="label label-info">{{ message.username }}</span>
 		<span class="badge">{{ message.ilYA }}</span>
-		{{ message.message }}
+		{{ message.message|bbcode_filter('chat_filter') }}
 	</li>
 {% else %}
 	<li class="list-group-item">
