@@ -21,5 +21,5 @@ fos_user_change_password:
     prefix:   /profile
 
 fos_user_group:
-    resource: "@FOSUserBundle/Resources/config/routing/group.xml"
-    prefix: /group
+    resource: "@UserBundle/Resources/config/routing/group.xml"
+    prefix: /equipes

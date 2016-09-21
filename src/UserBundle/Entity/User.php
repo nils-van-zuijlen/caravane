@@ -17,4 +17,14 @@ class User extends BaseUser
 	* @ORM\GeneratedValue(strategy="AUTO")
 	*/
 	protected $id;
+
+	/**
+	 * @ORM\ManyToMany(targetEntity="UserBundle\Entity\Group", mappedBy="users", cascade={"persist"})
+	 */
+	protected $groups;
+
+	public function getDisplay()
+	{
+		return ucfirst(strtolower($this->username));
+	}
 }

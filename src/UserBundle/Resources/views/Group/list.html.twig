@@ -1,0 +1,55 @@
+{% extends "UserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}Équipes – {{ parent() }}{% endblock %}
+
+{% block fos_user_content %}
+	<div class="row">
+		<h3 class="col-xs-12">Liste des équipes ayant existé</h3>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+				<a href="{{ path('fos_user_group_new') }}" class="btn btn-primary">Nouvelle équipe</a>
+			{% endif %}
+			<ul class="list-group" id="group_list">
+			{% for group in groups %}
+				<a href="{{ path('fos_user_group_show', {'groupName': group.name} ) }}" class="list-group-item{% if loop.first %} active{% endif %}">
+					<span class="glyphicon glyphicon-chevron-right pull-right"></span>
+					{{ group.name }}
+				</a>
+			{% endfor %}
+			</ul>
+			{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+				<a href="{{ path('fos_user_group_new') }}" class="btn btn-primary">Nouvelle équipe</a>
+			{% endif %}
+		</div>
+		<div class="col-md-9 well" id="group_show_zone">
+			{{ render(controller("FOSUserBundle:Group:show", {'groupName': groups.0.name} )) }}
+		</div>
+	</div>
+{% endblock fos_user_content %}
+
+{% block styles %}
+	{{ parent() }}
+	<style type="text/css">	
+		#group_list {
+			margin-top: 20px;
+		}
+	</style>
+{% endblock %}
+
+{% block scripts %}
+	{{ parent() }}
+	<script type="text/javascript">
+		$(function() {
+			$('#group_list>a').on('click', function(e) {
+				e.preventDefault();
+				$('#group_show_zone').load($(this).attr('href'));
+				$('#group_list>a.active').removeClass('active');
+				$(this).addClass('active');
+			});
+		});
+	</script>
+{% endblock %}

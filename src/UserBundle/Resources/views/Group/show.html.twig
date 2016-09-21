@@ -1,0 +1,29 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="row">
+	<div class="col-md-9">
+		<h4>Nom de l'équipe: {{ group.name }}</h4>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-9">
+		<h5>Membres</h5>
+		<ul>
+			{% for user in group.users %}
+				<li>{{ user.display }}</li>
+			{% else %}
+				<li>Pas (encore) de membres.</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+	<div class="row">
+		<div class="col-md-9">
+			<div class="btn-group">
+				<a href="{{ path('fos_user_group_edit', {groupName: group.name}) }}" class="btn btn-warning">Modifier</a>
+				<a href="{{ path('fos_user_group_delete', {groupName: group.name}) }}" class="btn btn-danger">Supprimer</a>
+			</div>
+		</div>
+	</div>
+{% endif %}
