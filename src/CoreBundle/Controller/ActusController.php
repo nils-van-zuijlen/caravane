@@ -51,7 +51,7 @@ class ActusController extends Controller
 		if ($actu === null)
 			throw $this->createNotFoundException("L'actualité ".$slug." n'existe pas.");
 
-		$em->remove();
+		$em->remove($actu);
 		$em->flush();
 
 		$request->getSession()->getFlashBag()->add('success', 'Actualité supprimée');
