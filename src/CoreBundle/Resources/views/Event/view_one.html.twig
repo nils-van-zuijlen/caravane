@@ -1,0 +1,23 @@
+{% extends 'CoreBundle:Event:layout.html.twig' %}
+
+{% block event_body %}
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<h3>{{ event.title }}</h3>
+			<p class="help-block" style="margin-left: 1em;">
+				Du {{ event.dateDebut|date('d/m/Y à H:i') }} au {{ event.dateFin|date('d/m/Y à H:i') }}.
+			</p>
+			<p>{{ event.content|bbcode_filter('events_filter') }}</p>
+			{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+				<div class="btn-group">
+					<a href="{{ path('core_event_edit', {slug: event.slug}) }}" class="btn btn-warning">
+						Modifier
+					</a>
+					<a href="{{ path('core_event_delete', {slug: event.slug}) }}" class="btn btn-danger">
+						Supprimer
+					</a>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'CoreBundle::layout.html.twig' %}
+
+{% block body %}
+	<div class="row">
+		<h2 class="col-sm-11 col-lg-offset-1">
+			Planning
+		</h2>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			{% block event_body %}{% endblock event_body %}
+		</div>
+	</div>
+{% endblock %}
+
+{% block title %}Planning – {{ parent() }}{% endblock %}

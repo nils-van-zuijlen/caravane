@@ -17,7 +17,10 @@ class MyFileType extends AbstractType
 		$builder
 			->add(
 				'file',
-				FileType::class
+				FileType::class,
+				array(
+					'label' => '',
+					)
 				);
 	}
 

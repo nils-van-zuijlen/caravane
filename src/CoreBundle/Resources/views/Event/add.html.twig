@@ -1,0 +1,12 @@
+{% extends 'CoreBundle:Event:layout.html.twig' %}
+
+{% block event_body %}
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<h3>Ajouter un évenement</h3>
+			<div class="well">
+				{% include 'CoreBundle:Event:form.html.twig' %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

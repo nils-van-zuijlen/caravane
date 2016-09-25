@@ -106,7 +106,7 @@ fm_bbcode:
             locale:  "%locale%"
             xhtml:   false
             filters: [ default, url, email, block, code, image, list, quote, text, video, table ]
-            hooks:   [ emoticon ]
+            hooks:   [ emoticon, clickable ]
         chat_filter:
             strict:  false
             locale:  "%locale%"
@@ -119,6 +119,12 @@ fm_bbcode:
             xhtml:   false
             hooks:   [ emoticon, clickable ]
             filters: [ default, url, email, block, code, image, list, quote, text ]
+        events_filter:
+            strict:  false
+            locale:  "%locale%"
+            xhtml:   false
+            hooks:   [ emoticon, clickable ]
+            filters: [ default, url, email, block, code, image, list, quote, text, table, video ]
     emoticon:
         path:      /Caravane/web/emoticons/
         resource:  "%kernel.root_dir%/config/emoticons.yml"

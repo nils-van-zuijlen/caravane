@@ -15,4 +15,8 @@ core_actus:
 
 core_file:
     resource: "@CoreBundle/Resources/config/routing/file.yml"
-    prefix:   /file
+    prefix:   /fichier
+
+core_event:
+    resource: "@CoreBundle/Resources/config/routing/event.yml"
+    prefix:   /evenements

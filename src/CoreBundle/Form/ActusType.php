@@ -20,19 +20,34 @@ class ActusType extends AbstractType
 		$builder
 			->add(
 				'title',
-				TextType::class
+				TextType::class,
+				array(
+					'label' => 'Titre',
+					)
 				)
 			->add(
 				'content',
-				TextareaType::class
+				TextareaType::class,
+				array(
+					'label' => 'Contenu',
+					)
 				)
 			->add(
 				'image',
-				MyFileType::class
+				MyFileType::class,
+				array(
+					'label' => 'Image',
+					)
 				)
 			->add(
 				'submit', 
-				SubmitType::class
+				SubmitType::class,
+				array(
+					'label' => 'Publier',
+					'attr'  => array(
+						'class' => 'btn btn-primary',
+						),
+					)
 				);
 	}
 

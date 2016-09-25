@@ -1,0 +1,32 @@
+{% extends 'CoreBundle:Event:layout.html.twig' %}
+
+{% block event_body %}
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+				<a href="{{ path('core_event_add') }}" class="btn btn-primary">
+					Nouveau
+				</a>
+			{% endif %}
+			<ul>
+				{% for event in events %}
+					<li>
+						<h5>
+							<a href="{{ path('core_event_viewone', {slug: event.slug}) }}">
+								{{ event.title }}
+							</a>
+						</h5>
+						<p class="help-block">
+							Du {{ event.dateDebut|date('d/m/Y à H:i') }} au {{ event.dateFin|date('d/m/Y à H:i') }}.
+						</p>
+					</li>
+				{% endfor %}
+			</ul>
+			{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+				<a href="{{ path('core_event_add') }}" class="btn btn-primary">
+					Nouveau
+				</a>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}

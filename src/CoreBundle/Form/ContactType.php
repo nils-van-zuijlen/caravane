@@ -20,27 +20,48 @@ class ContactType extends AbstractType
 		$builder
 			->add(
 				'nom', 
-				TextType::class
+				TextType::class,
+				array(
+					'label' => 'Nom',
+					)
 			)
 			->add(
 				'prenom', 
-				TextType::class
+				TextType::class,
+				array(
+					'label' => 'Prénom',
+					)
 			)
 			->add(
 				'email', 
-				EmailType::class
+				EmailType::class,
+				array(
+					'label' => 'E-mail',
+					)
 			)
 			->add(
 				'objet', 
-				TextType::class
+				TextType::class,
+				array(
+					'label' => 'Objet',
+					)
 			)
 			->add(
 				'contenu', 
-				TextareaType::class
+				TextareaType::class,
+				array(
+					'label' => 'Contenu',
+					)
 			)
 			->add(
 				'send', 
-				SubmitType::class
+				SubmitType::class,
+				array(
+					'label' => 'Envoyer',
+					'attr'  => array(
+						'class' => 'btn btn-primary',
+						),
+					)
 			);
 	}
 

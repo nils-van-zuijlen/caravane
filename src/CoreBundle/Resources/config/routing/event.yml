@@ -1,0 +1,56 @@
+core_event_view_by_day:
+    path: /calendrier/{annee}/{mois}/{jour}
+    defaults:
+        _controller: CoreBundle:Event:viewByDay
+    requirements:
+        annee: \d{4}
+        mois:  \d{1,2}
+        jour:  \d{1,2}
+    methods: GET
+
+core_event_view_by_month:
+    path: /calendrier/{annee}/{mois}
+    defaults:
+        _controller: CoreBundle:Event:viewByMonth
+    requirements:
+        annee: \d{4}
+        mois:  \d{1,2}
+    methods: GET
+
+core_event_view_by_year:
+    path: /calendrier/{annee}
+    defaults:
+        _controller: CoreBundle:Event:viewByYear
+    requirements:
+        annee: \d{4}
+    methods: GET
+
+core_event_add:
+    path: /add
+    defaults:
+        _controller: CoreBundle:Event:add
+    methods: GET|POST
+
+core_event_viewone:
+    path: /{slug}
+    defaults:
+        _controller: CoreBundle:Event:viewOne
+    requirements:
+        slug: ^[a-z0-9-]+$
+    methods: GET
+
+core_event_edit:
+    path: /{slug}/edit
+    defaults:
+        _controller: CoreBundle:Event:edit
+    requirements:
+        slug: ^[a-z0-9-]+$
+    methods: GET|POST
+
+core_event_delete:
+    path: /{slug}/delete
+    defaults:
+        _controller: CoreBundle:Event:delete
+    requirements:
+        slug: ^[a-z0-9-]+$
+    methods: GET
