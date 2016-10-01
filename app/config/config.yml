@@ -97,6 +97,7 @@ stof_doctrine_extensions:
 assetic:
     debug: '%kernel.debug%'
     use_controller: '%kernel.debug%'
+    bundles: [ "FOSCommentBundle" ]
 
 #FMBbcodeBundle
 fm_bbcode:
@@ -129,3 +130,11 @@ fm_bbcode:
         path:      /Caravane/web/emoticons/
         resource:  "%kernel.root_dir%/config/emoticons.yml"
         extension: gif
+
+# FOSCommentBundle
+fos_comment:
+    db_driver: orm
+    class:
+        model:
+            comment: ForumBundle\Entity\Comment
+            thread:  ForumBundle\Entity\Thread

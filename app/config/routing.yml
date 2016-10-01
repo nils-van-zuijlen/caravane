@@ -23,3 +23,14 @@ fos_user_change_password:
 fos_user_group:
     resource: "@UserBundle/Resources/config/routing/group.xml"
     prefix: /equipes
+
+fos_comment_api:
+    type: rest
+    resource: "@FOSCommentBundle/Resources/config/routing.yml"
+    prefix: /api
+    defaults: { _format: html }
+
+forum:
+    resource: "@ForumBundle/Resources/config/routing.yml"
+    prefix:   /forum
+

@@ -1,0 +1,16 @@
+{% extends 'CoreBundle::layout.html.twig' %}
+
+{% block body %}
+	<div class="row">
+		<div class="col-sm-12">
+			<h2>
+				Forum
+			</h2>
+		</div>
+	</div>
+	{% block forum_body %}
+	{% endblock forum_body %}
+{% endblock %}
+
+{% block title %}Forum – {{ parent() }}{% endblock %}
+

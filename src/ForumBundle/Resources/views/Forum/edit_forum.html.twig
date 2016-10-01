@@ -1,0 +1,21 @@
+{% extends 'ForumBundle::layout.html.twig' %}
+
+{% block title %}
+	Modifier – {{ forum.title }} – {{ categorie.title }} – {{ parent() }}
+{% endblock %}
+
+{% block forum_body %}
+	<div class="row">
+		<div class="col-lg-11 col-lg-offset-1">
+			<h3>
+				Modifier le forum {{ forum.title }}
+			</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 well">
+			{% include 'ForumBundle:Forum:form.html.twig' %}
+		</div>
+	</div>
+{% endblock %}
+

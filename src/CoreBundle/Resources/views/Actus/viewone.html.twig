@@ -17,6 +17,7 @@
 					<a href="{{ path('core_actus_delete', {slug:actu.slug}) }}" class="btn btn-danger">Supprimer</a>
 				</div>
 			{% endif %}
+			{% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': 'actus'} %}
 		</div>
 	</div>
 {% endblock %}
