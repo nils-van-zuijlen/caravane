@@ -10,7 +10,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-3">
-			{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+			{% if is_granted('ROLE_ALLOWED_TO_SWITCH') %}
 				<a href="{{ path('fos_user_group_new') }}" class="btn btn-primary">Nouvelle équipe</a>
 			{% endif %}
 			<ul class="list-group" id="group_list">
@@ -21,7 +21,7 @@
 				</a>
 			{% endfor %}
 			</ul>
-			{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+			{% if is_granted('ROLE_ALLOWED_TO_SWITCH') %}
 				<a href="{{ path('fos_user_group_new') }}" class="btn btn-primary">Nouvelle équipe</a>
 			{% endif %}
 		</div>

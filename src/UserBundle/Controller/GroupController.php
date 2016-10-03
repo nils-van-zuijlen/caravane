@@ -20,6 +20,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * RESTful controller managing group CRUD
@@ -55,6 +56,8 @@ class GroupController extends Controller
 
 	/**
 	 * Edit one group, show the edit form
+	 *
+	 * @Security("has_role('ROLE_ALLOWED_TO_SWITCH')")
 	 */
 	public function editAction(Request $request, $groupName)
 	{
@@ -99,6 +102,8 @@ class GroupController extends Controller
 
 	/**
 	 * Show the new form
+	 *
+	 * @Security("has_role('ROLE_ALLOWED_TO_SWITCH')")
 	 */
 	public function newAction(Request $request)
 	{
@@ -138,6 +143,8 @@ class GroupController extends Controller
 
 	/**
 	 * Delete one group
+	 *
+	 * @Security("has_role('ROLE_ALLOWED_TO_SWITCH')")
 	 */
 	public function deleteAction(Request $request, $groupName)
 	{
