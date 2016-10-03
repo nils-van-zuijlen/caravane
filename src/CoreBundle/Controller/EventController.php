@@ -5,6 +5,7 @@ namespace CoreBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 use CoreBundle\Entity\Event;
 use CoreBundle\Form\EventType;
@@ -35,6 +36,9 @@ class EventController extends Controller
 		return $this->viewEventsByDateInterval($date1, $date2);
 	}
 
+	/**
+	 * @Security("has_role('ROLE_COMMUNICATION')")
+	 */
 	public function addAction(Request $request)
 	{
 		$event = new Event();
@@ -80,6 +84,9 @@ class EventController extends Controller
 			);
 	}
 
+	/**
+	 * @Security("has_role('ROLE_COMMUNICATION')")
+	 */
 	public function editAction(Request $request, $slug)
 	{
 		$em = $this->getDoctrine()->getManager();
@@ -113,6 +120,9 @@ class EventController extends Controller
 			);
 	}
 
+	/**
+	 * @Security("has_role('ROLE_COMMUNICATION')")
+	 */
 	public function deleteAction($slug, Request $request)
 	{
 		$em = $this->getDoctrine()->getManager();

@@ -8,7 +8,7 @@
 				Du {{ event.dateDebut|date('d/m/Y à H:i') }} au {{ event.dateFin|date('d/m/Y à H:i') }}.
 			</p>
 			<p>{{ event.content|bbcode_filter('events_filter') }}</p>
-			{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+			{% if is_granted('ROLE_COMMUNICATION') %}
 				<div class="btn-group">
 					<a href="{{ path('core_event_edit', {slug: event.slug}) }}" class="btn btn-warning">
 						Modifier
