@@ -53,7 +53,7 @@
 
 			<ul class="nav navbar-nav">
 				<li><a href="{{ path('core_actus_view', {page:1}) }}">Actualités</a></li>
-				{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+				{% if is_granted('ROLE_PIOK') %}
 					<li><a href="{{ path('core_chat_view') }}">Chat</a></li>
 				{% endif %}
 				<li><a href="{{ path('forum_forum_view_categories') }}">Forum</a></li>
