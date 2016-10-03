@@ -11,7 +11,7 @@
 			<h3>{{ actu.title }}</h3>
 			<p>{{ actu.content|bbcode_filter('actus_filter') }}</p>
 			<p class="help-block">Le {{ actu.datePublication|date('d/m/Y') }}</p>
-			{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+			{% if is_granted('ROLE_COMMUNICATION') %}
 				<div class="button-group">
 					<a href="{{ path('core_actus_edit', {slug:actu.slug}) }}" class="btn btn-primary">Modifier</a>
 					<a href="{{ path('core_actus_delete', {slug:actu.slug}) }}" class="btn btn-danger">Supprimer</a>
