@@ -5,8 +5,18 @@ security:
         UserBundle\Entity\User: sha512
     
     role_hierarchy:
-        ROLE_ADMIN:       [ROLE_MODERATEUR]
-        ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_COMMUNICATION: [ROLE_PIOK]
+        ROLE_ANIMATION:     [ROLE_PIOK]
+        ROLE_INTENDANCE:    [ROLE_PIOK]
+        ROLE_BUDGET:        [ROLE_PIOK]
+        ROLE_DOCUMENTATION: [ROLE_PIOK]
+        ROLE_HEBERGEMENT:   [ROLE_PIOK]
+        ROLE_MATERIEL:      [ROLE_PIOK]
+        ROLE_SANTE:         [ROLE_PIOK]
+        ROLE_VIE_SPI:       [ROLE_PIOK]
+        ROLE_CHEF:          [ROLE_PIOK, ROLE_CHEF_EQUIPE, ROLE_COMMUNICATION, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_ADMIN:         [ROLE_COMMUNICATION, ROLE_ANIMATION, ROLE_CHEF, ROLE_CHEF_EQUIPE, ROLE_PIOK]
+        ROLE_SUPER_ADMIN:   [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
