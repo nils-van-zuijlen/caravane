@@ -43,6 +43,6 @@ security:
                 secret: "%secret%"
                 
     access_control:
-        - { path: ^/admin, roles: ROLE_ADMIN                  }
-        - { path: ^/chat,  roles: IS_AUTHENTICATED_REMEMBERED }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/chat,  roles: ROLE_PIOK  }
         
