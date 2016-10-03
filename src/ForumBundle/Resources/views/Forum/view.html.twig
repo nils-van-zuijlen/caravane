@@ -20,7 +20,7 @@
 			<p>
 				{{ forum.content|bbcode_filter('comments_filter') }}
 			</p>
-			{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+			{% if is_granted('IS_AUTHENTICATED_REMEMBERED') and (forum.user === app.user or is_granted('ROLE_COMMUNICATION') %}
 				<a
 					class="btn btn-primary"
 					href="{{ path('forum_forum_edit_forum', {categorie: categorie.slug, slug: forum.slug}) }}"
