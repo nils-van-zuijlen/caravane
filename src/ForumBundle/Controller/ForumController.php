@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Component\HttpKernel\Exception as HttpException;
 
 use ForumBundle\Entity\Forum;
 use ForumBundle\Form\ForumType;
@@ -147,6 +148,16 @@ class ForumController extends Controller
 					'Le forum '.$slug
 					.' n\'existe pas dans la categorie '.$categorie
 					);
+		}
+		
+		if (
+			$forum->getUser() != $this->getUser()
+			&& !$this->get('security.authorization_checker')->isGranted('ROLE_COMMUNICATION')
+		)
+		{
+			throw new HttpException\AccessDeniedHttpException(
+				'Vous n\'êtes pas autorisé à modifier le forum '.$forum
+				);
 		}
 
 		$form = $this->createForm(ForumType::class, $forum);

@@ -3,3 +3,8 @@
 {% block body %}
 	{% block index_body %}{% endblock index_body %}
 {% endblock %}
+
+{% block styles %}
+	{{ parent() }}
+	<link type="stylesheet" href="{{ asset('core/css/index.css') }}">
+{% endblock %}

@@ -49,11 +49,7 @@
 
 {% block styles %}
 	{{ parent() }}
-	<style>
-		#message-list {
-			margin-bottom: 0;
-		}
-	</style>
+	<link type="stylesheet" href="{{ asset('bundles/core/css/chat.css') }}" />
 {% endblock %}
 
 {% block scripts %}
