@@ -1,0 +1,41 @@
+{% extends 'UserBundle::layout.html.twig' %}
+
+{% block title %}Rôles – {{ parent() }}{% endblock %}
+
+{% block fos_user_content %}
+	<h3>Rôles des utilisateurs</h3>
+	<div class="row">
+		<div class="col-sm-12">
+			<table class="table table-bordered table-condensed table-striped">
+				<thead>
+					<tr>
+						<th>Nom d'utilisateur</th>
+						<th>Rôles</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<th>Nom d'utilisateur</th>
+						<th>Rôles</th>
+					</tr>
+				</tfoot>
+				<tbody>
+					{% for user in users %}
+						<tr>
+							<td>
+								{% if is_granted('ROLE_ALLOWED_TO_SWITCH') %}
+									<a href="{{ path('user_role_edit', {username: user.username}) }}" title="Modifier">
+										{{ user.username|capitalize }}
+									</a>
+								{% else %}
+									{{ user.username|capitalize }}
+								{% endif %}
+							</td>
+							<td>{% for role in user.roles %}{{ role }} {% endfor %}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+{% endblock %}
