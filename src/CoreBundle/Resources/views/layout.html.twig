@@ -12,29 +12,7 @@
 	{% block styles %}
 		<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap-theme.min.css') }}">
-		<style type="text/css">
-		html {
-			position: relative;
-			min-height: 100%;
-		}
-		body {
-			padding-top: 70px;
-			/* Margin bottom by footer height */
-			margin-bottom: 120px;
-		}
-		.footer {
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-			/* Set the fixed height of the footer here */
-			height: 100px;
-			background-color: #e3e3e3;
-		}
-		.image {
-			width: 100%;
-			height: auto;
-		}
-		</style>
+		<link rel="stylesheet" href="{{ asset('bundles/core/css/layout.css') }}" />
 		<link rel="stylesheet" href="{{ asset("bundles/foscomment/css/comments.css") }}" type="text/css" />
 	{% endblock styles %}
 
