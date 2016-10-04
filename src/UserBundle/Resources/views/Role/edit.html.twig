@@ -1,0 +1,16 @@
+{% extends 'UserBundle::layout.html.twig' %}
+
+{% block title %}Rôles – {{ parent() }}{% endblock %}
+
+{% block fos_user_content %}
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<h3>Édition des rôles de l'utilisateur {{ user.username|capitalize }}</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 well">
+			{{ form(form) }}
+		</div>
+	</div>
+{% endblock %}
