@@ -34,3 +34,6 @@ forum:
     resource: "@ForumBundle/Resources/config/routing.yml"
     prefix:   /forum
 
+user_role:
+    resource: "@UserBundle/Resources/config/routing/role.yml"
+    prefix:   /roles

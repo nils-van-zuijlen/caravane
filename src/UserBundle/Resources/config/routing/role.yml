@@ -1,0 +1,11 @@
+user_role_view:
+    path: /
+    defaults:
+        _controller: UserBundle:Role:view
+    methods: GET
+
+user_role_edit:
+    path: /{username}
+    defaults:
+        _controller: UserBundle:Role:edit
+    methods: GET|POST
