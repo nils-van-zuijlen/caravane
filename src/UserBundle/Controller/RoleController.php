@@ -16,6 +16,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
+use UserBundle\Form\Type\RoleFormType;
+
 /**
  * RESTful controller managing group CRUD
  *
@@ -59,7 +61,7 @@ class RoleController extends Controller
 				);
 		}
 
-		$form = $this->createForm(RoleType::class, $user);
+		$form = $this->createForm(RoleFormType::class, $user);
 
 		if (
 			$request->isMethod('POST')
@@ -81,6 +83,7 @@ class RoleController extends Controller
 			'UserBundle:Role:edit.html.twig',
 			array(
 				'form' => $form->createView(),
+				'user' => $user,
 				)
 			);
 	}
