@@ -15,6 +15,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class RoleFormType extends AbstractType
 {
@@ -24,7 +25,7 @@ class RoleFormType extends AbstractType
 	{
 		$builder
 			->add(
-				'name',
+				'roles',
 				ChoiceType::class,
 				array(
 					'label' => 'Rôles',
@@ -45,6 +46,16 @@ class RoleFormType extends AbstractType
 							'Responsable Hébergement'     => 'ROLE_HEBERGEMENT',
 							'Responsable Santé'           => 'ROLE_SANTE',
 							),
+						),
+					)
+				)
+			->add(
+				'submit',
+				SubmitType::class,
+				array(
+					'label' => 'Modifier',
+					'attr'  => array(
+						'class' => 'btn btn-danger',
 						),
 					)
 				);
