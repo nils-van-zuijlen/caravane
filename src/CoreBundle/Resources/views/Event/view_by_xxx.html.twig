@@ -3,7 +3,7 @@
 {% block event_body %}
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2">
-			{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+			{% if is_granted('ROLE_COMMUNICATION') %}
 				<a href="{{ path('core_event_add') }}" class="btn btn-primary">
 					Nouveau
 				</a>
@@ -22,7 +22,7 @@
 					</li>
 				{% endfor %}
 			</ul>
-			{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+			{% if is_granted('ROLE_COMMUNICATION') %}
 				<a href="{{ path('core_event_add') }}" class="btn btn-primary">
 					Nouveau
 				</a>

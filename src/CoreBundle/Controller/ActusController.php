@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\PreconditionRequiredHttpException;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 use CoreBundle\Entity\Actus;
 use CoreBundle\Form\ActusType;
@@ -13,6 +14,9 @@ use CoreBundle\Form\ActusEditType;
 
 class ActusController extends Controller
 {
+	/**
+	 * @Security("has_role('ROLE_COMMUNICATION')")
+	 */
 	public function addAction(Request $request)
 	{
 		$actu = new Actus();
@@ -41,6 +45,9 @@ class ActusController extends Controller
 			);
 	}
 
+	/**
+	 * @Security("has_role('ROLE_COMMUNICATION')")
+	 */
 	public function deleteAction($slug, Request $request)
 	{
 		$em = $this->getDoctrine()->getManager();
@@ -59,6 +66,9 @@ class ActusController extends Controller
 		return $this->redirectToRoute('core_actus_view');
 	}
 
+	/**
+	 * @Security("has_role('ROLE_COMMUNICATION')")
+	 */
 	public function editAction(Request $request, $slug)
 	{
 		$em = $this->getDoctrine()->getManager();
