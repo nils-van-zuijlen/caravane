@@ -25,12 +25,3 @@
 		</div>
 	{% endif %}
 {% endblock %}
-
-{% block scripts %}
-	{{ parent() }}
-	<script type="text/javascript">
-		$(function() {
-			$('.carousel').carousel();
-		});
-	</script>
-{% endblock %}
