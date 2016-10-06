@@ -1,4 +1,11 @@
 services:
-#    core.example:
-#        class: CoreBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
+    core.mailer:
+        class: CoreBundle\Mailer
+        arguments: 
+            - "@mailer"
+            - "@router"
+            - "@twig"
+            - parameters:
+                template:
+                    chefs: "CoreBundle:Chefs:email.html.twig"
+                mailer_user: "%mailer_user%"
