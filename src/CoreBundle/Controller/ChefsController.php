@@ -41,4 +41,12 @@ class ChefsController extends Controller
 				)
 			);
 	}
+
+	/**
+	 * @Security("has_role('ROLE_CHEF')")
+	 */
+	public function indexAction(Request $request)
+	{
+		return $this->render('CoreBundle:Chefs:index.html.twig');
+	}
 }
