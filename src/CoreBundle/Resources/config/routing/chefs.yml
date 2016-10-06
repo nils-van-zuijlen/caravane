@@ -1,0 +1,11 @@
+core_chefs_index:
+    path: /
+    defaults:
+        _controller: CoreBundle:Chefs:index
+    methods: GET
+
+core_chefs_send_email:
+    path: /email
+    defaults:
+        _controller: CoreBundle:Chefs:sendEmail
+    methods: GET|POST
