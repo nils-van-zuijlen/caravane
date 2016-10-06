@@ -33,23 +33,10 @@
 
 {% block styles %}
 	{{ parent() }}
-	<style type="text/css">	
-		#group_list {
-			margin-top: 20px;
-		}
-	</style>
+	<link type="stylesheet" href="{{ asset('bundles/user/css/group_list.css') }}">
 {% endblock %}
 
 {% block scripts %}
 	{{ parent() }}
-	<script type="text/javascript">
-		$(function() {
-			$('#group_list>a').on('click', function(e) {
-				e.preventDefault();
-				$('#group_show_zone').load($(this).attr('href'));
-				$('#group_list>a.active').removeClass('active');
-				$(this).addClass('active');
-			});
-		});
-	</script>
+	<script type="text/javascript" src="{{ asset('bundles/user/js/group_list.js') }}"></script>
 {% endblock %}
