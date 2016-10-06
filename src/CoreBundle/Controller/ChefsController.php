@@ -19,6 +19,8 @@ class ChefsController extends Controller
 	{
 		$email = new ChefsEmail;
 
+		$email->setFromUser($this->getUser());
+
 		$form = $this->createForm(EmailFormType::class, $email);
 
 		if (
@@ -26,6 +28,7 @@ class ChefsController extends Controller
 			&& $form->handleRequest($request)->isValid()
 			) {
 			$this->get('core.mailer')->sendChefsEmail($email);
+
 			$request->getSession()->getFlashBag()->add('success', 'L\'e-mail a été envoyé');
 
 			return $this->redirect('core_chefs_index');
