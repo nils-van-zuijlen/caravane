@@ -1,0 +1,16 @@
+{% extends 'CoreBundle:Chefs:layout.html.twig' %}
+
+{% block title %}E-mail – {{ parent() }}{% endblock %}
+
+{% block chefs_body %}
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<h3>Envoyer un e-mail aux utilisateurs du site</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 well">
+			{{ form() }}
+		</div>
+	</div>
+{% endblock %}
