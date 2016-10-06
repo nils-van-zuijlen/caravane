@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Swift_Message;
 
 use CoreBundle\Mailer\ChefsEmail;
-use CoreBundle\Form\EmailFormType;
+use CoreBundle\Form\ChefsEmailFormType;
 
 class ChefsController extends Controller
 {
@@ -21,7 +21,7 @@ class ChefsController extends Controller
 
 		$email->setFromUser($this->getUser());
 
-		$form = $this->createForm(EmailFormType::class, $email);
+		$form = $this->createForm(ChefsEmailFormType::class, $email);
 
 		if (
 			$request->isMethod('POST')
