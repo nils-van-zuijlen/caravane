@@ -113,7 +113,7 @@ fm_bbcode:
             locale:  "%locale%"
             xhtml:   false
             hooks:   [ emoticon, clickable ]
-            filters: [ url, email ]
+            filters: [ default, url, email ]
         comments_filter:
             strict:  false
             locale:  "%locale%"

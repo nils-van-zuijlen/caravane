@@ -42,6 +42,9 @@
 						<li><a href="http://sgdf.fr">Le site des Scouts et Guides de France</a></li>
 					</ul>
 				</li>
+				{% if is_granted('ROLE_CHEF') %}
+					<li><a href="{{ path('core_chefs_index') }}">Chefs</a></li>
+				{% endif %}
 			</ul>
 
 			<div class="pull-right">

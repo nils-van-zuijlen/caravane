@@ -15,11 +15,17 @@ class ChatRepository extends \Doctrine\ORM\EntityRepository
 		$qb = $this->createQueryBuilder('c');
 
 		$qb
-			->orderBy('c.sentTime', 'DESC')
+			->orderBy('c.id', 'DESC')
 			->setMaxResults($number);
 
 		$return = $qb->getQuery()->getResult();
 		krsort($return, SORT_NUMERIC);
 		return $return;
+	}
+
+	public function eraseAll()
+	{
+		$query = $this->_em->createQuery('DELETE CoreBundle:Chat c');
+		$query->execute();
 	}
 }
