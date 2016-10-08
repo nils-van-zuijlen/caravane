@@ -23,9 +23,9 @@ class ChefsEmail implements EmailInterface
 	{ $this->body = $body; }
 	public function setIsBcc($isBcc)
 	{ $this->isBcc = $isBcc; }
-	public function setToUsers(array $toUsers)
+	public function setToUsers($toUsers)
 	{ $this->toUsers = $toUsers; }
-	public function setToGroups(array $toGroups)
+	public function setToGroups($toGroups)
 	{ $this->toGroups = $toGroups; }
 	public function setFromUser($fromUser)
 	{ $this->fromUser = $fromUser; }
@@ -61,13 +61,13 @@ class ChefsEmail implements EmailInterface
 		$to = array();
 
 		foreach ($this->toGroups as $group) {
-			foreach ($group->getUser() as $user) {
-				$to[$user->getUsername()] = $user->getEmail();
+			foreach ($group->getUsers() as $user) {
+				$to[$user->getEmail()] = $user->getUsername();
 			}
 		}
 
 		foreach ($this->toUsers as $user) {
-			$to[$user->getUsername()] = $user->getEmail();
+			$to[$user->getEmail()] = $user->getUsername();
 		}
 
 		if ($this->isBcc) {
@@ -89,7 +89,7 @@ class ChefsEmail implements EmailInterface
 	public function getFrom()
 	{
 		return array(
-			$this->fromUser->getUsername() => $this->fromUser->getEmail(),
+			$this->fromUser->getEmail() => $this->fromUser->getUsername(),
 			);
 	}
 }

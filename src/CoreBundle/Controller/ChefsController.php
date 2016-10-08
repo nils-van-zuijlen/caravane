@@ -31,7 +31,7 @@ class ChefsController extends Controller
 
 			$request->getSession()->getFlashBag()->add('success', 'L\'e-mail a été envoyé');
 
-			return $this->redirect('core_chefs_index');
+			return $this->redirectToRoute('core_chefs_index');
 		}
 
 		return $this->render(

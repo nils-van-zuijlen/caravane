@@ -28,7 +28,7 @@ class ChatController extends Controller
 		$chat = new Chat();
 
 		$chat
-			->setUsername($user->getUsername())
+			->setUser($user)
 			->setMessage($message);
 
 		$em = $this->getDoctrine()->getManager();
@@ -48,7 +48,7 @@ class ChatController extends Controller
 		$messages = $repository->getLast(self::NB_MESSAGES_A_AFFICHER);
 
 		foreach ($messages as $key => $message) {
-			$dateInterval = $message['sentTime']->diff(new \DateTime);
+			$dateInterval = $message->getSentTime()->diff(new \DateTime);
 			if ($dateInterval->days != 0) {
 				$string = $dateInterval->format('%aj %hh %im %ss');
 			} elseif ($dateInterval->h != 0) {
@@ -58,7 +58,7 @@ class ChatController extends Controller
 			} else {
 				$string = $dateInterval->format('%ss');
 			}
-			$messages[$key]['ilYA'] = $string;
+			$messages[$key]->ilYA = $string;
 		}
 
 		return $this->render(

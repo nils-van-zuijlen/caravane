@@ -1,0 +1,3 @@
+{% block subject %}{{ subject }}{% endblock %}
+{% block body_text %}{{ body|bbcode_clean }}{% endblock %}
+{% block body_html %}{{ body|bbcode_filter() }}{% endblock %}

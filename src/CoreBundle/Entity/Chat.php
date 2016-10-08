@@ -12,121 +12,120 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Chat
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
+	/**
+	 * @var int
+	 *
+	 * @ORM\Column(name="id", type="integer")
+	 * @ORM\Id
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	private $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="username", type="string", length=255)
-     */
-    private $username;
+	/**
+	 * @var string
+	 *
+	 * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
+	 * @ORM\JoinColumn(nullable=false)
+	 */
+	private $user;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="message", type="text")
-     */
-    private $message;
+	/**
+	 * @var string
+	 *
+	 * @ORM\Column(name="message", type="text")
+	 */
+	private $message;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="sent_time", type="datetime")
-     */
-    private $sentTime;
+	/**
+	 * @var \DateTime
+	 *
+	 * @ORM\Column(name="sent_time", type="datetime")
+	 */
+	private $sentTime;
 
-    function __construct()
-    {
-        $this->sentTime = new \DateTime();
-    }
+	public $ilYA;
 
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+	function __construct()
+	{
+		$this->sentTime = new \DateTime();
+	}
 
-    /**
-     * Set username
-     *
-     * @param string $username
-     *
-     * @return Chat
-     */
-    public function setUsername($username)
-    {
-        $this->username = $username;
+	/**
+	 * Get id
+	 *
+	 * @return int
+	 */
+	public function getId()
+	{
+		return $this->id;
+	}
 
-        return $this;
-    }
+	/**
+	 * Set user
+	 *
+	 * @return Chat
+	 */
+	public function setUser(\UserBundle\Entity\User $user)
+	{
+		$this->user = $user;
 
-    /**
-     * Get username
-     *
-     * @return string
-     */
-    public function getUsername()
-    {
-        return $this->username;
-    }
+		return $this;
+	}
 
-    /**
-     * Set message
-     *
-     * @param string $message
-     *
-     * @return Chat
-     */
-    public function setMessage($message)
-    {
-        $this->message = $message;
+	/**
+	 * Get user
+	 */
+	public function getUser()
+	{
+		return $this->user;
+	}
 
-        return $this;
-    }
+	/**
+	 * Set message
+	 *
+	 * @param string $message
+	 *
+	 * @return Chat
+	 */
+	public function setMessage($message)
+	{
+		$this->message = $message;
 
-    /**
-     * Get message
-     *
-     * @return string
-     */
-    public function getMessage()
-    {
-        return $this->message;
-    }
+		return $this;
+	}
 
-    /**
-     * Set sentTime
-     *
-     * @param \DateTime $sentTime
-     *
-     * @return Chat
-     */
-    public function setSentTime($sentTime)
-    {
-        $this->sentTime = $sentTime;
+	/**
+	 * Get message
+	 *
+	 * @return string
+	 */
+	public function getMessage()
+	{
+		return $this->message;
+	}
 
-        return $this;
-    }
+	/**
+	 * Set sentTime
+	 *
+	 * @param \DateTime $sentTime
+	 *
+	 * @return Chat
+	 */
+	public function setSentTime($sentTime)
+	{
+		$this->sentTime = $sentTime;
 
-    /**
-     * Get sentTime
-     *
-     * @return \DateTime
-     */
-    public function getSentTime()
-    {
-        return $this->sentTime;
-    }
+		return $this;
+	}
+
+	/**
+	 * Get sentTime
+	 *
+	 * @return \DateTime
+	 */
+	public function getSentTime()
+	{
+		return $this->sentTime;
+	}
 }
 

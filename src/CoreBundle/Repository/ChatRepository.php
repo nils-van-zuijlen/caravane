@@ -18,7 +18,7 @@ class ChatRepository extends \Doctrine\ORM\EntityRepository
 			->orderBy('c.sentTime', 'DESC')
 			->setMaxResults($number);
 
-		$return = $qb->getQuery()->getArrayResult();
+		$return = $qb->getQuery()->getResult();
 		krsort($return, SORT_NUMERIC);
 		return $return;
 	}

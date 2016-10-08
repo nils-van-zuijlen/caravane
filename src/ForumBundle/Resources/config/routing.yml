@@ -29,7 +29,7 @@ forum_forum_view_categories:
     methods: GET
 
 forum_forum_view_categorie:
-    path: /{slug}
+    path: /{categorie}
     defaults:
         _controller: ForumBundle:Forum:viewCategorie
     requirements:

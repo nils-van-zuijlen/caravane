@@ -56,7 +56,7 @@ class RoleController extends Controller
 			->findOneByUsername($username);
 
 		if ($user === null) {
-			throw NotFoundHttpException(
+			throw new NotFoundHttpException(
 				'L\'utilisateur '.$username.' n\'existe pas.'
 				);
 		}
@@ -76,7 +76,7 @@ class RoleController extends Controller
 				->getFlashBag()
 				->add('success', 'Les rôles de l\'utilisateur '.$username.' ont bien été modifiés');
 
-			return $this->redirect('user_role_view');
+			return $this->redirectToRoute('user_role_view');
 		}
 
 		return $this->render(
