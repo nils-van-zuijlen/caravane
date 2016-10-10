@@ -1,0 +1,4 @@
+responsabilites_animation_index:
+    path: /
+    defaults:
+        _controller: ResponsabilitesBundle:Animation:index
