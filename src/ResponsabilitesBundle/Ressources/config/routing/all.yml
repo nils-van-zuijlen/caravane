@@ -3,3 +3,7 @@ responsabilites_index:
     defaults:
         _controller: FrameworkBundle:Template:template
         template:    ResponsabilitesBundle::index.html.twig
+
+responsabilites_animation:
+    prefix:   /animation
+    resource: animation.yml
