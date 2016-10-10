@@ -1,0 +1,5 @@
+responsabilites_index:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    ResponsabilitesBundle::index.html.twig
