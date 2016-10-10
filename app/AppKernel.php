@@ -18,6 +18,7 @@ class AppKernel extends Kernel
 			new CoreBundle\CoreBundle(),
 			new UserBundle\UserBundle(),
 			new ForumBundle\ForumBundle(),
+			new ResponsabilitesBundle\ResponsabilitesBundle(),
 			new FOS\UserBundle\FOSUserBundle(),
 			new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
 			new FM\BbcodeBundle\FMBbcodeBundle(),
