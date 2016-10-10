@@ -36,4 +36,8 @@ forum:
 
 user_role:
     resource: "@UserBundle/Resources/config/routing/role.yml"
-    prefix:   /roles
+    prefix:   /responsabilites
+
+responsabilites:
+    resource: "@ResponsabilitesBundle/Resources/config/routing/all.yml"
+    prefix:   /responsabilites
