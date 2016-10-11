@@ -4,19 +4,19 @@ responsabilites_intendance_index:
         _controller: ResponsabilitesBundle:Intendance:index
     methods: GET
 
-responsabilites_intendance_view_menu:
-    path:     /{slug}
-    defaults:
-        _controller: ResponsabilitesBundle:Intendance:viewMenu
-    requirements:
-        slug: [a-zA-Z0-9-]*
-    methods: GET
-
 responsabilites_intendance_new_menu:
     path:     /menu/nouveau
     defaults:
         _controller: ResponsabilitesBundle:Intendance:newMenu
     methods: GET|POST
+
+responsabilites_intendance_view_menu:
+    path:     /menu/{slug}
+    defaults:
+        _controller: ResponsabilitesBundle:Intendance:viewMenu
+    requirements:
+        slug: [a-zA-Z0-9-]*
+    methods: GET
 
 responsabilites_intendance_edit_menu:
     path:     /menu/{slug}/edit

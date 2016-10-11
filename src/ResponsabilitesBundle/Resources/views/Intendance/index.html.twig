@@ -1,7 +1,14 @@
-{% extends "::base.html.twig" %}
+{% extends "ResponsabilitesBundle:Intendance:layout.html.twig" %}
 
-{% block title %}ResponsabilitesBundle:Intendance:index{% endblock %}
-
-{% block body %}
-<h1>Welcome to the Intendance:index page</h1>
+{% block intendance_body %}
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<p>
+				{# description de la responsabilité #}
+			</p>
+			<ul class="list-group">
+				<a href="{{ path('responsabilite_intendance_view_all_menu') }}" class="list-group-item">Menus</a>
+			</ul>
+		</div>
+	</div>
 {% endblock %}
