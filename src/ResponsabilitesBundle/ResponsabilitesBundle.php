@@ -1,6 +1,6 @@
 <?php
 
-namespace ResponsabilitesBundle
+namespace ResponsabilitesBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle as BaseBundle;
 
