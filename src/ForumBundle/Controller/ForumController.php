@@ -58,17 +58,17 @@ class ForumController extends Controller
 			);
 	}
 
-	public function viewCategorieAction(Request $request, $slug)
+	public function viewCategorieAction(Request $request, $categorie)
 	{
 		$em = $this
 			->getDoctrine()
 			->getManager();
 		$categorie = $em
 			->getRepository('ForumBundle:Categorie')
-			->findOneBySlug($slug);
+			->findOneBySlug($categorie);
 
 		if ($categorie === null)
-			throw $this->createNotFoundException('La categorie '.$slug.' n\'existe pas');
+			throw $this->createNotFoundException('La categorie '.$categorie.' n\'existe pas');
 
 		$forums = $em
 			->getRepository('ForumBundle:Forum')

@@ -1,11 +1,8 @@
 services:
     core.mailer:
-        class: CoreBundle\Mailer
+        class: CoreBundle\Mailer\Mailer
         arguments: 
             - "@mailer"
             - "@router"
             - "@twig"
-            - parameters:
-                template:
-                    chefs: "CoreBundle:Chefs:email.html.twig"
-                mailer_user: "%mailer_user%"
+            - {template: {chefs: "CoreBundle:Chefs:email.html.twig"}, mailer_user: "%mailer_user%"}

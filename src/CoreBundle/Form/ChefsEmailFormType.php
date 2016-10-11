@@ -7,7 +7,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
@@ -20,30 +20,33 @@ class ChefsEmailFormType extends AbstractType
 				'toUsers',
 				EntityType::class,
 				array(
-					'label' => 'Aux utilisateurs',
-					'required' => false,
-					'class' => 'UserBundle:User',
+					'label'        => 'Aux utilisateurs',
+					'required'     => false,
+					'class'        => 'UserBundle:User',
 					'choice_label' => 'display',
-					'multiple' => true,
+					'multiple'     => true,
 					)
 				)
 			->add(
 				'toGroups',
 				EntityType::class,
 				array(
-					'label' => 'Aux groupes',
-					'required' => false,
-					'class' => 'UserBundle:Group',
+					'label'        => 'Aux groupes',
+					'required'     => false,
+					'class'        => 'UserBundle:Group',
 					'choice_label' => 'name',
-					'multiple' => true,
+					'multiple'     => true,
 					)
 				)
 			->add(
 				'isBcc',
-				CheckboxType::class,
+				ChoiceType::class,
 				array(
-					'label' => 'Envoi en copie cachée',
-					'required' => false,
+					'label'   => 'Mode d\'envoi',
+					'choices' => array(
+						'Copie cachée' => true,
+						'À'            => false,
+						),
 					)
 				)
 			->add(

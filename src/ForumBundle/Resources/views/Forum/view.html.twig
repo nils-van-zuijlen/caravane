@@ -20,7 +20,7 @@
 			<p>
 				{{ forum.content|bbcode_filter('comments_filter') }}
 			</p>
-			{% if is_granted('IS_AUTHENTICATED_REMEMBERED') and (forum.user === app.user or is_granted('ROLE_COMMUNICATION') %}
+			{% if is_granted('IS_AUTHENTICATED_REMEMBERED') and (forum.user == app.user or is_granted('ROLE_COMMUNICATION')) %}
 				<a
 					class="btn btn-primary"
 					href="{{ path('forum_forum_edit_forum', {categorie: categorie.slug, slug: forum.slug}) }}"
@@ -32,7 +32,7 @@
 	</div>
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2">
-			{% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': 'forum'} %}
+			{% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': 'forum'~forum.slug} %}
 		</div>
 	</div>
 {% endblock %}

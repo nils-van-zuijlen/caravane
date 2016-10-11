@@ -51,6 +51,8 @@ class Mailer
 			$bcc = array();
 		}
 
+		$parameters = $this->parameters;
+
 		$this
 			->sendMessage(
 				array(
@@ -75,8 +77,8 @@ class Mailer
 
 		$message = Swift_Message::newInstance()
 			->setSubject($subject)
-			->setFrom($fromEmail, $fromName)
-			->setReplyTo($fromEmail, $fromName))
+			->setFrom($fromEmails)
+			->setReplyTo($fromEmails)
 			->setSender($this->parameters['mailer_user'])
 			->setTo($toEmails)
 			->setBcc($bccEmails)

@@ -14,7 +14,7 @@ $(function() {
 				.hide('fast');
 			return;
 		}
-		$.post('{{ path("core_chat_send") }}', { 'message': message }, afficheConversation);
+		$.post('send', { 'message': message }, afficheConversation);
 		$('#message').val('');
 		$('.panel-footer form').removeClass('has-warning has-error has-success');
 		$('#message').focus();
@@ -26,7 +26,7 @@ $(function() {
 				.animate({right: '-=200'}, 2500, 'linear')
 				.animate({right: '+=200'}, 2500, 'linear');
 
-		$('#message-list').load('{{ path("core_chat_getmessages") }}');
+		$('#message-list').load('get');
 	}
 
 	$('#btn-loading').on('click', function(e) {
