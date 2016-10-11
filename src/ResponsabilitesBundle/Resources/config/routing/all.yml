@@ -7,3 +7,7 @@ responsabilites_index:
 responsabilites_animation:
     prefix:   /animation
     resource: animation.yml
+
+responsabilites_intendance:
+    prefix:   /intendance
+    resource: intendance.yml
