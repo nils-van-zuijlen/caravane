@@ -15,7 +15,7 @@ responsabilites_intendance_view_menu:
     defaults:
         _controller: ResponsabilitesBundle:Intendance:viewMenu
     requirements:
-        slug: [a-zA-Z0-9-]*
+        slug: ^[a-zA-Z0-9-]*$
     methods: GET
 
 responsabilites_intendance_edit_menu:
@@ -23,11 +23,14 @@ responsabilites_intendance_edit_menu:
     defaults:
         _controller: ResponsabilitesBundle:Intendance:editMenu
     requirements:
-        slug: [a-zA-Z0-9-]*
+        slug: ^[a-zA-Z0-9-]*$
     methods: GET|POST
 
 responsabilites_intendance_view_all_menu:
-    path:     /menu
+    path:     /menu/{page}
     defaults:
         _controller: ResponsabilitesBundle:Intendance:viewAllMenu
+        page: 1
+    requirements:
+        page: \d*
     methods: GET
