@@ -1,7 +1,17 @@
-{% extends "ResponsabilitesBundle:Intendance:layout.html.twig" %}
+{% extends "ResponsabilitesBundle::layout.html.twig" %}
 
 {% block title %}Nouveau – Menus – {{ parent() }}{% endblock %}
 
-{% block intendance_body %}
-<h1>Welcome to the Intendance:newMenu page</h1>
+{% block resp_body %}
+
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<h3>Nouveau menu</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 well">
+			{{ form(form) }}
+		</div>
+	</div>
 {% endblock %}
