@@ -141,4 +141,19 @@ class IntendanceController extends Controller
 			);
 	}
 
+	public function deleteMenuAction(Request $request, $slug)
+	{
+		$em = $this->getDoctrine()->getManager();
+		$menu = $em->getRepository('ResponsabilitesBundle:Menu');
+
+		if ($menu == null)
+			throw $this->createNotFoundException('Le menu '.$slug.' n\'existe pas');
+
+		$em->remove($menu);
+		$em->flush();
+
+		$request->getSession()->getFlashBag()->add('success', 'Le menu '.$menu->getTitle().' a été supprimé');
+
+		return $this->redirectToRoute('responsabilites_intendance_view_all_menu');
+	}
 }

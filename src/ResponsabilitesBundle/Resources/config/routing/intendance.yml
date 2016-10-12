@@ -26,6 +26,14 @@ responsabilites_intendance_edit_menu:
         slug: ^[a-zA-Z0-9-]*$
     methods: GET|POST
 
+responsabilites_intendance_delete_menu:
+    path:     /menu/{slug}/delete
+    defaults:
+        _controller: ResponsabilitesBundle:Intendance:deleteMenu
+    requirements:
+        slug: ^[a-zA-Z0-9-]*$
+    methods: GET|POST
+
 responsabilites_intendance_view_all_menu:
     path:     /menu/{page}
     defaults:
