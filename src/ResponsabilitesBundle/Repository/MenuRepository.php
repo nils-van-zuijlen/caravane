@@ -10,4 +10,17 @@ namespace ResponsabilitesBundle\Repository;
  */
 class MenuRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function getPaginedMenus($page, $nbPerPage)
+	{
+		$query = $this
+			->createQueryBuilder('m')
+			->orderBy('m.id', 'DESC')
+			->getQuery();
+
+		$query
+			->setFirstResult(($page-1) * $nbPerPage)
+			->setMaxResults($nbPerPage);
+
+		return new Paginator($query, true);
+	}
 }

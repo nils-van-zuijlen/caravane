@@ -105,12 +105,38 @@ class IntendanceController extends Controller
 			);
 	}
 
-	public function viewAllMenuAction(Request $request)
+	public function viewAllMenuAction(Request $request, $page)
 	{
+		if ($page < 1) {
+			throw $this->createNotFoundException("La page ".$page." n'existe pas.");
+		}
+
+		$nbPerPage = $this->container->getParameter('nb_per_page');
+
+		$listMenus = $this
+			->getDoctrine()
+			->getManager()
+			->getRepository('ResponsabilitesBundle:Menu')
+			->getPaginedMenus($page, $nbPerPage);
+
+		$nbPages = ceil(count($listMenus) / $nbPerPage);
+
+		if ($page > $nbPages) {
+			if ($page == 1) {
+				$listMenus = array();
+				$nbPages = 0;
+				$page = 0;
+			} else {
+				throw $this->createNotFoundException("La page ".$page." n'existe pas.");
+			}
+		}
+
 		return $this->render(
 			'ResponsabilitesBundle:Intendance:view_all_menu.html.twig',
 			array(
-				#
+				'listMenus' => $listMenus,
+				'nbPages'=> $nbPages,
+				'page'=> $page,
 				)
 			);
 	}
