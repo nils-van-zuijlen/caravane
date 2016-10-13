@@ -1,0 +1,4 @@
+responsabilites_budget_index:
+    path: /
+    defaults:
+        _controller: ResponsabilitesBundle:Budget:index
