@@ -41,6 +41,9 @@ class IntendanceController extends Controller
 			);
 	}
 
+	/**
+	 * @Security("has_role('ROLE_INTENDANCE')")
+	 */
 	public function newMenuAction(Request $request)
 	{
 		$menu = new Menu();
@@ -70,6 +73,9 @@ class IntendanceController extends Controller
 			);
 	}
 
+	/**
+	 * @Security("has_role('ROLE_INTENDANCE')")
+	 */
 	public function editMenuAction(Request $request, $slug)
 	{
 		$em = $this->getDoctrine()->getManager();
@@ -141,6 +147,9 @@ class IntendanceController extends Controller
 			);
 	}
 
+	/**
+	 * @Security("has_role('ROLE_INTENDANCE')")
+	 */
 	public function deleteMenuAction(Request $request, $slug)
 	{
 		$em = $this->getDoctrine()->getManager();
