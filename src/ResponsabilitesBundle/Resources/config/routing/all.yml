@@ -11,3 +11,7 @@ responsabilites_animation:
 responsabilites_intendance:
     prefix:   /intendance
     resource: intendance.yml
+
+responsabilites_communication:
+    prefix: /communication
+    resource: communication.yml
