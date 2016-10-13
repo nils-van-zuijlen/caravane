@@ -1,0 +1,24 @@
+{% extends 'ResponsabilitesBundle::layout.html.twig' %}
+
+{% block title %}Communication – {{ parent() }}{% endblock %}
+
+{% block resp_body %}
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<h3>Responsable communication</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<p>
+				{# description de la responsabilité #}
+			</p>
+			<ul class="list-group">
+				{# liens vers les pages de la responsabilité #}
+				{% if is_granted('ROLE_COMMUNICATION') %}
+					<a class="list-group-item" href="{{ path('core_actus_add') }}">Publier une actualité sur le site</a>
+				{% endif %}
+			</ul>
+		</div>
+</div>
+{% endblock %}
