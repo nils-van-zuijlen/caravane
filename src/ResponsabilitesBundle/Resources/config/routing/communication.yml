@@ -1,0 +1,3 @@
+responsabilites_communication_index:
+    path: /
+    methods: GET
