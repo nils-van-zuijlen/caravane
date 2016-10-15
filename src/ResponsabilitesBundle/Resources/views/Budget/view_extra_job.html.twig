@@ -1,0 +1,40 @@
+{% extends 'ResponsabilitesBundle::layout.html.twig' %}
+
+{% block title %}Extra Jobs – Budget – {{ parent() }}{% endblock %}
+
+{% block resp_body %}
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="panel panel-default">
+				<table class="table table-striped table-condensed">
+					<div class="panel-heading">
+						<h3 class="panel-title">Les extra jobs de l'année {{ year }}-{{ year + 1 }}</h3>
+					</div>
+					<thead>
+						<tr>
+							<th>Equipe</th>
+							<th>Commentaires</th>
+							<th>Montant (en €)</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for extra_job in extraJobs %}
+							<tr>
+								<td>{{ extra_job.equipe.name }}</td>
+								<td>{{ extra_job.commentaires|bbcode_filter('responsabilites_filter') }}</td>
+								<td>{{ extra_job.montant }}</td>
+							</tr>
+						{% else %}
+							<tr>
+								<td colspan="3">Pas d'extra jobs cette année</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+					<div class="panel-footer">
+						<p>{{ nbExtraJobs }} qui ont rapporté {{ recettes }} €</p>
+					</div>
+				</table>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -35,8 +35,10 @@ class BudgetController extends Controller
 		return $this->render(
 			'ResponsabilitesBundle:Budget:view_extra_job.html.twig',
 			array(
-				'extraJobs' => $extraJobs,
-				'recettes'  => $recettes,
+				'extraJobs'   => $extraJobs,
+				'recettes'    => $recettes,
+				'year'        => $year,
+				'nbExtraJobs' => count($extraJobs),
 				)
 			);
 	}
