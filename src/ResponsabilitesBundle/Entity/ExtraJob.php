@@ -52,14 +52,6 @@ class ExtraJob
 	 */
 	private $commentaires = '';
 
-	/**
-	 * @var string
-	 *
-	 * @ORM\Column(name="slug", type="string", length=255, unique=true)
-	 * @Gedmo\Slug(fields={"titre"}, updatable=false)
-	 */
-	private $slug;
-
 	function __construct()
 	{
 		$this->date = new \DateTime;
@@ -145,30 +137,6 @@ class ExtraJob
 	public function getCommentaires()
 	{
 		return $this->commentaires;
-	}
-
-	/**
-	 * Set slug
-	 *
-	 * @param string $slug
-	 *
-	 * @return ExtraJob
-	 */
-	public function setSlug($slug)
-	{
-		$this->slug = $slug;
-
-		return $this;
-	}
-
-	/**
-	 * Get slug
-	 *
-	 * @return string
-	 */
-	public function getSlug()
-	{
-		return $this->slug;
 	}
 
 	/**
