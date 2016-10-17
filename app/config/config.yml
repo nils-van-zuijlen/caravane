@@ -79,6 +79,8 @@ fos_user:
     registration:
         confirmation:
             enabled: false
+        form:
+            type: UserBundle\Form\Type\RegistrationFormType
     from_email:
         address: nilsdu29@gmail.com
         sender_name: "Nils Van Zuijlen"
@@ -86,6 +88,9 @@ fos_user:
         mailer: fos_user.mailer.twig_swift
     group:
         group_class: UserBundle\Entity\Group
+    profile:
+        form:
+            type: UserBundle\Form\Type\ProfileFormType
 
 # Stof\DoctrineExtensionsBundle configuration
 stof_doctrine_extensions:

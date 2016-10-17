@@ -1,6 +1,6 @@
 {% for message in messages %}
 	<li class="list-group-item">
-		<span class="label {% if message.user.hasRole('ROLE_CHEF') %}label-warning{% elseif message.user.username == 'chatbot' %}label-success{% else %}label-info{% endif %}">{{ message.user.username }}</span>
+		<span class="label {% if message.user.hasRole('ROLE_CHEF') %}label-warning{% elseif message.user.username == 'chatbot' %}label-success{% else %}label-info{% endif %}">{{ message.user.display }}</span>
 		<span class="badge">{{ message.ilYA }}</span>
 		{{ message.message|bbcode_filter('chat_filter') }}
 	</li>
