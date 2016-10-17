@@ -87,7 +87,7 @@ class BudgetController extends Controller
 		return $this->render(
 			'ResponsabilitesBundle:Budget:add_extra_job.html.twig',
 			array(
-				'form' => $form,
+				'form' => $form->createView(),
 				)
 			);
 	}

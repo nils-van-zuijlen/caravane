@@ -21,7 +21,7 @@
 						{% for extra_job in extraJobs %}
 							<tr>
 								<td>{{ extra_job.equipe.name }}</td>
-								<td>{{ extra_job.commentaires|bbcode_filter('responsabilites_filter') }}</td>
+								<td>{{ extra_job.commentaires|default('')|bbcode_filter('responsabilites_filter') }}</td>
 								<td>{{ extra_job.montant }}</td>
 							</tr>
 						{% else %}
@@ -30,11 +30,35 @@
 							</tr>
 						{% endfor %}
 					</tbody>
-					<div class="panel-footer">
-						<p>{{ nbExtraJobs }} qui ont rapporté {{ recettes }} €</p>
-					</div>
+					<tfoot class="panel-footer">
+						<tr>
+							<td colspan="3">
+								Soit 
+								<em>{{ nbExtraJobs }}</em> extra job(s) 
+								qui ont rapporté 
+								<strong>{{ recettes }} €</strong>
+							</td>
+						</tr>
+					</tfoot>
 				</table>
 			</div>
+			<ul class="pagination">
+				<li>
+					<a href="{{ path('responsabilites_budget_extra_job_view', {year: year - 1}) }}">
+						&lt;&lt;
+					</a>
+				</li>
+				<li class="active">
+					<a href="{{ path('responsabilites_budget_extra_job_view', {year: year}) }}">
+						{{ year~'-'~(year + 1) }}
+					</a>
+				</li>
+				<li>
+					<a href="{{ path('responsabilites_budget_extra_job_view', {year: year + 1}) }}">
+						&gt;&gt;
+					</a>
+				</li>
+			</ul>
 		</div>
 	</div>
 {% endblock %}
