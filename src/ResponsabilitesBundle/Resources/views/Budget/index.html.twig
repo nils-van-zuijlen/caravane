@@ -14,7 +14,10 @@
 				{# description de la responsabilité #}
 			</p>
 			<ul class="list-group">
-				{# liens vers les pages de la responsabilité #}
+				<a href="{{ path('responsabilites_budget_extra_job_view') }}">Extra jobs</a>
+				{% if is_granted('ROLE_CHEF_EQUIPE') or is_granted('ROLE_BUDGET') %}
+					<a href="{{ path('responsabilites_budget_extra_job_add') }}">Enregistrer un nouvel extra job</a>
+				{% endif %}
 			</ul>
 		</div>
   </div>
