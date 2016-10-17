@@ -2,3 +2,19 @@ responsabilites_budget_index:
     path: /
     defaults:
         _controller: ResponsabilitesBundle:Budget:index
+    methods: GET
+
+responsabilites_budget_extra_job_view:
+    path: /extra-jobs/{year}
+    defaults:
+        year: null
+        _controller: ResponsabilitesBundle:Budget:viewExtraJob
+    requirements:
+        year: ^[2-9][0-9]{3}$
+    methods: GET
+
+responsabilites_budget_extra_job_add:
+    path: /extra-jobs/nouveau
+    defaults:
+        _controller: ResponsabilitesBundle:Budget:addExtraJob
+    methods: GET|POST
