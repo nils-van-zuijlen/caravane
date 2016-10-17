@@ -1,6 +1,6 @@
 <?php
 
-namespace ResponsabilitesBundle\Form;
+namespace ResponsabilitesBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -9,7 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\DataTransformer\IntegerToLocalizedStringTransformer;
 
@@ -28,8 +28,8 @@ class ExtraJobFormType extends AbstractType
 				array(
 					'label'        => 'Équipe',
 					'required'     => true,
-					'class'        => 'ResponsabilitesBundle:ExtraJob',
-					'choice_label' => 'nom',
+					'class'        => 'UserBundle:Group',
+					'choice_label' => 'name',
 					)
 				)
 			->add(
@@ -41,14 +41,14 @@ class ExtraJobFormType extends AbstractType
 				)
 			->add(
 				'montant',
-				IntegerType::class,
+				NumberType::class,
 				array(
-					'label'         => 'Montant gagné',
+					'label'         => 'Montant gagné (en €)',
 					'scale'         => 2,
 					'rounding_mode' => IntegerToLocalizedStringTransformer::ROUND_HALF_DOWN,
 					'attr'          => array(
-						'min' => 0.01,
-						'max' => 99999999.99,
+						'min'  => 0.01,
+						'max'  => 99999999.99,
 						'step' => 0.01,
 						),
 					)
@@ -57,7 +57,8 @@ class ExtraJobFormType extends AbstractType
 				'commentaires',
 				TextareaType::class,
 				array(
-					'label' => 'Commentaires'
+					'label'    => 'Commentaires',
+					'required' => false,
 					)
 				)
 			->add(
