@@ -15,3 +15,7 @@ responsabilites_intendance:
 responsabilites_communication:
     prefix: /communication
     resource: communication.yml
+
+responsabilites_materiel:
+    prefix: /materiel
+    resource: materiel.yml
