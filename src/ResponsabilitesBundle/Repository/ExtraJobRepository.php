@@ -19,7 +19,7 @@ class ExtraJobRepository extends \Doctrine\ORM\EntityRepository
 			->setParameters(
 				array(
 					'date_debut' => new \DateTime($year.'/01/01'),
-					'date_fin'   => new \DateTime($year+1.'/01/01'),
+					'date_fin'   => new \DateTime(($year+1).'/01/01'),
 					)
 				);
 
@@ -35,7 +35,7 @@ class ExtraJobRepository extends \Doctrine\ORM\EntityRepository
 			->setParameters(
 				array(
 					'date_debut' => new \DateTime($firstYearOfSchoolYear.'/09/01'),
-					'date_fin'   => new \DateTime($firstYearOfSchoolYear+1.'/09/01'),
+					'date_fin'   => new \DateTime(($firstYearOfSchoolYear+1).'/09/01'),
 					)
 				);
 
@@ -75,9 +75,11 @@ class ExtraJobRepository extends \Doctrine\ORM\EntityRepository
 
 	public function getRecettesOfSchoolYear($firstYearOfSchoolYear)
 	{
-		$qb = $this->createQueryBuilder('e.montant');
+		$qb = $this->_em->createQueryBuilder()
+			->select('e.montant')
+			->from($this->_entityName, 'e');
 
-		$this->bySchoolYear($firstYearOfSchoolYear);
+		$this->bySchoolYear($qb, $firstYearOfSchoolYear);
 
 		$extraJobs = $qb->getQuery()->getArrayResult();
 
@@ -90,11 +92,13 @@ class ExtraJobRepository extends \Doctrine\ORM\EntityRepository
 		return $recettes;
 	}
 
-	public function getRecettesOfSchoolYear($year)
+	public function getRecettesOfYear($year)
 	{
-		$qb = $this->createQueryBuilder('e.montant');
+		$qb = $this->_em->createQueryBuilder()
+			->select('e.montant')
+			->from($this->_entityName, 'e');
 
-		$this->byYear($year);
+		$this->byYear($qb, $year);
 
 		$extraJobs = $qb->getQuery()->getArrayResult();
 
