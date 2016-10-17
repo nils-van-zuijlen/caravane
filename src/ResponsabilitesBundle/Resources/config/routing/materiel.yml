@@ -1,0 +1,5 @@
+responsabilites_materiel_index:
+    path: /
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:index
+    methods: GET
