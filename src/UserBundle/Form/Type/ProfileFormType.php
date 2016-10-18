@@ -11,19 +11,6 @@ use Symfony\Component\Security\Core\Validator\Constraints\UserPassword;
 
 class ProfileFormType extends AbstractType
 {
-	/**
-	 * @var string
-	 */
-	private $class;
-
-	/**
-	 * @param string $class The User class name
-	 */
-	public function __construct($class)
-	{
-		$this->class = $class;
-	}
-
 	public function buildForm(FormBuilderInterface $builder, array $options)
 	{
 		$builder
@@ -72,7 +59,7 @@ class ProfileFormType extends AbstractType
 	public function configureOptions(OptionsResolver $resolver)
 	{
 		$resolver->setDefaults(array(
-			'data_class' => $this->class,
+			'data_class' => 'UserBundle\Entity\User',
 			'csrf_token_id' => 'profile',
 		));
 	}

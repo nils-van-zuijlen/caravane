@@ -20,19 +20,6 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 class RegistrationFormType extends AbstractType
 {
 	/**
-	 * @var string
-	 */
-	private $class;
-
-	/**
-	 * @param string $class The User class name
-	 */
-	public function __construct($class)
-	{
-		$this->class = $class;
-	}
-
-	/**
 	 * {@inheritdoc}
 	 */
 	public function buildForm(FormBuilderInterface $builder, array $options)
@@ -96,7 +83,7 @@ class RegistrationFormType extends AbstractType
 	public function configureOptions(OptionsResolver $resolver)
 	{
 		$resolver->setDefaults(array(
-			'data_class' => $this->class,
+			'data_class' => 'UserBundle\Entity\User',
 			'csrf_token_id' => 'registration',
 		));
 	}
