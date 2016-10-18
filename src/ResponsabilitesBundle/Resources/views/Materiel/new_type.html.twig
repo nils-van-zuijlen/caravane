@@ -1,0 +1,14 @@
+{% extends 'ResponsabilitesBundle::layout.html.twig' %}
+
+{% block title %}Nouveau Type d'Objet -- {{ parent() }}{% endblock %}
+
+{% block resp_body %}
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<h3>Nouveau type d'objet</h3>
+			<div class="well">
+				{{ form(form) }}
+			</div>
+		</div>
+	</div>
+{% endblock %}
