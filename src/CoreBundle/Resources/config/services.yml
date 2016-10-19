@@ -6,3 +6,15 @@ services:
             - "@router"
             - "@twig"
             - {template: {chefs: "CoreBundle:Chefs:email.html.twig"}, mailer_user: "%mailer_user%"}
+    core.chatbot:
+        class: CoreBundle\Chatbot\Chatbot
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@security.token_storage"
+            - "@security.authorization_checker"
+            - 
+                repositoryName:
+                    chat: CoreBundle:Chat
+                    user: UserBundle:User
+                chatbotUsername: chatbot
+                role_admin: ROLE_CHEF
