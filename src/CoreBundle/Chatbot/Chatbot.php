@@ -7,22 +7,54 @@ use CoreBundle\Entity\Chat;
 class Chatbot
 {
 	private $em;
+	private $tokenStorage;
 	private $authChecker;
 	private $parameters;
-	private $chatRepository;
-	private $userRepository;
-	private $actualUser;
-	private $chatbotUser;
+	private $chatRepository = null;
+	private $userRepository = null;
+	private $actualUser = null;
+	private $chatbotUser = null;
 	
 	public function __construct($entityManager, $tokenStorage, $authChecker, array $parameters)
 	{
 		$this->em             = $entityManager;
+		$this->tokenStorage   = $tokenStorage;
 		$this->authChecker    = $authChecker;
 		$this->parameters     = $parameters;
-		$this->actualUser     = $tokenStorage->getToken()->getUser();
+	}
+
+	public function getChatRepository()
+	{
+		if ($this->chatRepository !== null)
+			return $this->chatRepository;
 		$this->chatRepository = $this->em->getRepository($parameters['repositoryName']['chat']);
+		return $this->chatRepository;
+	}
+
+	public function getUserRepository()
+	{
+		if ($this->userRepository !== null)
+			return $this->userRepository;
 		$this->userRepository = $this->em->getRepository($parameters['repositoryName']['user']);
-		$this->chatbotUser    = $this->userRepository->findOneByUsername($parameters['chatbotUsername']);
+		return $this->userRepository;
+	}
+
+	public function getActualUser()
+	{
+		if ($this->actualUser !== null)
+			return $this->actualUser;
+		$this->actualUser = $this->tokenStorage->getToken()->getUser();
+		return $this->actualUser;
+	}
+
+	public function getChatbotUser()
+	{
+		if ($this->chatbotUser !== null)
+			return $this->chatbotUser;
+		$this->chatbotUser = $this
+			->getUserRepository()
+			->findOneByUsername($parameters['chatbotUsername']);
+		return $this->chatbotUser;
 	}
 
 	/**
@@ -42,12 +74,12 @@ class Chatbot
 			#effacer tout le chat en laissant un message (ou pas)
 			if (preg_match("#^@erase_all#", $message)) {
 				$message = preg_replace("#@erase_all(.*)#", "[b]Chat effacé[/b]$1", $message);
-				$this->chatRepository->eraseAll();
+				$this->getChatRepository()->eraseAll();
 				$edited = true;
 			#utiliser un autre utilisateur quelconque
 			} else if (preg_match("#^@user\[.+\] .+#U", $message)) {
 				$username = preg_replace("#@user\[(.+)\] .+#", "$1", $message);
-				$user2 = $this->userRepository->findOneByUsername($username);
+				$user2 = $this->getUserRepository()->findOneByUsername($username);
 				$message = preg_replace("#@user\[.+\] (.+)#", "$1", $message);
 				if ($user2 != null) {
 					$user = $user2;
@@ -55,7 +87,7 @@ class Chatbot
 				}
 			#utiliser le chatbot pour s'exprimer
 			} else if (preg_match("#^@chatbot#", $message)) {
-				$user = $this->chatbotUser;
+				$user = $this->getChatbotUser();
 				$message = preg_replace("#@chatbot (.+)#", "$1", $message);
 				$edited = true;
 			}
@@ -83,7 +115,7 @@ class Chatbot
 		$user    = $chat->getUser();
 		$message = $chat->getMessage();
 
-		if ($user !== $this->chatbotUser) {
+		if ($user !== $this->getChatbotUser()) {
 			$eggs = array(
 					'You\'re up' => 'Yes, We\'re Up!',
 					'Caravane'   => 'La Caravane prend le départ...',
@@ -96,7 +128,7 @@ class Chatbot
 				if (preg_match('#'.preg_quote($key).'#i', $message)) {
 					$egg = new Chat();
 					$egg
-						->setUser($this->chatbotUser)
+						->setUser($this->getChatbotUser())
 						->setMessage($value);
 					$this->em->persist($egg);
 				}
