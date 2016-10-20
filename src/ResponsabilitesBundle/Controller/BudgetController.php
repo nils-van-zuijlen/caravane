@@ -91,4 +91,30 @@ class BudgetController extends Controller
 				)
 			);
 	}
+
+	public function deleteExtraJobAction(Request $request, $id)
+	{
+		// security check
+		if (
+			!$this->get('security.authorization_checker')->isGranted('ROLE_BUDGET')
+			&& !$this->get('security.authorization_checker')->isGranted('ROLE_CHEF')
+			) {
+			throw $this->createAccessDeniedException(
+				'Vous n\'avez ni la responsabilité budget, ni le rôle de chef d\'équipe.'
+				);
+		}
+
+		$em = $this->getDoctrine()->getManager();
+		$extraJob = $em->getRepository('ResponsabilitesBundle:ExtraJob')->find((integer) $id);
+
+		if (null === $extraJob)
+			throw $this->createNotFoundException('L\'extra job n°'.$id.' n\'existe pas');
+
+		$em->remove($extraJob);
+		$em->flush();
+
+		$request->getSession()->getFlashBag()->add('success', 'L\'extra job a été supprimé');
+
+		return $this->redirectToRoute('responsabilites_budget_extra_job_view');
+	}
 }

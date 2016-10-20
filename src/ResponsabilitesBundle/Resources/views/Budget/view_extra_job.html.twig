@@ -23,6 +23,16 @@
 								<td>{{ extra_job.equipe.name }}</td>
 								<td>{{ extra_job.commentaires|default('')|bbcode_filter('responsabilites_filter') }}</td>
 								<td>{{ extra_job.montant }}</td>
+								{% if is_granted('ROLE_BUDGET') or is_granted('ROLE_CHEF') %}
+									<td>
+										<a
+										href="{{ path('responsabilites_budget_extra_job_delete', {id: extra_job.id}) }}"
+										title="Attention: Ne peut pas être annulé"
+										>
+											Supprimer
+										</a>
+									</td>
+								{% endif %}
 							</tr>
 						{% else %}
 							<tr>

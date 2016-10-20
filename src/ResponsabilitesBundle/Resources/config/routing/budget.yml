@@ -18,3 +18,9 @@ responsabilites_budget_extra_job_add:
     defaults:
         _controller: ResponsabilitesBundle:Budget:addExtraJob
     methods: GET|POST
+
+responsabilites_budget_extra_job_delete:
+    path: /extra-jobs/delete/{id}
+    defaults:
+        _controller: ResponsabilitesBundle:Budget:deleteExtraJob
+    methods: GET
