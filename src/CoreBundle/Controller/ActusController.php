@@ -12,6 +12,9 @@ use CoreBundle\Entity\Actus;
 use CoreBundle\Form\ActusType;
 use CoreBundle\Form\ActusEditType;
 
+use CoreBundle\Event\NewActuEvent;
+use CoreBundle\Event\CaravaneEvents;
+
 class ActusController extends Controller
 {
 	/**
@@ -26,6 +29,10 @@ class ActusController extends Controller
 		if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
 
 			$em = $this->getDoctrine()->getManager();
+
+			$event = new NewActuEvent($actu, $this->getUser());
+			$this->get('event_dispatcher')->dispatch(CaravaneEvents::NEW_ACTU, $event);
+
 			$em->persist($actu);
 			$em->flush();
 
