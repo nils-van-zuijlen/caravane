@@ -59,8 +59,7 @@ class RegistrationFormType extends AbstractType
 				'plainPassword',
 				\Symfony\Component\Form\Extension\Core\Type\RepeatedType::class,
 				array(
-					'type'            => \Symfony\Component\Form\Extension\Core\Type\PasswordType::class
-						),
+					'type'            => \Symfony\Component\Form\Extension\Core\Type\PasswordType::class,
 					'options'         => array(
 						'translation_domain' => 'FOSUserBundle'
 						),
