@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Objets de l'inventaire.
  * 
  * @ORM\Table(name="objet")
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="ResponsabilitesBundle\Repository\ObjetRepository")
  */
 class Objet
 {
