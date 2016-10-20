@@ -1,0 +1,24 @@
+{% extends 'ResponsabilitesBundle::layout.html.twig' %}
+
+{% block title %}Budget -- {{ parent() }}{% endblock %}
+
+{% block resp_body %}
+  <div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<h3>Responsable budget</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<p>
+				{# description de la responsabilité #}
+			</p>
+			<ul class="list-group">
+				<a href="{{ path('responsabilites_budget_extra_job_view') }}">Extra jobs</a>
+				{% if is_granted('ROLE_CHEF_EQUIPE') or is_granted('ROLE_BUDGET') %}
+					<a href="{{ path('responsabilites_budget_extra_job_add') }}">Enregistrer un nouvel extra job</a>
+				{% endif %}
+			</ul>
+		</div>
+  </div>
+{% endblock %}
