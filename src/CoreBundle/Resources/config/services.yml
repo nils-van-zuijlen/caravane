@@ -12,9 +12,18 @@ services:
             - "@doctrine.orm.entity_manager"
             - "@security.token_storage"
             - "@security.authorization_checker"
+            - "@router"
             - 
                 repositoryName:
                     chat: CoreBundle:Chat
                     user: UserBundle:User
                 chatbotUsername: chatbot
                 role_admin: ROLE_CHEF
+                route:
+                    view_actu: core_actus_viewone
+    core.listener:
+        class: CoreBundle\Event\EventListener
+        arguments:
+            - "@core.chatbot"
+        tags:
+            - { name: kernel.event_listener, event: caravane.new_actu, method: newActu }

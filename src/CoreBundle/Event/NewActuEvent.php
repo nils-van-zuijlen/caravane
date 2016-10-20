@@ -4,14 +4,14 @@ namespace CoreBundle\Event;
 
 use Symfony\Component\EventDispatcher\Event as BaseEvent;
 use Symfony\Component\Security\Core\User\UserInterface;
-use CoreBundle\Entity\Actu;
+use CoreBundle\Entity\Actus;
 
 class NewActuEvent extends BaseEvent
 {
 	protected $newActu;
 	protected $user
 
-	function __construct(Actu $newActu, UserInterface $user)
+	function __construct(Actus $newActu, UserInterface $user)
 	{
 		$this->newActu = $newActu;
 		$this->user    = $user;

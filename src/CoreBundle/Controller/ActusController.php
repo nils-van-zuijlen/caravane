@@ -29,12 +29,11 @@ class ActusController extends Controller
 		if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
 
 			$em = $this->getDoctrine()->getManager();
+			$em->persist($actu);
+			$em->flush();
 
 			$event = new NewActuEvent($actu, $this->getUser());
 			$this->get('event_dispatcher')->dispatch(CaravaneEvents::NEW_ACTU, $event);
-
-			$em->persist($actu);
-			$em->flush();
 
 			$request->getSession()->getFlashBag()->add('success', 'Actualité enregistrée');
 

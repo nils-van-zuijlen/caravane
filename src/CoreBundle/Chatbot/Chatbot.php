@@ -3,24 +3,29 @@
 namespace CoreBundle\Chatbot;
 
 use CoreBundle\Entity\Chat;
+use CoreBundle\Entity\Actus;
+use UserBundle\Entity\User;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class Chatbot
 {
 	private $em;
 	private $tokenStorage;
 	private $authChecker;
+	private $router;
 	private $parameters;
 	private $chatRepository = null;
 	private $userRepository = null;
-	private $actualUser = null;
-	private $chatbotUser = null;
+	private $actualUser     = null;
+	private $chatbotUser    = null;
 	
-	public function __construct($entityManager, $tokenStorage, $authChecker, array $parameters)
+	public function __construct($entityManager, $tokenStorage, $authChecker, UrlGeneratorInterface $router, array $parameters)
 	{
-		$this->em             = $entityManager;
-		$this->tokenStorage   = $tokenStorage;
-		$this->authChecker    = $authChecker;
-		$this->parameters     = $parameters;
+		$this->em           = $entityManager;
+		$this->tokenStorage = $tokenStorage;
+		$this->authChecker  = $authChecker;
+		$this->router       = $router;
+		$this->parameters   = $parameters;
 	}
 
 	public function getChatRepository()
@@ -134,5 +139,21 @@ class Chatbot
 				}
 			}
 		}
+	}
+
+	public function newActuNotification(Actus $actu, User $user)
+	{
+		$message = 
+			'Nouvelle actualité: [i][url='
+			.$this->router->generate($this->parameters['route']['view_actu'], array('slug' => $actu->getSlug()), UrlGeneratorInterface::ABSOLUTE_PATH)
+			.']'
+			.$actu->getTitle()
+			.'[/url][/i] postée par '
+			.$user->getDisplay()
+			.'.';
+		$chatMsg = new Chat;
+		$chatMsg->setMessage($message)->setUser($this->getChatbotUser());
+		$this->em->persist($chatMsg);
+		return;
 	}
 }
