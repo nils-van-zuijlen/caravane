@@ -5,7 +5,7 @@ responsabilites_materiel_index:
     methods: GET
 
 responsabilites_materiel_new_type:
-    path: /inventaire/nouveau/type
+    path: /inventaire/types/nouveau
     defaults:
         _controller: ResponsabilitesBundle:Materiel:newType
     methods: GET|POST
@@ -19,7 +19,7 @@ responsabilites_materiel_view_type:
     methods: GET
 
 responsabilites_materiel_new_objet:
-    path: /inventaire/nouveau/objet
+    path: /inventaire/objets/nouveau
     defaults:
         _controller: ResponsabilitesBundle:Materiel:newObjet
     methods: GET|POST
@@ -34,7 +34,13 @@ responsabilites_materiel_view_objet:
     methods: GET
 
 responsabilites_materiel_view_all_objet:
-    path: /inventaire
+    path: /inventaire/objets
     defaults:
         _controller: ResponsabilitesBundle:Materiel:viewAllObjet
+    methods: GET
+
+responsabilites_materiel_view_all_type:
+    path: /inventaire/types
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:viewAllType
     methods: GET

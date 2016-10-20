@@ -96,4 +96,55 @@ class MaterielController extends Controller
 				)
 			);
 	}
+
+	public function viewObjetAction(Request $request, $type, $objet)
+	{
+		$ob_jet = $this
+			->getDoctrine()
+			->getManager()
+			->getRepository('ResponsabilitesBundle:Objet')
+			->getWithTypeById($objet);
+
+		if (null === $ob_jet || $ob_jet->getType()->getId() != $type)
+			throw $this->createNotFoundException("L'objet n°".$objet." n'existe pas pour le type".$type);
+
+		return $this->render(
+			'ResponsabilitesBundle:Materiel:view_objet.html.twig',
+			array(
+				'objet' => $ob_jet,
+				)
+			);
+	}
+
+	public function viewAllTypeAction(Request $request)
+	{
+		$types = $this
+			->getDoctrine()
+			->getManager()
+			->getRepository('ResponsabilitesBundle:TypeObjet')
+			->findAll();
+
+		return $this->render(
+			'ResponsabilitesBundle:Materiel:view_all_type.html.twig',
+			array(
+				'types' => $types,
+				)
+			);
+	}
+
+	public function viewAllObjetAction(Request $request)
+	{
+		$objets = $this
+			->getDoctrine()
+			->getManager()
+			->getRepository('ResponsabilitesBundle:Objet')
+			->findAll();
+
+		return $this->render(
+			'ResponsabilitesBundle:Materiel:view_all_objet.html.twig',
+			array(
+				'objets' => $objets,
+				)
+			);
+	}
 }
