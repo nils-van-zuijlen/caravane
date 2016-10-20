@@ -35,13 +35,43 @@ class MaterielController extends Controller
 			return $this->redirectToRoute(
 				'responsabilites_materiel_view_type',
 				array(
-					'id' => $type->getId(),
+					'type' => $type->getId(),
 					)
 				);
 		}
 		
 		return $this->render(
 			'ResponsabilitesBundle:Materiel:new_type.html.twig',
+			array(
+				'form' => $form->createView(),
+				)
+			);
+	}
+
+	public function newObjetAction(Request $request)
+	{
+		$objet = new Objet;
+		
+		$form = $this->createForm(ObjetFormType::class, $objet);
+		
+		if ($request->isType('POST') && $form->handleRequest($request)->isValid()) {
+			$em = $this->getDoctrine()->getManager();
+			$em->persist($objet);
+			$em->flush();
+			
+			$request->getSession()->getFlashBag()->add('success', 'Objet enregistré');
+			
+			return $this->redirectToRoute(
+				'responsabilites_materiel_view_objet',
+				array(
+					'objet' => $objet->getId(),
+					'type'  => $objet->getType()->getId(),
+					)
+				);
+		}
+		
+		return $this->render(
+			'ResponsabilitesBundle:Materiel:new_objet.html.twig',
 			array(
 				'form' => $form->createView(),
 				)
