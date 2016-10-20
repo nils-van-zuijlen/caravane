@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Types d'objets de l'inventaire.
  * 
  * @ORM\Table(name="type_objet")
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="ResponsabilitesBundle\Repository\TypeObjetRepository")
  */
 class TypeObjet
 {
@@ -28,6 +28,11 @@ class TypeObjet
 	 * @Assert\Type("string")
 	 */
 	private $nom;
+
+	/**
+	 * @ORM\OneToMany(targetEntity="ResponsabilitesBundle\Entity\Objet", mappedBy="type")
+	 */
+	private $objets;
 
 	public function getId()
 	{
@@ -47,5 +52,46 @@ class TypeObjet
 	{
 		$this->nom = $nom;
 		return $this;
+	}
+	/**
+	 * Constructor
+	 */
+	public function __construct()
+	{
+		$this->objets = new \Doctrine\Common\Collections\ArrayCollection();
+	}
+
+	/**
+	 * Add objet
+	 *
+	 * @param \ResponsabilitesBundle\Entity\Objet $objet
+	 *
+	 * @return TypeObjet
+	 */
+	public function addObjet(\ResponsabilitesBundle\Entity\Objet $objet)
+	{
+		$this->objets[] = $objet;
+
+		return $this;
+	}
+
+	/**
+	 * Remove objet
+	 *
+	 * @param \ResponsabilitesBundle\Entity\Objet $objet
+	 */
+	public function removeObjet(\ResponsabilitesBundle\Entity\Objet $objet)
+	{
+		$this->objets->removeElement($objet);
+	}
+
+	/**
+	 * Get objets
+	 *
+	 * @return \Doctrine\Common\Collections\Collection
+	 */
+	public function getObjets()
+	{
+		return $this->objets;
 	}
 }

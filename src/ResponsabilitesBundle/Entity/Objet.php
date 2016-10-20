@@ -30,7 +30,7 @@ class Objet
 	private $nom;
 	
 	/**
-	 * @ORM\ManyToOne(targetEntity="ResponsabilitesBundle\Entity\TypeObjet")
+	 * @ORM\ManyToOne(targetEntity="ResponsabilitesBundle\Entity\TypeObjet", inversedBy="objets")
 	 * @ORM\JoinColumn(nullable=false)
 	 * @Assert\Length(max=255)
 	 * @Assert\NotBlank()
@@ -71,6 +71,7 @@ class Objet
 	}
 	public function setType($type)
 	{
+		$type->addObjet($this);
 		$this->type = $type;
 		return $this;
 	}
