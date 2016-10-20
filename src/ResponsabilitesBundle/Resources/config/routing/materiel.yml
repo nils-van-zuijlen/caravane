@@ -3,3 +3,38 @@ responsabilites_materiel_index:
     defaults:
         _controller: ResponsabilitesBundle:Materiel:index
     methods: GET
+
+responsabilites_materiel_new_type:
+    path: /inventaire/nouveau/type
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:newType
+    methods: GET|POST
+
+responsabilites_materiel_view_type:
+    path: /inventaire/{type}
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:viewType
+    requirements:
+        type: \d*
+    methods: GET
+
+responsabilites_materiel_new_objet:
+    path: /inventaire/nouveau/objet
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:newObjet
+    methods: GET|POST
+
+responsabilites_materiel_view_objet:
+    path: /inventaire/{type}/{objet}
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:viewObjet
+    requirements:
+        type:  \d*
+        objet: \d*
+    methods: GET
+
+responsabilites_materiel_view_all_objet:
+    path: /inventaire
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:viewAllObjet
+    methods: GET
