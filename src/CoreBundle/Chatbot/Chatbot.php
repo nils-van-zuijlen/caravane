@@ -32,7 +32,7 @@ class Chatbot
 	{
 		if ($this->chatRepository !== null)
 			return $this->chatRepository;
-		$this->chatRepository = $this->em->getRepository($parameters['repositoryName']['chat']);
+		$this->chatRepository = $this->em->getRepository($this->parameters['repositoryName']['chat']);
 		return $this->chatRepository;
 	}
 
@@ -40,7 +40,7 @@ class Chatbot
 	{
 		if ($this->userRepository !== null)
 			return $this->userRepository;
-		$this->userRepository = $this->em->getRepository($parameters['repositoryName']['user']);
+		$this->userRepository = $this->em->getRepository($this->parameters['repositoryName']['user']);
 		return $this->userRepository;
 	}
 
@@ -58,7 +58,7 @@ class Chatbot
 			return $this->chatbotUser;
 		$this->chatbotUser = $this
 			->getUserRepository()
-			->findOneByUsername($parameters['chatbotUsername']);
+			->findOneByUsername($this->parameters['chatbotUsername']);
 		return $this->chatbotUser;
 	}
 
@@ -131,11 +131,7 @@ class Chatbot
 
 			foreach ($eggs as $key => $value) {
 				if (preg_match('#'.preg_quote($key).'#i', $message)) {
-					$egg = new Chat();
-					$egg
-						->setUser($this->getChatbotUser())
-						->setMessage($value);
-					$this->em->persist($egg);
+					$this->sendBotMessage($value);
 				}
 			}
 		}
@@ -151,9 +147,27 @@ class Chatbot
 			.'[/url][/i] postée par '
 			.$user->getDisplay()
 			.'.';
+		$this->sendBotMessage($message, true);
+		return;
+	}
+
+	public function newUserNotification(User $user)
+	{
+		$message =
+			'Un nouvel utilisateur au nom charmant de '
+			.$user->getDisplay()
+			.' vient de s\'inscrire.';
+		$this->sendBotMessage($message);
+		return;
+	}
+
+	private function sendBotMessage($message, $andFlush = false)
+	{
 		$chatMsg = new Chat;
 		$chatMsg->setMessage($message)->setUser($this->getChatbotUser());
 		$this->em->persist($chatMsg);
-		return;
+		if ($andFlush) {
+			$this->em->flush();
+		}
 	}
 }
