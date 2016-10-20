@@ -9,7 +9,7 @@ use CoreBundle\Entity\Actus;
 class NewActuEvent extends BaseEvent
 {
 	protected $newActu;
-	protected $user
+	protected $user;
 
 	function __construct(Actus $newActu, UserInterface $user)
 	{
