@@ -77,4 +77,23 @@ class MaterielController extends Controller
 				)
 			);
 	}
+
+	public function viewTypeAction(Request $request, $type)
+	{
+		$typeObjet = $this
+			->getDoctrine()
+			->getManager()
+			->getRepository('ResponsabilitesBundle:TypeObjet')
+			->getWithObjetsById($type);
+
+		if (null === $typeObjet)
+			throw $this->createNotFoundException("Le type d'objet n°".$type." n'existe pas.");
+
+		return $this->render(
+			'ResponsabilitesBundle:Materiel:view_type.html.twig',
+			array(
+				'type' => $typeObjet,
+				)
+			);
+	}
 }
