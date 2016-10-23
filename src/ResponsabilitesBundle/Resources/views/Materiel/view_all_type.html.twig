@@ -1,0 +1,27 @@
+{% extends 'ResponsabilitesBundle::layout.html.twig' %}
+
+{% block title %}Types – {{ parent() }}{% endblock %}
+
+{% block resp_body %}
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<h3>Types d'objets</h3>
+			{% if is_granted('ROLE_MATERIEL') %}
+				<a href="{{ path('responsabilites_materiel_new_type') }}" class="btn btn-primary">Nouveau type d'objets</a>
+			{% endif %}
+			<p><a href="{{ path('responsabilites_materiel_view_all_objet') }}">Voir tous les objets</a></p>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Les types existants :</h3>
+				</div>
+				<div class="list-group">
+					{% for type in types %}
+						<a href="{{ path('responsabilites_materiel_view_type', {type: type.id}) }}" class="list-group-item">
+							{{ type.nom }}
+						</a>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

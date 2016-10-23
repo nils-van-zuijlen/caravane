@@ -19,3 +19,7 @@ responsabilites_communication:
 responsabilites_budget:
     prefix: /budget
     resource: budget.yml
+
+responsabilites_materiel:
+    prefix: /materiel
+    resource: materiel.yml

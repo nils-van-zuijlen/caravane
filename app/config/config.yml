@@ -127,11 +127,11 @@ fm_bbcode:
             hooks:   [ emoticon, clickable ]
             filters: [ default, url, email, block, code, image, list, quote, text, table, video ]
         responsabilites_filter:
-            strict:  false
-            locale:  "%locale%"
-            xhtml:   false
-            hooks:   [ clickable ]
-            filters: [ default, url, email ]
+            strict: false
+            locale: "%locale%"
+            xhtml: false
+            hooks: [ emoticon, clickable ]
+            filters: [ default, url, email, code, list, quote ]
     emoticon:
         path:      /Caravane/web/emoticons/
         resource:  "%kernel.root_dir%/config/emoticons.yml"
