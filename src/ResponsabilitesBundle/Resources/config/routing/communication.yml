@@ -1,0 +1,5 @@
+responsabilites_communication_index:
+    path: /
+    methods: GET
+    defaults:
+        _controller: ResponsabilitesBundle:Communication:index

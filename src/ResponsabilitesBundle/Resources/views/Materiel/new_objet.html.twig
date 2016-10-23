@@ -1,0 +1,14 @@
+{% extends 'ResponsabilitesBundle::layout.html.twig' %}
+
+{% block title %}Nouvel Objet – {{ parent() }}{% endblock %}
+
+{% block resp_body %}
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<h3>Nouvel objet</h3>
+			<div class="well">
+				{% include 'ResponsabilitesBundle:Materiel:objet_form.html.twig' %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

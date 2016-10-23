@@ -1,0 +1,74 @@
+{% extends 'ResponsabilitesBundle::layout.html.twig' %}
+
+{% block title %}Extra Jobs – Budget – {{ parent() }}{% endblock %}
+
+{% block resp_body %}
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="panel panel-default">
+				<table class="table table-striped table-condensed">
+					<div class="panel-heading">
+						<h3 class="panel-title">Les extra jobs de l'année {{ year }}-{{ year + 1 }}</h3>
+					</div>
+					<thead>
+						<tr>
+							<th>Equipe</th>
+							<th>Commentaires</th>
+							<th>Montant (en €)</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for extra_job in extraJobs %}
+							<tr>
+								<td>{{ extra_job.equipe.name }}</td>
+								<td>{{ extra_job.commentaires|default('')|bbcode_filter('responsabilites_filter') }}</td>
+								<td>{{ extra_job.montant }}</td>
+								{% if is_granted('ROLE_BUDGET') or is_granted('ROLE_CHEF') %}
+									<td>
+										<a
+										href="{{ path('responsabilites_budget_extra_job_delete', {id: extra_job.id}) }}"
+										title="Attention: Ne peut pas être annulé"
+										>
+											Supprimer
+										</a>
+									</td>
+								{% endif %}
+							</tr>
+						{% else %}
+							<tr>
+								<td colspan="3">Pas d'extra jobs cette année</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+					<tfoot class="panel-footer">
+						<tr>
+							<td colspan="3">
+								Soit 
+								<em>{{ nbExtraJobs }}</em> extra job(s) 
+								qui ont rapporté 
+								<strong>{{ recettes }} €</strong>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+			<ul class="pagination">
+				<li>
+					<a href="{{ path('responsabilites_budget_extra_job_view', {year: year - 1}) }}">
+						&lt;&lt;
+					</a>
+				</li>
+				<li class="active">
+					<a href="{{ path('responsabilites_budget_extra_job_view', {year: year}) }}">
+						{{ year~'-'~(year + 1) }}
+					</a>
+				</li>
+				<li>
+					<a href="{{ path('responsabilites_budget_extra_job_view', {year: year + 1}) }}">
+						&gt;&gt;
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+{% endblock %}

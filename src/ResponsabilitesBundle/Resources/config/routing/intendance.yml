@@ -1,0 +1,44 @@
+responsabilites_intendance_index:
+    path:     /
+    defaults:
+        _controller: ResponsabilitesBundle:Intendance:index
+    methods: GET
+
+responsabilites_intendance_new_menu:
+    path:     /menu/nouveau
+    defaults:
+        _controller: ResponsabilitesBundle:Intendance:newMenu
+    methods: GET|POST
+
+responsabilites_intendance_view_menu:
+    path:     /menu/{slug}
+    defaults:
+        _controller: ResponsabilitesBundle:Intendance:viewMenu
+    requirements:
+        slug: ^[a-zA-Z0-9-]*$
+    methods: GET
+
+responsabilites_intendance_edit_menu:
+    path:     /menu/{slug}/edit
+    defaults:
+        _controller: ResponsabilitesBundle:Intendance:editMenu
+    requirements:
+        slug: ^[a-zA-Z0-9-]*$
+    methods: GET|POST
+
+responsabilites_intendance_delete_menu:
+    path:     /menu/{slug}/delete
+    defaults:
+        _controller: ResponsabilitesBundle:Intendance:deleteMenu
+    requirements:
+        slug: ^[a-zA-Z0-9-]*$
+    methods: GET|POST
+
+responsabilites_intendance_view_all_menu:
+    path:     /menu/{page}
+    defaults:
+        _controller: ResponsabilitesBundle:Intendance:viewAllMenu
+        page: 1
+    requirements:
+        page: \d*
+    methods: GET

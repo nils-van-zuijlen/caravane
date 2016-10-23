@@ -1,0 +1,77 @@
+responsabilites_materiel_index:
+    path: /
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:index
+    methods: GET
+
+responsabilites_materiel_new_type:
+    path: /inventaire/types/nouveau
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:newType
+    methods: GET|POST
+
+responsabilites_materiel_view_type:
+    path: /inventaire/types/{type}
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:viewType
+    requirements:
+        type: \d*
+    methods: GET
+
+responsabilites_materiel_new_objet:
+    path: /inventaire/objets/nouveau
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:newObjet
+    methods: GET|POST
+
+responsabilites_materiel_view_objet:
+    path: /inventaire/objets/{objet}
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:viewObjet
+    requirements:
+        objet: \d*
+    methods: GET
+
+responsabilites_materiel_view_all_objet:
+    path: /inventaire/objets
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:viewAllObjet
+    methods: GET
+
+responsabilites_materiel_view_all_type:
+    path: /inventaire/types
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:viewAllType
+    methods: GET
+
+responsabilites_materiel_edit_type:
+    path: /inventaire/types/{type}/edit
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:editType
+    requirements:
+        type: \d*
+    methods: GET|POST
+
+responsabilites_materiel_edit_objet:
+    path: /inventaire/objets/{objet}/edit
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:editObjet
+    requirements:
+        objet: \d*
+    methods: GET|POST
+
+responsabilites_materiel_delete_type:
+    path: /inventaire/types/{type}/delete
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:deleteType
+    requirements:
+        type: \d*
+    methods: GET
+
+responsabilites_materiel_delete_objet:
+    path: /inventaire/objets/{objet}/delete
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:deleteObjet
+    requirements:
+        objet: \d*
+    methods: GET

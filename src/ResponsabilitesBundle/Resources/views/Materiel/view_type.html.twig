@@ -1,0 +1,30 @@
+{% extends 'ResponsabilitesBundle::layout.html.twig' %}
+
+{% block title %}{{ type.nom }} – Type – {{ parent() }}{% endblock %}
+
+{% block resp_body %}
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<h3>{{ type.nom }}</h3>
+			{% if is_granted('ROLE_MATERIEL') %}
+				<div class="btn-group">
+					<a href="{{ path('responsabilites_materiel_edit_type', {type: type.id}) }}" class="btn btn-warning">Modifier</a>
+					<a href="{{ path('responsabilites_materiel_delete_type', {type: typet.id}) }}" class="btn btn-danger">Supprimer</a>
+				</div>
+			{% endif %}
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Les objets du type :</h3>
+				</div>
+				<div class="list-group">
+					{% for objet in type.objets %}
+						<a href="{{ path('responsabilites_materiel_view_objet', {objet: objet.id}) }}" class="list-group-item">
+							{{ objet.nom }}
+						</a>
+					{% endfor %}
+				</div>
+			</div>
+			<p><a href="{{ path('responsabilites_materiel_view_all_objet') }}">Voir tous les objets</a></p>
+		</div>
+	</div>
+{% endblock %}

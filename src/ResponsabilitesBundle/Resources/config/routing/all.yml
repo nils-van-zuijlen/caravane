@@ -1,0 +1,25 @@
+responsabilites_index:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    ResponsabilitesBundle::index.html.twig
+
+responsabilites_animation:
+    prefix:   /animation
+    resource: animation.yml
+
+responsabilites_intendance:
+    prefix:   /intendance
+    resource: intendance.yml
+
+responsabilites_communication:
+    prefix: /communication
+    resource: communication.yml
+
+responsabilites_budget:
+    prefix: /budget
+    resource: budget.yml
+
+responsabilites_materiel:
+    prefix: /materiel
+    resource: materiel.yml
