@@ -97,7 +97,7 @@ class MaterielController extends Controller
 			);
 	}
 
-	public function viewObjetAction(Request $request, $type, $objet)
+	public function viewObjetAction(Request $request, $objet)
 	{
 		$ob_jet = $this
 			->getDoctrine()
@@ -105,8 +105,8 @@ class MaterielController extends Controller
 			->getRepository('ResponsabilitesBundle:Objet')
 			->getWithTypeById($objet);
 
-		if (null === $ob_jet || $ob_jet->getType()->getId() != $type)
-			throw $this->createNotFoundException("L'objet n°".$objet." n'existe pas pour le type".$type);
+		if (null === $ob_jet)
+			throw $this->createNotFoundException("L'objet n°".$objet." n'existe pas.");
 
 		return $this->render(
 			'ResponsabilitesBundle:Materiel:view_objet.html.twig',
