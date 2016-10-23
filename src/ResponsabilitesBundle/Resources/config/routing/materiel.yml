@@ -59,3 +59,19 @@ responsabilites_materiel_edit_objet:
     requirements:
         objet: \d*
     methods: GET|POST
+
+responsabilites_materiel_delete_type:
+    path: /inventaire/types/{type}/delete
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:deleteType
+    requirements:
+        type: \d*
+    methods: GET
+
+responsabilites_materiel_delete_objet:
+    path: /inventaire/objets/{objet}/delete
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:deleteObjet
+    requirements:
+        objet: \d*
+    methods: GET
