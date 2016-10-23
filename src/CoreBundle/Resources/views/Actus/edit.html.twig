@@ -2,15 +2,15 @@
 
 {% block actus_body %}
 	<div class="row">
-		<h4 class="col-lg-8 col-lg-offset-2">Modifier une actualité</h4>
+		<h4 class="col-lg-8 col-lg-offset-2">{{ 'actus.edit.header'|trans }}</h4>
 	</div>
 	<div class="row">
 		<div class="col-lg-2">
-			<h4>Aide</h4>
+			<h4>{{ 'actus.edit.help.title'|trans }}</h4>
 			<ul class="list-inline">
-				<li>Vous pouvez utiliser du BBCode pour le contenu.</li>
-				<li>Le titre doit faire entre 5 et 255 caractères.</li>
-				<li>Le contenu doit faire au moins 5 caractères.</li>
+				{% for id in 0..2 %}
+					<li>{{ ('actus.edit.help.list.' ~ id)|trans }}</li>
+				{% endfor %}
 			</ul>
 		</div>
 		<div class="col-lg-10 well">

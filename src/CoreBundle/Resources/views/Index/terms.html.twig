@@ -1,16 +1,13 @@
 {% extends "CoreBundle:Index:layout.html.twig" %}
 
-{% block title %}Conditions d'utilisation – {{ parent() }}{% endblock %}
+{% block title %}{{ 'index.terms.title'|trans }} – {{ parent() }}{% endblock %}
 
 {% block index_body %}
-	<h1>Bienvenue sur la page des conditions d'utilisation</h1>
+	<h1>{{ 'index.terms.header'|trans }}</h1>
 	<hr>
 	<ul>
-		<li>Le respect de la charte s'applique aussi sur le site.</li>
-		<li>Les actes de vandalismes sont interdis.</li>
-		<li>Seuls les chefs peuvent modifier les responsabilités et les équipes. Faites leur vos éventuelles réclamations (poliement).</li>
-		<li>L'annuaire n'est pas disponible à des fins de spamming.</li>
-		<li>Les trois derniers jours de chat restent enregistrés en base de donnée. Ils ne sont consultables que par le webmaster (Responsable communication)</li>
-		<li>Ce site utilise des cookies à des fins d'identification des utilisateurs.</li>
+		{% for id in 0..4 %}
+			<li>{{ ('index.terms.list.' ~ id)|trans}}</li>
+		{% endfor %}
 	</ul>
 {% endblock %}

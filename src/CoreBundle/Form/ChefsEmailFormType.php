@@ -20,7 +20,7 @@ class ChefsEmailFormType extends AbstractType
 				'toUsers',
 				EntityType::class,
 				array(
-					'label'        => 'Aux utilisateurs',
+					'label'        => 'chefs.send_email.form.to.users',
 					'required'     => false,
 					'class'        => 'UserBundle:User',
 					'choice_label' => 'display',
@@ -31,7 +31,7 @@ class ChefsEmailFormType extends AbstractType
 				'toGroups',
 				EntityType::class,
 				array(
-					'label'        => 'Aux groupes',
+					'label'        => 'chefs.send_email.form.to.groups',
 					'required'     => false,
 					'class'        => 'UserBundle:Group',
 					'choice_label' => 'name',
@@ -42,10 +42,10 @@ class ChefsEmailFormType extends AbstractType
 				'isBcc',
 				ChoiceType::class,
 				array(
-					'label'   => 'Mode d\'envoi',
+					'label'   => 'chefs.send_email.form.is_bcc.label',
 					'choices' => array(
-						'Copie cachée' => true,
-						'À'            => false,
+						'chefs.send_email.form.is_bcc.true'  => true,
+						'chefs.send_email.form.is_bcc.false' => false,
 						),
 					)
 				)
@@ -53,21 +53,21 @@ class ChefsEmailFormType extends AbstractType
 				'subject',
 				TextType::class,
 				array(
-					'label' => 'Objet',
+					'label' => 'chefs.send_email.form.subject',
 					)
 				)
 			->add(
 				'body',
 				TextareaType::class,
 				array(
-					'label' => 'Contenu',
+					'label' => 'chefs.send_email.form.body',
 					)
 				)
 			->add(
 				'submit', 
 				SubmitType::class,
 				array(
-					'label' => 'Envoyer',
+					'label' => 'chefs.send_email.form.submit',
 					'attr'  => array(
 						'class' => 'btn btn-primary',
 						),

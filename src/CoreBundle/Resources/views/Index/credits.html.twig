@@ -1,22 +1,15 @@
 {% extends "CoreBundle:Index:layout.html.twig" %}
 
-{% block title %}Crédits – {{ parent() }}{% endblock %}
+{% block title %}{{ 'index.credits.title'|trans }} – {{ parent() }}{% endblock %}
 
 {% block index_body %}
-	<h1>Welcome to the Credits page</h1>
+	<h1>{{ 'index.credits.header'|trans }}</h1>
 	<hr>
 	<ul class="list-group">
-		<li class="list-group-item">
-			<a href="http://getbootstrap.com">Bootstrap</a> pour leur framework CSS
-		</li>
-		<li class="list-group-item">
-			<a href="#">Glyphicons</a> pour les icones
-		</li>
-		<li class="list-group-item">
-			<a href="#">Symfony</a> pour le framework PHP
-		</li>
-		<li class="list-group-item">
-			<a href="#">XXX</a> pour l'hébergement du site
-		</li>
+		{% for id in 0..3 %}
+			<li class="list-group-item">
+				{{ ('index.credits.thanks.' ~ id)|trans|bbcode_filter('actus_filter') }}
+			</li>
+		{% endfor %}
 	</ul>
 {% endblock %}

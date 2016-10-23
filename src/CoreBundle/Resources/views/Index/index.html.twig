@@ -1,7 +1,7 @@
 {% extends "CoreBundle:Index:layout.html.twig" %}
 
 {% block index_body %}
-	<h1>Bienvenue sur le site de la Caravane de Quimper</h1>
+	<h1>{{ 'index.index.header'|trans }}</h1>
 	<hr>
 	{% if nb_actus != 0 %}
 		<div class="carousel slide" id="carousel">
@@ -11,7 +11,7 @@
 						<img src="{{ path('core_file_get', {id: actu.image.id}) }}" alt="{{ actu.image.originalName }}">
 						<div class="carousel-caption">
 							<h3>{{ actu.title }}</h3>
-							<a href="{{ path('core_actus_viewone', {slug: actu.slug}) }}" class="btn btn-primary">Voir plus</a>
+							<a href="{{ path('core_actus_viewone', {slug: actu.slug}) }}" class="btn btn-primary">{{ 'index.index.carousel.more'|trans }}</a>
 						</div>
 					</div>
 				{% endfor %}

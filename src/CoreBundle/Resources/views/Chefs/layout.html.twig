@@ -1,9 +1,9 @@
 {% extends 'CoreBundle::layout.html.twig' %}
 
-{% block title %}Chefs – {{ parent() }}{% endblock %}
+{% block title %}{{ 'chefs.layout.title'|trans }} – {{ parent() }}{% endblock %}
 
 {% block body %}
-	<h2>Chefs</h2>
+	<h2>{{ 'chefs.layout.header'|trans }}</h2>
 	{% block chefs_body %}
 	{% endblock chefs_body %}
 {% endblock %}

@@ -1,12 +1,12 @@
 {% extends "CoreBundle:Index:layout.html.twig" %}
 
-{% block title %}Liens utiles – {{ parent() }}{% endblock %}
+{% block title %}{{ 'index.links.title'|trans }} – {{ parent() }}{% endblock %}
 
 {% block index_body %}
-	<h1>Bienvenue sur la page des liens utiles</h1>
+	<h1>{{ 'index.links.header'|trans }}</h1>
 	<hr>
 	<ul>
-		<li><a href="http://caravane.sgdf.fr">Le site national des PiosK</a></li>
-		<li><a href="http://sgdf.fr">Le site des Scouts et Guides de France</a></li>
+		<li><a href="http://caravane.sgdf.fr">{{ 'index.links.caravane'|trans }}</a></li>
+		<li><a href="http://sgdf.fr">{{ 'index.links.sgdf'|trans }}</a></li>
 	</ul>
 {% endblock %}

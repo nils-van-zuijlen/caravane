@@ -19,21 +19,21 @@ class EventType extends AbstractType
 				'dateDebut',
 				DateTimeType::class,
 				array(
-					'label' => 'Début',
+					'label' => 'event.form.date.debut',
 					)
 				)
 			->add(
 				'dateFin',
 				DateTimeType::class,
 				array(
-					'label' => 'Fin',
+					'label' => 'event.form.date.fin',
 					)
 				)
 			->add(
 				'title',
 				TextType::class,
 				array(
-					'label' => 'Titre',
+					'label' => 'event.form.title',
 					)
 				)
 			->add(
@@ -41,14 +41,14 @@ class EventType extends AbstractType
 				TextareaType::class,
 				array(
 					'required' => false,
-					'label'    => 'Notes',
+					'label'    => 'event.form.content',
 					)
 				)
 			->add(
 				'submit', 
 				SubmitType::class,
 				array(
-					'label' => 'Ajouter',
+					'label' => 'event.form.submit',
 					'attr' => array(
 						'class' => 'btn btn-primary',
 						),

@@ -5,16 +5,16 @@
 		<div class="col-lg-8 col-lg-offset-2">
 			<h3>{{ event.title }}</h3>
 			<p class="help-block" style="margin-left: 1em;">
-				Du {{ event.dateDebut|date('d/m/Y à H:i') }} au {{ event.dateFin|date('d/m/Y à H:i') }}.
+				{{ 'event.view.one.date'|trans({'%debut%': event.dateDebut|date('d/m/Y à H:i'), '%fin%': event.dateFin|date('d/m/Y à H:i')}) }}
 			</p>
 			<p>{{ event.content|bbcode_filter('events_filter') }}</p>
 			{% if is_granted('ROLE_COMMUNICATION') %}
 				<div class="btn-group">
 					<a href="{{ path('core_event_edit', {slug: event.slug}) }}" class="btn btn-warning">
-						Modifier
+						{{ 'event.view.one.edit'|trans }}
 					</a>
 					<a href="{{ path('core_event_delete', {slug: event.slug}) }}" class="btn btn-danger">
-						Supprimer
+						{{ 'event.view.one.delete'|trans }}
 					</a>
 				</div>
 			{% endif %}

@@ -22,42 +22,42 @@ class ContactType extends AbstractType
 				'nom', 
 				TextType::class,
 				array(
-					'label' => 'Nom',
+					'label' => 'index.contact.form.nom',
 					)
 			)
 			->add(
 				'prenom', 
 				TextType::class,
 				array(
-					'label' => 'Prénom',
+					'label' => 'index.contact.form.prenom',
 					)
 			)
 			->add(
 				'email', 
 				EmailType::class,
 				array(
-					'label' => 'E-mail',
+					'label' => 'index.contact.form.email',
 					)
 			)
 			->add(
 				'objet', 
 				TextType::class,
 				array(
-					'label' => 'Objet',
+					'label' => 'index.contact.form.objet',
 					)
 			)
 			->add(
 				'contenu', 
 				TextareaType::class,
 				array(
-					'label' => 'Contenu',
+					'label' => 'index.contact.form.contenu',
 					)
 			)
 			->add(
 				'send', 
 				SubmitType::class,
 				array(
-					'label' => 'Envoyer',
+					'label' => 'index.contact.form.send',
 					'attr'  => array(
 						'class' => 'btn btn-primary',
 						),

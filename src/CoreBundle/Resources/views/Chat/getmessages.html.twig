@@ -6,8 +6,8 @@
 	</li>
 {% else %}
 	<li class="list-group-item">
-		<span class="label label-info">La Caravane</span>
+		<span class="label label-info">{{ 'chat.getmessages.user'|trans }}</span>
 		<span class="badge">0s</span>
-		N'a pas encore utilisé son chat. Sois le premier à écrire un message.
+		{{ 'chat.getmessages.message'|trans }}
 	</li>
 {% endfor %}

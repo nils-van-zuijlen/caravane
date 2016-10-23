@@ -34,7 +34,7 @@ index:
             send: Envoyer
     credits:
         title: Crédits
-        header: Welcome to the Credits page
+        header: Crédits
         thanks:
             - "[url=//getbootstrap.com]Bootstrap[/url] pour leur framework CSS"
             - "[url]Glyphicons[/url] pour les icones"
@@ -46,12 +46,12 @@ index:
             more: Voir plus
     links:
         title: Liens utiles
-        header: Bienvenue sur la page des liens utiles
+        header: Liens utiles
         caravane: Le site national des PiosK
         sgdf: Le site des Scouts et Guides de France
     terms:
         title: Conditions d'utilisation
-        header: Bienvenue sur la page des conditions d'utilisation
+        header: Conditions d'utilisation
         list:
             - Le respect de la charte s'applique aussi sur le site.
             - Les actes de vandalismes sont interdits.
@@ -64,7 +64,7 @@ event:
     add:
         header: Ajouter un évenement
     edit:
-        header: 'Modifier l'évenement "%title%"'
+        header: 'Modifier l''évenement "%title%"'
     form:
         date:
             debut: Début
@@ -80,7 +80,7 @@ event:
             new: Nouveau
             date: 'Du %debut% au %fin%'
         one:
-            date: 'Du %debut% au %fin%'
+            date: 'Du %debut% au %fin%.'
             edit: Modifier
             delete: Supprimer
 
