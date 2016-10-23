@@ -194,7 +194,7 @@ class MaterielController extends Controller
 			->find($objet_id);
 
 		if (null === $objet)
-			throw $this->createNotFoundException("L'objet n°".$objet." n'existe pas.");
+			throw $this->createNotFoundException("L'objet n°".$objet_id." n'existe pas.");
 		
 		$form = $this->createForm(ObjetFormType::class, $objet);
 		
@@ -219,5 +219,42 @@ class MaterielController extends Controller
 				'objet' => $objet,
 				)
 			);
+	}
+
+	public function deleteTypeAction(Request $request, $type)
+	{
+		$type_id = (int) $type;
+		$em = $this->getDoctrine()->getManager();
+
+		$type = $em
+			->getRepository('ResponsabilitesBundle:TypeObjet')
+			->find($type_id);
+
+		if (null === $type)
+			throw $this->createNotFoundException("Le type d'objet n°".$type_id." n'existe pas.");
+		
+		$em->remove($type);
+		$em->flush();
+		
+		return $this->redirectToRoute('responsabilites_materiel_view_type');
+		
+	}
+
+	public function deleteObjetAction(Request $request, $objet)
+	{
+		$objet_id = (int) $objet;
+		$em = $this->getDoctrine()->getManager();
+
+		$objet = $em
+			->getRepository('ResponsabilitesBundle:Objet')
+			->find($objet_id);
+
+		if (null === $objet)
+			throw $this->createNotFoundException("L'objet n°".$objet_id." n'existe pas.");
+		
+		$em->remove($objet);
+		$em->flush();
+
+		return $this->redirectToRoute('responsabilites_materiel_view_all_objet');
 	}
 }
