@@ -65,7 +65,6 @@ class MaterielController extends Controller
 				'responsabilites_materiel_view_objet',
 				array(
 					'objet' => $objet->getId(),
-					'type'  => $objet->getType()->getId(),
 					)
 				);
 		}
@@ -144,6 +143,80 @@ class MaterielController extends Controller
 			'ResponsabilitesBundle:Materiel:view_all_objet.html.twig',
 			array(
 				'objets' => $objets,
+				)
+			);
+	}
+
+	public function editTypeAction(Request $request, $type)
+	{
+		$type_id = (int) $type;
+		$em = $this->getDoctrine()->getManager();
+
+		$type = $em
+			->getRepository('ResponsabilitesBundle:TypeObjet')
+			->find($type_id);
+
+		if (null === $type)
+			throw $this->createNotFoundException("Le type d'objet n°".$type_id." n'existe pas.");
+		
+		$form = $this->createForm(TypeFormType::class, $type);
+		
+		if ($request->isType('POST') && $form->handleRequest($request)->isValid()) {
+			$em->persist($type);
+			$em->flush();
+			
+			$request->getSession()->getFlashBag()->add('success', 'Type d\'objet modifié');
+			
+			return $this->redirectToRoute(
+				'responsabilites_materiel_view_type',
+				array(
+					'type' => $type->getId(),
+					)
+				);
+		}
+		
+		return $this->render(
+			'ResponsabilitesBundle:Materiel:edit_type.html.twig',
+			array(
+				'form' => $form->createView(),
+				'type' => $type,
+				)
+			);
+	}
+
+	public function editObjetAction(Request $request, $objet)
+	{
+		$objet_id = (int) $objet;
+		$em = $this->getDoctrine()->getManager();
+
+		$objet = $em
+			->getRepository('ResponsabilitesBundle:Objet')
+			->find($objet_id);
+
+		if (null === $objet)
+			throw $this->createNotFoundException("L'objet n°".$objet." n'existe pas.");
+		
+		$form = $this->createForm(ObjetFormType::class, $objet);
+		
+		if ($request->isType('POST') && $form->handleRequest($request)->isValid()) {
+			$em->persist($objet);
+			$em->flush();
+			
+			$request->getSession()->getFlashBag()->add('success', 'Modifications de l\'objet enregistrées');
+			
+			return $this->redirectToRoute(
+				'responsabilites_materiel_view_objet',
+				array(
+					'objet' => $objet->getId(),
+					)
+				);
+		}
+		
+		return $this->render(
+			'ResponsabilitesBundle:Materiel:new_objet.html.twig',
+			array(
+				'form' => $form->createView(),
+				'objet' => $objet,
 				)
 			);
 	}

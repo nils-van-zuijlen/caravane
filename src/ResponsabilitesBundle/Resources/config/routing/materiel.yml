@@ -29,7 +29,6 @@ responsabilites_materiel_view_objet:
     defaults:
         _controller: ResponsabilitesBundle:Materiel:viewObjet
     requirements:
-        type:  \d*
         objet: \d*
     methods: GET
 
@@ -44,3 +43,19 @@ responsabilites_materiel_view_all_type:
     defaults:
         _controller: ResponsabilitesBundle:Materiel:viewAllType
     methods: GET
+
+responsabilites_materiel_edit_type:
+    path: /inventaire/types/{type}/edit
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:editType
+    requirements:
+        type: \d*
+    methods: GET|POST
+
+responsabilites_materiel_edit_objet:
+    path: /inventaire/objets/{objet}/edit
+    defaults:
+        _controller: ResponsabilitesBundle:Materiel:editObjet
+    requirements:
+        objet: \d*
+    methods: GET|POST
