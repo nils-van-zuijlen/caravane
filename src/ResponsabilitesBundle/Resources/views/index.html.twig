@@ -3,17 +3,25 @@
 {% block resp_body %}
 	<div class="col-lg-8 col-lg-offset-2">
 		<p>
-			D'ici vous pouvez acceder aux pages spécifiques à chaque responsabilité
 			<blockquote>
 				Si tu veux réussir dans ta vie, sois capable de prendre des responsabilités.
 				Pour cela, il faut avoir confiance en soi, connaître son travail et exercer sa responsabilité.
 				<br>
-				<span class="pull-right">Baden Powell</span>
+				<small class="pull-right">Baden Powell</small><br>
 			</blockquote>
+		</p>
+		<p>
+			D'ici vous pouvez acceder aux pages spécifiques à chaque responsabilité
 		</p>
 		<ul class="list-group">
 			<a href="{{ path('responsabilites_animation_index') }}" class="list-group-item">
 				Responsable Animation
+			</a>
+			<a href="{{ path('responsabilites_budget_index') }}" class="list-group-item">
+				Responsable Budget
+			</a>
+			<a href="{{ path('responsabilites_communication_index') }}" class="list-group-item">
+				Responsable Communication
 			</a>
 			<a href="{{ path('responsabilites_intendance_index') }}" class="list-group-item">
 				Responsable Intendance
