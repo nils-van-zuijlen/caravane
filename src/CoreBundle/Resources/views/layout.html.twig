@@ -51,7 +51,7 @@
 			<div class="pull-right">
 				{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 					<p class="navbar-text">
-						Connecté en tant que <a href="{{ path('fos_user_profile_show') }}" style="color: inherit;">{{ app.user.username }}</a>
+						Connecté en tant que <a href="{{ path('fos_user_profile_show') }}" style="color: inherit;">{{ app.user.display }}</a>
 					</p>
 					<a class="btn btn-default navbar-btn" href="{{ path('fos_user_security_logout') }}">
 						{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}

@@ -10,12 +10,16 @@
 				<thead>
 					<tr>
 						<th>Nom d'utilisateur</th>
+						<th>Nom</th>
+						<th>Prénom</th>
 						<th>Rôles</th>
 					</tr>
 				</thead>
 				<tfoot>
 					<tr>
 						<th>Nom d'utilisateur</th>
+						<th>Nom</th>
+						<th>Prénom</th>
 						<th>Rôles</th>
 					</tr>
 				</tfoot>
@@ -25,12 +29,14 @@
 							<td>
 								{% if is_granted('ROLE_ALLOWED_TO_SWITCH') %}
 									<a href="{{ path('user_role_edit', {username: user.username}) }}" title="Modifier">
-										{{ user.username|capitalize }}
+										{{ user.username }}
 									</a>
 								{% else %}
-									{{ user.username|capitalize }}
+									{{ user.username }}
 								{% endif %}
 							</td>
+							<td>{{ user.nom }}</td>
+							<td>{{ user.prenom }}</td>
 							<td>{% for role in user.roles %}{{ role }} {% endfor %}</td>
 						</tr>
 					{% endfor %}

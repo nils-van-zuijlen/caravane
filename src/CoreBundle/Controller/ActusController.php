@@ -12,6 +12,9 @@ use CoreBundle\Entity\Actus;
 use CoreBundle\Form\ActusType;
 use CoreBundle\Form\ActusEditType;
 
+use CoreBundle\Event\NewActuEvent;
+use CoreBundle\Event\CaravaneEvents;
+
 class ActusController extends Controller
 {
 	/**
@@ -28,6 +31,9 @@ class ActusController extends Controller
 			$em = $this->getDoctrine()->getManager();
 			$em->persist($actu);
 			$em->flush();
+
+			$event = new NewActuEvent($actu, $this->getUser());
+			$this->get('event_dispatcher')->dispatch(CaravaneEvents::NEW_ACTU, $event);
 
 			$request->getSession()->getFlashBag()->add('success', 'Actualité enregistrée');
 
