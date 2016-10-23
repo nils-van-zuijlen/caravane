@@ -14,13 +14,13 @@ class TypeObjetFormType extends AbstractType
 	public function buildForm(FormBuilderInterface $builder, array $options)
 	{
 		$builder
-      ->add(
-        'nom',
-        TextType::class,
-        array(
-          'label' => 'Nom',
-          )
-        )
+			->add(
+				'nom',
+				TextType::class,
+				array(
+					'label' => 'Nom',
+					)
+				)
 			->add(
 				'submit', 
 				SubmitType::class,

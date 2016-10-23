@@ -18,7 +18,10 @@ class MaterielController extends Controller
 	{
 		return $this->render('ResponsabilitesBundle:Materiel:index.html.twig');
 	}
-	
+
+	/**
+	 * @Security("has_role('ROLE_BUDGET')")
+	 */
 	public function newTypeAction(Request $request)
 	{
 		$type = new Type;
@@ -48,6 +51,9 @@ class MaterielController extends Controller
 			);
 	}
 
+	/**
+	 * @Security("has_role('ROLE_BUDGET')")
+	 */
 	public function newObjetAction(Request $request)
 	{
 		$objet = new Objet;
@@ -147,6 +153,9 @@ class MaterielController extends Controller
 			);
 	}
 
+	/**
+	 * @Security("has_role('ROLE_BUDGET')")
+	 */
 	public function editTypeAction(Request $request, $type)
 	{
 		$type_id = (int) $type;
@@ -184,6 +193,9 @@ class MaterielController extends Controller
 			);
 	}
 
+	/**
+	 * @Security("has_role('ROLE_BUDGET')")
+	 */
 	public function editObjetAction(Request $request, $objet)
 	{
 		$objet_id = (int) $objet;
@@ -221,6 +233,9 @@ class MaterielController extends Controller
 			);
 	}
 
+	/**
+	 * @Security("has_role('ROLE_BUDGET')")
+	 */
 	public function deleteTypeAction(Request $request, $type)
 	{
 		$type_id = (int) $type;
@@ -240,6 +255,9 @@ class MaterielController extends Controller
 		
 	}
 
+	/**
+	 * @Security("has_role('ROLE_BUDGET')")
+	 */
 	public function deleteObjetAction(Request $request, $objet)
 	{
 		$objet_id = (int) $objet;

@@ -14,12 +14,7 @@ class IntendanceController extends Controller
 {
 	public function indexAction(Request $request)
 	{
-		return $this->render(
-			'ResponsabilitesBundle:Intendance:index.html.twig',
-			array(
-				#
-				)
-			);
+		return $this->render('ResponsabilitesBundle:Intendance:index.html.twig');
 	}
 
 	public function viewMenuAction(Request $request, $slug)

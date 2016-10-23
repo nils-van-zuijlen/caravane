@@ -20,25 +20,25 @@ class ObjetFormType extends AbstractType
 				'nom',
 				TextType::class,
 				array(
-					'label' => 'Nom de l'objet (plusieurs objets peuvent avoir le même nom)',
+					'label' => 'Nom de l\'objet (plusieurs objets peuvent avoir le même nom)',
 					)
 				)
-      ->add(
-        'type',
-        EntityType::class,
-        array(
-          'label' => 'Type d'objet',
-          'class' => 'ResponsabilitesBundle:TypeObjet',
-          'choice_label' => 'nom',
-          )
-        )
-      ->add(
-        'commentaires',
-        TextareaType::class,
-        array(
-          'label' => 'Commentaires',
-          )
-        )
+			->add(
+				'type',
+				EntityType::class,
+				array(
+					'label' => 'Type d\'objet',
+					'class' => 'ResponsabilitesBundle:TypeObjet',
+					'choice_label' => 'nom',
+					)
+				)
+			->add(
+				'commentaires',
+				TextareaType::class,
+				array(
+					'label' => 'Commentaires',
+					)
+				)
 			->add(
 				'submit', 
 				SubmitType::class,
