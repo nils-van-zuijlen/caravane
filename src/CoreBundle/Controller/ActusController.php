@@ -35,7 +35,8 @@ class ActusController extends Controller
 			$event = new NewActuEvent($actu, $this->getUser());
 			$this->get('event_dispatcher')->dispatch(CaravaneEvents::NEW_ACTU, $event);
 
-			$request->getSession()->getFlashBag()->add('success', 'Actualité enregistrée');
+			$message = $this->get('translator')->trans('actus.add.flash');
+			$request->getSession()->getFlashBag()->add('success', $message);
 
 			return $this->redirectToRoute(
 				'core_actus_viewone',
@@ -67,7 +68,8 @@ class ActusController extends Controller
 		$em->remove($actu);
 		$em->flush();
 
-		$request->getSession()->getFlashBag()->add('success', 'Actualité supprimée');
+		$message = $this->get('translator')->trans('actus.delete.flash');
+		$request->getSession()->getFlashBag()->add('success', $message);
 
 		return $this->redirectToRoute('core_actus_view');
 	}
@@ -91,7 +93,8 @@ class ActusController extends Controller
 
 			$em->flush();
 
-			$request->getSession()->getFlashBag()->add('success', 'Modifications enregistrées');
+			$message = $this->get('translator')->trans('actus.edit.flash');
+			$request->getSession()->getFlashBag()->add('success', $message);
 
 			return $this->redirectToRoute(
 				'core_actus_viewone',

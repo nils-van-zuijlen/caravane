@@ -29,7 +29,8 @@ class ChefsController extends Controller
 			) {
 			$this->get('core.mailer')->sendChefsEmail($email);
 
-			$request->getSession()->getFlashBag()->add('success', 'L\'e-mail a été envoyé');
+			$message = $this->get('translator')->trans('chefs.send_email.flash');
+			$request->getSession()->getFlashBag()->add('success', $message);
 
 			return $this->redirectToRoute('core_chefs_index');
 		}

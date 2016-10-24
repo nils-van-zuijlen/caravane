@@ -32,6 +32,7 @@ index:
             objet: Objet
             contenu: Contenu
             send: Envoyer
+        flash: Votre e-mail a bien été envoyé
     credits:
         title: Crédits
         header: Crédits
@@ -63,8 +64,12 @@ index:
 event:
     add:
         header: Ajouter un évenement
+        flash: Évenement ajouté
+    delete:
+        flash: Évenement supprimé
     edit:
         header: 'Modifier l''évenement "%title%"'
+        flash: Modifications enregistrées
     form:
         date:
             debut: Début
@@ -109,6 +114,7 @@ chefs:
             subject: Objet
             body: Contenu
             submit: Envoyer
+        flash: 'L''e-mail a été envoyé'
 
 chat:
     view:
@@ -131,6 +137,7 @@ actus:
                 - Le contenu doit faire au moins 5 caractères.
                 - L'image doit être au format JPEG, JPG, PNG, GIF ou SVG.
                 - L'image ne pourra pas être modifiée après publication.
+        flash: Actualité enregistrée
     edit:
         header: Modifier une actualité
         help:
@@ -139,6 +146,9 @@ actus:
                 - Vous pouvez utiliser du BBCode pour le contenu.
                 - Le titre doit faire entre 5 et 255 caractères.
                 - Le contenu doit faire au moins 5 caractères.
+        flash: Modifications enregistrées
+    delete:
+        flash: Actualité supprimée
     form:
         title: Titre
         content: Contenu
