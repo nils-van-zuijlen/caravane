@@ -85,7 +85,7 @@ fos_user:
         address: nilsdu29@gmail.com
         sender_name: "Nils Van Zuijlen"
     service:
-        mailer: fos_user.mailer.twig_swift
+        mailer: core.mailer
     group:
         group_class: UserBundle\Entity\Group
     profile:
@@ -107,6 +107,12 @@ assetic:
 #FMBbcodeBundle
 fm_bbcode:
     filter_sets:
+        all:
+            strict: false
+            locale: "%locale%"
+            xhtml: false
+            hooks: [ emoticon, clickable ]
+            filters: [ default, block, code, email, image, list, quote, text, url, video, table ]
         actus_filter:
             strict:  false
             locale:  "%locale%"

@@ -12,13 +12,15 @@
 namespace CoreBundle\Mailer;
 
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use FOS\UserBundle\Mailer\MailerInterface;
+use FOS\UserBundle\Model\UserInterface;
 use Swift_Mailer;
 use Swift_Message;
 use Twig_Environment;
 
 use CoreBundle\Mailer\EmailInterface;
 
-class Mailer
+class Mailer implements MailerInterface
 {
 	protected $mailer;
 	protected $router;
@@ -31,6 +33,32 @@ class Mailer
 		$this->router     = $router;
 		$this->twig       = $twig;
 		$this->parameters = $parameters;
+	}
+
+	public function sendConfirmationEmailMessage(UserInterface $user)
+	{
+		$template = $this->parameters['template']['confirmation'];
+		$url = $this->router->generate('fos_user_registration_confirm', array('token' => $user->getConfirmationToken()), UrlGeneratorInterface::ABSOLUTE_URL);
+
+		$context = array(
+			'user' => $user,
+			'confirmationUrl' => $url,
+		);
+
+		$this->sendMessage($context, $template, $this->parameters['from_email']['confirmation'], (string) $user->getEmail());
+	}
+
+	public function sendResettingEmailMessage(UserInterface $user)
+	{
+		$template = $this->parameters['template']['resetting'];
+		$url = $this->router->generate('fos_user_resetting_reset', array('token' => $user->getConfirmationToken()), UrlGeneratorInterface::ABSOLUTE_URL);
+
+		$context = array(
+			'user' => $user,
+			'confirmationUrl' => $url,
+		);
+
+		$this->sendMessage($context, $template, $this->parameters['from_email']['resetting'], (string) $user->getEmail());
 	}
 
 	public function sendChefsEmail(EmailInterface $email)
@@ -66,7 +94,7 @@ class Mailer
 				);
 	}
 
-	protected function sendMessage($context, $templateName, $fromEmails, $toEmails, $bccEmails)
+	protected function sendMessage($context, $templateName, $fromEmails, $toEmails, $bccEmails = null)
 	{
 		$context  = $this->twig->mergeGlobals($context);
 		$template = $this->twig->loadTemplate($templateName);
