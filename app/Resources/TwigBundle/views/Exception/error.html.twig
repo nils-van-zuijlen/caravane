@@ -1,13 +1,15 @@
 {% extends 'CoreBundle::layout.html.twig' %}
 
+{% trans_default_domain 'error' %}
+
 {% block body %}
 	<div class="row alert alert-danger">
 		<div class="col-sm-11 col-sm-offset-1">
-			<h1>Oups!</h1>
-			<h2>Erreur {{ status_code }}</h2>
-			<h3>{{ status_text }}</h3>
+			<h1>{{ 'html.titles.h1'|trans }}</h1>
+			<h2>{{ 'html.titles.h2'|trans({'%code%': status_code}) }}</h2>
+			<h3>{{ ('messages.' ~ status_code)|trans }}</h3>
 			<p>
-				<a href="{{ path('contact') }}">Contactez</a> nous si cette erreur s'affiche trop souvent en expliquant ce que vous étiez en train de faire.
+				{{ 'html.content'|trans({'%path%': path('contact')})|raw }}
 			</p>
 		</div>
 	</div>

@@ -1,0 +1,69 @@
+html:
+    titles:
+        h1: Oups!
+        h2: Erreur %code%
+    content: <a href="%path%">Contactez</a> nous si cette erreur s'affiche trop souvent en expliquant ce que vous étiez en train de faire.
+    content404: La page que vous essayez d'atteindre n'existe pas (ou plus).
+
+messages: # ceux avec un # sont déjà traduits
+    '100': 'Continue'
+    '101': 'Switching Protocols'
+    '102': 'Processing'
+    '200': 'OK'                                                        #
+    '201': 'Créé'                                                      #
+    '202': 'Accepté'                                                   #
+    '203': 'Non-Authoritative Information'
+    '204': 'Pas de contenu'                                            #
+    '205': 'Reset Content'
+    '206': 'Contenu partiel'                                           #
+    '207': 'Statuts multiples'                                         #
+    '208': 'Already Reported'
+    '226': 'IM Used'
+    '300': 'Choix multiples'                                           #
+    '301': 'Déplacé de manière permanente'                             #
+    '302': 'Trouvé'                                                    #
+    '303': 'See Other'
+    '304': 'Non modifié'                                               #
+    '305': 'Use Proxy'
+    '307': 'Redirection temporaire'                                    #
+    '308': 'Redirection permanente'                                    #
+    '400': 'Mauvaise requète'                                          #
+    '401': 'Non autorisé'                                              #
+    '402': 'Payement nécessaire'                                       #
+    '403': 'Interdit'                                                  #
+    '404': 'Introuvable'                                               #
+    '405': 'Méthode interdite'                                         #
+    '406': 'Inacceptable'                                              #
+    '407': 'Proxy Authentication Required'
+    '408': 'Request Timeout'
+    '409': 'Conflit'                                                   #
+    '410': 'Parti'                                                     #
+    '411': 'Longueur requise'                                          #
+    '412': 'Precondition Failed'
+    '413': 'Payload Too Large'
+    '414': 'URL trop longue'                                           #
+    '415': 'Unsupported Media Type'
+    '416': 'Range Not Satisfiable'
+    '417': 'Expectation Failed'
+    '418': 'Je suis une théière'                                       #
+    '421': 'Misdirected Request'
+    '422': 'Unprocessable Entity'
+    '423': 'Verouillé'                                                 #
+    '424': 'Failed Dependency'
+    '425': 'Reserved for WebDAV advanced collections expired proposal'
+    '426': 'Mise à jour nécessaire'                                    #
+    '428': 'Précondition nécessaire'                                   #
+    '429': 'Trop de requètes'                                          #
+    '431': 'En-têtes de requète trop larges'                           #
+    '451': 'Indisponible pour raisons légales'                         #
+    '500': 'Erreur interne au serveur'                                 #
+    '501': 'Non implementé'                                            #
+    '502': 'Bad Gateway'
+    '503': 'Service indisponible'                                      #
+    '504': 'Gateway Timeout'
+    '505': 'Version HTTP non supportée'                                #
+    '506': 'Variant Also Negotiates (Experimental)'
+    '507': 'Stockage insufisant'                                       #
+    '508': 'Boucle détectée'                                           #
+    '510': 'Not Extended'
+    '511': 'Authentification au réseau nécessaire'                     #
