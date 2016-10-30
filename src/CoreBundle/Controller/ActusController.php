@@ -117,6 +117,9 @@ class ActusController extends Controller
 
 		$actu = $repository->getActuAndImageBySlug((string) $slug);
 
+		if ($actu === null)
+			throw $this->createNotFoundException('L\'actu '.$slug.' n\'existe pas.');
+
 		return $this->render(
 			'CoreBundle:Actus:viewone.html.twig',
 			array(
