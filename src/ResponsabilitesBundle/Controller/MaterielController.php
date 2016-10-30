@@ -33,7 +33,7 @@ class MaterielController extends Controller
 			$em->persist($type);
 			$em->flush();
 			
-			$request->getSession()->getFlashBag()->add('success', 'Type d\'objet créé');
+			$request->getSession()->getFlashBag()->add('success', 'materiel.flash.type.add');
 			
 			return $this->redirectToRoute(
 				'responsabilites_materiel_view_type',
@@ -65,7 +65,7 @@ class MaterielController extends Controller
 			$em->persist($objet);
 			$em->flush();
 			
-			$request->getSession()->getFlashBag()->add('success', 'Objet enregistré');
+			$request->getSession()->getFlashBag()->add('success', 'materiel.flash.objet.add');
 			
 			return $this->redirectToRoute(
 				'responsabilites_materiel_view_objet',
@@ -174,7 +174,7 @@ class MaterielController extends Controller
 			$em->persist($type);
 			$em->flush();
 			
-			$request->getSession()->getFlashBag()->add('success', 'Type d\'objet modifié');
+			$request->getSession()->getFlashBag()->add('success', 'materiel.flash.type.edit');
 			
 			return $this->redirectToRoute(
 				'responsabilites_materiel_view_type',
@@ -214,7 +214,7 @@ class MaterielController extends Controller
 			$em->persist($objet);
 			$em->flush();
 			
-			$request->getSession()->getFlashBag()->add('success', 'Modifications de l\'objet enregistrées');
+			$request->getSession()->getFlashBag()->add('success', 'materiel.flash.objet.edit');
 			
 			return $this->redirectToRoute(
 				'responsabilites_materiel_view_objet',
@@ -250,6 +250,8 @@ class MaterielController extends Controller
 		
 		$em->remove($type);
 		$em->flush();
+
+		$this->addFlash('success', 'materiel.flash.type.delete')
 		
 		return $this->redirectToRoute('responsabilites_materiel_view_type');
 		
@@ -272,6 +274,8 @@ class MaterielController extends Controller
 		
 		$em->remove($objet);
 		$em->flush();
+
+		$this->addFlash('success', 'materiel.flash.objet.delete')
 
 		return $this->redirectToRoute('responsabilites_materiel_view_all_objet');
 	}

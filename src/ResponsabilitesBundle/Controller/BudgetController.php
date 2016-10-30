@@ -68,7 +68,7 @@ class BudgetController extends Controller
 			$em->persist($extraJob);
 			$em->flush();
 
-			$request->getSession()->getFlashBag()->add('success', 'Le nouvel extra job a été enregistré');
+			$request->getSession()->getFlashBag()->add('success', 'budget.extra_job.flash');
 
 			if ($extraJob->getDate()->format('m') >= 9) {
 				$year = $extraJob->getDate()->format('Y');
@@ -113,7 +113,7 @@ class BudgetController extends Controller
 		$em->remove($extraJob);
 		$em->flush();
 
-		$request->getSession()->getFlashBag()->add('success', 'L\'extra job a été supprimé');
+		$request->getSession()->getFlashBag()->add('success', 'budget.extra_job.flash.delete');
 
 		return $this->redirectToRoute('responsabilites_budget_extra_job_view');
 	}

@@ -46,8 +46,7 @@ class IndexController extends Controller
 
 			$this->get('mailer')->send($email);
 
-			$message = $this->get('translator')->trans('index.contact.flash');
-			$request->getSession()->getFlashBag()->add('success', $message);
+			$request->getSession()->getFlashBag()->add('success', 'index.contact.flash');
 			
 			return $this->redirectToRoute('index');
 		}

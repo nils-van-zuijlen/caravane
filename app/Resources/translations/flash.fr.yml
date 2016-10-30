@@ -1,0 +1,47 @@
+# flash messages
+
+# CoreBundle
+index.contact.flash: Votre e-mail a bien été envoyé
+event:
+    add.flash: Évenement ajouté
+    delete.flash: Évenement supprimé
+    edit.flash: Modifications enregistrées
+chefs.send_email.flash: 'L''e-mail a été envoyé'
+actus:
+    add.flash: Actualité enregistrée
+    edit.flash: Modifications enregistrées
+    delete.flash: Actualité supprimée
+
+# UserBundle
+role.flash.edited: 'Les responsabilités de l''utilisateur ont été modifiés'
+resetting.flash.success: 'Le mot de passe a été réinitialisé avec succès'
+registration.flash.user_created: 'L''utilisateur a été créé avec succès'
+profile.flash.updated: 'Le profil a été mis à jour'
+group.flash:
+    updated: 'L''équipe a été mise à jour'
+    created: 'L''équipe a été créée'
+    deleted: 'L''équipe a été supprimée'
+change_password.flash.success: 'Le mot de passe a été modifié'
+
+# ResponsabilitesBundle
+budget.extra_job.flash:
+    add: 'Le nouvel extra job a été enregistré'
+    delete: 'L''extra job a été supprimé'
+intendance.menu.flash:
+    add: 'Menu enregistré'
+    edit: 'Menu enregistré'
+    delete: 'Le menu a été supprimé'
+materiel.flash:
+    type:
+        add: 'Type d''objet créé'
+        edit: 'Type d''objet modifié'
+        delete: 'Type d''objet supprimé'
+    objet:
+        add: 'Objet enregistré'
+        edit: 'Modifications de l''objet enregistrées'
+        delete: 'Objet supprimé'
+
+# ForumBundle
+forum.flash.forum:
+    add: 'Forum créé'
+    edit: 'Forum modifié'

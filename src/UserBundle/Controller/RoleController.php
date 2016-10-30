@@ -71,10 +71,7 @@ class RoleController extends Controller
 			$em->persist($user);
 			$em->flush();
 
-			$request
-				->getSession()
-				->getFlashBag()
-				->add('success', 'Les rôles de l\'utilisateur '.$username.' ont bien été modifiés');
+			$request->getSession()->getFlashBag()->add('success', 'role.flash.edited');
 
 			return $this->redirectToRoute('user_role_view');
 		}
