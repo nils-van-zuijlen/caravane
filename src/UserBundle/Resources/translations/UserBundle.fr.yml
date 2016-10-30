@@ -12,6 +12,7 @@ role:
     edit:
         title: Rôles
         header: 'Édition des rôles de l''utilisateur %user%'
+        submit: Modifier
     view:
         title: Rôles
         header: Rôles des utilisateurs
@@ -19,7 +20,7 @@ role:
             username: Nom d'utilisateur
             name: Nom
             nickname: Prénom
-            roles: Rôles
+            role: Rôles
         roles:
             ROLE_CHEF: Chef
             ROLE_PIOK: PioK
@@ -106,3 +107,17 @@ group:
 
 change_password:
     submit: 'Modifier le mot de passe'
+
+form:
+    group_name: 'Nom de l''équipe'
+    username: 'Nom d''utilisateur'
+    email: 'Adresse e-mail'
+    current_password: 'Mot de passe actuel'
+    password: 'Mot de passe'
+    password_confirmation: 'Confirmation mot de passe'
+    new_password: 'Nouveau mot de passe'
+    new_password_confirmation: 'Confirmation nouveau mot de passe'
+    members: 'Membres'
+    nom: 'Nom'
+    prenom: 'Prénom'
+    roles: Rôles

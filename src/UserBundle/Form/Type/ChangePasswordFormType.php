@@ -15,9 +15,9 @@ use FOS\UserBundle\Util\LegacyFormHelper;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Security\Core\Validator\Constraints\UserPassword;
 
-class RegistrationFormType extends AbstractType
+class ChangePasswordFormType extends AbstractType
 {
 	/**
 	 * {@inheritdoc}
@@ -26,35 +26,13 @@ class RegistrationFormType extends AbstractType
 	{
 		$builder
 			->add(
-				'email',
-				\Symfony\Component\Form\Extension\Core\Type\EmailType::class,
+				'current_password',
+				\Symfony\Component\Form\Extension\Core\Type\PasswordType::class,
 				array(
-					'label'              => 'form.email',
+					'label'              => 'form.current_password',
 					'translation_domain' => 'UserBundle',
-					)
-				)
-			->add(
-				'username',
-				null,
-				array(
-					'label'              => 'form.username',
-					'translation_domain' => 'UserBundle',
-					)
-				)
-			->add(
-				'nom',
-				null,
-				array(
-					'label'              => 'form.nom',
-					'translation_domain' => 'UserBundle',
-					)
-				)
-			->add(
-				'prenom',
-				null,
-				array(
-					'label'              => 'form.prenom',
-					'translation_domain' => 'UserBundle',
+					'mapped'             => false,
+					'constraints'        => new UserPassword(!empty($options['validation_groups']) ? array('groups' => array(reset($options['validation_groups']))) : null),
 					)
 				)
 			->add(
@@ -63,23 +41,29 @@ class RegistrationFormType extends AbstractType
 				array(
 					'type'            => \Symfony\Component\Form\Extension\Core\Type\PasswordType::class,
 					'options'         => array('translation_domain' => 'UserBundle'),
-					'first_options'   => array('label' => 'form.password'),
-					'second_options'  => array('label' => 'form.password_confirmation',),
+					'first_options'   => array('label' => 'form.new_password'),
+					'second_options'  => array('label' => 'form.new_password_confirmation'),
 					'invalid_message' => 'fos_user.password.mismatch',
 					)
 				);
 	}
 
-	public function getBlockPrefix()
-	{
-		return 'user_registration';
-	}
-
+	/**
+	 * {@inheritdoc}
+	 */
 	public function configureOptions(OptionsResolver $resolver)
 	{
 		$resolver->setDefaults(array(
 			'data_class'    => 'UserBundle\Entity\User',
-			'csrf_token_id' => 'registration',
+			'csrf_token_id' => 'change_password',
 		));
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function getBlockPrefix()
+	{
+		return 'user_change_password';
 	}
 }

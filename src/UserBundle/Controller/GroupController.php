@@ -73,7 +73,11 @@ class GroupController extends Controller
 			return $event->getResponse();
 		}
 
-		$form = $this->get('form.factory')->create(\UserBundle\Form\Type\GroupFormType::class, $group);
+		/** @var $formFactory FactoryInterface */
+        $formFactory = $this->get('fos_user.group.form.factory');
+
+        $form = $formFactory->createForm();
+        $form->setData($group);
 
 		if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
 			$entityManager = $this->getDoctrine()->getManager();

@@ -1,18 +1,18 @@
-{% trans_default_domain 'FOSUserBundle' %}
+{% trans_default_domain 'UserBundle' %}
 
 <div class="row">
 	<div class="col-md-9">
-		<h4>Nom de l'équipe: {{ group.name }}</h4>
+		<h4>{{ 'group.show.name'|trans({'%name%': group.name}) }}</h4>
 	</div>
 </div>
 <div class="row">
 	<div class="col-md-9">
-		<h5>Membres</h5>
+		<h5>{{ 'group.show.members'|trans }}</h5>
 		<ul>
 			{% for user in group.users %}
 				<li>{{ user.display }}</li>
 			{% else %}
-				<li>Pas (encore) de membres.</li>
+				<li>{{ 'group.show.no_members'|trans }}</li>
 			{% endfor %}
 		</ul>
 	</div>
@@ -21,8 +21,12 @@
 	<div class="row">
 		<div class="col-md-9">
 			<div class="btn-group">
-				<a href="{{ path('fos_user_group_edit', {groupName: group.name}) }}" class="btn btn-warning">Modifier</a>
-				<a href="{{ path('fos_user_group_delete', {groupName: group.name}) }}" class="btn btn-danger">Supprimer</a>
+				<a href="{{ path('fos_user_group_edit', {groupName: group.name}) }}" class="btn btn-warning">
+					{{ 'group.show.edit'|trans }}
+				</a>
+				<a href="{{ path('fos_user_group_delete', {groupName: group.name}) }}" class="btn btn-danger">
+					{{ 'group.show.delete'|trans }}
+				</a>
 			</div>
 		</div>
 	</div>

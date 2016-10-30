@@ -1,26 +1,28 @@
 {% extends 'UserBundle::layout.html.twig' %}
 
-{% block title %}Rôles – {{ parent() }}{% endblock %}
+{% trans_default_domain 'UserBundle' %}
+
+{% block title %}{{ 'role.view.title'|trans }} – {{ parent() }}{% endblock %}
 
 {% block fos_user_content %}
-	<h3>Rôles des utilisateurs</h3>
+	<h3>{{ 'role.view.header'|trans }}</h3>
 	<div class="row">
 		<div class="col-sm-12">
 			<table class="table table-bordered table-condensed table-striped">
 				<thead>
 					<tr>
-						<th>Nom d'utilisateur</th>
-						<th>Nom</th>
-						<th>Prénom</th>
-						<th>Rôles</th>
+						<th>{{ 'role.view.thead.username'|trans }}</th>
+						<th>{{ 'role.view.thead.name'|trans }}</th>
+						<th>{{ 'role.view.thead.nickname'|trans }}</th>
+						<th>{{ 'role.view.thead.role'|trans }}</th>
 					</tr>
 				</thead>
 				<tfoot>
 					<tr>
-						<th>Nom d'utilisateur</th>
-						<th>Nom</th>
-						<th>Prénom</th>
-						<th>Rôles</th>
+						<th>{{ 'role.view.thead.username'|trans }}</th>
+						<th>{{ 'role.view.thead.name'|trans }}</th>
+						<th>{{ 'role.view.thead.nickname'|trans }}</th>
+						<th>{{ 'role.view.thead.role'|trans }}</th>
 					</tr>
 				</tfoot>
 				<tbody>
@@ -37,7 +39,7 @@
 							</td>
 							<td>{{ user.nom }}</td>
 							<td>{{ user.prenom }}</td>
-							<td>{% for role in user.roles %}{{ role }} {% endfor %}</td>
+							<td>{% for role in user.roles %}{{ ('role.view.roles.' ~ role)|trans }} {% endfor %}</td>
 						</tr>
 					{% endfor %}
 				</tbody>

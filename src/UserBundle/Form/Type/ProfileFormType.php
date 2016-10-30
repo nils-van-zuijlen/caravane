@@ -19,7 +19,7 @@ class ProfileFormType extends AbstractType
 				null,
 				array(
 					'label'              => 'form.username',
-					'translation_domain' => 'FOSUserBundle',
+					'translation_domain' => 'UserBundle',
 					)
 				)
 			->add(
@@ -27,21 +27,23 @@ class ProfileFormType extends AbstractType
 				\Symfony\Component\Form\Extension\Core\Type\EmailType::class,
 				array(
 					'label'              => 'form.email',
-					'translation_domain' => 'FOSUserBundle'
+					'translation_domain' => 'UserBundle'
 					)
 				)
 			->add(
 				'nom',
 				null,
 				array(
-					'label' => 'Nom',
+					'label'              => 'form.nom',
+					'translation_domain' => 'UserBundle',
 					)
 				)
 			->add(
 				'prenom',
 				null,
 				array(
-					'label' => 'Prénom',
+					'label'              => 'form.prenom',
+					'translation_domain' => 'UserBundle',
 					)
 				)
 			->add(
@@ -49,7 +51,7 @@ class ProfileFormType extends AbstractType
 				\Symfony\Component\Form\Extension\Core\Type\PasswordType::class,
 				array(
 					'label'              => 'form.current_password',
-					'translation_domain' => 'FOSUserBundle',
+					'translation_domain' => 'UserBundle',
 					'mapped'             => false,
 					'constraints'        => new UserPassword(),
 					)

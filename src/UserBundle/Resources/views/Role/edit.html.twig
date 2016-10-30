@@ -1,11 +1,13 @@
 {% extends 'UserBundle::layout.html.twig' %}
 
-{% block title %}Rôles – {{ parent() }}{% endblock %}
+{% trans_default_domain 'UserBundle' %}
+
+{% block title %}{{ 'role.edit.title'|trans }} – {{ parent() }}{% endblock %}
 
 {% block fos_user_content %}
 	<div class="row">
 		<div class="col-lg-10 col-lg-offset-1">
-			<h3>Édition des rôles de l'utilisateur {{ user.display }}</h3>
+			<h3>{{ 'role.edit.header'|trans({'%user%': user.display}) }}</h3>
 		</div>
 	</div>
 	<div class="row">

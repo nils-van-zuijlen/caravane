@@ -1,6 +1,6 @@
-{% extends "FOSUserBundle::layout.html.twig" %}
+{% extends "UserBundle::layout.html.twig" %}
 
-{% trans_default_domain 'FOSUserBundle' %}
+{% trans_default_domain 'UserBundle' %}
 
 {% block fos_user_content %}
     <p class="alert alert-info">{{ 'registration.check_email'|trans({'%email%': user.email}) }}</p>

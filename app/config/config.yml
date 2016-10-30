@@ -78,7 +78,7 @@ fos_user:
     user_class: UserBundle\Entity\User
     registration:
         confirmation:
-            enabled: false
+            enabled: true
         form:
             type: UserBundle\Form\Type\RegistrationFormType
     from_email:
@@ -91,6 +91,15 @@ fos_user:
     profile:
         form:
             type: UserBundle\Form\Type\ProfileFormType
+    change_password:
+        form:
+            type: UserBundle\Form\Type\ChangePasswordFormType
+    resetting:
+        form:
+            type: UserBundle\Form\Type\ResettingFormType
+    group:
+        form:
+            type: UserBundle\Form\Type\GroupFormType
 
 # Stof\DoctrineExtensionsBundle configuration
 stof_doctrine_extensions:
