@@ -13,18 +13,20 @@ class Chatbot
 	private $tokenStorage;
 	private $authChecker;
 	private $router;
+	private $translator;
 	private $parameters;
 	private $chatRepository = null;
 	private $userRepository = null;
 	private $actualUser     = null;
 	private $chatbotUser    = null;
 	
-	public function __construct($entityManager, $tokenStorage, $authChecker, UrlGeneratorInterface $router, array $parameters)
+	public function __construct($entityManager, $tokenStorage, $authChecker, UrlGeneratorInterface $router, $translator, array $parameters)
 	{
 		$this->em           = $entityManager;
 		$this->tokenStorage = $tokenStorage;
 		$this->authChecker  = $authChecker;
 		$this->router       = $router;
+		$this->translator   = $translator;
 		$this->parameters   = $parameters;
 	}
 
@@ -78,7 +80,7 @@ class Chatbot
 		if ($this->authChecker->isGranted($this->parameters['role_admin'])) {
 			#effacer tout le chat en laissant un message (ou pas)
 			if (preg_match("#^@erase_all#", $message)) {
-				$message = preg_replace("#@erase_all(.*)#", "[b]Chat effacé[/b]$1", $message);
+				$message = preg_replace("#@erase_all(.*)#", $this->translator->trans("chatbot.erase_all")."$1", $message);
 				$this->getChatRepository()->eraseAll();
 				$edited = true;
 			#utiliser un autre utilisateur quelconque
@@ -139,24 +141,24 @@ class Chatbot
 
 	public function newActuNotification(Actus $actu, User $user)
 	{
-		$message = 
-			'Nouvelle actualité: [i][url='
-			.$this->router->generate($this->parameters['route']['view_actu'], array('slug' => $actu->getSlug()), UrlGeneratorInterface::ABSOLUTE_PATH)
-			.']'
-			.$actu->getTitle()
-			.'[/url][/i] postée par '
-			.$user->getDisplay()
-			.'.';
+		$message = $this->translator->trans("chatbot.notifications.new.actu", array(
+			'%url%'   => $this->generateRoute('view_actu', array('slug' => $actu->getSlug())),
+			'%title%' => $actu->getTitle(),
+			'%user%'  => $user->getDisplay(),
+			)
+		);
 		$this->sendBotMessage($message, true);
 		return;
 	}
 
 	public function newUserNotification(User $user)
 	{
-		$message =
-			'Un nouvel utilisateur au nom charmant de '
-			.$user->getDisplay()
-			.' vient de s\'inscrire.';
+		$message = $this->translator->trans(
+			'chatbot.notifications.new.user',
+			array(
+				'%name%' => $user->getDisplay(),
+				)
+			);
 		$this->sendBotMessage($message);
 		return;
 	}
@@ -169,5 +171,14 @@ class Chatbot
 		if ($andFlush) {
 			$this->em->flush();
 		}
+	}
+
+	private function generateRoute($name, $options = array())
+	{
+		return $this->router->generate(
+			$this->parameters['route'][$name],
+			$options,
+			UrlGeneratorInterface::ABSOLUTE_PATH
+			);
 	}
 }

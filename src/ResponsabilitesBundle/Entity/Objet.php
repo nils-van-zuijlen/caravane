@@ -23,24 +23,21 @@ class Objet
 	
 	/**
 	 * @ORM\Column(type="string", length=255)
-	 * @Assert\Length(max=255)
-	 * @Assert\NotBlank()
-	 * @Assert\Type("string")
+	 * @Assert\Length(max=255, maxMessage="responsabilites.objet.nom.length.max")
+	 * @Assert\NotBlank(message="responsabilites.objet.nom.not_blank")
+	 * @Assert\Type(type="string", message="responsabilites.objet.nom.string")
 	 */
 	private $nom;
 	
 	/**
 	 * @ORM\ManyToOne(targetEntity="ResponsabilitesBundle\Entity\TypeObjet", inversedBy="objets")
 	 * @ORM\JoinColumn(nullable=false)
-	 * @Assert\Length(max=255)
-	 * @Assert\NotBlank()
-	 * @Assert\Type("string")
 	 */
 	private $type;
 	
 	/**
 	 * @ORM\Column(type="text")
-	 * @Assert\Type("string")
+	 * @Assert\Type(type="string", message="responsabilites.objet.caracteristiques.string")
 	 */
 	private $caracteristiques;
 

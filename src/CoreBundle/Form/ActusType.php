@@ -22,28 +22,28 @@ class ActusType extends AbstractType
 				'title',
 				TextType::class,
 				array(
-					'label' => 'Titre',
+					'label' => 'actus.form.title',
 					)
 				)
 			->add(
 				'content',
 				TextareaType::class,
 				array(
-					'label' => 'Contenu',
+					'label' => 'actus.form.content',
 					)
 				)
 			->add(
 				'image',
 				MyFileType::class,
 				array(
-					'label' => 'Image',
+					'label' => 'actus.form.image',
 					)
 				)
 			->add(
 				'submit', 
 				SubmitType::class,
 				array(
-					'label' => 'Publier',
+					'label' => 'actus.form.submit',
 					'attr'  => array(
 						'class' => 'btn btn-primary',
 						),

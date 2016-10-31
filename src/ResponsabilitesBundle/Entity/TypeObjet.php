@@ -23,9 +23,9 @@ class TypeObjet
 	
 	/**
 	 * @ORM\Column(type="string", length=255)
-	 * @Assert\Length(max=255)
-	 * @Assert\NotBlank()
-	 * @Assert\Type("string")
+	 * @Assert\Length(max=255, maxMessage="responsabilites.type_objet.nom.length.max")
+	 * @Assert\NotBlank(message="responsabilites.type_objet.nom.not_blank")
+	 * @Assert\Type(type="string", message="responsabilites.type_objet.nom.string")
 	 */
 	private $nom;
 

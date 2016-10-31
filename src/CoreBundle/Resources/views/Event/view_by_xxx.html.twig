@@ -5,7 +5,7 @@
 		<div class="col-lg-8 col-lg-offset-2">
 			{% if is_granted('ROLE_COMMUNICATION') %}
 				<a href="{{ path('core_event_add') }}" class="btn btn-primary">
-					Nouveau
+					{{ 'event.view.by.new'|trans }}
 				</a>
 			{% endif %}
 			<ul>
@@ -17,14 +17,14 @@
 							</a>
 						</h5>
 						<p class="help-block">
-							Du {{ event.dateDebut|date('d/m/Y à H:i') }} au {{ event.dateFin|date('d/m/Y à H:i') }}.
+							{{ 'event.view.by.date'|trans({'%debut%': event.dateDebut|date('d/m/Y à H:i'), '%fin%': event.dateFin|date('d/m/Y à H:i')}) }}
 						</p>
 					</li>
 				{% endfor %}
 			</ul>
 			{% if is_granted('ROLE_COMMUNICATION') %}
 				<a href="{{ path('core_event_add') }}" class="btn btn-primary">
-					Nouveau
+					{{ 'event.view.by.new'|trans }}
 				</a>
 			{% endif %}
 		</div>

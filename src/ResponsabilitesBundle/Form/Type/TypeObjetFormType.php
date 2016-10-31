@@ -18,15 +18,17 @@ class TypeObjetFormType extends AbstractType
 				'nom',
 				TextType::class,
 				array(
-					'label' => 'Nom',
+					'label'              => 'form.type_objet.nom',
+					'translation_domain' => 'ResponsabilitesBundle',
 					)
 				)
 			->add(
 				'submit', 
 				SubmitType::class,
 				array(
-					'label' => 'Enregistrer',
-					'attr'  => array(
+					'label'              => 'form.type_objet.submit',
+					'translation_domain' => 'ResponsabilitesBundle',
+					'attr'               => array(
 						'class' => 'btn btn-primary',
 						),
 					)

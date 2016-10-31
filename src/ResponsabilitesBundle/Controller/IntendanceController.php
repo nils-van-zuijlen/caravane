@@ -50,7 +50,7 @@ class IntendanceController extends Controller
 			$em->persist($menu);
 			$em->flush();
 			
-			$request->getSession()->getFlashBag()->add('success', 'Menu enregistré');
+			$request->getSession()->getFlashBag()->add('success', 'intendance.menu.flash.add');
 			
 			return $this->redirectToRoute(
 				'responsabilites_intendance_view_menu',
@@ -87,7 +87,7 @@ class IntendanceController extends Controller
 			$em->persist($menu);
 			$em->flush();
 			
-			$request->getSession()->getFlashBag()->add('success', 'Menu enregistré');
+			$request->getSession()->getFlashBag()->add('success', 'intendance.menu.flash.edit');
 			
 			return $this->redirectToRoute(
 				'responsabilites_intendance_view_menu',
@@ -156,7 +156,7 @@ class IntendanceController extends Controller
 		$em->remove($menu);
 		$em->flush();
 
-		$request->getSession()->getFlashBag()->add('success', 'Le menu '.$menu->getTitle().' a été supprimé');
+		$request->getSession()->getFlashBag()->add('success', 'intendance.menu.flash.delete');
 
 		return $this->redirectToRoute('responsabilites_intendance_view_all_menu');
 	}

@@ -1,5 +1,7 @@
 {% extends 'ForumBundle::layout.html.twig' %}
 
+{% trans_default_domain 'ForumBundle' %}
+
 {% block title %}
 	{{ forum.title }} – {{ categorie.title }} – {{ parent() }}
 {% endblock %}
@@ -15,7 +17,7 @@
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2">
 			<p class="help-block">
-				Le {{ forum.datePublication|date('d/m/Y à h:i') }}
+				{{ 'forum.view.date'|trans({'%date%': forum.datePublication|date('d/m/Y à h:i')}) }}
 			</p>
 			<p>
 				{{ forum.content|bbcode_filter('comments_filter') }}
@@ -25,7 +27,7 @@
 					class="btn btn-primary"
 					href="{{ path('forum_forum_edit_forum', {categorie: categorie.slug, slug: forum.slug}) }}"
 				>
-					Modifier
+					{{ 'forum.view.edit'|trans }}
 				</a>
 			{% endif %}
 		</div>

@@ -3,22 +3,22 @@
 {% block chefs_body %}
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2">
-			<p>Bienvenue sur cette partie du site réservée aux chefs.</p>
-			<p>D'ici vous pouvez:</p>
+			<p>{{ 'chefs.index.header.0'|trans }}</p>
+			<p>{{ 'chefs.index.header.1'|trans }}</p>
 			<ul>
 				<li>
 					<a href="{{ path('core_chefs_send_email') }}">
-						Envoyer des e-mails aux utilisateurs du site
+						{{ 'chefs.index.send_mail'|trans }}
 					</a>
 				</li>
 				<li>
 					<a href="{{ path('fos_user_group_list') }}">
-						Voir et modifier les équipes
+						{{ 'chefs.index.list_group'|trans }}
 					</a>
 				</li>
 				<li>
 					<a href="{{ path('user_role_view') }}">
-						Voir et modifier les rôles, les responsabilités
+						{{ 'chefs.index.view_roles'|trans }}
 					</a>
 				</li>
 			</ul>

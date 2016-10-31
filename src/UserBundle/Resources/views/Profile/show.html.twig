@@ -1,14 +1,14 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
-{% trans_default_domain 'FOSUserBundle' %}
+{% trans_default_domain 'UserBundle' %}
 
 {% block fos_user_content %}
 	<div class="row">
 	    <dl class="col-lg-8 col-lg-offset-2">
-	    	<dt>Nom</dt>
+	    	<dt>{{ 'profile.show.nom'|trans }}</dt>
 	    	<dd>{{ user.nom }}</dd>
 
-	    	<dt>Prénom</dt>
+	    	<dt>{{ 'profile.show.prenom'|trans }}</dt>
 	    	<dd>{{ user.prenom }}</dd>
 	    	
 	    	<dt>{{ 'profile.show.username'|trans }}</dt>
@@ -21,8 +21,8 @@
 	<div class="row">
 		<div class="col-lg-6 col-lg-offset-3">
 			<div class="btn-group btn-group-justified">
-				<a href="{{ path('fos_user_change_password') }}" class="btn btn-warning">{{ 'change_password.submit'|trans }}</a>
-				<a href="{{ path('fos_user_profile_edit') }}" class="btn btn-primary">Modifier les informations</a>
+				<a href="{{ path('fos_user_change_password') }}" class="btn btn-warning">{{ 'profile.show.change_password'|trans }}</a>
+				<a href="{{ path('fos_user_profile_edit') }}" class="btn btn-primary">{{ 'profile.show.edit'|trans }}</a>
 			</div>
 		</div>
 	</div>

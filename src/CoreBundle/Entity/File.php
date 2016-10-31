@@ -50,7 +50,11 @@ class File
 	private $extension;
 
 	/**
-	 * @Assert\File(maxSize="5M")
+	 * @Assert\File(
+	 * 		maxSize="5M",
+	 * 		maxSizeMessage="core.file.max_size",
+	 * 		disallowEmptyMessage="core.file.disallow_empty"
+	 * 	)
 	 */
 	private $file;
 

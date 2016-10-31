@@ -1,14 +1,16 @@
 {% extends 'ForumBundle::layout.html.twig' %}
 
+{% trans_default_domain 'ForumBundle' %}
+
 {% block title %}
-	Modifier – {{ forum.title }} – {{ categorie.title }} – {{ parent() }}
+	{{ 'forum.edit_forum.title'|trans }} – {{ forum.title }} – {{ categorie.title }} – {{ parent() }}
 {% endblock %}
 
 {% block forum_body %}
 	<div class="row">
 		<div class="col-lg-11 col-lg-offset-1">
 			<h3>
-				Modifier le forum {{ forum.title }}
+				{{ 'forum.edit_forum.header'|trans({'%name%': forum.title}) }}
 			</h3>
 		</div>
 	</div>

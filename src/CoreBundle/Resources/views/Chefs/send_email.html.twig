@@ -1,11 +1,11 @@
 {% extends 'CoreBundle:Chefs:layout.html.twig' %}
 
-{% block title %}E-mail – {{ parent() }}{% endblock %}
+{% block title %}{{ 'chefs.send_email.title'|trans }} – {{ parent() }}{% endblock %}
 
 {% block chefs_body %}
 	<div class="row">
 		<div class="col-lg-10 col-lg-offset-1">
-			<h3>Envoyer un e-mail aux utilisateurs du site</h3>
+			<h3>{{ 'chefs.send_email.header'|trans }}</h3>
 		</div>
 	</div>
 	<div class="row">

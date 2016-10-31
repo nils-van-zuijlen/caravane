@@ -30,7 +30,7 @@ class RegistrationFormType extends AbstractType
 				\Symfony\Component\Form\Extension\Core\Type\EmailType::class,
 				array(
 					'label'              => 'form.email',
-					'translation_domain' => 'FOSUserBundle'
+					'translation_domain' => 'UserBundle',
 					)
 				)
 			->add(
@@ -38,21 +38,23 @@ class RegistrationFormType extends AbstractType
 				null,
 				array(
 					'label'              => 'form.username',
-					'translation_domain' => 'FOSUserBundle'
+					'translation_domain' => 'UserBundle',
 					)
 				)
 			->add(
 				'nom',
 				null,
 				array(
-					'label' => 'Nom',
+					'label'              => 'form.nom',
+					'translation_domain' => 'UserBundle',
 					)
 				)
 			->add(
 				'prenom',
 				null,
 				array(
-					'label' => 'Prénom',
+					'label'              => 'form.prenom',
+					'translation_domain' => 'UserBundle',
 					)
 				)
 			->add(
@@ -60,15 +62,9 @@ class RegistrationFormType extends AbstractType
 				\Symfony\Component\Form\Extension\Core\Type\RepeatedType::class,
 				array(
 					'type'            => \Symfony\Component\Form\Extension\Core\Type\PasswordType::class,
-					'options'         => array(
-						'translation_domain' => 'FOSUserBundle'
-						),
-					'first_options'   => array(
-						'label'              => 'form.password'
-						),
-					'second_options'  => array(
-						'label'              => 'form.password_confirmation'
-						),
+					'options'         => array('translation_domain' => 'UserBundle'),
+					'first_options'   => array('label' => 'form.password'),
+					'second_options'  => array('label' => 'form.password_confirmation',),
 					'invalid_message' => 'fos_user.password.mismatch',
 					)
 				);
@@ -82,7 +78,7 @@ class RegistrationFormType extends AbstractType
 	public function configureOptions(OptionsResolver $resolver)
 	{
 		$resolver->setDefaults(array(
-			'data_class' => 'UserBundle\Entity\User',
+			'data_class'    => 'UserBundle\Entity\User',
 			'csrf_token_id' => 'registration',
 		));
 	}

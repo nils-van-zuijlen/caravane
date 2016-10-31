@@ -106,7 +106,7 @@ class ForumController extends Controller
 			$em->persist($forum);
 			$em->flush();
 
-			$request->getSession()->getFlashBag()->add('success', 'Forum créé');
+			$request->getSession()->getFlashBag()->add('success', 'forum.flash.forum.add');
 
 			return $this->redirectToRoute(
 				'forum_forum_view',
@@ -172,7 +172,7 @@ class ForumController extends Controller
 			$request
 				->getSession()
 				->getFlashBag()
-				->add('success', 'Forum '.$forum->getTitle().' modifié');
+				->add('success', 'forum.flash.forum.edit');
 
 			return $this->redirectToRoute(
 				'forum_forum_view',

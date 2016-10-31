@@ -10,11 +10,11 @@
 		<div class="col-lg-8 col-lg-offset-2">
 			<h3>{{ actu.title }}</h3>
 			<p>{{ actu.content|bbcode_filter('actus_filter') }}</p>
-			<p class="help-block">Le {{ actu.datePublication|date('d/m/Y') }}</p>
+			<p class="help-block">{{ 'actus.viewone.date'|trans({'%date%': actu.datePublication|date('d/m/Y')}) }}</p>
 			{% if is_granted('ROLE_COMMUNICATION') %}
 				<div class="button-group">
-					<a href="{{ path('core_actus_edit', {slug:actu.slug}) }}" class="btn btn-primary">Modifier</a>
-					<a href="{{ path('core_actus_delete', {slug:actu.slug}) }}" class="btn btn-danger">Supprimer</a>
+					<a href="{{ path('core_actus_edit', {slug:actu.slug}) }}" class="btn btn-primary">{{ 'actus.viewone.edit'|trans }}</a>
+					<a href="{{ path('core_actus_delete', {slug:actu.slug}) }}" class="btn btn-danger">{{ 'actus.viewone.delete'|trans }}</a>
 				</div>
 			{% endif %}
 			{% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': 'actus'~actu.slug} %}

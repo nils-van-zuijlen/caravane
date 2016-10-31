@@ -3,7 +3,7 @@
 {% block event_body %}
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2">
-			<h3>Modifier l'évenement "{{ event.title }}"</h3>
+			<h3>{{ 'event.edit.header'|trans({'%title%': event.title}) }}</h3>
 			<div class="well">
 				{% include 'CoreBundle:Event:form.html.twig' %}
 			</div>

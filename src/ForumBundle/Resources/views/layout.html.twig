@@ -1,10 +1,12 @@
 {% extends 'CoreBundle::layout.html.twig' %}
 
+{% trans_default_domain 'ForumBundle' %}
+
 {% block body %}
 	<div class="row">
 		<div class="col-sm-12">
 			<h2>
-				Forum
+				{{ 'layout.header'|trans }}
 			</h2>
 		</div>
 	</div>
@@ -12,5 +14,4 @@
 	{% endblock forum_body %}
 {% endblock %}
 
-{% block title %}Forum – {{ parent() }}{% endblock %}
-
+{% block title %}{{ 'layout.title'|trans }} – {{ parent() }}{% endblock %}

@@ -1,12 +1,14 @@
 {% extends "ResponsabilitesBundle::layout.html.twig" %}
 
-{% block title %}Nouveau – Menus – {{ parent() }}{% endblock %}
+{% trans_default_domain 'ResponsabilitesBundle' %}
+
+{% block title %}{{ 'intendance.menu.add.title'|trans }} – {{ parent() }}{% endblock %}
 
 {% block resp_body %}
 
 	<div class="row">
 		<div class="col-lg-10 col-lg-offset-1">
-			<h3>Nouveau menu</h3>
+			<h3>{{ 'intendance.menu.add.header'|trans }}</h3>
 		</div>
 	</div>
 	<div class="row">

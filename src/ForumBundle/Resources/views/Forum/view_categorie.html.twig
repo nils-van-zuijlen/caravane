@@ -1,5 +1,7 @@
 {% extends 'ForumBundle::layout.html.twig' %}
 
+{% trans_default_domain 'ForumBundle' %}
+
 {% block title %}
 	{{ categorie.title }} – {{ parent() }}
 {% endblock %}
@@ -32,7 +34,7 @@
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2">
 				<a class="btn btn-primary" href="{{ path('forum_forum_add_forum') }}">
-					Nouveau
+					{{ 'forum.view_categorie.new_forum'|trans }}
 				</a>
 			</div>
 		</div>

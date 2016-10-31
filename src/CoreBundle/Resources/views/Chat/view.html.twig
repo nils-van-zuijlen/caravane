@@ -6,7 +6,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<div class="panel-title">
-						Chat entre PiosK
+						{{ 'chat.view.header'|trans }}
 					</div>
 				</div>
 				<ul class="list-group" id="message-list">
@@ -23,11 +23,11 @@
 						<div class="input-group-btn">
 							<button class="btn btn-default" id="btn-send" type="submit">
 								<span class="glyphicon glyphicon-send"></span>
-								<span class="sr-only">Envoyer</span>
+								<span class="sr-only">{{ 'chat.view.send'|trans }}</span>
 							</button>
 							<button class="btn btn-default" id="btn-loading" type="button">
 								<span class="glyphicon glyphicon-refresh" id="loading-icon"></span>
-								<span class="sr-only">Actualiser</span>
+								<span class="sr-only">{{ 'chat.view.actualize'|trans }}</span>
 							</button>
 							<!--
 								<button class="btn btn-default" type="button" id="btn-sound">

@@ -1,28 +1,30 @@
 {% extends "ResponsabilitesBundle::layout.html.twig" %}
 
-{% block title %}{{ menu.title }} — Menus – {{ parent() }}{% endblock %}
+{% trans_default_domain 'ResponsabilitesBundle' %}
+
+{% block title %}{{ 'intendance.menu.view_one.title'|trans({'%title%': menu.title}) }} – {{ parent() }}{% endblock %}
 
 {% block resp_body %}
 	<div class="row">
 		<div class="col-lg-10 col-lg-offset-1">
-			<h3>Menu {{ menu.titre }}</h3>
+			<h3>{{ 'intendance.menu.view_one.header'|trans({'%title%': menu.titre}) }}</h3>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2">
-			<p>Menu du {{ menu.date|date('d/m/Y à h:i') }}.</p>
+			<p>{{ 'intendance.menu.view_one.date'|trans({'%date%': menu.date|date('d/m/Y à h:i')}) }}</p>
 			<dl class="dl-horizontal">
-				<dt>Entrée</dt>
+				<dt>{{ 'intendance.menu.view_one.entree'|trans }}</dt>
 				<dd>{{ menu.entree }}</dd>
-				<dt>Plat</dt>
+				<dt>{{ 'intendance.menu.view_one.plat'|trans }}</dt>
 				<dd>{{ menu.plat }}</dd>
-				<dt>Dessert</dt>
+				<dt>{{ 'intendance.menu.view_one.dessert'|trans }}</dt>
 				<dd>{{ menu.dessert }}</dd>
 			</dl>
 			{% if is_granted('ROLE_INTENDANCE') %}
 				<div class="btn-group">
-					<a href="{{ path('responsabilites_intendance_edit_menu', {slug: menu.slug}) }}" class="btn btn-warning">Modifier</a>
-					<a href="{{ path('responsabilites_intendance_delete_menu', {slug: menu.slug}) }}" class="btn btn-danger">Supprimer</a>
+					<a href="{{ path('responsabilites_intendance_edit_menu', {slug: menu.slug}) }}" class="btn btn-warning">{{ 'intendance.menu.view_one.edit'|trans }}</a>
+					<a href="{{ path('responsabilites_intendance_delete_menu', {slug: menu.slug}) }}" class="btn btn-danger">{{ 'intendance.menu.view_one.delete'|trans }}</a>
 				</div>
 			{% endif %}
 			<hr>

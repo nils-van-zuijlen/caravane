@@ -20,8 +20,6 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class GroupFormType extends AbstractType
 {
-	private $class;
-
 	public function buildForm(FormBuilderInterface $builder, array $options)
 	{
 		$builder
@@ -30,19 +28,20 @@ class GroupFormType extends AbstractType
 				TextType::class,
 				array(
 					'label'              => 'form.group_name',
-					'translation_domain' => 'FOSUserBundle'
+					'translation_domain' => 'UserBundle'
 					)
 				)
 			->add(
 				'users',
 				EntityType::class,
 				array(
-					'class'        => 'UserBundle:User',
-					'choice_label' => 'display',
-					'multiple'     => true,
-					'label'        => 'Membres',
-					#'expanded'    => true,
-					'required'     => false,
+					'class'              => 'UserBundle:User',
+					'choice_label'       => 'display',
+					'multiple'           => true,
+					'label'              => 'form.members',
+					'translation_domain' => 'UserBundle',
+					#'expanded'          => true,
+					'required'           => false,
 					)
 				);
 	}
@@ -50,12 +49,12 @@ class GroupFormType extends AbstractType
 	public function configureOptions(OptionsResolver $resolver)
 	{
 		$resolver->setDefaults(array(
-			'data_class'    => 'UserBundle\Entity\Group',
+			'data_class' => 'UserBundle\Entity\Group',
 		));
 	}
 
 	public function getBlockPrefix()
 	{
-		return 'fos_user_group';
+		return 'user_group';
 	}
 }

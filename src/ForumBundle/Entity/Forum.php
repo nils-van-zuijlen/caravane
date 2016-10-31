@@ -27,8 +27,8 @@ class Forum
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
-     * @Assert\NotBlank()
-     * @Assert\Length(max=255)
+     * @Assert\NotBlank(message="forum.forum.title.not_blank")
+     * @Assert\Length(max=255, maxMessage="forum.forum.title.length.max")
      */
     private $title;
 
@@ -36,8 +36,8 @@ class Forum
      * @var string
      *
      * @ORM\Column(name="content", type="text")
-     * @Assert\NotBlank()
-     * @Assert\Length(min=3)
+     * @Assert\NotBlank(message="forum.forum.content.not_blank")
+     * @Assert\Length(min=3, minMessage="forum.forum.content.length.min")
      */
     private $content;
 

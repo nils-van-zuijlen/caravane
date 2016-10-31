@@ -1,6 +1,6 @@
 {% extends "UserBundle::layout.html.twig" %}
 
-{% trans_default_domain 'FOSUserBundle' %}
+{% trans_default_domain 'UserBundle' %}
 
 {% block styles %}
 	{{ parent() }}
@@ -9,7 +9,7 @@
 
 {% block fos_user_content %}
 	<form class="form-signin" action="{{ path("fos_user_security_check") }}" method="post">
-		<h2 class="form-signin-heading">Se connecter</h2>
+		<h2 class="form-signin-heading">{{ 'security.login.header'|trans }}</h2>
 
 		<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
@@ -32,7 +32,7 @@
 
 		<input class="btn btn-lg btn-primary btn-block" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
 
-		<a href="{{ path('fos_user_registration_register') }}">Je n'ai pas encore de compte</a>
-		<a href="{{ path('fos_user_resetting_request') }}">J'ai oublié mon mot de passe</a>
+		<a href="{{ path('fos_user_registration_register') }}">{{ 'security.login.register'|trans }}</a>
+		<a href="{{ path('fos_user_resetting_request') }}">{{ 'security.login.reset'|trans }}</a>
 	</form>
 {% endblock %}

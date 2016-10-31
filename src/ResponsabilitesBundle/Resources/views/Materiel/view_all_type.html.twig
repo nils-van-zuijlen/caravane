@@ -1,18 +1,20 @@
 {% extends 'ResponsabilitesBundle::layout.html.twig' %}
 
-{% block title %}Types – {{ parent() }}{% endblock %}
+{% trans_default_domain 'ResponsabilitesBundle' %}
+
+{% block title %}{{ 'materiel.type.view_all.title'|trans }} – {{ parent() }}{% endblock %}
 
 {% block resp_body %}
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2">
-			<h3>Types d'objets</h3>
+			<h3>{{ 'materiel.type.view_all.header'|trans }}</h3>
 			{% if is_granted('ROLE_MATERIEL') %}
-				<a href="{{ path('responsabilites_materiel_new_type') }}" class="btn btn-primary">Nouveau type d'objets</a>
+				<a href="{{ path('responsabilites_materiel_new_type') }}" class="btn btn-primary">{{ 'materiel.type.view_all.new'|trans }}</a>
 			{% endif %}
-			<p><a href="{{ path('responsabilites_materiel_view_all_objet') }}">Voir tous les objets</a></p>
+			<p><a href="{{ path('responsabilites_materiel_view_all_objet') }}">{{ 'materiel.type.view_all.view_objet'|trans }}</a></p>
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">Les types existants :</h3>
+					<h3 class="panel-title">{{ 'materiel.type.view_all.existing'|trans }}</h3>
 				</div>
 				<div class="list-group">
 					{% for type in types %}

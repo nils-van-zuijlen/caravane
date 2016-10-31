@@ -1,17 +1,17 @@
 {% extends "UserBundle::layout.html.twig" %}
 
-{% trans_default_domain 'FOSUserBundle' %}
+{% trans_default_domain 'UserBundle' %}
 
-{% block title %}Équipes – {{ parent() }}{% endblock %}
+{% block title %}{{ 'group.list.title'|trans }} – {{ parent() }}{% endblock %}
 
 {% block fos_user_content %}
 	<div class="row">
-		<h3 class="col-xs-12">Liste des équipes ayant existé</h3>
+		<h3 class="col-xs-12">{{ 'group.list.header'|trans }}</h3>
 	</div>
 	<div class="row">
 		<div class="col-md-3">
 			{% if is_granted('ROLE_ALLOWED_TO_SWITCH') %}
-				<a href="{{ path('fos_user_group_new') }}" class="btn btn-primary">Nouvelle équipe</a>
+				<a href="{{ path('fos_user_group_new') }}" class="btn btn-primary">{{ 'group.list.new'|trans }}</a>
 			{% endif %}
 			<ul class="list-group" id="group_list">
 			{% for group in groups %}
@@ -22,7 +22,7 @@
 			{% endfor %}
 			</ul>
 			{% if is_granted('ROLE_ALLOWED_TO_SWITCH') %}
-				<a href="{{ path('fos_user_group_new') }}" class="btn btn-primary">Nouvelle équipe</a>
+				<a href="{{ path('fos_user_group_new') }}" class="btn btn-primary">{{ 'group.list.new'|trans }}</a>
 			{% endif %}
 		</div>
 		<div class="col-md-9 well" id="group_show_zone">

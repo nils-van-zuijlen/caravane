@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>{% block title %}Caravane Quimper{% endblock title %}</title>
+	<title>{% block title %}{{ 'layout.title'|trans }}{% endblock title %}</title>
 
 	{% block styles %}
 		<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
@@ -26,39 +26,39 @@
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="{{ path('index') }}">Caravane Quimper</a>
+				<a class="navbar-brand" href="{{ path('index') }}">{{ 'layout.navbar.brand'|trans }}</a>
 			</div>
 
 			<ul class="nav navbar-nav">
-				<li><a href="{{ path('core_actus_view', {page:1}) }}">Actualités</a></li>
+				<li><a href="{{ path('core_actus_view', {page:1}) }}">{{ 'layout.navbar.nav.actus'|trans }}</a></li>
 				{% if is_granted('ROLE_PIOK') %}
-					<li><a href="{{ path('core_chat_view') }}">Chat</a></li>
+					<li><a href="{{ path('core_chat_view') }}">{{ 'layout.navbar.nav.chat'|trans }}</a></li>
 				{% endif %}
-				<li><a href="{{ path('forum_forum_view_categories') }}">Forum</a></li>
+				<li><a href="{{ path('forum_forum_view_categories') }}">{{ 'layout.navbar.nav.forum'|trans }}</a></li>
 				<li class="dropdown">
-					<a href="{{ path('links') }}" data-toggle="dropdown">Liens utiles</a>
+					<a href="{{ path('links') }}" data-toggle="dropdown">{{ 'layout.navbar.nav.links.title'|trans }}</a>
 					<ul class="dropdown-menu">
-						<li><a href="http://caravane.sgdf.fr">Le site national des PiosK</a></li>
-						<li><a href="http://sgdf.fr">Le site des Scouts et Guides de France</a></li>
+						<li><a href="http://caravane.sgdf.fr">{{ 'layout.navbar.nav.links.caravane'|trans }}</a></li>
+						<li><a href="http://sgdf.fr">{{ 'layout.navbar.nav.links.sgdf'|trans }}</a></li>
 					</ul>
 				</li>
 				{% if is_granted('ROLE_CHEF') %}
-					<li><a href="{{ path('core_chefs_index') }}">Chefs</a></li>
+					<li><a href="{{ path('core_chefs_index') }}">{{ 'layout.navbar.nav.chefs'|trans }}</a></li>
 				{% endif %}
-				<li><a href="{{ path('responsabilites_index') }}">Responsabilités</a></li>
+				<li><a href="{{ path('responsabilites_index') }}">{{ 'layout.navbar.nav.responsabilites'|trans }}</a></li>
 			</ul>
 
 			<div class="pull-right">
 				{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 					<p class="navbar-text">
-						Connecté en tant que <a href="{{ path('fos_user_profile_show') }}" style="color: inherit;">{{ app.user.display }}</a>
+						{{ 'layout.navbar.user.connected_as'|trans }} <a href="{{ path('fos_user_profile_show') }}" style="color: inherit;">{{ app.user.display }}</a>
 					</p>
 					<a class="btn btn-default navbar-btn" href="{{ path('fos_user_security_logout') }}">
-						{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+						{{ 'layout.navbar.user.logout'|trans }}
 					</a>
 				{% else %}
 					<a class="btn btn-default navbar-btn" href="{{ path('fos_user_security_login') }}">
-						{{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+						{{ 'layout.navbar.user.login'|trans }}
 					</a>
 				{% endif %}
 			</div>
@@ -71,7 +71,7 @@
 		{% for key, messages in app.session.flashbag.all() %}
 			{% for message in messages %}
 				<div class="alert alert-{{ key }}">
-					{{ message|trans({}, 'FOSUserBundle') }}
+					{{ message|trans({}, 'flash') }}
 				</div>
 			{% endfor %}
 		{% endfor %}
@@ -91,14 +91,14 @@
 					<div class="btn-group btn-group-justified">
 						<a href="{{ path('contact') }}" class="btn btn-default">
 							<span class="glyphicon glyphicon-envelope"></span>
-							Contact
+							{{ 'layout.footer.contact'|trans }}
 						</a>
 						<a href="{{ path('terms') }}" class="btn btn-default">
-							Conditions d'utilisation
+							{{ 'layout.footer.terms'|trans }}
 						</a>
 						<a href="{{ path('credits') }}" class="btn btn-default">
 							<span class="glyphicon glyphicon-copyright-mark"></span>
-							Crédits
+							{{ 'layout.footer.credits'|trans }}
 						</a>
 					</div>
 				</div>

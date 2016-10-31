@@ -28,7 +28,7 @@ class Event
 	 * @var \DateTime
 	 *
 	 * @ORM\Column(name="date_debut", type="datetime")
-	 * @Assert\DateTime
+	 * @Assert\DateTime(message="core.event.date_debut.date_time")
 	 */
 	private $dateDebut;
 
@@ -36,7 +36,7 @@ class Event
 	 * @var \DateTime
 	 *
 	 * @ORM\Column(name="date_fin", type="datetime")
-	 * @Assert\DateTime
+	 * @Assert\DateTime(message="core.event.date_fin.date_time")
 	 */
 	private $dateFin;
 
@@ -44,8 +44,8 @@ class Event
 	 * @var string
 	 *
 	 * @ORM\Column(name="title", type="string", length=255)
-	 * @Assert\Length(min=3, max=255)
-	 * @Assert\NotBlank()
+	 * @Assert\Length(min=3, max=255, minMessage="core.event.title.length.min", maxMessage="core.event.title.length.max")
+	 * @Assert\NotBlank(message="core.event.title.not_blank")
 	 */
 	private $title;
 
@@ -53,7 +53,7 @@ class Event
 	 * @var string
 	 *
 	 * @ORM\Column(name="content", type="text", nullable=true)
-	 * @Assert\Type("string")
+	 * @Assert\Type(type="string", message="core.event.content.string")
 	 */
 	private $content;
 

@@ -1,13 +1,13 @@
 {% extends "UserBundle::layout.html.twig" %}
 
-{% trans_default_domain 'FOSUserBundle' %}
+{% trans_default_domain 'UserBundle' %}
 
-{% block title %}Équipes – {{ parent() }}{% endblock %}
+{% block title %}{{ 'group.edit.title'|trans }} – {{ parent() }}{% endblock %}
 
 {% block fos_user_content %}
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2">
-			<h3>Modifier le nom de l'équipe "{{ group_name }}"</h3>
+			<h3>{{ 'group.edit.header'|trans({'%name%': group_name}) }}</h3>
 			{{ form_start(form, { 'action': path('fos_user_group_edit', {'groupName': group_name}), 'attr': { 'class': 'fos_user_group_edit well' } }) }}
 				{{ form_widget(form) }}
 				<div>

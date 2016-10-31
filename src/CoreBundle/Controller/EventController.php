@@ -51,7 +51,7 @@ class EventController extends Controller
 			$em->persist($event);
 			$em->flush();
 
-			$request->getSession()->getFlashBag()->add('success', 'Évenement ajouté');
+			$request->getSession()->getFlashBag()->add('success', 'event.add.flash');
 
 			return $this->redirectToRoute(
 				'core_event_viewone',
@@ -103,7 +103,7 @@ class EventController extends Controller
 
 			$em->flush();
 
-			$request->getSession()->getFlashBag()->add('success', 'Modifications enregistrées');
+			$request->getSession()->getFlashBag()->add('success', 'event.edit.flash');
 
 			return $this->redirectToRoute(
 				'core_event_viewone',
@@ -139,7 +139,7 @@ class EventController extends Controller
 		$em->remove($event);
 		$em->flush();
 
-		$request->getSession()->getFlashBag()->add('success', 'Évenement supprimé');
+		$request->getSession()->getFlashBag()->add('success', 'event.delete.flash');
 
 		return $this->redirectToRoute(
 			'core_event_view_by_month',

@@ -10,13 +10,13 @@ use CoreBundle\Form\ContactType;
 
 class IndexController extends Controller
 {
-	const NB_ACTUS_IN_CAROUSSEL = 4;
+	const NB_ACTUS_IN_CAROUSEL = 4;
 
 	public function indexAction()
 	{
 		$repository = $this->getDoctrine()->getManager()->getRepository('CoreBundle:Actus');
 
-		$actus = $repository->getLast(self::NB_ACTUS_IN_CAROUSSEL);
+		$actus = $repository->getLast(self::NB_ACTUS_IN_CAROUSEL);
 
 		return $this->render(
 			'CoreBundle:Index:index.html.twig',
@@ -46,7 +46,7 @@ class IndexController extends Controller
 
 			$this->get('mailer')->send($email);
 
-			$request->getSession()->getFlashBag()->add('success', 'Votre e-mail a bien été envoyé');
+			$request->getSession()->getFlashBag()->add('success', 'index.contact.flash');
 			
 			return $this->redirectToRoute('index');
 		}

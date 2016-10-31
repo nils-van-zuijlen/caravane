@@ -27,7 +27,7 @@ class ExtraJob
 	 * @var string
 	 *
 	 * @ORM\Column(name="montant", type="decimal", precision=10, scale=2)
-	 * @Assert\Range(min=0.01, max=99999999.99, minMessage="Vous êtes sérieux?", maxMessage="Tout ça?! Faites le en deux fois SVP.")
+	 * @Assert\Range(min=0.01, max=99999999.99, minMessage="responsabilites.extra_job.montant.range.min", maxMessage="responsabilites.extra_job.montant.range.max")
 	 * 
 	 */
 	private $montant;
@@ -36,7 +36,7 @@ class ExtraJob
 	 * @var \DateTime
 	 *
 	 * @ORM\Column(type="date")
-	 * @Assert\Date()
+	 * @Assert\Date(message="responsabilites.extra_job.date.date")
 	 */
 	private $date;
 
@@ -48,7 +48,7 @@ class ExtraJob
 
 	/**
 	 * @ORM\Column(type="text", nullable=true)
-	 * @Assert\Type("string")
+	 * @Assert\Type(type="string", message="responsabilites.extra_job.commentaires.string")
 	 */
 	private $commentaires = '';
 

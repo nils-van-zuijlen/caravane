@@ -5,7 +5,15 @@ services:
             - "@mailer"
             - "@router"
             - "@twig"
-            - {template: {chefs: "CoreBundle:Chefs:email.html.twig"}, mailer_user: "%mailer_user%"}
+            - 
+                template:
+                    chefs:        "CoreBundle:Chefs:email.html.twig"
+                    confirmation: "UserBundle:Registration:email.txt.twig"
+                    resetting:    "UserBundle:Resetting:email.txt.twig"
+                mailer_user: "%mailer_user%"
+                from_email:
+                    confirmation: "%mailer_user%"
+                    resetting:    "%mailer_user%"
     core.chatbot:
         class: CoreBundle\Chatbot\Chatbot
         arguments:
@@ -13,6 +21,7 @@ services:
             - "@security.token_storage"
             - "@security.authorization_checker"
             - "@router"
+            - "@translator"
             - 
                 repositoryName:
                     chat: CoreBundle:Chat

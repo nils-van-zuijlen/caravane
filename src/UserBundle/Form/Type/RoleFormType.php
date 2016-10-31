@@ -26,11 +26,14 @@ class RoleFormType extends AbstractType
 				'roles',
 				ChoiceType::class,
 				array(
-					'label' => 'Rôles',
-					'expanded' => true,
-					'multiple' => true,
-					'choices' => array(
-						'Hiérarchie' => array(
+					'label'                     => 'form.roles',
+					'translation_domain'        => 'UserBundle',
+					'choice_translation_domain' => true,
+					'choice_label'              => function($value,$key,$index){return 'role.view.roles.'.$key;},
+					'expanded'                  => true,
+					'multiple'                  => true,
+					'choices'                   => array(
+						'Hiérarchie'     => array(
 							'PioK' => 'ROLE_PIOK',
 							'Chef' => 'ROLE_CHEF',
 							),
@@ -51,8 +54,9 @@ class RoleFormType extends AbstractType
 				'submit',
 				SubmitType::class,
 				array(
-					'label' => 'Modifier',
-					'attr'  => array(
+					'label'              => 'role.edit.submit',
+					'translation_domain' => 'UserBundle',
+					'attr'               => array(
 						'class' => 'btn btn-danger',
 						),
 					)

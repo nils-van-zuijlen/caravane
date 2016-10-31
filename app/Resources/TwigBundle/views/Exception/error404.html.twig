@@ -4,13 +4,13 @@
 	<div class="row">
 		<div class="col-sm-11 col-sm-offset-1">
 			<div class="alert alert-warning">
-				<h2>Erreur 404</h2>
-				<h3>Introuvable</h3>
+				<h2>{{ 'html.titles.h2'|trans({'%code%': status_code}, 'error') }}</h2>
+				<h3>{{ 'messages.404'|trans({}, 'error') }}</h3>
 			</div>
 			<p>
-				La page que vous essayez d'atteindre n'existe pas (ou plus).
+				{{ 'html.content404'|trans({}, 'error') }}
 			</p>
-			<img src="{{ asset('404.jpg') }}" alt="">
+			<!--<img src="{{ asset('404.jpg') }}" alt="">-->
 			<pre>      /|   /‾‾‾‾‾‾‾\        /|     |\         |   /‾‾‾‾‾\   –––––––––
      / |  /         \      / |     | \        |  /       \      |
     /  |  |         |     /  |     |  \       | /         \     |
@@ -34,7 +34,7 @@
 |            \       /   \       /  |        \ | |        /
 |             \_____/     \_____/   |         \| |_______/</pre>
 			<p>
-				<a href="{{ path('contact') }}">Contactez</a> nous si cette erreur s'affiche trop souvent en expliquant ce que vous étiez en train de faire.
+				{{ 'html.content'|trans({'%path%': path('contact')}, 'error')|raw }}
 			</p>
 		</div>
 	</div>

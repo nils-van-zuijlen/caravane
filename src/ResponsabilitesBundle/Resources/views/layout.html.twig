@@ -1,8 +1,10 @@
 {% extends 'CoreBundle::layout.html.twig' %}
 
-{% block title %}Responsabilités ‒ {{ parent () }}{% endblock %}
+{% trans_default_domain 'ResponsabilitesBundle' %}
+
+{% block title %}{{ 'layout.title'|trans }} ‒ {{ parent() }}{% endblock %}
 
 {% block body %}
-	<h2>Responsabilités</h2>
+	<h2>{{ 'layout.header'|trans }}</h2>
 	{% block resp_body %}{% endblock resp_body %}
 {% endblock %}

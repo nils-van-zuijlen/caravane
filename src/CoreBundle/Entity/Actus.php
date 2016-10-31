@@ -30,7 +30,7 @@ class Actus
 	 *
 	 * @ORM\Column(name="title", type="string", length=255)
 	 * 
-	 * @Assert\Length(min=5, max=255, minMessage="Le titre doit faire au moins {{ limit }} caractères", maxMessage="Le titre doit faire au plus {{ limit }} caractères")
+	 * @Assert\Length(min=5, max=255, minMessage="core.actus.title.length.min", maxMessage="core.actus.title.length.max")
 	 */
 	private $title;
 
@@ -39,7 +39,7 @@ class Actus
 	 *
 	 * @ORM\Column(name="content", type="text")
 	 *
-	 * @Assert\Length(min=5, minMessage="Un peu plus de caractères, s'il vous plait! (au moins {{limit }})")
+	 * @Assert\Length(min=5, minMessage="core.actus.content.length.min")
 	 */
 	private $content;
 
@@ -75,7 +75,7 @@ class Actus
 	}
 
 	/**
-	 * @Assert\IsTrue(message="Le format de l'image envoyée est incorrect")
+	 * @Assert\IsTrue(message="core.actus.image.is_image")
 	 */
 	public function isImageFile()
 	{

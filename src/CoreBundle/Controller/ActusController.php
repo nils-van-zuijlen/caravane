@@ -35,7 +35,7 @@ class ActusController extends Controller
 			$event = new NewActuEvent($actu, $this->getUser());
 			$this->get('event_dispatcher')->dispatch(CaravaneEvents::NEW_ACTU, $event);
 
-			$request->getSession()->getFlashBag()->add('success', 'Actualité enregistrée');
+			$request->getSession()->getFlashBag()->add('success', 'actus.add.flash');
 
 			return $this->redirectToRoute(
 				'core_actus_viewone',
@@ -67,7 +67,7 @@ class ActusController extends Controller
 		$em->remove($actu);
 		$em->flush();
 
-		$request->getSession()->getFlashBag()->add('success', 'Actualité supprimée');
+		$request->getSession()->getFlashBag()->add('success', 'actus.delete.flash');
 
 		return $this->redirectToRoute('core_actus_view');
 	}
@@ -91,7 +91,7 @@ class ActusController extends Controller
 
 			$em->flush();
 
-			$request->getSession()->getFlashBag()->add('success', 'Modifications enregistrées');
+			$request->getSession()->getFlashBag()->add('success', 'actus.edit.flash');
 
 			return $this->redirectToRoute(
 				'core_actus_viewone',
@@ -113,6 +113,9 @@ class ActusController extends Controller
 		$repository = $em->getRepository('CoreBundle:Actus');
 
 		$actu = $repository->getActuAndImageBySlug((string) $slug);
+
+		if ($actu === null)
+			throw $this->createNotFoundException('L\'actu '.$slug.' n\'existe pas.');
 
 		return $this->render(
 			'CoreBundle:Actus:viewone.html.twig',

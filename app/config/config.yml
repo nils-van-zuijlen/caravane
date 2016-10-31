@@ -78,19 +78,28 @@ fos_user:
     user_class: UserBundle\Entity\User
     registration:
         confirmation:
-            enabled: false
+            enabled: true
         form:
             type: UserBundle\Form\Type\RegistrationFormType
     from_email:
         address: nilsdu29@gmail.com
         sender_name: "Nils Van Zuijlen"
     service:
-        mailer: fos_user.mailer.twig_swift
+        mailer: core.mailer
     group:
         group_class: UserBundle\Entity\Group
     profile:
         form:
             type: UserBundle\Form\Type\ProfileFormType
+    change_password:
+        form:
+            type: UserBundle\Form\Type\ChangePasswordFormType
+    resetting:
+        form:
+            type: UserBundle\Form\Type\ResettingFormType
+    group:
+        form:
+            type: UserBundle\Form\Type\GroupFormType
 
 # Stof\DoctrineExtensionsBundle configuration
 stof_doctrine_extensions:
@@ -107,6 +116,12 @@ assetic:
 #FMBbcodeBundle
 fm_bbcode:
     filter_sets:
+        all:
+            strict: false
+            locale: "%locale%"
+            xhtml: false
+            hooks: [ emoticon, clickable ]
+            filters: [ default, block, code, email, image, list, quote, text, url, video, table ]
         actus_filter:
             strict:  false
             locale:  "%locale%"

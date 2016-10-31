@@ -6,12 +6,12 @@
 			<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
 				<img class="image" src="{{ path('core_file_get', {id:actu.image.id}) }}" alt="{{ actu.image.originalName }}">
 				<h4>{{ actu.title }}</h4>
-				<a href="{{ path('core_actus_viewone', {slug: actu.slug}) }}" class="btn btn-default">Lire plus</a>
-				<p>Le {{ actu.datePublication|date('d/m/Y') }}</p>
+				<a href="{{ path('core_actus_viewone', {slug: actu.slug}) }}" class="btn btn-default">{{ 'actus.view.more'|trans }}</a>
+				<p>{{ 'actus.view.date'|trans({'%date%': actu.datePublication|date('d/m/Y')}) }}</p>
 			</div>
 		{% else %}
 			<div class="col-lg-8 col-lg-offset-2">
-				<p>Il n'y a pas d'actualités publiées pour le moment.</p>
+				<p>{{ 'actus.view.null'|trans }}</p>
 			</div>
 		{% endfor %}
 	</div>
@@ -31,7 +31,7 @@
 	{% if is_granted('ROLE_COMMUNICATION') %}
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2">
-				<a href="{{ path('core_actus_add') }}" class="btn btn-primary">Publier une nouvelle actualité</a>
+				<a href="{{ path('core_actus_add') }}" class="btn btn-primary">{{ 'actus.view.new'|trans }}</a>
 			</div>
 		</div>
 	{% endif %}
