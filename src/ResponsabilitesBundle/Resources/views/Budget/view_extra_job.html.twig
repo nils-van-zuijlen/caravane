@@ -1,6 +1,8 @@
 {% extends 'ResponsabilitesBundle::layout.html.twig' %}
 
-{% block title %}Extra Jobs – Budget – {{ parent() }}{% endblock %}
+{% trans_default_domain 'ResponsabilitesBundle' %}
+
+{% block title %}{{ 'budget.extra_job.view.title'|trans }} – {{ parent() }}{% endblock %}
 
 {% block resp_body %}
 	<div class="row">
@@ -8,13 +10,13 @@
 			<div class="panel panel-default">
 				<table class="table table-striped table-condensed">
 					<div class="panel-heading">
-						<h3 class="panel-title">Les extra jobs de l'année {{ year }}-{{ year + 1 }}</h3>
+						<h3 class="panel-title">{{ 'budget.extra_job.view.header'|trans({'%year%': year, '%next_year%': (year + 1)}) }}</h3>
 					</div>
 					<thead>
 						<tr>
-							<th>Equipe</th>
-							<th>Commentaires</th>
-							<th>Montant (en €)</th>
+							<th>{{ 'budget.extra_job.view.thead.equipe'|trans }}</th>
+							<th>{{ 'budget.extra_job.view.thead.comments'|trans }}</th>
+							<th>{{ 'budget.extra_job.view.thead.montant'|trans }}</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -27,26 +29,23 @@
 									<td>
 										<a
 										href="{{ path('responsabilites_budget_extra_job_delete', {id: extra_job.id}) }}"
-										title="Attention: Ne peut pas être annulé"
+										title="{{ 'budget.extra_job.view.delete_warning'|trans }}"
 										>
-											Supprimer
+											{{ 'budget.extra_job.view.delete'|trans }}
 										</a>
 									</td>
 								{% endif %}
 							</tr>
 						{% else %}
 							<tr>
-								<td colspan="3">Pas d'extra jobs cette année</td>
+								<td colspan="3">{{ 'budget.extra_job.view.no_extra'|trans }}</td>
 							</tr>
 						{% endfor %}
 					</tbody>
 					<tfoot class="panel-footer">
 						<tr>
 							<td colspan="3">
-								Soit 
-								<em>{{ nbExtraJobs }}</em> extra job(s) 
-								qui ont rapporté 
-								<strong>{{ recettes }} €</strong>
+								{{ 'budget.extra_job.view.cad'|trans({'%number%': nbExtraJobs, '%montant%': recettes}) }}
 							</td>
 						</tr>
 					</tfoot>

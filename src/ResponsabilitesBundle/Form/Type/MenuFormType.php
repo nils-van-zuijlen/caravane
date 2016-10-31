@@ -19,46 +19,52 @@ class MenuFormType extends AbstractType
 				'titre',
 				TextType::class,
 				array(
-					'label' => 'Nom du menu',
+					'label'              => 'form.menu.titre',
+					'translation_domain' => 'ResponsabilitesBundle',
 					)
 				)
 			->add(
 				'date',
 				DateTimeType::class,
 				array(
-					'label' => 'Date et heure',
+					'label'              => 'form.menu.date',
+					'translation_domain' => 'ResponsabilitesBundle',
 					)
 				)
 			->add(
 				'entree',
 				TextareaType::class,
 				array(
-					'label'    => 'Entrée',
-					'required' => false,
+					'label'              => 'form.menu.entree',
+					'translation_domain' => 'ResponsabilitesBundle',
+					'required'           => false,
 					)
 				)
 			->add(
 				'plat',
 				TextareaType::class,
 				array(
-					'label'    => 'Plat',
-					'required' => false,
+					'label'              => 'form.menu.plat',
+					'translation_domain' => 'ResponsabilitesBundle',
+					'required'           => false,
 					)
 				)
 			->add(
 				'dessert',
 				TextareaType::class,
 				array(
-					'label'    => 'Dessert',
-					'required' => false,
+					'label'              => 'form.menu.dessert',
+					'translation_domain' => 'ResponsabilitesBundle',
+					'required'           => false,
 					)
 				)
 			->add(
 				'submit', 
 				SubmitType::class,
 				array(
-					'label' => 'Enregistrer',
-					'attr'  => array(
+					'label'              => 'form.menu.submit',
+					'translation_domain' => 'ResponsabilitesBundle',
+					'attr'               => array(
 						'class' => 'btn btn-primary',
 						),
 					)

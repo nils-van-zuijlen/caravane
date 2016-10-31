@@ -90,7 +90,7 @@ intendance:
         view_one:
             title: '%title% – Menus'
             header: 'Menu %title%'
-            date: 'Menu du %date%'
+            date: 'Menu du %date%.'
             entree: Entrée
             plat: Plat
             dessert: Dessert
@@ -194,3 +194,25 @@ index:
 layout:
     title: Responsabilités
     header: Responsabilités
+form:
+    extra_job:
+        equipe: Équipe
+        date: 'Date de l''extra job'
+        montant: 'Montant gagné (en €)'
+        commentaires: 'Commentaires'
+        submit: 'Enregistrer'
+    menu:
+        titre: 'Nom du menu'
+        date: 'Date et heure'
+        entree: Entrée
+        plat: Plat
+        dessert: Dessert
+        submit: Enregistrer
+    objet:
+        nom: 'Nom de l''objet (plusieurs objets peuvent avoir le même nom)'
+        type: 'Type d''objet'
+        commentaires: Commentaires
+        submit: Enregistrer
+    type_objet:
+        nom: 'Nom'
+        submit: Enregistrer

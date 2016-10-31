@@ -1,6 +1,8 @@
 {% extends 'ResponsabilitesBundle::layout.html.twig' %}
 
-{% block title %}{{ type.nom }} – Type – {{ parent() }}{% endblock %}
+{% trans_default_domain 'ResponsabilitesBundle' %}
+
+{% block title %}{{ 'materiel.type.view_one.title'|trans({'%nom%': type.nom}) }} – {{ parent() }}{% endblock %}
 
 {% block resp_body %}
 	<div class="row">
@@ -8,13 +10,13 @@
 			<h3>{{ type.nom }}</h3>
 			{% if is_granted('ROLE_MATERIEL') %}
 				<div class="btn-group">
-					<a href="{{ path('responsabilites_materiel_edit_type', {type: type.id}) }}" class="btn btn-warning">Modifier</a>
-					<a href="{{ path('responsabilites_materiel_delete_type', {type: typet.id}) }}" class="btn btn-danger">Supprimer</a>
+					<a href="{{ path('responsabilites_materiel_edit_type', {type: type.id}) }}" class="btn btn-warning">{{ 'materiel.view_one.edit'|trans }}</a>
+					<a href="{{ path('responsabilites_materiel_delete_type', {type: typet.id}) }}" class="btn btn-danger">{{ 'materiel.view_one.delete'|trans }}</a>
 				</div>
 			{% endif %}
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">Les objets du type :</h3>
+					<h3 class="panel-title">{{ 'materiel.view_one.objets'|trans }}</h3>
 				</div>
 				<div class="list-group">
 					{% for objet in type.objets %}
@@ -24,7 +26,7 @@
 					{% endfor %}
 				</div>
 			</div>
-			<p><a href="{{ path('responsabilites_materiel_view_all_objet') }}">Voir tous les objets</a></p>
+			<p><a href="{{ path('responsabilites_materiel_view_all_objet') }}">{{ 'materiel.view_one.all_objets'|trans }}</a></p>
 		</div>
 	</div>
 {% endblock %}

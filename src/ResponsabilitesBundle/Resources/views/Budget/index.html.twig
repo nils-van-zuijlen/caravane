@@ -1,39 +1,38 @@
 {% extends 'ResponsabilitesBundle::layout.html.twig' %}
 
-{% block title %}Budget -- {{ parent() }}{% endblock %}
+{% trans_default_domain 'ResponsabilitesBundle' %}
+
+{% block title %}{{ 'budget.index.title'|trans }} – {{ parent() }}{% endblock %}
 
 {% block resp_body %}
   <div class="row">
 		<div class="col-lg-10 col-lg-offset-1">
-			<h3>Responsable budget</h3>
+			<h3>{{ 'budget.index.header'|trans }}</h3>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2">
 			<p>
 				{# description de la responsabilité #}
-				Tu as pour mission de faire en sorte que la caravane et les équipes disposent du budget nécessaire à la réalisation de leurs activités. Pour cela, tu établis un budget et veilles à ce que tous le respectent. En fonction du projet ou des activités choisis, tu coordonne la recherche de fonds.
+				{{ 'budget.index.description.chapeau'|trans|bbcode_filter('all') }}
 			</p>
-			<h5>Budget</h5>
+			<h5>{{ 'budget.index.description.budget.head'|trans }}</h5>
 			<p>
-				En lien avec les autres responsables et en concertation avec la maîtrise, prévoir le budget de la caravane sur les activités d'années et pour le camp : suivi des comptes, achats de matériel, participation financière...
+				{{ 'budget.index.description.budget.content'|trans|bbcode_filter('all') }}
 			</p>
-			<h5>Recherche de fonds</h5>
+			<h5>{{ 'budget.index.description.fonds.head'|trans }}</h5>
 			<p>
-				Avec l'appui d'adultes et en lien avec le responsable communication, rédiger des demandes d'aides pour des projets précis en évaluant les moyens nécessaires.<br>
-				Soliciter des administrations, entreprises, personnes, associations, susceptibles d'être intéressées par le projet.<br>
-				Organiser et assurer le suivi des extra-jobs (planning, contacts...). Veiller à ce que les extra-jobs ne prennent pas trop d'emprise sur la vie de la caravane.
+				{{ 'budget.index.description.fonds.content'|trans|bbcode_filter('all') }}
 			</p>
 			<ul class="list-group">
-				<a href="{{ path('responsabilites_budget_extra_job_view') }}">Extra jobs</a>
+				<a href="{{ path('responsabilites_budget_extra_job_view') }}">{{ 'budget.index.pages.extra_job'|trans }}</a>
 				{% if is_granted('ROLE_CHEF_EQUIPE') or is_granted('ROLE_BUDGET') %}
-					<a href="{{ path('responsabilites_budget_extra_job_add') }}">Enregistrer un nouvel extra job</a>
+					<a href="{{ path('responsabilites_budget_extra_job_add') }}">{{ 'budget.index.pages.new_extra_job'|trans }}</a>
 				{% endif %}
 			</ul>
 		</div>
 		<div class="col-lg-2 alert alert-danger">
-			L'argent n'est pas un but en soi, il est le moyen du projet et des activités de la caravane.<br>
-			<strong>La caravane ne recherche pas de fonds si elle n'a pas de projet concret</strong>
+			{{ 'budget.index.warning'|trans|bbcode_filter('all') }}
 		</div>
   </div>
 {% endblock %}

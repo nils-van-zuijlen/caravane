@@ -1,35 +1,39 @@
 {% extends 'ResponsabilitesBundle::layout.html.twig' %}
 
-{% block title %}Communication – {{ parent() }}{% endblock %}
+{% trans_default_domain 'ResponsabilitesBundle' %}
+
+{% block title %}{{ 'communication.index.title'|trans }} – {{ parent() }}{% endblock %}
 
 {% block resp_body %}
 	<div class="row">
 		<div class="col-lg-10 col-lg-offset-1">
-			<h3>Responsable communication</h3>
+			<h3>{{ 'communication.index.header'|trans }}</h3>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2">
 			<p>
 				{# description de la responsabilité #}
-				Tu es le porte-parole de la caravane, en interne et en externe. À ce titre, tu tiens le livre de la caravane, prépares avec la maîtrise la communication pour les parents, le territoire. Tu écris des articles dans les journaux locaux, dans Oze. Tu actualise ou <abbr title="Le code du site de la caravane est disponible sur GitHub: nils-van-zuijlen/caravane">participe</abbr> au site de la caravane.
+				{{ 'communication.index.description.chapeau'|trans|bbcode_filter('all') }}
 			</p>
-			<h5>Le livre de la caravane</h5>
+			<h5>{{ 'communication.index.description.livre.head'|trans }}</h5>
 			<p>
-				C'est le livre de l'unité, on y retrouve mois après mois, année après année, les activités et les Cap vécus par la caravane, les itinéraires parcourus par chaque pionnier ou caravelle avec les actions réalisées. Le penser et l'imaginer, le faire vivre pour qu'il soit une vraie boîte à souvenirs, la trace que la caravane campe et décampe...
+				{{ 'communication.index.description.livre.content'|trans|bbcode_filter('all') }}
 			</p>
-			<h5>Informer</h5>
+			<h5>{{ 'communication.index.description.informer.head'|trans }}</h5>
 			<p>
-				Installer et tenir à jour un panneau d'informations au local et au camp avec les coordonnées de chacun, des parents et de la maîtrise et des numéros d'urgence. <a href="//github.com/nils-van-zuijlen/caravane">Contribuer</a> et mettre à jour le site internet : photos, <a href="{{ path('core_actus_view') }}">actualités</a>, reportages, témoignages, déroulement des Cap et des activités.
+				{{ 'communication.index.description.informer.content'|trans|bbcode_filter('all') }}
 			</p>
-			<h5>Témoigner</h5>
+			<h5>{{ 'communication.index.description.temoigner.head'|trans }}</h5>
 			<p>
-				Connaître la vie du groupe pour que la caravane y participe. Avec des personnes ressources, rédiger des communiqués sur les activités vécues : presse régionale écrite, TV, radio, presse spécialisée en fonction du Cap. Sans oublier des témoignages pour Oze (<a href="mailto:oze@sgdf.fr">oze@sgdf.fr</a>) et sur le site internet des pionniers caravelles : <a href="//caravane.sgdf.fr/temoigner">http://caravane.sgdf.fr</a> rubrique Témoigner.
+				{{ 'communication.index.description.temoigner.content'|trans|bbcode_filter('all') }}
 			</p>
 			<ul class="list-group">
 				{# liens vers les pages de la responsabilité #}
 				{% if is_granted('ROLE_COMMUNICATION') %}
-					<a class="list-group-item" href="{{ path('core_actus_add') }}">Publier une actualité sur le site</a>
+					<a class="list-group-item" href="{{ path('core_actus_add') }}">
+						{{ 'communication.index.pages.publier_actu'|trans }}
+					</a>
 				{% endif %}
 			</ul>
 		</div>

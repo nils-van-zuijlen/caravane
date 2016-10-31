@@ -1,11 +1,13 @@
 {% extends 'ResponsabilitesBundle::layout.html.twig' %}
 
-{% block title %}Éditer l'objet – {{ parent() }}{% endblock %}
+{% trans_default_domain 'ResponsabilitesBundle' %}
+
+{% block title %}{{ 'materiel.objet.edit.title'|trans }} – {{ parent() }}{% endblock %}
 
 {% block resp_body %}
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2">
-			<h3>Éditer l'objet {{ objet.nom }}</h3>
+			<h3>{{ 'materiel.objet.edit.header'|trans({'%nom%': objet.nom}) }}</h3>
 			<div class="well">
 				{% include 'ResponsabilitesBundle:Materiel:objet_form.html.twig' %}
 			</div>

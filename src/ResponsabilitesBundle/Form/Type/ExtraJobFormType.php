@@ -26,27 +26,30 @@ class ExtraJobFormType extends AbstractType
 				'equipe',
 				EntityType::class,
 				array(
-					'label'        => 'Équipe',
-					'required'     => true,
-					'class'        => 'UserBundle:Group',
-					'choice_label' => 'name',
+					'label'              => 'form.extra_job.equipe',
+					'translation_domain' => 'ResponsabilitesBundle',
+					'required'           => true,
+					'class'              => 'UserBundle:Group',
+					'choice_label'       => 'name',
 					)
 				)
 			->add(
 				'date',
 				DateType::class,
 				array(
-					'label' => 'Date de l\'extra job',
+					'label'              => 'form.extra_job.date',
+					'translation_domain' => 'ResponsabilitesBundle',
 					)
 				)
 			->add(
 				'montant',
 				NumberType::class,
 				array(
-					'label'         => 'Montant gagné (en €)',
-					'scale'         => 2,
-					'rounding_mode' => IntegerToLocalizedStringTransformer::ROUND_HALF_DOWN,
-					'attr'          => array(
+					'label'              => 'form.extra_job.montant',
+					'translation_domain' => 'ResponsabilitesBundle',
+					'scale'              => 2,
+					'rounding_mode'      => IntegerToLocalizedStringTransformer::ROUND_HALF_DOWN,
+					'attr'               => array(
 						'min'  => 0.01,
 						'max'  => 99999999.99,
 						'step' => 0.01,
@@ -57,16 +60,18 @@ class ExtraJobFormType extends AbstractType
 				'commentaires',
 				TextareaType::class,
 				array(
-					'label'    => 'Commentaires',
-					'required' => false,
+					'label'              => 'form.extra_job.commentaires',
+					'translation_domain' => 'ResponsabilitesBundle',
+					'required'           => false,
 					)
 				)
 			->add(
 				'submit', 
 				SubmitType::class,
 				array(
-					'label' => 'Enregistrer',
-					'attr'  => array(
+					'label'              => 'form.extra_job.submit',
+					'translation_domain' => 'ResponsabilitesBundle',
+					'attr'               => array(
 						'class' => 'btn btn-primary',
 						),
 					)

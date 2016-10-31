@@ -1,19 +1,20 @@
 {% extends 'ResponsabilitesBundle::layout.html.twig' %}
 
-{% block title %}{{ objet.nom }} – Objet – {{ parent() }}{% endblock %}
+{% trans_default_domain 'ResponsabilitesBundle' %}
+
+{% block title %}{{ 'materiel.objet.view_one.title'|trans({'%nom%': objet.nom}) }} – {{ parent() }}{% endblock %}
 
 {% block resp_body %}
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2">
 			<h3>{{ objet.nom }}</h3>
 			<p>
-				Du type {{ objet.type.nom }}, cet objet possède les caractéristiques: <br>
-				{{ objet.caracteristiques|bbcode_filter('responsabilites_filter') }}
+				{{ 'materiel.objet.view_one.text'|trans({'%nom_type%': objet.type.nom, '%caracteristiques%': objet.caracteristiques})|bbcode_filter('all') }}
 			</p>
 			{% if is_granted('ROLE_MATERIEL') %}
 				<div class="btn-group">
-					<a href="{{ path('responsabilites_materiel_edit_objet', {objet: objet.id}) }}" class="btn btn-warning">Modifier</a>
-					<a href="{{ path('responsabilites_materiel_delete_objet', {objet: objet.id}) }}" class="btn btn-danger">Supprimer</a>
+					<a href="{{ path('responsabilites_materiel_edit_objet', {objet: objet.id}) }}" class="btn btn-warning">{{ 'materiel.objet.view_one.edit'|trans }}</a>
+					<a href="{{ path('responsabilites_materiel_delete_objet', {objet: objet.id}) }}" class="btn btn-danger">{{ 'materiel.objet.view_one.delete'|trans }}</a>
 				</div>
 			{% endif %}
 		</div>

@@ -1,33 +1,34 @@
 {% extends 'ResponsabilitesBundle::layout.html.twig' %}
 
+{% trans_default_domain 'ResponsabilitesBundle' %}
+
 {% block resp_body %}
 	<div class="col-lg-8 col-lg-offset-2">
 		<p>
 			<blockquote>
-				Si tu veux réussir dans ta vie, sois capable de prendre des responsabilités.
-				Pour cela, il faut avoir confiance en soi, connaître son travail et exercer sa responsabilité.
+				{{ 'index.quote'|trans|bbcode_filter('all') }}
 				<br>
-				<small class="pull-right">Baden Powell</small><br>
+				<small class="pull-right">{{ 'index.quote_auth'|trans }}</small><br>
 			</blockquote>
 		</p>
 		<p>
-			D'ici vous pouvez acceder aux pages spécifiques à chaque responsabilité
+			{{ 'index.head'|trans }}
 		</p>
 		<ul class="list-group">
 			<a href="{{ path('responsabilites_animation_index') }}" class="list-group-item">
-				Responsable Animation
+				{{ 'index.pages.animation'|trans }}
 			</a>
 			<a href="{{ path('responsabilites_budget_index') }}" class="list-group-item">
-				Responsable Budget
+				{{ 'index.pages.budget'|trans }}
 			</a>
 			<a href="{{ path('responsabilites_communication_index') }}" class="list-group-item">
-				Responsable Communication
+				{{ 'index.pages.communication'|trans }}
 			</a>
 			<a href="{{ path('responsabilites_intendance_index') }}" class="list-group-item">
-				Responsable Intendance
+				{{ 'index.pages.intendance'|trans }}
 			</a>
 			<a href="{{ path('responsabilites_materiel_index') }}" class="list-group-item">
-				Responsable Matériel
+				{{ 'index.pages.materiel'|trans }}
 			</a>
 		</ul>
 	</div>

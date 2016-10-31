@@ -1,11 +1,13 @@
 {% extends "ResponsabilitesBundle::layout.html.twig" %}
 
-{% block title %}Menus – {{ parent() }}{% endblock %}
+{% trans_default_domain 'ResponsabilitesBundle' %}
+
+{% block title %}{{ 'intendance.menu.view_all.title'|trans }} – {{ parent() }}{% endblock %}
 
 {% block resp_body %}
 	<div class="row">
 		<div class="col-lg-10 col-lg-offset-1">
-			<h3>Menus</h3>
+			<h3>{{ 'intendance.menu.view_all.header'|trans }}</h3>
 		</div>
 	</div>
 	<div class="row">
@@ -14,7 +16,7 @@
 				<div class="row">
 					<div class="col-lg-8">
 						<a href="{{ path('responsabilites_intendance_new_menu') }}" class="btn btn-primary">
-							Nouveau
+							{{ 'intendance.menu.view_all.new'|trans }}
 						</a>
 					</div>
 				</div>
@@ -27,11 +29,11 @@
 								{{ menu.titre }}
 							</a>
 						</h4>
-						<p>Le {{ menu.date|date('d/m/Y h:i') }}</p>
+						<p>{{ 'intendance.menu.view_all.date'|trans({'%date%': menu.date|date('d/m/Y h:i')}) }}</p>
 					</div>
 				{% else %}
 					<div class="col-lg-8">
-						Il n'y a pas encore de menus.
+						{{ 'intendance.menu.view_all.no_menu'|trans }}
 					</div>
 				{% endfor %}
 			</div>
@@ -39,7 +41,7 @@
 				<div class="row">
 					<div class="col-lg-8">
 						<a href="{{ path('responsabilites_intendance_new_menu') }}" class="btn btn-primary">
-							Nouveau
+							{{ 'intendance.menu.view_all.new'|trans }}
 						</a>
 					</div>
 				</div>
