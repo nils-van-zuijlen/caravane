@@ -7,27 +7,27 @@ use Symfony\Component\Validator\Constraints as Assert;
 class ContactModel
 {
 	/**
-	 * @Assert\Length(min=3, minMessage="Doit faire au moins {{ limit }} caractères")
+	 * @Assert\Length(min=3, minMessage="core.contact.nom.length.min")
 	 */
 	private $nom;
 
 	/**
-	 * @Assert\Length(min=3, minMessage="Doit faire au moins {{ limit }} caractères")
+	 * @Assert\Length(min=3, minMessage="core.contact.prenom.length.min")
 	 */
 	private $prenom;
 
 	/**
-	 * @Assert\Email(checkMX=true, message="Veuillez entrer une adresse e-mail existante")
+	 * @Assert\Email(checkMX=true, message="core.contact.email.email")
 	 */
 	private $email;
 
 	/**
-	 * @Assert\Length(max=255, min=3, maxMessage="Doit faire au plus {{ limit }} caractères", minMessage="Doit faire au moins {{ limit }} caractères")
+	 * @Assert\Length(max=255, min=3, maxMessage="core.contact.objet.length.max", minMessage="core.contact.objet.length.min")
 	 */
 	private $objet;
 
 	/**
-	 * @Assert\Length(min=10, minMessage="Doit faire au moins {{ limit }} caractères")
+	 * @Assert\Length(min=10, minMessage="core.contact.contenu.length.min")
 	 */
 	private $contenu;
 

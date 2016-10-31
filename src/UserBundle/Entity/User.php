@@ -27,16 +27,16 @@ class User extends BaseUser
 	/**
 	 * @ORM\Column(name="prenom", type="string", length=255)
 	 *
-	 * @Assert\NotBlank(groups={"Registration", "Profile"})
-	 * @Assert\Length(max=255, groups={"Registration", "Profile"})
+	 * @Assert\NotBlank(groups={"Registration", "Profile"}, message="user.user.prenom.not_blank")
+	 * @Assert\Length(max=255, groups={"Registration", "Profile"}, maxMessage="user.user.prenom.length.min")
 	 */
 	protected $prenom;
 
 	/**
 	 * @ORM\Column(name="nom", type="string", length=255)
 	 *
-	 * @Assert\NotBlank(groups={"Registration", "Profile"})
-	 * @Assert\Length(max=255, groups={"Registration", "Profile"})
+	 * @Assert\NotBlank(groups={"Registration", "Profile"}, message="user.user.nom.not_blank")
+	 * @Assert\Length(max=255, groups={"Registration", "Profile"}, maxMessage="user.user.nom.length.min")
 	 */
 	protected $nom;
 

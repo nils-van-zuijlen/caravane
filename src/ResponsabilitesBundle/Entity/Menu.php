@@ -27,8 +27,8 @@ class Menu
 	 * @var string
 	 *
 	 * @ORM\Column(name="titre", type="string", length=255)
-	 * @Assert\Length(max=255)
-	 * @Assert\NotBlank()
+	 * @Assert\Length(max=255, maxMessage="responsabilites.menu.titre.length.max")
+	 * @Assert\NotBlank(message="responsabilites.menu.titre.not_blank")
 	 */
 	private $titre;
 
@@ -44,8 +44,8 @@ class Menu
 	 * @var \DateTime
 	 *
 	 * @ORM\Column(name="date", type="datetime")
-	 * @Assert\DateTime()
-	 * @Assert\NotBlank()
+	 * @Assert\DateTime(message="responsabilites.menu.date.date_time")
+	 * @Assert\NotBlank(message="responsabilites.menu.date.not_blank")
 	 */
 	private $date;
 

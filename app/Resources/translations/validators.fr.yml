@@ -22,7 +22,8 @@ core:
         content:
             string: Doit être du texte
     file:
-        max_size: Le fichier doit faire moins que {{ limit }}
+        max_size: Le fichier doit faire moins que {{ limit }} {{ suffix }}
+        disallow_empty: Veuillez envoyer un fichier possédant un contenu
     contact:
         nom:
             length:
