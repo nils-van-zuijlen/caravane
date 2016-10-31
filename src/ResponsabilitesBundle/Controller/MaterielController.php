@@ -251,7 +251,7 @@ class MaterielController extends Controller
 		$em->remove($type);
 		$em->flush();
 
-		$this->addFlash('success', 'materiel.flash.type.delete')
+		$this->addFlash('success', 'materiel.flash.type.delete');
 		
 		return $this->redirectToRoute('responsabilites_materiel_view_type');
 		
@@ -275,7 +275,7 @@ class MaterielController extends Controller
 		$em->remove($objet);
 		$em->flush();
 
-		$this->addFlash('success', 'materiel.flash.objet.delete')
+		$this->addFlash('success', 'materiel.flash.objet.delete');
 
 		return $this->redirectToRoute('responsabilites_materiel_view_all_objet');
 	}

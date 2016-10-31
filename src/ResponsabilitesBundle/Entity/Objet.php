@@ -32,9 +32,6 @@ class Objet
 	/**
 	 * @ORM\ManyToOne(targetEntity="ResponsabilitesBundle\Entity\TypeObjet", inversedBy="objets")
 	 * @ORM\JoinColumn(nullable=false)
-	 * @Assert\Length(max=255)
-	 * @Assert\NotBlank()
-	 * @Assert\Type("string")
 	 */
 	private $type;
 	

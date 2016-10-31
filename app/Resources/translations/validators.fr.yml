@@ -1,0 +1,93 @@
+core:
+    actus:
+        title:
+            length:
+                min: Le titre doit faire au moins {{ limit }} caractères
+                max: Le titre doit faire au plus {{ limit }} caractères
+        content:
+            length:
+                min: Un peu plus de caractères, s'il vous plait! (au moins {{limit }})
+        image:
+            is_image: Le format de l'image envoyée est incorrect
+    event:
+        date_debut:
+            date_time: Doit être une date
+        date_fin:
+            date_time: Doit être une date
+        title:
+            length:
+                min: Le titre doit faire au moins {{ limit }} caractères
+                max: Le titre doit faire au plus {{ limit }} caractères
+            not_blank: Le titre ne doit pas être vide
+        content:
+            string: Doit être du texte
+    file:
+        max_size: Le fichier doit faire moins que {{ limit }}
+    contact:
+        nom:
+            length:
+                min: Doit faire au moins {{ limit }} caractères
+        prenom:
+            length:
+                min: Doit faire au moins {{ limit }} caractères
+        email:
+            email: Veuillez entrer une adresse e-mail existante
+        objet:
+            length:
+                min: Doit faire au moins {{ limit }} caractères
+                max: Doit faire au plus {{ limit }} caractères
+        contenu:
+            length:
+                min: Doit faire au moins {{ limit }} caractères
+forum:
+    forum:
+        title:
+            length:
+                max: Le titre doit faire au plus {{ limit }} caractères
+            not_blank: Le titre ne doit pas être vide
+        content:
+            length:
+                min: Doit faire au moins {{ limit }} caractères
+            not_blank: Ne doit pas être vide
+responsabilites:
+    extra_job:
+        montant:
+            range:
+                min: Vous êtes sérieux?
+                max: Tout ça?! Faites le en deux fois SVP.
+        date:
+            date: Doit être une date valide
+        commentaires:
+            string: Doit être du texte
+    menu:
+        titre:
+            length:
+                max: Le titre doit faire au plus {{ limit }} caractères
+            not_blank: Le titre ne doit pas être vide
+        date:
+            date_time: Doit être une date valide
+            not_blank: Ne doit pas être vide
+    objet:
+        nom:
+            length:
+                max: Doit faire au plus {{ limit }} caractères
+            not_blank: Ne doit pas être vide
+            string: Doit être du texte
+        caracteristiques:
+            string: Doit être du texte
+    type_objet:
+        nom:
+            length:
+                max: Doit faire au plus {{ limit }} caractères
+            not_blank: Ne doit pas être vide
+            string: Doit être du texte
+user:
+    user:
+        prenom:
+            not_blank: Ne doit pas être vide
+            length:
+                min: Doit faire au moins {{ limit }} caractères
+        nom:
+            not_blank: Ne doit pas être vide
+            length:
+                min: Doit faire au moins {{ limit }} caractères
