@@ -18,33 +18,37 @@ class ForumType extends AbstractType
 				'title',
 				TextType::class,
 				array(
-					'label' => 'Titre',
+					'label'              => 'forum.form.title',
+					'translation_domain' => 'ForumBundle',
 					)
 				)
 			->add(
 				'content',
 				TextareaType::class,
 				array(
-					'label' => 'Contenu',
+					'label'              => 'forum.form.content',
+					'translation_domain' => 'ForumBundle',
 					)
 				)
 			->add(
 				'categorie',
 				EntityType::class,
 				array(
-					'label'        => 'Catégorie',
-					'multiple'     => false,
-					'expanded'     => false,
-					'class'        => 'ForumBundle:Categorie',
-					'choice_label' => 'title',
+					'label'              => 'forum.form.categorie',
+					'translation_domain' => 'ForumBundle',
+					'multiple'           => false,
+					'expanded'           => false,
+					'class'              => 'ForumBundle:Categorie',
+					'choice_label'       => 'title',
 					)
 				)
 			->add(
 				'submit',
 				SubmitType::class,
 				array(
-					'label' => 'Publier',
-					'attr'  => array(
+					'label'              => 'forum.form.submit',
+					'translation_domain' => 'ForumBundle',
+					'attr'               => array(
 						'class' => 'btn btn-primary',
 						),
 					)
