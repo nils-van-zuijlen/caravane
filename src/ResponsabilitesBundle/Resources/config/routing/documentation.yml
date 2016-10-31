@@ -1,0 +1,5 @@
+responsabilites_documentation_index:
+    path: /
+    defaults:
+        _controller: ResponsabilitesBundle:Documentation:index
+    methods: GET
