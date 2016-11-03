@@ -90,6 +90,11 @@ documentation:
                 head: Livre de la caravane
                 content: |
                     Tenir le livre de la caravane en lien avec le responsable communication. Assurer avec lui les reportages photos, les récits des activités vécues...
+        pages:
+            search: Faire une recherche avancée sur Internet
+    search:
+        title: Recherche avancée – Documentation
+        header: Recherche avancée sur Internet
 intendance:
     menu:
         add:

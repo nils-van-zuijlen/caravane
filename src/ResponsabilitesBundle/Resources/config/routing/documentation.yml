@@ -3,3 +3,9 @@ responsabilites_documentation_index:
     defaults:
         _controller: ResponsabilitesBundle:Documentation:index
     methods: GET
+
+responsabilites_documentation_search:
+    path: /search
+    defaults:
+        _controller: ResponsabilitesBundle:Documentation:search
+    methods: GET
