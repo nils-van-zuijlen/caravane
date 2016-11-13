@@ -2,18 +2,22 @@ var LAST_ID = 0;
 
 function addElement(name, where) {
 	LAST_ID++;
+
 	var element;
-	element = $('#template'+name.toUpperCase()).html().replace(/%id%/g, LAST_ID).replace(/%value%/g, '');
+	element = $('#template'+name.toUpperCase())
+		.html()
+		.replace(/%id%/g, LAST_ID)
+		.replace(/%value%/g, '');
+	
 	if (name == 'or' || name == 'and') {
 		LAST_ID++;
 		element = element.replace(/%id2%/g, LAST_ID);
 	}
+
 	if (typeof where === 'undefined') {
 		$('#addElement').before(element);
-		console.log('Élément '+name+' ajouté');
 	} else {
 		$('#'+where).append(element);
-		console.log('Élément '+name+' ajouté en '+where);
 	}
 	$('.alert').hide('fast');
 }
@@ -69,14 +73,9 @@ function editElement(which, type) {
 	}
 }
 
-function error(type) {
-	switch(type)
-	{
-		case 'no_block':
-			console.error('Erreur: pas d\'éléments lors du lancement de la recherche')
-			$('.alert').text('Veuillez insérer un élément de recherche').show('slow');
-			break;
-	}
+function error() {
+	console.error('Erreur: pas d\'éléments lors du lancement de la recherche')
+	$('.alert').show('slow');
 }
 
 function parseElement(element) {
@@ -89,13 +88,26 @@ function parseElement(element) {
 			group.attr('done', true);
 			var input = document.getElementById(group.attr('id').replace("groupe", "input"));
 			if (/or|and/i.test(group.attr('type'))) {
-				parsed.push({type: group.attr('type'), content: parseElement(input)});
+				parsed.push({
+					type: group.attr('type'),
+					content: parseElement(input)
+				});
 			} else {
-				parsed.push({type: group.attr('type'), content: input.value});
+				parsed.push({
+					type: group.attr('type'),
+					content: input.value
+				});
 			}
 		}
 	}
 	return parsed;
+}
+
+function clean(string) {
+	return string
+		.trim()
+		.replace(/\((\S*)\)/gi, '$1')
+		.replace(/ {2,}/gi, ' ');
 }
 
 function elementsToString(elements, separator) {
@@ -129,6 +141,7 @@ function elementsToString(elements, separator) {
 	});
 
 	string = string.substring(separator.length);
+	string = clean(string);
 
 	return string;
 }
@@ -138,17 +151,14 @@ function submit(event) {
 
 	var form = document.getElementsByTagName('form')[0];
 	if (!form.querySelector('.form-group')) {
-		error('no_block');
+		error();
 		return;
 	}
 
-	var elements = parseElement(form);
-	console.log(elements);
-
-	var string = elementsToString(elements);
-	console.log(string);
+	var string = elementsToString(parseElement(form));
 
 	var search = 'http://www.google.com/search?q=' + string.replace(/ /g, '+');
+	window.location = search;
 }
 
 $(function() {
