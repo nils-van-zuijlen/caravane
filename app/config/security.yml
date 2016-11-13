@@ -44,6 +44,5 @@ security:
                 
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^/chat,  roles: ROLE_PIOK  }
         #- { path: ^/login, requires_chanel: https }
         
