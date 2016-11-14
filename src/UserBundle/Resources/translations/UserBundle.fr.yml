@@ -121,4 +121,10 @@ form:
     members: 'Membres'
     nom: 'Nom'
     prenom: 'Prénom'
-    roles: Rôles
+    none: ""
+    roles:
+        label: Rôles
+        choices:
+            main: Hiérarchie
+            responsable: Responsabilités
+            special: ""
