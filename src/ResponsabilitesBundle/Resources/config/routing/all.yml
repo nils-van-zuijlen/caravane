@@ -23,3 +23,7 @@ responsabilites_budget:
 responsabilites_materiel:
     prefix: /materiel
     resource: materiel.yml
+
+responsabilites_documentation:
+    prefix:   /documentation
+    resource: documentation.yml

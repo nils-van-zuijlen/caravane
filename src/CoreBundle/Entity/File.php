@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
  */
 class File
 {
-	const UPLOAD_ROOT_DIR = "/var/www/html/Caravane/src/CoreBundle/Files";
+	const UPLOAD_ROOT_DIR = __DIR__."/../Files";
 
 	/**
 	 * @var int
