@@ -21,6 +21,7 @@ role:
             name: Nom
             nickname: Prénom
             role: Rôles
+            ban: Banni
         roles:
             ROLE_CHEF: Chef
             ROLE_PIOK: PioK
@@ -36,6 +37,9 @@ role:
             ROLE_ADMIN: Administrateur
             ROLE_SUPER_ADMIN: Super Administrateur
             ROLE_USER: ""
+        banned:
+            "yes": Oui
+            "no": Non
 
 resetting:
     password_already_requested: 'Un nouveau mot de passe a déjà été demandé pour cet utilisateur dans les dernières 24 heures.'
