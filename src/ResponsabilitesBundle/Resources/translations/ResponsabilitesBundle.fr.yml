@@ -179,6 +179,21 @@ materiel:
             new_type: Nouveau type d'objets
             view_objet: Voir tous les objets de l'inventaire
             view_type: Voir tous les types d'objets
+vie_spi:
+    index:
+        title: Vie Spirituelle
+        header: Vie Spirituelle
+        description:
+            chapeau: |
+                Tu rappelles à tous que la dimension spirituelle est importante même si tu n'es pas forcément spécialiste des questions de foi. Tu "pulses" la vie spirituelle de la caravane, tu l'entraînes dans les déserts et tu inventes des temps de partage et de prière originaux.
+            deserts:
+                head: Les déserts
+                content: |
+                    Au début de l'année, introduire les thèmes du désert spécifique à l'année en cours. Inciter les pionniers et les caravelles à exploiter ces thèmes dans les temps spirituels, les célébrations et les temps d'équipe.
+            animation:
+                head: Animation
+                content: |
+                    Ce n'est pas si difficile de prier. Trouver les moyens originaux d'inviter la caravane à vivre des temps de partage sous différentes formes : rencontres, débats, café-théo, targui... Se renseigner sur les lieux et les horaires des célébrations sur les lieux spirituels à visiter à proximité des camps (monastères, lieux de pèlerinages...). Animer des messes de groupe ou de paroisse avec la caravane.
 index:
     quote: |
         Si tu veux réussir dans ta vie, sois capable de prendre des responsabilités.
