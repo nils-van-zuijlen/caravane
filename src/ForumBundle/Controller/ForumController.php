@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpKernel\Exception as HttpException;
 
 use ForumBundle\Entity\Forum;
-use ForumBundle\Form\ForumType;
+use ForumBundle\Form\Type\ForumType;
 
 class ForumController extends Controller
 {
