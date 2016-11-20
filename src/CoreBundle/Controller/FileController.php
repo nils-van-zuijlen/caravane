@@ -19,7 +19,7 @@ class FileController extends Controller
 			->getRepository('CoreBundle:File')
 			->find($id);
 
-		if ($file == null || !file_exists($file->getActualPath())) {
+		if ($file === null || !file_exists($file->getActualPath())) {
 			throw $this->createNotFoundException("Le fichier ".$id." n'existe pas.");
 		}
 

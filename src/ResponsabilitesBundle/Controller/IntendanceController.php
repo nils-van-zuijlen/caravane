@@ -150,7 +150,7 @@ class IntendanceController extends Controller
 		$em = $this->getDoctrine()->getManager();
 		$menu = $em->getRepository('ResponsabilitesBundle:Menu');
 
-		if ($menu == null)
+		if ($menu === null)
 			throw $this->createNotFoundException('Le menu '.$slug.' n\'existe pas');
 
 		$em->remove($menu);
