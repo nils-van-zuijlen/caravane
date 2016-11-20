@@ -35,4 +35,3 @@ forum_forum_view_categorie:
     requirements:
         categorie: ^[a-z0-9-]+$
     methods: GET
-
