@@ -155,8 +155,8 @@ class ForumController extends Controller
 			&& !$this->get('security.authorization_checker')->isGranted('ROLE_COMMUNICATION')
 		)
 		{
-			throw new HttpException\AccessDeniedHttpException(
-				'Vous n\'êtes pas autorisé à modifier le forum '.$forum
+			throw $this->createAccessDeniedException(
+				'Vous n\'êtes pas autorisé à modifier le forum '.$forum->getTitle()
 				);
 		}
 
