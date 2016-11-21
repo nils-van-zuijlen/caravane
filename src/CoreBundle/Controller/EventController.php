@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 use CoreBundle\Entity\Event;
-use CoreBundle\Form\EventType;
+use CoreBundle\Form\Type\EventType;
 
 class EventController extends Controller
 {
