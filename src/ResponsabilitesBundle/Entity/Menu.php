@@ -225,4 +225,3 @@ class Menu
 		return $this->dessert;
 	}
 }
-

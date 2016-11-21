@@ -128,4 +128,3 @@ class Chat
 		return $this->sentTime;
 	}
 }
-
