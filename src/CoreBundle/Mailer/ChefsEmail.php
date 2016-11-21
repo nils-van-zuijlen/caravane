@@ -65,7 +65,7 @@ class ChefsEmail implements EmailInterface
 	/** @inheritdoc */
 	public function getTo()
 	{
-		if ($this->to != null) {
+		if ($this->to !== null) {
 			return $this->to;
 		}
 

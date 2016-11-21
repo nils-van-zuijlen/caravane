@@ -79,7 +79,7 @@ class Actus
 	 */
 	public function isImageFile()
 	{
-		if ($this->image->getFile() != null)
+		if ($this->image->getFile() !== null)
 			return in_array($this->image->getFile()->getMimeType(), self::ALLOWED_MIME_TYPES);
 		else
 			return true;
