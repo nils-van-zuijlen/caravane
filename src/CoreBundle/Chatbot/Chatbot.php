@@ -88,7 +88,7 @@ class Chatbot
 				$username = preg_replace("#@user\[(.+)\] .+#", "$1", $message);
 				$user2 = $this->getUserRepository()->findOneByUsername($username);
 				$message = preg_replace("#@user\[.+\] (.+)#", "$1", $message);
-				if ($user2 != null) {
+				if ($user2 !== null) {
 					$user = $user2;
 					$edited = true;
 				}

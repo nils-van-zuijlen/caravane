@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpKernel\Exception as HttpException;
 
 use ForumBundle\Entity\Forum;
-use ForumBundle\Form\ForumType;
+use ForumBundle\Form\Type\ForumType;
 
 class ForumController extends Controller
 {
@@ -155,8 +155,8 @@ class ForumController extends Controller
 			&& !$this->get('security.authorization_checker')->isGranted('ROLE_COMMUNICATION')
 		)
 		{
-			throw new HttpException\AccessDeniedHttpException(
-				'Vous n\'êtes pas autorisé à modifier le forum '.$forum
+			throw $this->createAccessDeniedException(
+				'Vous n\'êtes pas autorisé à modifier le forum '.$forum->getTitle()
 				);
 		}
 

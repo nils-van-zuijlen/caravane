@@ -72,10 +72,10 @@ class Mailer implements MailerInterface
 		$to  = $email->getTo()['to'];
 		$bcc = $email->getTo()['bcc'];
 
-		if ($to == null) {
+		if ($to === null) {
 			$to = array();
 		}
-		if ($bcc == null) {
+		if ($bcc === null) {
 			$bcc = array();
 		}
 

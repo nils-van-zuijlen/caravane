@@ -2,6 +2,7 @@
     "name": "nils/caravane",
     "license": "proprietary",
     "type": "project",
+    "description": "Ceci est le site de la caravane de Quimper.",
     "autoload": {
         "psr-4": {
             "": "src/"
