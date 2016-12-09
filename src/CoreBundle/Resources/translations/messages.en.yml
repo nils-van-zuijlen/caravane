@@ -1,14 +1,148 @@
 layout:
+  title: Quimper Caravan
   navbar:
+    brand: Quimper Caravan
     nav:
+      actus: News
+      chat: Chat
+      forum: Forum
       links:
         title: Useful links
-        caravane: The national PioK's site
+        caravane: The national Venture's site
+        sgdf: The Scouts and Guides of France's site
+      chefs: Leaders
       responsabilites: Responsibilities
     user:
       connected_as: Logged in as
       logout: Logout
       login: Login
   footer:
+    contact: Contact
     terms: Terms of use
     credits: Credits
+index:
+  contact:
+    title: Contact
+    header: Contact us
+    form:
+      nom: Name
+      prenom: First name
+      email: E-mail
+      objet: Subject
+      contenu: Content
+      send: Send
+  credits:
+    title: Credits
+    header: Credits
+    thanks:
+    - '[url=//getbootstrap.com]Bootstrap[/url] for their CSS framework'
+    - '[url] Glyphicons[/url] for icons'
+    - '[url]Symfony[/url] for PHP framework'
+    - '[url]XXX[/url] for the site hosting'
+  index:
+    header: Welcome to Quimper Caravan site
+    carousel:
+      more: See more
+  links:
+    title: Useful links
+    header: Useful links
+    caravane: The national Venture's site
+    sgdf: The Scouts and Guides of France's site
+  terms:
+    title: Terms of use
+    header: Terms of use
+    list:
+    - Respect for the Charter applies also on the site.
+    - Acts of vandalism are prohibited.
+    - Only leaders can change the responsibilities and teams. Make them your potential claims (politely).
+    - The chat remains stored in database until it is deleted. It is not available to the Communication responsibility.
+    - This website uses cookies for user identification purposes. A cookie is a (small) text file stored on your computer and which is sent by it to the server each request.
+event:
+  add:
+    header: Add an event
+  edit:
+    header: Edit the event "%title%"
+  form:
+    date:
+      debut: Beginning
+      fin: End
+    title: Title
+    content: Notes
+    submit: Add
+  layout:
+    title: Calendar
+    header: Calendar
+  view:
+    by:
+      new: New
+      date: From %debut% to %fin%
+    one:
+      date: From %debut% to %fin%
+      edit: Edit
+      delete: Remove
+chefs:
+  index:
+    header:
+    - Welcome to this part of the site reserved for leaders.
+    - 'From here you can:'
+    send_mail: Send e-mails to site users
+    list_group: View and edit patrols
+    view_roles: View and edit roles, responsibilities
+  layout:
+    title: Leaders
+    header: Leaders
+  send_email:
+    title: E-mail
+    header: Send an e-mail to site users
+    form:
+      to:
+        users: To users
+        groups: To groups
+      is_bcc:
+        label: Send mode
+        true: Hidden copy
+        false: To
+      subject: Subject
+      body: Content
+      submit: Send
+chat:
+  view:
+    header: Chat between ventures
+    send: Send
+    actualize: Actualize
+  getmessages:
+    user: The caravan
+    message: Has not used her chat. Be the first to write a message.
+actus:
+  add:
+    help:
+      list:
+      - Content must be at least {{ limit }} characters.
+      - The image must be in JPEG, JPG, PNG, GIF or SVG.
+      - The image can not be modified after publication.
+  edit:
+    header: Edit a news
+    help:
+      title: Help
+      list:
+      - You can use BBCode for the content.
+  form:
+    image: Picture
+    submit: Publish
+  layout:
+    header: News
+  view:
+    more: Read more
+    date: The %date%
+    'null': There is no news published yet.
+    new: Publish a news
+  viewone:
+    date: The %date%
+    edit: Edit
+    delete: Remove
+chatbot:
+  erase_all: '[b]Chat cleared[/b]'
+  notifications:
+    new:
+      actu: 'New news: [i][url=%url%]%title%[/url][/i] posted by %user%.'
+      user: A new user to the charming name of %name% just signed.

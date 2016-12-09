@@ -1,2 +1,19 @@
 # CoreBundle
 index.contact.flash: Your e-mail was successfully send
+event:
+  add.flash: Event added
+  delete.flash: Event deleted
+  edit.flash: Changes saved
+chefs.send_email.flash: The e-mail was sent
+actus:
+  add.flash: New recorded
+  edit.flash: Changes saved
+  delete.flash: New deleted
+# UserBundle
+role.flash.edited: User responsibilities have changed
+registration.flash.user_created: The user was created successfully
+profile.flash.updated: The profile has been updated
+group.flash:
+  updated: The patrol was updated
+  created: The patrol was created
+  deleted: The patrol has been removed

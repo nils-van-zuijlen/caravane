@@ -53,7 +53,7 @@ index:
     header: Conditions d'utilisation
     list:
     - Le respect de la charte s'applique aussi sur le site.
-    - Les actes de vandalismes sont interdits.
+    - Les actes de vandalisme sont interdits.
     - Seuls les chefs peuvent modifier les responsabilités et les équipes. Faites leur vos éventuelles réclamations (poliement).
     - Le chat reste enregistré en base de donnée jusqu'à ce qu'il soit effacé. Il n'est consultable que par le webmaster (Responsable communication)
     - Ce site utilise des cookies à des fins d'identification des utilisateurs. Un cookie est un (petit) fichier texte stocké sur votre ordinateur et qui est envoyé par celui-ci au serveur à chaque requète.
@@ -122,7 +122,7 @@ actus:
       - Vous pouvez utiliser du BBCode pour le contenu.
       - Tous les champs du formulaire sont obligatoires.
       - Le titre doit faire entre 5 et 255 caractères.
-      - Le contenu doit faire au moins 5 caractères.
+      - Le contenu doit faire au moins {{ limit }} caractères.
       - L'image doit être au format JPEG, JPG, PNG, GIF ou SVG.
       - L'image ne pourra pas être modifiée après publication.
   edit:
