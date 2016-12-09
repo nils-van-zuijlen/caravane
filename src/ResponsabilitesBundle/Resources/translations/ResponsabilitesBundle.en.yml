@@ -165,7 +165,11 @@ materiel:
       view_objet: View all inventory objects
       view_type: View all types of objects
 index:
+  quote: |-
+    If you want to succeed in your life, be able to take responsibilities.
+    For that, you must have self-confidence, know your work and exercise your responsibility.
   quote_auth: Baden Powell
+  head: From here you can access every responsibility specific pages.
   pages:
     animation: Animation responsibility
     budget: Finance responsibility
@@ -178,3 +182,22 @@ layout:
 form:
   extra_job:
     equipe: Patrol
+    date: Extra job's date
+    montant: Amount earned (€)
+    commentaires: Comments
+    submit: Save
+  menu:
+    titre: Menu name
+    date: Date and hour
+    entree: Starter
+    plat: Dish
+    dessert: Dessert
+    submit: Save
+  objet:
+    nom: Object name (several objects can have the same name)
+    type: Object type
+    commentaires: Comments
+    submit: Save
+  type_objet:
+    nom: Name
+    submit: Save

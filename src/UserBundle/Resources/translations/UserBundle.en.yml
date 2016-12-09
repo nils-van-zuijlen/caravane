@@ -82,12 +82,17 @@ profile:
     reset: Discard changes
 group:
   edit:
+    title: Patrols
     header: Edit the team name "%name%"
     submit: Update patrol
   show:
     name: 'Patrol name: %name%'
     members: Members
+    no_members: Not (yet) members.
+    edit: Edit
+    delete: Remove
   new:
+    title: Patrols
     header: New patrol
     submit: Create patrol
   list:
@@ -98,3 +103,14 @@ change_password:
   submit: Change password
 form:
   group_name: Patrol name
+  username: Username
+  email: E-mail
+  current_password: Current password
+  password: Password
+  password_confirmation: Password confirmation
+  new_password: New Password
+  new_password_confirmation: New password confirmation
+  members: Members
+  nom: Name
+  prenom: First name
+  roles: Roles

@@ -11,9 +11,30 @@ actus:
   delete.flash: New deleted
 # UserBundle
 role.flash.edited: User responsibilities have changed
+resetting.flash.success: The password has been reset successfully
 registration.flash.user_created: The user was created successfully
 profile.flash.updated: The profile has been updated
 group.flash:
   updated: The patrol was updated
   created: The patrol was created
   deleted: The patrol has been removed
+change_password.flash.success: The password has been changed
+budget.extra_job.flash:
+  add: The new extra job was registered
+  delete: The extra job was deleted
+intendance.menu.flash:
+  add: Menu registered
+  edit: Menu registered
+  delete: The menu has been removed
+materiel.flash:
+  type:
+    add: Object type created
+    edit: Object type edited
+    delete: Object type removed
+  objet:
+    add: Object saved
+    edit: Object's edits saved
+    delete: Deleted object
+forum.flash.forum:
+  add: Forum created
+  edit: Forum edited

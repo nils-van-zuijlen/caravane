@@ -22,6 +22,7 @@ core:
     content:
       string: Must be text
   file:
+    max_size: The file must be less than {{limit}} {{suffix}}
     disallow_empty: Please send a file that has a content
   contact:
     nom:
