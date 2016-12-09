@@ -122,7 +122,7 @@ actus:
       - Vous pouvez utiliser du BBCode pour le contenu.
       - Tous les champs du formulaire sont obligatoires.
       - Le titre doit faire entre 5 et 255 caractères.
-      - Le contenu doit faire au moins {{ limit }} caractères.
+      - Le contenu doit faire au moins 5 caractères.
       - L'image doit être au format JPEG, JPG, PNG, GIF ou SVG.
       - L'image ne pourra pas être modifiée après publication.
   edit:

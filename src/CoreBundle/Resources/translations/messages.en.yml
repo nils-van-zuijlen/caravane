@@ -122,7 +122,7 @@ actus:
       - You can use BBCode for the content.
       - All form fields are required.
       - Title should be between 5 and 255 characters
-      - Content must be at least {{ limit }} characters.
+      - The content must be at least 5 characters.
       - The image must be in JPEG, JPG, PNG, GIF or SVG.
       - The image can not be modified after publication.
   edit:
