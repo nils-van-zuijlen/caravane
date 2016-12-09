@@ -1,0 +1,19 @@
+core:
+  actus:
+    title:
+      length:
+        min: Title must be at least {{ limit }} characters
+        max: Title must be at most {{ limit }} characters
+    content:
+      length:
+        min: A few more characters, please! (At least {{ limit }})
+  event:
+    date_debut:
+      date_time: Must be a date
+    date_fin:
+      date_time: Must be a date
+    title:
+      length:
+        min: Title must be at least {{limit}} characters
+        max: Title must be at most {{limit}} characters
+      not_blank: Title must not be empty

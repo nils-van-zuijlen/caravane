@@ -1,0 +1,14 @@
+layout:
+  navbar:
+    nav:
+      links:
+        title: Useful links
+        caravane: The national PioK's site
+      responsabilites: Responsibilities
+    user:
+      connected_as: Logged in as
+      logout: Logout
+      login: Login
+  footer:
+    terms: Terms of use
+    credits: Credits

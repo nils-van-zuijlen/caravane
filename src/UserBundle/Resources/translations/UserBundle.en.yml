@@ -1,0 +1,9 @@
+security:
+  login:
+    header: Login
+    username: Username
+    password: Password
+    remember_me: Remember me
+    submit: Login
+    register: I do not have an account yet
+    reset: I forgot my password

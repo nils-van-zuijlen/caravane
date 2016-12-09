@@ -1,21 +1,20 @@
 layout:
-    title: Forum
-    header: Forum
+  title: Forum
+  header: Forum
 forum:
-    add_forum:
-        title: Nouveau
-        header: Ajouter un forum
-    edit_forum:
-        title: Modifier
-        header: Modifier le forum %name%
-    form:
-        title: Titre
-        content: Contenu
-        categorie: Catégorie
-        submit: Publier
-    view:
-        date: Le %date%
-        edit: Modifier
-    view_categorie:
-        new_forum: Nouveau
-    #view_categories:
+  add_forum:
+    title: Nouveau
+    header: Ajouter un forum
+  edit_forum:
+    title: Modifier
+    header: Modifier le forum %name%
+  form:
+    title: Titre
+    content: Contenu
+    categorie: Catégorie
+    submit: Publier
+  view:
+    date: Le %date%
+    edit: Modifier
+  view_categorie:
+    new_forum: Nouveau
