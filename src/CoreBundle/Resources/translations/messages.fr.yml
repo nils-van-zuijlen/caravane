@@ -1,164 +1,157 @@
 layout:
-    title: Caravane Quimper
-    navbar:
-        brand: Caravane Quimper
-        nav:
-            actus: Actualités
-            chat: Chat
-            forum: Forum
-            links:
-                title: Liens utiles
-                caravane: Le site national des PiosK
-                sgdf: Le site des Scouts et Guides de France
-            chefs: Chefs
-            responsabilites: Responsabilités
-        user:
-            connected_as: Connecté en tant que
-            logout: Déconnection
-            login: Connection
-    footer:
-        contact: Contact
-        terms: Conditions d'utilisation
-        credits: Crédits
-
-index:
-    contact:
-        title: Contact
-        header: Contactez nous
-        form:
-            nom: Nom
-            prenom: Prénom
-            email: E-mail
-            objet: Objet
-            contenu: Contenu
-            send: Envoyer
-    credits:
-        title: Crédits
-        header: Crédits
-        thanks:
-            - "[url=//getbootstrap.com]Bootstrap[/url] pour leur framework CSS"
-            - "[url]Glyphicons[/url] pour les icones"
-            - "[url]Symfony[/url] pour le framework PHP"
-            - "[url]XXX[/url] pour l'hébergement du site"
-    index:
-        header: Bienvenue sur le site de la Caravane de Quimper
-        carousel:
-            more: Voir plus
-    links:
+  title: Caravane Quimper
+  navbar:
+    brand: Caravane Quimper
+    nav:
+      actus: Actualités
+      chat: Chat
+      forum: Forum
+      links:
         title: Liens utiles
-        header: Liens utiles
         caravane: Le site national des PiosK
         sgdf: Le site des Scouts et Guides de France
-    terms:
-        title: Conditions d'utilisation
-        header: Conditions d'utilisation
-        list:
-            - Le respect de la charte s'applique aussi sur le site.
-            - Les actes de vandalismes sont interdits.
-            - Seuls les chefs peuvent modifier les responsabilités et les équipes. Faites leur vos éventuelles réclamations (poliement).
-          #  - L'annuaire n'est pas disponible à des fins de spamming.
-            - Le chat reste enregistré en base de donnée jusqu'à ce qu'il soit effacé. Il n'est consultable que par le webmaster (Responsable communication)
-            - Ce site utilise des cookies à des fins d'identification des utilisateurs. Un cookie est un (petit) fichier texte stocké sur votre ordinateur et qui est envoyé par celui-ci au serveur à chaque requète.
-
+      chefs: Chefs
+      responsabilites: Responsabilités
+    user:
+      connected_as: Connecté en tant que
+      logout: Déconnection
+      login: Connexion
+  footer:
+    contact: Contact
+    terms: Conditions d'utilisation
+    credits: Crédits
+index:
+  contact:
+    title: Contact
+    header: Contactez nous
+    form:
+      nom: Nom
+      prenom: Prénom
+      email: E-mail
+      objet: Objet
+      contenu: Contenu
+      send: Envoyer
+  credits:
+    title: Crédits
+    header: Crédits
+    thanks:
+    - '[url=//getbootstrap.com]Bootstrap[/url] pour leur framework CSS'
+    - '[url]Glyphicons[/url] pour les icones'
+    - '[url]Symfony[/url] pour le framework PHP'
+    - '[url]XXX[/url] pour l''hébergement du site'
+  index:
+    header: Bienvenue sur le site de la Caravane de Quimper
+    carousel:
+      more: Voir plus
+  links:
+    title: Liens utiles
+    header: Liens utiles
+    caravane: Le site national des PiosK
+    sgdf: Le site des Scouts et Guides de France
+  terms:
+    title: Conditions d'utilisation
+    header: Conditions d'utilisation
+    list:
+    - Le respect de la charte s'applique aussi sur le site.
+    - Les actes de vandalisme sont interdits.
+    - Seuls les chefs peuvent modifier les responsabilités et les équipes. Faites leur vos éventuelles réclamations (poliement).
+    - Le chat reste enregistré en base de donnée jusqu'à ce qu'il soit effacé. Il n'est consultable que par le webmaster (Responsable communication)
+    - Ce site utilise des cookies à des fins d'identification des utilisateurs. Un cookie est un (petit) fichier texte stocké sur votre ordinateur et qui est envoyé par celui-ci au serveur à chaque requète.
 event:
-    add:
-        header: Ajouter un évenement
-    edit:
-        header: 'Modifier l''évenement "%title%"'
-    form:
-        date:
-            debut: Début
-            fin: Fin
-        title: Titre
-        content: Notes
-        submit: Ajouter
-    layout:
-        title: Planning
-        header: Planning
-    view:
-        by:
-            new: Nouveau
-            date: 'Du %debut% au %fin%'
-        one:
-            date: 'Du %debut% au %fin%.'
-            edit: Modifier
-            delete: Supprimer
-
+  add:
+    header: Ajouter un évenement
+  edit:
+    header: Modifier l'évenement "%title%"
+  form:
+    date:
+      debut: Début
+      fin: Fin
+    title: Titre
+    content: Notes
+    submit: Ajouter
+  layout:
+    title: Planning
+    header: Planning
+  view:
+    by:
+      new: Nouveau
+      date: Du %debut% au %fin%
+    one:
+      date: Du %debut% au %fin%.
+      edit: Modifier
+      delete: Supprimer
 chefs:
-    index:
-        header:
-            - Bienvenue sur cette partie du site réservée aux chefs.
-            - 'D''ici vous pouvez:'
-        send_mail: Envoyer des e-mails aux utilisateurs du site
-        list_group: Voir et modifier les équipes
-        view_roles: Voir et modifier les rôles, les responsabilités
-    layout:
-        title: Chefs
-        header: Chefs
-    send_email:
-        title: E-mail
-        header: Envoyer un e-mail aux utilisateurs du site
-        form:
-            to:
-                users: Aux utilisateurs
-                groups: Aux groupes
-            is_bcc:
-                label: 'Mode d''envoi'
-                "true": Copie cachée
-                "false": À
-            subject: Objet
-            body: Contenu
-            submit: Envoyer
-
-chat:
-    view:
-        header: Chat entre PiosK
-        send: Envoyer
-        actualize: Actualiser
-    getmessages:
-        user: La caravane
-        message: N'a pas encore utilisé son chat. Sois le premier à écrire un message.
-
-actus:
-    add:
-        header: Publier une nouvelle actualité
-        help:
-            title: Aide
-            list:
-                - Vous pouvez utiliser du BBCode pour le contenu.
-                - Tous les champs du formulaire sont obligatoires.
-                - Le titre doit faire entre 5 et 255 caractères.
-                - Le contenu doit faire au moins 5 caractères.
-                - L'image doit être au format JPEG, JPG, PNG, GIF ou SVG.
-                - L'image ne pourra pas être modifiée après publication.
-    edit:
-        header: Modifier une actualité
-        help:
-            title: Aide
-            list:
-                - Vous pouvez utiliser du BBCode pour le contenu.
-                - Le titre doit faire entre 5 et 255 caractères.
-                - Le contenu doit faire au moins 5 caractères.
+  index:
+    header:
+    - Bienvenue sur cette partie du site réservée aux chefs.
+    - 'D''ici vous pouvez:'
+    send_mail: Envoyer des e-mails aux utilisateurs du site
+    list_group: Voir et modifier les équipes
+    view_roles: Voir et modifier les rôles, les responsabilités
+  layout:
+    title: Chefs
+    header: Chefs
+  send_email:
+    title: E-mail
+    header: Envoyer un e-mail aux utilisateurs du site
     form:
-        title: Titre
-        content: Contenu
-        image: Image
-        submit: Publier
-    layout:
-        header: Actualités
-    view:
-        more: Lire plus
-        date: 'Le %date%'
-        "null": Il n'y a pas d'actualités publiées pour le moment.
-        new: Publier une nouvelle actualité
-    viewone:
-        date: 'Le %date%'
-        edit: Modifier
-        delete: Supprimer
-
+      to:
+        users: Aux utilisateurs
+        groups: Aux groupes
+      is_bcc:
+        label: Mode d'envoi
+        true: Copie cachée
+        false: À
+      subject: Objet
+      body: Contenu
+      submit: Envoyer
+chat:
+  view:
+    header: Chat entre PiosK
+    send: Envoyer
+    actualize: Actualiser
+  getmessages:
+    user: La caravane
+    message: N'a pas encore utilisé son chat. Sois le premier à écrire un message.
+actus:
+  add:
+    header: Publier une nouvelle actualité
+    help:
+      title: Aide
+      list:
+      - Vous pouvez utiliser du BBCode pour le contenu.
+      - Tous les champs du formulaire sont obligatoires.
+      - Le titre doit faire entre 5 et 255 caractères.
+      - Le contenu doit faire au moins 5 caractères.
+      - L'image doit être au format JPEG, JPG, PNG, GIF ou SVG.
+      - L'image ne pourra pas être modifiée après publication.
+  edit:
+    header: Modifier une actualité
+    help:
+      title: Aide
+      list:
+      - Vous pouvez utiliser du BBCode pour le contenu.
+      - Le titre doit faire entre 5 et 255 caractères.
+      - Le contenu doit faire au moins 5 caractères.
+  form:
+    title: Titre
+    content: Contenu
+    image: Image
+    submit: Publier
+  layout:
+    header: Actualités
+  view:
+    more: Lire plus
+    date: Le %date%
+    'null': Il n'y a pas d'actualités publiées pour le moment.
+    new: Publier une nouvelle actualité
+  viewone:
+    date: Le %date%
+    edit: Modifier
+    delete: Supprimer
 chatbot:
-    erase_all: "[b]Chat effacé[/b]"
-    notifications:
-        new:
-            actu: "Nouvelle actualité: [i][url=%url%]%title%[/url][/i] postée par %user%."
-            user: "Un nouvel utilisateur au nom charmant de %name% vient de s'inscrire."
+  erase_all: '[b]Chat effacé[/b]'
+  notifications:
+    new:
+      actu: 'Nouvelle actualité: [i][url=%url%]%title%[/url][/i] postée par %user%.'
+      user: Un nouvel utilisateur au nom charmant de %name% vient de s'inscrire.

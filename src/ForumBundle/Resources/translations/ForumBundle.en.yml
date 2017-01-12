@@ -1,0 +1,20 @@
+layout:
+  title: Forum
+  header: Forum
+forum:
+  add_forum:
+    title: New
+    header: Add Forum
+  edit_forum:
+    title: Edit
+    header: Edit the forum %name%
+  form:
+    title: Title
+    content: Content
+    categorie: Category
+    submit: Publish
+  view:
+    date: The %date%
+    edit: Edit
+  view_categorie:
+    new_forum: New
