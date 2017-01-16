@@ -1,7 +1,7 @@
 {# src/CoreBundle/Resources/views/layout.html.twig #}
 
 <!DOCTYPE html>
-<html>
+<html lang="{{ app.request.locale }}">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +23,7 @@
 	{% endblock icons %}
 </head>
 <body>
-	<div class="navbar navbar-inverse navbar-fixed-top">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="{{ path('index') }}">{{ 'layout.navbar.brand'|trans }}</a>
@@ -34,7 +34,7 @@
 				{% if is_granted('ROLE_PIOK') %}
 					<li><a href="{{ path('core_chat_view') }}">{{ 'layout.navbar.nav.chat'|trans }}</a></li>
 				{% endif %}
-				<li><a href="{{ path('forum_forum_view_categories') }}">{{ 'layout.navbar.nav.forum'|trans }}</a></li>
+				<li><a href="{{ path('discutea_forum_homepage') }}">{{ 'layout.navbar.nav.forum'|trans }}</a></li>
 				<li class="dropdown">
 					<a href="{{ path('links') }}" data-toggle="dropdown">{{ 'layout.navbar.nav.links.title'|trans }}</a>
 					<ul class="dropdown-menu">
@@ -63,7 +63,7 @@
 				{% endif %}
 			</div>
 		</div>
-	</div>
+	</nav>
 
 	<div class="container">
 
