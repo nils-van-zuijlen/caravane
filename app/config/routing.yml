@@ -30,10 +30,6 @@ fos_comment_api:
     prefix: /api
     defaults: { _format: html }
 
-forum:
-    resource: "@ForumBundle/Resources/config/routing.yml"
-    prefix:   /forum
-
 user_role:
     resource: "@UserBundle/Resources/config/routing/role.yml"
     prefix:   /responsabilites
@@ -41,3 +37,7 @@ user_role:
 responsabilites:
     resource: "@ResponsabilitesBundle/Resources/config/routing/all.yml"
     prefix:   /responsabilites
+
+discutea_forum:
+    resource: "@DForumBundle/Resources/config/routing.yml"
+    prefix:   /
