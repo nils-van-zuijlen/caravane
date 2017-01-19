@@ -1,0 +1,5 @@
+responsabilites_vie_spi_index:
+    path: /
+    defaults:
+        _controller: ResponsabilitesBundle:VieSpi:index
+    methods: GET
