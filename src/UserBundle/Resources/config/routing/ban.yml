@@ -1,0 +1,11 @@
+user_ban_ban:
+    path: /{user}/ban
+    defaults:
+        _controller: UserBundle:BanController:ban
+    method: GET
+
+user_ban_deban:
+    path: /{user}/deban
+    defaults:
+        _controller: UserBundle:BanController:deban
+    method: GET
