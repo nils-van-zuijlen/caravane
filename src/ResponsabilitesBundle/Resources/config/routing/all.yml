@@ -27,3 +27,7 @@ responsabilites_materiel:
 responsabilites_vie_spi:
     prefix: /vie-spirituelle
     resource: vie_spi.yml
+
+responsabilites_documentation:
+    prefix:   /documentation
+    resource: documentation.yml

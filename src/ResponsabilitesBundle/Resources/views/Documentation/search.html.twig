@@ -1,0 +1,35 @@
+{% extends 'ResponsabilitesBundle::layout.html.twig' %}
+
+{% trans_default_domain 'ResponsabilitesBundle' %}
+
+{% block title %}{{ 'documentation.search.title'|trans }} – {{ parent() }}{% endblock %}
+
+{% block resp_body %}
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<h3>{{ 'documentation.search.header'|trans }}</h3>
+		</div>
+	</div>
+	<form class="form-horizontal">
+		<div class="alert alert-danger" style="display: none;">Veuillez insérer un élément de recherche</div>
+		<div class="btn-group" id="addElement">
+			<button class="btn btn-info dropdown-toggle" data-toggle="dropdown">Ajouter un élément <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a value="default" class="pointer">Contient</a></li>
+				<li><a value="quote" class="pointer">Contient exactement</a></li>
+				<li><a value="site" class="pointer">Rechercher sur le site</a></li>
+				<li><a value="inurl" class="pointer">Contient dans l'url</a></li>
+				<li><a value="or" class="pointer">Ou</a></li>
+				<li><a value="and" class="pointer">Et</a></li>
+				<li><a value="not" class="pointer">Ne contient pas</a></li>
+			</ul>
+		</div>
+		<input type="submit" class="btn btn-success" value="Lancer la recherche">
+	</form>
+{% endblock %}
+
+{% block scripts %}
+	{{ parent() }}
+	<script type="text/javascript" src="{{ asset('bundles/responsabilites/documentation/search.js') }}"></script>
+	{% include 'ResponsabilitesBundle:Documentation:search_templates.html.twig' %}
+{% endblock %}

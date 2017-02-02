@@ -1,0 +1,35 @@
+{% extends 'ResponsabilitesBundle::layout.html.twig' %}
+
+{% trans_default_domain 'ResponsabilitesBundle' %}
+
+{% block title %}{{ 'documentation.index.title'|trans }} – {{ parent() }}{% endblock %}
+
+{% block resp_body %}
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<h3>{{ 'documentation.index.header'|trans }}</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<p>
+				{# description de la responsabilité #}
+				{{ 'documentation.index.description.chapeau'|trans|bbcode_filter('all') }}
+			</p>
+			<h5>{{ 'documentation.index.description.bdd.head'|trans }}</h5>
+			<p>
+				{{ 'documentation.index.description.bdd.content'|trans|bbcode_filter('all') }}
+			</p>
+			<h5>{{ 'documentation.index.description.livre.head'|trans }}</h5>
+			<p>
+				{{ 'documentation.index.description.livre.content'|trans|bbcode_filter('all') }}
+			</p>
+			<ul class="list-group">
+				{# liens vers les pages de la responsabilité #}
+				<a href="{{ path('responsabilites_documentation_search') }}" class="list-group-item">
+					{{ 'documentation.index.pages.search'|trans }}
+				</a>
+			</ul>
+		</div>
+</div>
+{% endblock %}
