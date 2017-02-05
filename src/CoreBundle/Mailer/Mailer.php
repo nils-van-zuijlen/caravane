@@ -79,8 +79,6 @@ class Mailer implements MailerInterface
 			$bcc = array();
 		}
 
-		$parameters = $this->parameters;
-
 		$this
 			->sendMessage(
 				array(
@@ -88,6 +86,42 @@ class Mailer implements MailerInterface
 					"body"    => $email->getBody(),
 					),
 				$this->parameters['template']['chefs'],
+				$email->getFrom(),
+				$to,
+				$bcc
+				);
+	}
+
+	public function sendContactEmail(EmailInterface $email)
+	{
+		if ($email->getType() != 'contact') {
+			throw new \UnexpectedValueException(
+				'Expected EmailInterface of type "contact", got type "'.$email->getType().'".'
+				);
+		}
+
+		$to  = $email->getTo()['to'];
+		$bcc = $email->getTo()['bcc'];
+
+		if ($to === null) {
+			$to = array();
+		}
+		if ($bcc === null) {
+			$bcc = array();
+		}
+
+		if (strtolower($to[0]." ") == "contact ") {
+			$to = $this->parameters['to_email']['contact'];
+		}
+
+		$this
+			->sendMessage(
+				array(
+					"subject"      => $email->getSubject(),
+					"body"         => $email->getBody(),
+					"display_name" => $email->getDisplay(),
+					),
+				$this->parameters['template']['contact'],
 				$email->getFrom(),
 				$to,
 				$bcc

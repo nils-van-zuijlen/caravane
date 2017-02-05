@@ -33,28 +33,28 @@ class ContactType extends AbstractType
 					)
 			)
 			->add(
-				'email', 
+				'email',
 				EmailType::class,
 				array(
 					'label' => 'index.contact.form.email',
 					)
 			)
 			->add(
-				'objet', 
+				'subject',
 				TextType::class,
 				array(
 					'label' => 'index.contact.form.objet',
 					)
 			)
 			->add(
-				'contenu', 
+				'body',
 				TextareaType::class,
 				array(
 					'label' => 'index.contact.form.contenu',
 					)
 			)
 			->add(
-				'send', 
+				'send',
 				SubmitType::class,
 				array(
 					'label' => 'index.contact.form.send',
@@ -70,7 +70,7 @@ class ContactType extends AbstractType
 		$resolver
 			->setDefaults(
 				array(
-					'data_class' => 'CoreBundle\FormModels\ContactModel'
+					'data_class' => 'CoreBundle\FMailer\ContactEmail',
 					)
 				);
 	}
