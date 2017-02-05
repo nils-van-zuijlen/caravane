@@ -22,6 +22,7 @@ role:
             nickname: Prénom
             role: Rôles
             ban: Banni
+            actions: Actions
         roles:
             ROLE_CHEF: Chef
             ROLE_PIOK: PioK
@@ -40,6 +41,8 @@ role:
         banned:
             "yes": Oui
             "no": Non
+            ban: Bannir
+            deban: Rétablir
 
 resetting:
     password_already_requested: 'Un nouveau mot de passe a déjà été demandé pour cet utilisateur dans les dernières 24 heures.'

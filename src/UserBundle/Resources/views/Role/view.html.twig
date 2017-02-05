@@ -16,6 +16,9 @@
 						<th>{{ 'role.view.thead.nickname'|trans }}</th>
 						<th>{{ 'role.view.thead.role'|trans }}</th>
 						<th>{{ 'role.view.thead.ban'|trans }}</th>
+						{% if is_granted('ROLE_BANNIR') %}
+							<th>{{ 'role.view.actions'|trans }}</th>
+						{% endif %}
 					</tr>
 				</thead>
 				<tfoot>
@@ -25,6 +28,9 @@
 						<th>{{ 'role.view.thead.nickname'|trans }}</th>
 						<th>{{ 'role.view.thead.role'|trans }}</th>
 						<th>{{ 'role.view.thead.ban'|trans }}</th>
+						{% if is_granted('ROLE_CHEF') %}
+							<th>{{ 'role.view.actions'|trans }}</th>
+						{% endif %}
 					</tr>
 				</tfoot>
 				<tbody>
@@ -41,8 +47,25 @@
 							</td>
 							<td>{{ user.nom }}</td>
 							<td>{{ user.prenom }}</td>
-							<td>{% for role in user.roles %}{{ ('role.view.roles.' ~ role)|trans }} {% endfor %}</td>
-							<td>{% if user.locked %}<strong>{{ 'role.view.banned.yes'|trans }}</strong>{% else %}{{ 'role.view.banned.no'|trans }}{% endif %}</td>
+							<td>
+								{% for role in user.roles %}{{ ('role.view.roles.' ~ role)|trans }} {% endfor %}
+							</td>
+							<td>
+								{% if user.locked %}
+									<strong>{{ 'role.view.banned.yes'|trans }}</strong>
+								{% else %}
+									{{ 'role.view.banned.no'|trans }}
+								{% endif %}
+							</td>
+							{% if is_granted('ROLE_CHEF') %}
+								<td>
+									{% if user.locked %}
+										<a href="{{ path('user_ban_deban', {user: user.username}) }}">{{ 'role.view.banned.deban'|trans }}</a>
+									{% else %}
+										<a href="{{ path('user_ban_ban', {user: user.username}) }}">{{ 'role.view.banned.ban'|trans }}</a>
+									{% endif %}
+								</td>
+							{% endif %}
 						</tr>
 					{% endfor %}
 				</tbody>
