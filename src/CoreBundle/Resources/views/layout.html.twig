@@ -13,7 +13,9 @@
 		<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap-theme.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('bundles/core/css/layout.css') }}" />
-		<link rel="stylesheet" href="{{ asset("bundles/foscomment/css/comments.css") }}" type="text/css" />
+		{% stylesheets '@FOSCommentBundle/Resources/public/css/comments.css' %}
+			<link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+		{% endstylesheets %}
 	{% endblock styles %}
 
 	{% block icons %}

@@ -164,8 +164,34 @@ fos_comment:
     db_driver: orm
     class:
         model:
-            comment: ForumBundle\Entity\Comment
-            thread:  ForumBundle\Entity\Thread
+            comment: CoreBundle\Entity\Comment
+            thread:  CoreBundle\Entity\Thread
+    acl: true
+    acl_roles:
+        comment:
+            create: IS_AUTHENTICATED_REMEMBERED
+            view: IS_AUTHENTICATED_REMEMBERED
+            edit: ROLE_MODERATOR
+            delete: ROLE_MODERATOR
+        thread:
+            create: IS_AUTHENTICATED_REMEMBERED
+            view: IS_AUTHENTICATED_REMEMBERED
+            edit: ROLE_MODERATOR
+            delete: ROLE_MODERATOR
+        vote:
+            create: IS_AUTHENTICATED_REMEMBERED
+            view: IS_AUTHENTICATED_REMEMBERED
+            edit: ROLE_MODERATOR
+            delete: ROLE_MODERATOR
+    service:
+        acl:
+            thread:  fos_comment.acl.thread.roles
+            comment: fos_comment.acl.comment.roles
+            vote:    fos_comment.acl.vote.roles
+        manager:
+            thread:  fos_comment.manager.thread.acl
+            comment: fos_comment.manager.comment.acl
+            vote:    fos_comment.manager.vote.acl
 
 # KNPPaginatorBundle
 knp_paginator:
