@@ -1,0 +1,7 @@
+{% block subject %}{{ subject }}{% endblock %}
+{% block body_text %}{{ display_name }} vous a envoyé un e-mail :
+{{ body|bbcode_clean }}{% endblock %}
+{% block body_html %}
+	<p>{{ display_name }} vous a envoyé un e-mail :</p>
+	<p>{{ body|bbcode_filter() }}</p>
+{% endblock %}

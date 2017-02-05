@@ -10,10 +10,13 @@ services:
                     chefs:        "CoreBundle:Chefs:email.html.twig"
                     confirmation: "UserBundle:Registration:email.txt.twig"
                     resetting:    "UserBundle:Resetting:email.txt.twig"
+                    contact:      "CoreBundle:Index:contact_email.html.twig"
                 mailer_user: "%mailer_user%"
                 from_email:
                     confirmation: "%mailer_user%"
                     resetting:    "%mailer_user%"
+                to_email:
+                    contact: "%mailer_user%"
     core.chatbot:
         class: CoreBundle\Chatbot\Chatbot
         arguments:
