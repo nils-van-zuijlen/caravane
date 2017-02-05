@@ -63,17 +63,38 @@ communication:
         head: Le livre de la caravane
         content: |
           C'est le livre de l'unité, on y retrouve mois après mois, année après année, les activités et les Cap vécus par la caravane, les itinéraires parcourus par chaque pionnier ou caravelle avec les actions réalisées. Le penser et l'imaginer, le faire vivre pour qu'il soit une vraie boîte à souvenirs, la trace que la caravane campe et décampe...
-      informer:
-        head: Informer
-        content: |
-          Installer et tenir à jour un panneau d'informations au local et au camp avec les coordonnées de chacun, des parents et de la maîtrise et des numéros d'urgence. [url=//github.com/nils-van-zuijlen/caravane]Contribuer[/url] et mettre à jour le site internet : photos, [url=%actus_path%]actualités[/url], reportages, témoignages, déroulement des Cap et des activités.
-      temoigner:
-        head: Témoigner
-        content: |
-          Connaître la vie du groupe pour que la caravane y participe. Avec des personnes ressources, rédiger des communiqués sur les activités vécues : presse régionale écrite, TV, radio, presse spécialisée en fonction du Cap. Sans oublier des témoignages pour Oze ([email]oze@sgdf.fr[/email]) et sur le site internet des pionniers caravelles : [url=//caravane.sgdf.fr/temoigner]http://caravane.sgdf.fr[/url] rubrique Témoigner.
+        informer:
+          head: Informer
+          content: |
+            Installer et tenir à jour un panneau d'informations au local et au camp avec les coordonnées de chacun, des parents et de la maîtrise et des numéros d'urgence. [url=//github.com/nils-van-zuijlen/caravane]Contribuer[/url] et mettre à jour le site internet : photos, [url=%actus_path%]actualités[/url], reportages, témoignages, déroulement des Cap et des activités.
+        temoigner:
+          head: Témoigner
+          content: |
+            Connaître la vie du groupe pour que la caravane y participe. Avec des personnes ressources, rédiger des communiqués sur les activités vécues : presse régionale écrite, TV, radio, presse spécialisée en fonction du Cap. Sans oublier des témoignages pour Oze ([email]oze@sgdf.fr[/email]) et sur le site internet des pionniers caravelles : [url=//caravane.sgdf.fr/temoigner]http://caravane.sgdf.fr[/url] rubrique Témoigner.
     pages:
       publier_actu: Publier une actualité sur le site
-      forum_dashboard: Gérer le forum
+documentation:
+  index:
+    title: Documentation
+    header: Responsable documentation
+    description:
+      chapeau: |
+        Avec toi la caravane regarde son passé et son avenir. Tu es à la fois l'historien et celui qui se projette dans ce que les pionniers et caravelles vont vivre. Ta mission sera donc aussi bien de collecter tous les témoignages du vécu de ton unité que de rechercher les éléments nécessaires à ses projets.
+      bdd:
+        head: Base de données
+        content: |
+          Se documenter sur les personnes que la caravane va rencontrer, les lieux où elle va aller.
+          Rechercher dans les bouquins, les fiches techniques utiles au CAP ou aux autres responsabilités.
+          Répertorier toutes ces données dans un classeur ou un fichier (cartes IGN, guides touristiques, éléments pris sur internet...).
+      livre:
+        head: Livre de la caravane
+        content: |
+          Tenir le livre de la caravane en lien avec le responsable communication. Assurer avec lui les reportages photos, les récits des activités vécues...
+    pages:
+      search: Faire une recherche avancée sur Internet
+  search:
+    title: Recherche avancée – Documentation
+    header: Recherche avancée sur Internet
 intendance:
   menu:
     add:
@@ -123,7 +144,7 @@ materiel:
       header: Nouvel objet
     edit:
       title: Éditer l'objet
-      header: Éditer l'objet %nom%
+      header: 'Éditer l''objet %nom%'
     view_all:
       title: Objets
       header: Les objets enregistrés
@@ -134,7 +155,7 @@ materiel:
       title: '%nom% – Objet'
       text: |
         Du type %nom_type%, cet objet possède les caractéristiques:
-        %caractéristiques%
+         %caractéristiques%
       edit: Modifier
       delete: Supprimer
   type:
@@ -143,7 +164,7 @@ materiel:
       header: Nouveau type d'objet
     edit:
       title: Éditer le Type d'Objet
-      header: Éditer le type d'objet %nom%
+      header: 'Éditer le type d''objet %nom%'
     view_all:
       title: Types
       header: Types d'objets
@@ -180,16 +201,32 @@ materiel:
       new_type: Nouveau type d'objets
       view_objet: Voir tous les objets de l'inventaire
       view_type: Voir tous les types d'objets
+vie_spi:
+  index:
+    title: Vie Spirituelle
+    header: Vie Spirituelle
+    description:
+      chapeau: |
+        Tu rappelles à tous que la dimension spirituelle est importante même si tu n'es pas forcément spécialiste des questions de foi. Tu "pulses" la vie spirituelle de la caravane, tu l'entraînes dans les déserts et tu inventes des temps de partage et de prière originaux.
+      deserts:
+        head: Les déserts
+        content: |
+          Au début de l'année, introduire les thèmes du désert spécifique à l'année en cours. Inciter les pionniers et les caravelles à exploiter ces thèmes dans les temps spirituels, les célébrations et les temps d'équipe.
+      animation:
+        head: Animation
+        content: |
+          Ce n'est pas si difficile de prier. Trouver les moyens originaux d'inviter la caravane à vivre des temps de partage sous différentes formes : rencontres, débats, café-théo, targui... Se renseigner sur les lieux et les horaires des célébrations sur les lieux spirituels à visiter à proximité des camps (monastères, lieux de pèlerinages...). Animer des messes de groupe ou de paroisse avec la caravane.
 index:
   quote: |
     Si tu veux réussir dans ta vie, sois capable de prendre des responsabilités.
     Pour cela, il faut avoir confiance en soi, connaître son travail et exercer sa responsabilité.
   quote_auth: Baden Powell
-  head: D'ici vous pouvez acceder aux pages spécifiques à chaque responsabilité.
+  head: D'ici vous pouvez acceder aux pages spécifiques à chaque responsabilité
   pages:
     animation: Responsable Animation
     budget: Responsable Budget
     communication: Responsable Communication
+    documentation: Responsable Documentation
     intendance: Responsable Intendance
     materiel: Responsable Matériel
 layout:
