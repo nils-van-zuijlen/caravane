@@ -73,6 +73,7 @@ communication:
           Connaître la vie du groupe pour que la caravane y participe. Avec des personnes ressources, rédiger des communiqués sur les activités vécues : presse régionale écrite, TV, radio, presse spécialisée en fonction du Cap. Sans oublier des témoignages pour Oze ([email]oze@sgdf.fr[/email]) et sur le site internet des pionniers caravelles : [url=//caravane.sgdf.fr/temoigner]http://caravane.sgdf.fr[/url] rubrique Témoigner.
     pages:
       publier_actu: Publier une actualité sur le site
+      forum_dashboard: Gérer le forum
 intendance:
   menu:
     add:

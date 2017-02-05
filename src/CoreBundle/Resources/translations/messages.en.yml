@@ -6,20 +6,23 @@ layout:
       actus: News
       chat: Chat
       forum: Forum
-      links:
-        title: Useful links
-        caravane: The national Venture's site
-        sgdf: The Scouts and Guides of France's site
+      
       chefs: Leaders
       responsabilites: Responsibilities
-    user:
-      connected_as: Logged in as
-      logout: Logout
-      login: Login
+      user:
+        profile: Profile
+        connected_as: Logged in as
+        my_profile: My profile
+        logout: Logout
+        login: Login
   footer:
     contact: Contact
     terms: Terms of use
     credits: Credits
+    links:
+      title: Useful links
+      caravane: The national Venture's site
+      sgdf: The Scouts and Guides of France's site
 index:
   contact:
     title: Contact
@@ -88,6 +91,7 @@ chefs:
     send_mail: Send e-mails to site users
     list_group: View and edit patrols
     view_roles: View and edit roles, responsibilities
+    forum_dashboard: Manage the forum
   layout:
     title: Leaders
     header: Leaders

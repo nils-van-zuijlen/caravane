@@ -5,15 +5,18 @@ html {
 body {
 	padding-top: 70px;
 	/* Margin bottom by footer height +20px */
-	margin-bottom: 120px;
+	margin-bottom: 72px;
 }
 .footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
 	/* Set the fixed height of the footer here */
-	height: 100px;
+	height: 52px;
 	background-color: #e3e3e3;
+}
+.footer > .navbar {
+	margin-bottom: 0;
 }
 .image {
 	width: 100%;

@@ -23,44 +23,83 @@
 	{% endblock icons %}
 </head>
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="{{ path('index') }}">{{ 'layout.navbar.brand'|trans }}</a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="{{ path('index') }}">
+					{{ 'layout.navbar.brand'|trans }}
+				</a>
 			</div>
 
-			<ul class="nav navbar-nav">
-				<li><a href="{{ path('core_actus_view', {page:1}) }}">{{ 'layout.navbar.nav.actus'|trans }}</a></li>
-				{% if is_granted('ROLE_PIOK') %}
-					<li><a href="{{ path('core_chat_view') }}">{{ 'layout.navbar.nav.chat'|trans }}</a></li>
-				{% endif %}
-				<li><a href="{{ path('discutea_forum_homepage') }}">{{ 'layout.navbar.nav.forum'|trans }}</a></li>
-				<li class="dropdown">
-					<a href="{{ path('links') }}" data-toggle="dropdown">{{ 'layout.navbar.nav.links.title'|trans }}</a>
-					<ul class="dropdown-menu">
-						<li><a href="http://caravane.sgdf.fr">{{ 'layout.navbar.nav.links.caravane'|trans }}</a></li>
-						<li><a href="http://sgdf.fr">{{ 'layout.navbar.nav.links.sgdf'|trans }}</a></li>
-					</ul>
-				</li>
-				{% if is_granted('ROLE_CHEF') %}
-					<li><a href="{{ path('core_chefs_index') }}">{{ 'layout.navbar.nav.chefs'|trans }}</a></li>
-				{% endif %}
-				<li><a href="{{ path('responsabilites_index') }}">{{ 'layout.navbar.nav.responsabilites'|trans }}</a></li>
-			</ul>
-
-			<div class="pull-right">
-				{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-					<p class="navbar-text">
-						{{ 'layout.navbar.user.connected_as'|trans }} <a href="{{ path('fos_user_profile_show') }}" style="color: inherit;">{{ app.user.display }}</a>
-					</p>
-					<a class="btn btn-default navbar-btn" href="{{ path('fos_user_security_logout') }}">
-						{{ 'layout.navbar.user.logout'|trans }}
-					</a>
-				{% else %}
-					<a class="btn btn-default navbar-btn" href="{{ path('fos_user_security_login') }}">
-						{{ 'layout.navbar.user.login'|trans }}
-					</a>
-				{% endif %}
+			<div  class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="{{ path('core_actus_view', {page:1}) }}">
+							{{ 'layout.navbar.nav.actus'|trans }}
+						</a>
+					</li>
+					{% if is_granted('ROLE_PIOK') %}
+						<li>
+							<a href="{{ path('core_chat_view') }}">
+								{{ 'layout.navbar.nav.chat'|trans }}
+							</a>
+						</li>
+					{% endif %}
+					<li>
+						<a href="{{ path('discutea_forum_homepage') }}">
+							{{ 'layout.navbar.nav.forum'|trans }}
+						</a>
+					</li>
+					{% if is_granted('ROLE_CHEF') %}
+						<li>
+							<a href="{{ path('core_chefs_index') }}">
+								{{ 'layout.navbar.nav.chefs'|trans }}
+							</a>
+						</li>
+					{% endif %}
+					<li>
+						<a href="{{ path('responsabilites_index') }}">
+							{{ 'layout.navbar.nav.responsabilites'|trans }}
+						</a>
+					</li>
+					{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+						<li class="dropdown">
+							<a data-toggle="dropdown" href="#">
+								{{ 'layout.navbar.nav.user.profile'|trans }}
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-right">
+								<li>
+									<p class="navbar-text">
+										{{ 'layout.navbar.nav.user.connected_as'|trans }} {{ app.user.display }}
+									</p>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="{{ path('fos_user_profile_show') }}">
+										{{ 'layout.navbar.nav.user.my_profile'|trans }}
+									</a>
+								</li>
+								<li>
+									<a href="{{ path('fos_user_security_logout') }}">
+										{{ 'layout.navbar.nav.user.logout'|trans }}
+									</a>
+								</li>
+							</ul>
+						</li>
+					{% else %}
+						<li>
+							<a href="{{ path('fos_user_security_login') }}">
+								{{ 'layout.navbar.nav.user.login'|trans }}
+							</a>
+						</li>
+					{% endif %}
+				</ul>
 			</div>
 		</div>
 	</nav>
@@ -80,30 +119,39 @@
 	</div>
 	
 	<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-8 col-sm-offset-2">
-					<hr style="border-color: #aaa; border-style: dashed; margin-top: 0;">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-6 col-sm-offset-3">
-					<div class="btn-group btn-group-justified">
-						<a href="{{ path('contact') }}" class="btn btn-default">
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<ul class="navbar-nav nav">
+					<li>
+						<a href="{{ path('contact') }}">
 							<span class="glyphicon glyphicon-envelope"></span>
 							{{ 'layout.footer.contact'|trans }}
 						</a>
-						<a href="{{ path('terms') }}" class="btn btn-default">
+					</li>
+					<li>
+						<a href="{{ path('terms') }}">
 							{{ 'layout.footer.terms'|trans }}
 						</a>
-						<a href="{{ path('credits') }}" class="btn btn-default">
+					</li>
+					<li>
+						<a href="{{ path('credits') }}">
 							<span class="glyphicon glyphicon-copyright-mark"></span>
 							{{ 'layout.footer.credits'|trans }}
 						</a>
-					</div>
-				</div>
+					</li>
+					<li class="dropup">
+						<a href="{{ path('links') }}" data-toggle="dropdown">
+							{{ 'layout.footer.links.title'|trans }}
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="http://caravane.sgdf.fr">{{ 'layout.footer.links.caravane'|trans }}</a></li>
+							<li><a href="http://sgdf.fr">{{ 'layout.footer.links.sgdf'|trans }}</a></li>
+						</ul>
+					</li>
+				</ul>
 			</div>
-		</div>
+		</nav>
 	</footer>
 
 	{% block scripts %}
