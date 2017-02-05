@@ -65,6 +65,7 @@ communication:
         content: 'Knowing the life of the group for the caravan participate. With resource persons, writing releases on the lived activities: written regional press, TV, radio, specialized press linked whit your PAC. Not to mention testimonials to Oze ([email]oze@sgdf.fr[/email]) and on the venture''s website: [url=//caravane.sgdf.fr/temoigner]http://caravane.sgdf.fr[/url], Testify section.'
     pages:
       publier_actu: Post news on the website
+      forum_dashboard: Manage the forum
 intendance:
   menu:
     add:

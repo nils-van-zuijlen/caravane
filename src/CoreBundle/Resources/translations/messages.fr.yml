@@ -6,20 +6,22 @@ layout:
       actus: Actualités
       chat: Chat
       forum: Forum
-      links:
-        title: Liens utiles
-        caravane: Le site national des PiosK
-        sgdf: Le site des Scouts et Guides de France
       chefs: Chefs
       responsabilites: Responsabilités
-    user:
-      connected_as: Connecté en tant que
-      logout: Déconnection
-      login: Connexion
+      user:
+        profile: Profil
+        connected_as: Connecté en tant que
+        my_profile: Mon profil
+        logout: Déconnection
+        login: Connexion
   footer:
     contact: Contact
     terms: Conditions d'utilisation
     credits: Crédits
+    links:
+        title: Liens utiles
+        caravane: Le site national des PiosK
+        sgdf: Le site des Scouts et Guides de France
 index:
   contact:
     title: Contact
@@ -88,6 +90,7 @@ chefs:
     send_mail: Envoyer des e-mails aux utilisateurs du site
     list_group: Voir et modifier les équipes
     view_roles: Voir et modifier les rôles, les responsabilités
+    forum_dashboard: Gérer les forums
   layout:
     title: Chefs
     header: Chefs
