@@ -11,9 +11,21 @@ forum:
     resource: "@ForumBundle/Resources/config/routing.yml"
     prefix:   /forum
 
-user:
-    resource: "@UserBundle/Resources/config/routing/all.yml"
+user_role:
+    resource: "@UserBundle/Resources/config/routing/role.yml"
+    prefix:   /responsabilites
 
 responsabilites:
     resource: "@ResponsabilitesBundle/Resources/config/routing/all.yml"
     prefix:   /responsabilites
+
+discutea_forum:
+    resource: "@DForumBundle/Resources/config/routing.yml"
+    prefix:   /
+
+remove_trailing_slash: # MUST BE LAST ROUTE
+    path: /{url}
+    defaults: { _controller: CoreBundle:Redirecting:removeTrailingSlash }
+    requirements:
+        url: .*/$
+    methods: [GET]

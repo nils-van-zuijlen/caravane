@@ -1,0 +1,204 @@
+animation:
+  index:
+    title: Animation
+    header: Animation responsibility
+    description:
+      chapeau: If anyone knows livening, it's you! You are responsible for games, songs, vigils and all relaxation. You participate in the animation of the time but mostly you provide the necessary equipment, supplies in new ideas, each invited to express their talents.
+      materiel:
+        head: The entertainment equipment
+        content: |-
+          Manage and complete everything the trailer needs to have fun and relax: songbooks, game books, costume trunk, face painting, juggling game equipment, etc.
+          Many resources are available in books and on the internet. To you make the right choice. To the imagination, you can also invent!
+      talents:
+        head: Talents and Skills
+        content: 'Knowing the animation skills and individual talents: musicians, artists, designers ... and how to use them for animation time of the caravan (evenings, games, masses, etc.)'
+budget:
+  extra_job:
+    add:
+      title: Extra Jobs - Budget
+      header: Save an extra job
+    view:
+      title: Extra Jobs - Budget
+      header: The extra jobs in the year %year%-%next_year%
+      thead:
+        equipe: Patrol
+        comments: Comments
+        montant: Amount (€)
+      delete_warning: 'Warning: Can not be canceled'
+      delete: Remove
+      no_extra: No extra jobs this year
+      cad: Let [em]%number%[/ em] extra job(s) who reported [strong]%amount% €[/ strong]
+  index:
+    title: Budget
+    header: Finance responsibility
+    description:
+      chapeau: You mission is to ensure that the caravan and teams have the budget necessary for the realization of their activities. For this, you establish a budget and vigils that all respect him. Depending on the project or selected activities you coordinate fundraising.
+      budget:
+        head: Budget
+        content: In connection with the other leaders and in consultation with the master, predict the budget of the caravan on the years activities and the camp account tracking, equipment purchases, financial participation ...
+      fonds:
+        head: Fundraising
+        content: |-
+          With adult support and in conjunction with the responsible communication, writing applications for aid for specific projects by assessing the necessary means.
+          Solicit administrations, companies, associations, might be interested in the project.
+          Organize and monitor extra-jobs (planning, contacts ...). Ensure that the extra jobs do not take too much control over the life of the caravan.
+    pages:
+      extra_job: Extra Jobs
+      new_extra_job: Register a new extra job
+    warning: |-
+      Money is not a goal in itself, it is the way of the project and the caravan activities.
+      [strong]The caravan did not research funding if it has no concrete plans[/strong]
+communication:
+  index:
+    title: Communication
+    header: Communication responsibility
+    description:
+      chapeau: 'You are the spokesman for the caravan, internally and externally. As such, you hold the book of the caravan, prepare with the leaders communication for parents and territory. You write articles in local newspapers, in Oze. You update or [abbr=Code of the caravan website is available on GitHub: nils-van-zuijlen/caravane]got involved[/ abbr] in the caravan site.'
+      livre:
+        head: The caravan book
+        content: This is the book of the unit, one finds month after month, year after year, the activities and Cape experienced by the caravan routes traveled by each pioneer or caravel with the actions performed. Think and imagine, to live for it to be a real memory box, track the caravan and camping decamp ...
+      informer:
+        head: Inform
+        content: Install and maintain an information panel at the local and at the camp with the coordinates of each, of the parents and the leaders and emergency numbers. [url=//github.com/nils-van-zuijlen/caravane]Contribuer[/url] and update the website photos, [url=%actus_path%]News[/url], reports, testimonials, progress Cap and activities.
+      temoigner:
+        head: Bear witness
+        content: 'Knowing the life of the group for the caravan participate. With resource persons, writing releases on the lived activities: written regional press, TV, radio, specialized press linked whit your PAC. Not to mention testimonials to Oze ([email]oze@sgdf.fr[/email]) and on the venture''s website: [url=//caravane.sgdf.fr/temoigner]http://caravane.sgdf.fr[/url], Testify section.'
+    pages:
+      publier_actu: Post news on the website
+      forum_dashboard: Manage the forum
+intendance:
+  menu:
+    add:
+      title: New - Menus
+      header: New menu
+    edit:
+      title: Edit - Menus
+      header: Editing menu %name%
+    view_all:
+      title: Menus
+      header: Menus
+      new: New
+      date: The %date%
+      no_menu: There are no menus.
+    view_one:
+      title: '%title% - Menus'
+      header: Menu %title%
+      date: Menu of %date%.
+      entree: Starter
+      plat: Dish
+      dessert: Dessert
+      edit: Edit
+      delete: Remove
+  index:
+    header: Food responsibility
+    description:
+      chapeau: 'It is you who watches to food of the caravan. You must therefore set menus, ensure supplies and ensure the proper maintenance of kitchen equipment. You are also responsible for quality: no kitchen at the time of the contest that the caravan eat well!'
+      menus:
+        head: Menus
+        content: Prepare healthy menus, varied, balanced and quality! Knowing the energy required in the age of ventures and propose menus adapted to their activities, climatic conditions, the ability to find local and environmentally friendly products.
+      approvisionnement:
+        head: Supplying
+        content: Learn about suppliers close the camp site and on their schedules to get a good price/quality ratio (note the travel time!).
+      proprete:
+        head: Cleanliness and equipment
+        content: In connection with the equipment responsibility, preparing materials for weekends and camps and ensure cleanliness and storage before and after use.
+    pages:
+      menus: Menus
+materiel:
+  objet:
+    add:
+      title: New object
+      header: New object
+    edit:
+      title: Edit object
+      header: Edit object %nom%
+    view_all:
+      title: Objects
+      header: Registered objects
+      new: New object
+      view_type: See the types of objects
+      existing: 'Existing objects:'
+    view_one:
+      title: '%nom% - Object'
+      text: |-
+        Of type %nom_type%, this object has the features:
+        %caractéristiques%
+      edit: Edit
+      delete: Remove
+  type:
+    add:
+      title: New Object Type
+      header: New object type
+    edit:
+      title: Edit Object Type
+      header: Edit object type %nom%
+    view_all:
+      title: Types
+      header: Object types
+      new: New objects type
+      view_objet: View all objects
+      existing: 'Existing types:'
+    view_one:
+      title: '%nom% - Type'
+      edit: Edit
+      delete: Remove
+      objets: 'Objects of type:'
+      all_objets: View all objects
+  index:
+    title: Equipment
+    header: Equipment responsibility
+    description:
+      chapeau: You watch that the caravan still has the equipment it needs. For this, you lists all equipment, vigils and plan maintenance renewal.
+      inventaire:
+        head: Inventory
+        content: |-
+          Make an inventory of the unit's equipment. Prepare equipment for camps and weekends and ensure its return.
+          On the site, this responsibility allows the management of the inventory.
+      entretien:
+        head: Maintenance
+        content: Review the material after each use, clean or ask to clean the dishes, sharpen the hatchets and saws, dry tents ... Not always pleasant, but it avoids having to renew too often the material!
+      renouvellement:
+        head: Renewal
+        content: List the missing material and look where renew and at what cost linked to the finance responsibility.
+    pages:
+      new_objet: New inventory object
+      new_type: New objects type
+      view_objet: View all inventory objects
+      view_type: View all types of objects
+index:
+  quote: |-
+    If you want to succeed in your life, be able to take responsibilities.
+    For that, you must have self-confidence, know your work and exercise your responsibility.
+  quote_auth: Baden Powell
+  head: From here you can access every responsibility specific pages.
+  pages:
+    animation: Animation responsibility
+    budget: Finance responsibility
+    communication: Communication responsibility
+    intendance: Food responsibility
+    materiel: Equipment responsibility
+layout:
+  title: Responsibilities
+  header: Responsibilities
+form:
+  extra_job:
+    equipe: Patrol
+    date: Extra job's date
+    montant: Amount earned (€)
+    commentaires: Comments
+    submit: Save
+  menu:
+    titre: Menu name
+    date: Date and hour
+    entree: Starter
+    plat: Dish
+    dessert: Dessert
+    submit: Save
+  objet:
+    nom: Object name (several objects can have the same name)
+    type: Object type
+    commentaires: Comments
+    submit: Save
+  type_objet:
+    nom: Name
+    submit: Save

@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\PreconditionRequiredHttpException;
 
-use CoreBundle\Entity\File;
+use CoreBundle\Entity\Type\File;
 
 class FileController extends Controller
 {
@@ -19,7 +19,7 @@ class FileController extends Controller
 			->getRepository('CoreBundle:File')
 			->find($id);
 
-		if ($file == null || !file_exists($file->getActualPath())) {
+		if ($file === null || !file_exists($file->getActualPath())) {
 			throw $this->createNotFoundException("Le fichier ".$id." n'existe pas.");
 		}
 

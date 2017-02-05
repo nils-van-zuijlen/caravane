@@ -1,0 +1,94 @@
+core:
+  actus:
+    title:
+      length:
+        min: Title must be at least {{ limit }} characters
+        max: Title must be at most {{ limit }} characters
+    content:
+      length:
+        min: A few more characters, please! (At least {{ limit }})
+    image:
+      is_image: The format of the image sent is incorrect
+  event:
+    date_debut:
+      date_time: Must be a date
+    date_fin:
+      date_time: Must be a date
+    title:
+      length:
+        min: Title must be at least {{limit}} characters
+        max: Title must be at most {{limit}} characters
+      not_blank: Title must not be empty
+    content:
+      string: Must be text
+  file:
+    max_size: The file must be less than {{limit}} {{suffix}}
+    disallow_empty: Please send a file that has a content
+  contact:
+    nom:
+      length:
+        min: Must be at least {{limit}} characters
+    prenom:
+      length:
+        min: Must be at least {{limit}} characters
+    email:
+      email: Please enter an existing email address
+    objet:
+      length:
+        min: Must be at least {{limit}} characters
+        max: Must be at most {{limit}} characters
+    contenu:
+      length:
+        min: Must be at least {{limit}} characters
+forum:
+  forum:
+    title:
+      length:
+        max: Title must be at most {{limit}} characters
+      not_blank: Title must not be empty
+    content:
+      length:
+        min: Must be at least {{limit}} characters
+      not_blank: Should not be empty
+responsabilites:
+  extra_job:
+    montant:
+      range:
+        min: You are serious?
+        max: All that?! Do it twice, please.
+    date:
+      date: Must be a valid date
+    commentaires:
+      string: Must be text
+  menu:
+    titre:
+      length:
+        max: Title must be at most {{limit}} characters
+      not_blank: Title must not be empty
+    date:
+      date_time: Must be a valid date
+      not_blank: Should not be empty
+  objet:
+    nom:
+      length:
+        max: Must be at most {{limit}} characters
+      not_blank: Should not be empty
+      string: Must be text
+    caracteristiques:
+      string: Must be text
+  type_objet:
+    nom:
+      length:
+        max: Must be at most {{limit}} characters
+      not_blank: Should not be empty
+      string: Must be text
+user:
+  user:
+    prenom:
+      not_blank: Should not be empty
+      length:
+        min: Must be at least {{limit}} characters
+    nom:
+      not_blank: Should not be empty
+      length:
+        min: Must be at least {{limit}} characters

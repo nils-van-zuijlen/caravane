@@ -1,218 +1,219 @@
 animation:
-    index:
-        title: Animation
-        header: Responsable Animation
-        description:
-            chapeau: |
-                Si quelqu'un sait mettre de l'ambiance, c'est bien toi ! Tu es responsable des jeux, des chants, des veillées et de tous les moments de détente. Tu participes à l'animation de ces temps mais surtout tu fournis le matériel nécessaire, approvisionne en idées nouvelles, invites chacun à exprimer ses talents.
-            materiel:
-                head: Le matériel d'animation
-                content: | #faire un nl2br
-                    Gérer et compléter tout ce dont la caravane a besoin pour s'amuser et se détendre : carnets de chants, livres de jeux, malle déguisement, maquillage, matériel de jeu de jonglage, etc.
-                    De nombreuses ressources sont disponibles dans les livres et sur internet. À toi de faire le bon choix. Place à l'imagination, tu peux aussi inventer !
-            talents:
-                head: Talents et compétences
-                content: |
-                    Connaître les compétences d'animation et les talents de chacun : musiciens, artistes, dessinateurs... et savoir les utiliser pour les temps d'animation de la caravane (veillées, jeux, messes, etc.)
+  index:
+    title: Animation
+    header: Responsable Animation
+    description:
+      chapeau: |
+        Si quelqu'un sait mettre de l'ambiance, c'est bien toi ! Tu es responsable des jeux, des chants, des veillées et de tous les moments de détente. Tu participes à l'animation de ces temps mais surtout tu fournis le matériel nécessaire, approvisionne en idées nouvelles, invites chacun à exprimer ses talents.
+      materiel:
+        head: Le matériel d'animation
+        content: |
+          Gérer et compléter tout ce dont la caravane a besoin pour s'amuser et se détendre : carnets de chants, livres de jeux, malle déguisement, maquillage, matériel de jeu de jonglage, etc.
+          De nombreuses ressources sont disponibles dans les livres et sur internet. À toi de faire le bon choix. Place à l'imagination, tu peux aussi inventer !
+      talents:
+        head: Talents et compétences
+        content: |
+          Connaître les compétences d'animation et les talents de chacun : musiciens, artistes, dessinateurs... et savoir les utiliser pour les temps d'animation de la caravane (veillées, jeux, messes, etc.)
 budget:
-    extra_job:
-        add:
-            title: Extra Jobs – Budget
-            header: Enregistrer un extra job
-        view:
-            title: Extra Jobs – Budget
-            header: 'Les extra jobs de l''année %year%-%next_year%'
-            thead:
-                equipe: Équipe
-                comments: Commentaires
-                montant: Montant (en €)
-            delete_warning: 'Attention: Ne peut pas être annulé'
-            delete: Supprimer
-            no_extra: 'Pas d''extra jobs cette année'
-            cad: Soit [em]%number%[/em] extra job(s) qui ont rapporté [strong]%montant% €[/strong]
-    index:
-        title: Budget
-        header: Responsable budget
-        description:
-            chapeau: |
-                Tu as pour mission de faire en sorte que la caravane et les équipes disposent du budget nécessaire à la réalisation de leurs activités. Pour cela, tu établis un budget et veilles à ce que tous le respectent. En fonction du projet ou des activités choisis, tu coordonne la recherche de fonds.
-            budget:
-                head: Budget
-                content: |
-                    En lien avec les autres responsables et en concertation avec la maîtrise, prévoir le budget de la caravane sur les activités d'années et pour le camp : suivi des comptes, achats de matériel, participation financière...
-            fonds:
-                head: Recherche de fonds
-                content: |
-                    Avec l'appui d'adultes et en lien avec le responsable communication, rédiger des demandes d'aides pour des projets précis en évaluant les moyens nécessaires.
-                    Soliciter des administrations, entreprises, personnes, associations, susceptibles d'être intéressées par le projet.
-                    Organiser et assurer le suivi des extra-jobs (planning, contacts...). Veiller à ce que les extra-jobs ne prennent pas trop d'emprise sur la vie de la caravane.
-        pages:
-            extra_job: Extra jobs
-            new_extra_job: Enregistrer un nouvel extra job
-        warning: |
-            L'argent n'est pas un but en soi, il est le moyen du projet et des activités de la caravane.
-            [strong]La caravane ne recherche pas de fonds si elle n'a pas de projet concret[/strong]
-communication:
-    index:
-        title: Communication
-        header: Responsable communication
-        description:
-            chapeau: |
-                Tu es le porte-parole de la caravane, en interne et en externe. À ce titre, tu tiens le livre de la caravane, prépares avec la maîtrise la communication pour les parents, le territoire. Tu écris des articles dans les journaux locaux, dans Oze. Tu actualise ou [abbr=Le code du site de la caravane est disponible sur GitHub: nils-van-zuijlen/caravane]participe[/abbr] au site de la caravane.
-            livre:
-                head: Le livre de la caravane
-                content: |
-                    C'est le livre de l'unité, on y retrouve mois après mois, année après année, les activités et les Cap vécus par la caravane, les itinéraires parcourus par chaque pionnier ou caravelle avec les actions réalisées. Le penser et l'imaginer, le faire vivre pour qu'il soit une vraie boîte à souvenirs, la trace que la caravane campe et décampe...
-            informer:
-                head: Informer
-                content: |
-                    Installer et tenir à jour un panneau d'informations au local et au camp avec les coordonnées de chacun, des parents et de la maîtrise et des numéros d'urgence. [url=//github.com/nils-van-zuijlen/caravane]Contribuer[/url] et mettre à jour le site internet : photos, [url=%actus_path%]actualités[/url], reportages, témoignages, déroulement des Cap et des activités.
-            temoigner:
-                head: Témoigner
-                content: |
-                    Connaître la vie du groupe pour que la caravane y participe. Avec des personnes ressources, rédiger des communiqués sur les activités vécues : presse régionale écrite, TV, radio, presse spécialisée en fonction du Cap. Sans oublier des témoignages pour Oze ([email]oze@sgdf.fr[/email]) et sur le site internet des pionniers caravelles : [url=//caravane.sgdf.fr/temoigner]http://caravane.sgdf.fr[/url] rubrique Témoigner.
-        pages:
-            publier_actu: Publier une actualité sur le site
-intendance:
-    menu:
-        add:
-            title: Nouveau – Menus
-            header: Nouveau menu
-        edit:
-            title: Édition – Menus
-            header: Édition du menu %name%
-        view_all:
-            title: Menus
-            header: Menus
-            new: Nouveau
-            date: 'Le %date%'
-            no_menu: Il n'y a pas encore de menus.
-        view_one:
-            title: '%title% – Menus'
-            header: 'Menu %title%'
-            date: 'Menu du %date%.'
-            entree: Entrée
-            plat: Plat
-            dessert: Dessert
-            edit: Modifier
-            delete: Supprimer
-    index:
-        header: Responsable Intendance
-        description:
-            chapeau: |
-                C'est toi qui veilles à l'alimentation de la caravane. Tu dois donc établir les menus, assurer le ravitaillement et veiller au bon entretien du matériel de cuisine. Tu es aussi responsable de la qualité : il n'y a pas qu'au moment du concours cuisine que la caravane mange bien !
-            menus:
-                head: Menus
-                content: |
-                    Préparer des menus sains, variés, équilibrés et de qualité ! Connaître l'apport énergétique nécessaire à l'âge des poinniers et caravelles et proposer des menus adaptés selon les activités, les conditions climatiques, la possibilité de trouver des produits locaux et respetueux de l'environnement.
-            approvisionnement:
-                head: Approvisionnement
-                content: |
-                    Se renseigner sur les fournisseurs proches du lieu de camp et sur leurs horaires pour bénéficier d'un bon rapport qualité/prix (attention au temps de trajet !).
-            proprete:
-                head: Propreté et matériel
-                content: |
-                    En lien avec le responsable matériel, préparer le matériel pour week-ends et camps et veiller à la propreté et au rangement avant et après utilisation.
-        pages:
-            menus: Menus
-materiel:
-    objet:
-        add:
-            title: Nouvel Objet
-            header: Nouvel objet
-        edit:
-            title: Éditer l'objet
-            header: 'Éditer l''objet %nom%'
-        view_all:
-            title: Objets
-            header: Les objets enregistrés
-            new: Nouvel objet
-            view_type: Voir les types d'objets
-            existing: 'Les objets existants :'
-        view_one:
-            title: '%nom% – Objet'
-            text: |
-                Du type %nom_type%, cet objet possède les caractéristiques:
-                %caractéristiques%
-            edit: Modifier
-            delete: Supprimer
-    type:
-        add:
-            title: Nouveau Type d'Objet
-            header: Nouveau type d'objet
-        edit:
-            title: Éditer le Type d'Objet
-            header: 'Éditer le type d''objet %nom%'
-        view_all:
-            title: Types
-            header: Types d'objets
-            new: Nouveau type d'objets
-            view_objet: Voir tous les objets
-            existing: 'Les types existants :'
-        view_one:
-            title: '%nom% – Type'
-            edit: Modifier
-            delete: Supprimer
-            objets: 'Les objets du type :'
-            all_objets: Voir tous les objets
-    index:
-        title: Matériel
-        header: Responsable matériel
-        description:
-            chapeau: |
-                Tu veilles à ce que la caravane dispose toujours du matériel qui lui est nécessaire. Pour cela, tu répertorie l'ensemble du matériel, veilles à son entretien et prévois son renouvellement.
-            inventaire:
-                head: Inventaire
-                content: |
-                    Faire l'inventaire du matériel d'unité. Préparer le matériel pour les camps et les week-ends et s'assurer de sa restitution.
-                    Sur le site, cette responsabilité permet la gestion de l'inventaire.
-            entretien:
-                head: Entretien
-                content: |
-                    Réviser le matériel après chacune des utilisations, nettoyer ou faire nettoyer les gamelles, réaffuter les hachettes et les scies, faire sécher les tentes... Pas toujours très agréable, mais cela évite d'avoir à renouveler trop souvent le matériel !
-            renouvellement:
-                head: Renouvellement
-                content: |
-                    Lister le matériel manquant et chercher où le renouveler et à quel prix en lien avec le responsable budget.
-        pages:
-            new_objet: Nouvel objet dans l'inventaire
-            new_type: Nouveau type d'objets
-            view_objet: Voir tous les objets de l'inventaire
-            view_type: Voir tous les types d'objets
-index:
-    quote: |
-        Si tu veux réussir dans ta vie, sois capable de prendre des responsabilités.
-        Pour cela, il faut avoir confiance en soi, connaître son travail et exercer sa responsabilité.
-    quote_auth: Baden Powell
-    head: D'ici vous pouvez acceder aux pages spécifiques à chaque responsabilité
-    pages:
-        animation: Responsable Animation
-        budget: Responsable Budget
-        communication: Responsable Communication
-        intendance: Responsable Intendance
-        materiel: Responsable Matériel
-layout:
-    title: Responsabilités
-    header: Responsabilités
-form:
-    extra_job:
+  extra_job:
+    add:
+      title: Extra Jobs – Budget
+      header: Enregistrer un extra job
+    view:
+      title: Extra Jobs – Budget
+      header: Les extra jobs de l'année %year%-%next_year%
+      thead:
         equipe: Équipe
-        date: 'Date de l''extra job'
-        montant: 'Montant gagné (en €)'
-        commentaires: 'Commentaires'
-        submit: 'Enregistrer'
-    menu:
-        titre: 'Nom du menu'
-        date: 'Date et heure'
-        entree: Entrée
-        plat: Plat
-        dessert: Dessert
-        submit: Enregistrer
-    objet:
-        nom: 'Nom de l''objet (plusieurs objets peuvent avoir le même nom)'
-        type: 'Type d''objet'
-        commentaires: Commentaires
-        submit: Enregistrer
-    type_objet:
-        nom: 'Nom'
-        submit: Enregistrer
+        comments: Commentaires
+        montant: Montant (en €)
+      delete_warning: 'Attention: Ne peut pas être annulé'
+      delete: Supprimer
+      no_extra: Pas d'extra jobs cette année
+      cad: Soit [em]%number%[/em] extra job(s) qui ont rapporté [strong]%montant% €[/strong]
+  index:
+    title: Budget
+    header: Responsable budget
+    description:
+      chapeau: |
+        Tu as pour mission de faire en sorte que la caravane et les équipes disposent du budget nécessaire à la réalisation de leurs activités. Pour cela, tu établis un budget et veilles à ce que tous le respectent. En fonction du projet ou des activités choisis, tu coordonne la recherche de fonds.
+      budget:
+        head: Budget
+        content: |
+          En lien avec les autres responsables et en concertation avec la maîtrise, prévoir le budget de la caravane sur les activités d'années et pour le camp : suivi des comptes, achats de matériel, participation financière...
+      fonds:
+        head: Recherche de fonds
+        content: |
+          Avec l'appui d'adultes et en lien avec le responsable communication, rédiger des demandes d'aides pour des projets précis en évaluant les moyens nécessaires.
+          Soliciter des administrations, entreprises, personnes, associations, susceptibles d'être intéressées par le projet.
+          Organiser et assurer le suivi des extra-jobs (planning, contacts...). Veiller à ce que les extra-jobs ne prennent pas trop d'emprise sur la vie de la caravane.
+    pages:
+      extra_job: Extra jobs
+      new_extra_job: Enregistrer un nouvel extra job
+    warning: |
+      L'argent n'est pas un but en soi, il est le moyen du projet et des activités de la caravane.
+      [strong]La caravane ne recherche pas de fonds si elle n'a pas de projet concret[/strong]
+communication:
+  index:
+    title: Communication
+    header: Responsable communication
+    description:
+      chapeau: |
+        Tu es le porte-parole de la caravane, en interne et en externe. À ce titre, tu tiens le livre de la caravane, prépares avec la maîtrise la communication pour les parents, le territoire. Tu écris des articles dans les journaux locaux, dans Oze. Tu actualise ou [abbr=Le code du site de la caravane est disponible sur GitHub: nils-van-zuijlen/caravane]participe[/abbr] au site de la caravane.
+      livre:
+        head: Le livre de la caravane
+        content: |
+          C'est le livre de l'unité, on y retrouve mois après mois, année après année, les activités et les Cap vécus par la caravane, les itinéraires parcourus par chaque pionnier ou caravelle avec les actions réalisées. Le penser et l'imaginer, le faire vivre pour qu'il soit une vraie boîte à souvenirs, la trace que la caravane campe et décampe...
+      informer:
+        head: Informer
+        content: |
+          Installer et tenir à jour un panneau d'informations au local et au camp avec les coordonnées de chacun, des parents et de la maîtrise et des numéros d'urgence. [url=//github.com/nils-van-zuijlen/caravane]Contribuer[/url] et mettre à jour le site internet : photos, [url=%actus_path%]actualités[/url], reportages, témoignages, déroulement des Cap et des activités.
+      temoigner:
+        head: Témoigner
+        content: |
+          Connaître la vie du groupe pour que la caravane y participe. Avec des personnes ressources, rédiger des communiqués sur les activités vécues : presse régionale écrite, TV, radio, presse spécialisée en fonction du Cap. Sans oublier des témoignages pour Oze ([email]oze@sgdf.fr[/email]) et sur le site internet des pionniers caravelles : [url=//caravane.sgdf.fr/temoigner]http://caravane.sgdf.fr[/url] rubrique Témoigner.
+    pages:
+      publier_actu: Publier une actualité sur le site
+      forum_dashboard: Gérer le forum
+intendance:
+  menu:
+    add:
+      title: Nouveau – Menus
+      header: Nouveau menu
+    edit:
+      title: Édition – Menus
+      header: Édition du menu %name%
+    view_all:
+      title: Menus
+      header: Menus
+      new: Nouveau
+      date: Le %date%
+      no_menu: Il n'y a pas encore de menus.
+    view_one:
+      title: '%title% – Menus'
+      header: Menu %title%
+      date: Menu du %date%.
+      entree: Entrée
+      plat: Plat
+      dessert: Dessert
+      edit: Modifier
+      delete: Supprimer
+  index:
+    header: Responsable Intendance
+    description:
+      chapeau: |
+        C'est toi qui veilles à l'alimentation de la caravane. Tu dois donc établir les menus, assurer le ravitaillement et veiller au bon entretien du matériel de cuisine. Tu es aussi responsable de la qualité : il n'y a pas qu'au moment du concours cuisine que la caravane mange bien !
+      menus:
+        head: Menus
+        content: |
+          Préparer des menus sains, variés, équilibrés et de qualité ! Connaître l'apport énergétique nécessaire à l'âge des poinniers et caravelles et proposer des menus adaptés selon les activités, les conditions climatiques, la possibilité de trouver des produits locaux et respectueux de l'environnement.
+      approvisionnement:
+        head: Approvisionnement
+        content: |
+          Se renseigner sur les fournisseurs proches du lieu de camp et sur leurs horaires pour bénéficier d'un bon rapport qualité/prix (attention au temps de trajet !).
+      proprete:
+        head: Propreté et matériel
+        content: |
+          En lien avec le responsable matériel, préparer le matériel pour week-ends et camps et veiller à la propreté et au rangement avant et après utilisation.
+    pages:
+      menus: Menus
+materiel:
+  objet:
+    add:
+      title: Nouvel Objet
+      header: Nouvel objet
+    edit:
+      title: Éditer l'objet
+      header: Éditer l'objet %nom%
+    view_all:
+      title: Objets
+      header: Les objets enregistrés
+      new: Nouvel objet
+      view_type: Voir les types d'objets
+      existing: 'Les objets existants :'
+    view_one:
+      title: '%nom% – Objet'
+      text: |
+        Du type %nom_type%, cet objet possède les caractéristiques:
+        %caractéristiques%
+      edit: Modifier
+      delete: Supprimer
+  type:
+    add:
+      title: Nouveau Type d'Objet
+      header: Nouveau type d'objet
+    edit:
+      title: Éditer le Type d'Objet
+      header: Éditer le type d'objet %nom%
+    view_all:
+      title: Types
+      header: Types d'objets
+      new: Nouveau type d'objets
+      view_objet: Voir tous les objets
+      existing: 'Les types existants :'
+    view_one:
+      title: '%nom% – Type'
+      edit: Modifier
+      delete: Supprimer
+      objets: 'Les objets du type :'
+      all_objets: Voir tous les objets
+  index:
+    title: Matériel
+    header: Responsable matériel
+    description:
+      chapeau: |
+        Tu veilles à ce que la caravane dispose toujours du matériel qui lui est nécessaire. Pour cela, tu répertorie l'ensemble du matériel, veilles à son entretien et prévois son renouvellement.
+      inventaire:
+        head: Inventaire
+        content: |
+          Faire l'inventaire du matériel d'unité. Préparer le matériel pour les camps et les week-ends et s'assurer de sa restitution.
+          Sur le site, cette responsabilité permet la gestion de l'inventaire.
+      entretien:
+        head: Entretien
+        content: |
+          Réviser le matériel après chacune des utilisations, nettoyer ou faire nettoyer les gamelles, réaffuter les hachettes et les scies, faire sécher les tentes... Pas toujours très agréable, mais cela évite d'avoir à renouveler trop souvent le matériel !
+      renouvellement:
+        head: Renouvellement
+        content: |
+          Lister le matériel manquant et chercher où le renouveler et à quel prix en lien avec le responsable budget.
+    pages:
+      new_objet: Nouvel objet dans l'inventaire
+      new_type: Nouveau type d'objets
+      view_objet: Voir tous les objets de l'inventaire
+      view_type: Voir tous les types d'objets
+index:
+  quote: |
+    Si tu veux réussir dans ta vie, sois capable de prendre des responsabilités.
+    Pour cela, il faut avoir confiance en soi, connaître son travail et exercer sa responsabilité.
+  quote_auth: Baden Powell
+  head: D'ici vous pouvez acceder aux pages spécifiques à chaque responsabilité.
+  pages:
+    animation: Responsable Animation
+    budget: Responsable Budget
+    communication: Responsable Communication
+    intendance: Responsable Intendance
+    materiel: Responsable Matériel
+layout:
+  title: Responsabilités
+  header: Responsabilités
+form:
+  extra_job:
+    equipe: Équipe
+    date: Date de l'extra job
+    montant: Montant gagné (en €)
+    commentaires: Commentaires
+    submit: Enregistrer
+  menu:
+    titre: Nom du menu
+    date: Date et heure
+    entree: Entrée
+    plat: Plat
+    dessert: Dessert
+    submit: Enregistrer
+  objet:
+    nom: Nom de l'objet (plusieurs objets peuvent avoir le même nom)
+    type: Type d'objet
+    commentaires: Commentaires
+    submit: Enregistrer
+  type_objet:
+    nom: Nom
+    submit: Enregistrer

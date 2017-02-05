@@ -21,8 +21,6 @@ class ChefsEmail implements EmailInterface
 	{ $this->subject = $subject; }
 	public function setBody($body)
 	{ $this->body = $body; }
-	public function setIsBcc($isBcc)
-	{ $this->isBcc = $isBcc; }
 	public function setToUsers($toUsers)
 	{ $this->toUsers = $toUsers; }
 	public function setToGroups($toGroups)
@@ -30,14 +28,27 @@ class ChefsEmail implements EmailInterface
 	public function setFromUser($fromUser)
 	{ $this->fromUser = $fromUser; }
 
-	public function getIsBcc()
-	{ return $this->isBcc; }
 	public function getToUsers()
 	{ return $this->toUsers; }
 	public function getToGroups()
 	{ return $this->toGroups; }
 	public function getFromUser()
 	{ return $this->fromUser; }
+
+	/**
+	 * This is the getter AND the setter for isBcc property
+	 * @param  boolean,null  $isBcc Optional, only if used as setter
+	 * @return boolean,this        Value of isBcc or $this
+	 */
+	public function isBcc($isBcc = null)
+	{
+		if (null === $isBcc){
+			return $this->isBcc;
+		} else {
+			$this->isBcc = $isBcc;
+			return $this;
+		}
+	}
 
 	/** @inheritdoc */
 	public function getType()
@@ -54,7 +65,7 @@ class ChefsEmail implements EmailInterface
 	/** @inheritdoc */
 	public function getTo()
 	{
-		if ($this->to != null) {
+		if ($this->to !== null) {
 			return $this->to;
 		}
 

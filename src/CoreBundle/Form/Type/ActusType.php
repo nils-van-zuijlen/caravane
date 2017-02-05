@@ -1,16 +1,16 @@
 <?php
-namespace CoreBundle\Form;
+namespace CoreBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ContactType extends AbstractType
+use CoreBundle\Form\Type\MyFileType;
+
+class ActusType extends AbstractType
 {
 	public function buildForm(
 		FormBuilderInterface $builder,
@@ -19,50 +19,36 @@ class ContactType extends AbstractType
 	{
 		$builder
 			->add(
-				'nom', 
+				'title',
 				TextType::class,
 				array(
-					'label' => 'index.contact.form.nom',
+					'label' => 'actus.form.title',
 					)
-			)
+				)
 			->add(
-				'prenom', 
-				TextType::class,
-				array(
-					'label' => 'index.contact.form.prenom',
-					)
-			)
-			->add(
-				'email', 
-				EmailType::class,
-				array(
-					'label' => 'index.contact.form.email',
-					)
-			)
-			->add(
-				'objet', 
-				TextType::class,
-				array(
-					'label' => 'index.contact.form.objet',
-					)
-			)
-			->add(
-				'contenu', 
+				'content',
 				TextareaType::class,
 				array(
-					'label' => 'index.contact.form.contenu',
+					'label' => 'actus.form.content',
 					)
-			)
+				)
 			->add(
-				'send', 
+				'image',
+				MyFileType::class,
+				array(
+					'label' => 'actus.form.image',
+					)
+				)
+			->add(
+				'submit', 
 				SubmitType::class,
 				array(
-					'label' => 'index.contact.form.send',
+					'label' => 'actus.form.submit',
 					'attr'  => array(
 						'class' => 'btn btn-primary',
 						),
 					)
-			);
+				);
 	}
 
 	public function configureOptions(OptionsResolver $resolver)
@@ -70,7 +56,7 @@ class ContactType extends AbstractType
 		$resolver
 			->setDefaults(
 				array(
-					'data_class' => 'CoreBundle\FormModels\ContactModel'
+					'data_class' => 'CoreBundle\Entity\Actus'
 					)
 				);
 	}

@@ -9,8 +9,8 @@ use Symfony\Component\HttpKernel\Exception\PreconditionRequiredHttpException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 use CoreBundle\Entity\Actus;
-use CoreBundle\Form\ActusType;
-use CoreBundle\Form\ActusEditType;
+use CoreBundle\Form\Type\ActusType;
+use CoreBundle\Form\Type\ActusEditType;
 
 use CoreBundle\Event\NewActuEvent;
 use CoreBundle\Event\CaravaneEvents;

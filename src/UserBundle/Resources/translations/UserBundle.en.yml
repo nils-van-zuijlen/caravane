@@ -1,0 +1,116 @@
+security:
+  login:
+    header: Login
+    username: Username
+    password: Password
+    remember_me: Remember me
+    submit: Login
+    register: I do not have an account yet
+    reset: I forgot my password
+role:
+  edit:
+    title: Roles
+    header: Editing User Roles from %user%
+    submit: Edit
+  view:
+    title: Roles
+    header: User roles
+    thead:
+      username: Username
+      name: Name
+      nickname: First name
+      role: Roles
+    roles:
+      ROLE_CHEF: Leader
+      ROLE_PIOK: Venture
+      ROLE_COMMUNICATION: Communication responsibility
+      ROLE_ANIMATION: Animation responsibility
+      ROLE_INTENDANCE: Food responsibility
+      ROLE_BUDGET: Finance responsibility
+      ROLE_DOCUMENTATION: Documentation responsibility
+      ROLE_HEBERGEMENT: Accommodation responsibility
+      ROLE_MATERIEL: Equipment responsibility
+      ROLE_SANTE: Health responsibility
+      ROLE_VIE_SPI: Spiritual life responsibility
+      ROLE_ADMIN: Administrator
+      ROLE_SUPER_ADMIN: Super Administrator
+resetting:
+  password_already_requested: A new password has already been requested for this user in the last 24 hours.
+  check_email: |-
+    An email has been sent. It contains a link which you will need to click to reset your password.
+    Note: You can only request a new password every %tokenLifetime% hours.
+
+    If you do not receive an email, check your spam folder or try again.
+  request:
+    username: Username or email address
+    submit: Reset password
+  reset:
+    submit: Change password
+  email:
+    subject: Resetting your password
+    message: |-
+      Hello% username%!
+
+      To reset your password, thank you to visit %confirmationUrl%
+
+      Regards,
+      Caravan
+registration:
+  check_email: An email was sent to %email%. It contains an activation link that you must click to activate your account.
+  confirmed: Congratulations %username%, your account is now activated.
+  back: Back to the original page.
+  submit: Create an account
+  email:
+    subject: Welcome %username%!
+    message: |-
+      Hello% username%!
+
+      To validate your account, thank you to visit %confirmationUrl%
+
+      Regards,
+      Caravan
+profile:
+  show:
+    username: Username
+    email: E-mail
+    nom: Name
+    prenom: First name
+    change_password: Change password
+    edit: Edit information
+  edit:
+    submit: Update
+    reset: Discard changes
+group:
+  edit:
+    title: Patrols
+    header: Edit the team name "%name%"
+    submit: Update patrol
+  show:
+    name: 'Patrol name: %name%'
+    members: Members
+    no_members: Not (yet) members.
+    edit: Edit
+    delete: Remove
+  new:
+    title: Patrols
+    header: New patrol
+    submit: Create patrol
+  list:
+    title: Patrols
+    header: List of patrols that existed
+    new: New patrol
+change_password:
+  submit: Change password
+form:
+  group_name: Patrol name
+  username: Username
+  email: E-mail
+  current_password: Current password
+  password: Password
+  password_confirmation: Password confirmation
+  new_password: New Password
+  new_password_confirmation: New password confirmation
+  members: Members
+  nom: Name
+  prenom: First name
+  roles: Roles

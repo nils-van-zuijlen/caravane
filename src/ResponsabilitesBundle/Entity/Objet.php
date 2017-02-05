@@ -66,7 +66,7 @@ class Objet
 	{
 		return $this->type;
 	}
-	public function setType($type)
+	public function setType(TypeObjet $type)
 	{
 		$type->addObjet($this);
 		$this->type = $type;
