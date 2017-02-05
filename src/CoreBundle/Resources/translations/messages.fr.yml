@@ -153,8 +153,11 @@ actus:
     edit: Modifier
     delete: Supprimer
 chatbot:
-  erase_all: '[b]Chat effacé[/b]'
-  notifications:
-    new:
-      actu: 'Nouvelle actualité: [i][url=%url%]%title%[/url][/i] postée par %user%.'
-      user: Un nouvel utilisateur au nom charmant de %name% vient de s'inscrire.
+    notifications:
+        new:
+            actu: "Nouvelle actualité: [i][url=%url%]%title%[/url][/i] postée par %user%."
+            user: "Un nouvel utilisateur au nom charmant de %name% vient de s'inscrire."
+    admin:
+        ban: "%who% a été bani par %by% : [i]%why%[/i]"
+        deban: "%who% a été rétabli par %by% : [i]%why%[/i]"
+        erase_all: "[b]Chat effacé[/b]"

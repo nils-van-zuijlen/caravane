@@ -92,4 +92,15 @@ class User extends BaseUser
 	{
 		return $this->nom;
 	}
+
+	public function lock()
+	{
+		$this->setLocked(true);
+		return $this;
+	}
+	public function unlock()
+	{
+		$this->setLocked(false);
+		return $this;
+	}
 }

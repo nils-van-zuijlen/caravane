@@ -8,32 +8,40 @@ security:
     register: Je n'ai pas encore de compte
     reset: J'ai oublié mon mot de passe
 role:
-  edit:
-    title: Rôles
-    header: Édition des rôles de l'utilisateur %user%
-    submit: Modifier
-  view:
-    title: Rôles
-    header: Rôles des utilisateurs
-    thead:
-      username: Nom d'utilisateur
-      name: Nom
-      nickname: Prénom
-      role: Rôles
-    roles:
-      ROLE_CHEF: Chef
-      ROLE_PIOK: PioK
-      ROLE_COMMUNICATION: Responsable Communication
-      ROLE_ANIMATION: Responsable Animation
-      ROLE_INTENDANCE: Responsable Intendance
-      ROLE_BUDGET: Responsable Budget
-      ROLE_DOCUMENTATION: Responsable Documentation
-      ROLE_HEBERGEMENT: Responsable Hébergement
-      ROLE_MATERIEL: Responsable Matériel
-      ROLE_SANTE: Responsable Santé
-      ROLE_VIE_SPI: Responsable Vie Spirituelle
-      ROLE_ADMIN: Administrateur
-      ROLE_SUPER_ADMIN: Super Administrateur
+    edit:
+        title: Rôles
+        header: 'Édition des rôles de l''utilisateur %user%'
+        submit: Modifier
+    view:
+        title: Rôles
+        header: Rôles des utilisateurs
+        thead:
+            username: Nom d'utilisateur
+            name: Nom
+            nickname: Prénom
+            role: Rôles
+            ban: Banni
+            actions: Actions
+        roles:
+            ROLE_CHEF: Chef
+            ROLE_PIOK: PioK
+            ROLE_COMMUNICATION: Responsable Communication
+            ROLE_ANIMATION: Responsable Animation
+            ROLE_INTENDANCE: Responsable Intendance
+            ROLE_BUDGET: Responsable Budget
+            ROLE_DOCUMENTATION: Responsable Documentation
+            ROLE_HEBERGEMENT: Responsable Hébergement
+            ROLE_MATERIEL: Responsable Matériel
+            ROLE_SANTE: Responsable Santé
+            ROLE_VIE_SPI: Responsable Vie Spirituelle
+            ROLE_ADMIN: Administrateur
+            ROLE_SUPER_ADMIN: Super Administrateur
+            ROLE_USER: ""
+        banned:
+            "yes": Oui
+            "no": Non
+            ban: Bannir
+            deban: Rétablir
 resetting:
   password_already_requested: Un nouveau mot de passe a déjà été demandé pour cet utilisateur dans les dernières 24 heures.
   check_email: |
@@ -102,15 +110,21 @@ group:
 change_password:
   submit: Modifier le mot de passe
 form:
-  group_name: Nom de l'équipe
-  username: Nom d'utilisateur
-  email: Adresse e-mail
-  current_password: Mot de passe actuel
-  password: Mot de passe
-  password_confirmation: Confirmation mot de passe
-  new_password: Nouveau mot de passe
-  new_password_confirmation: Confirmation nouveau mot de passe
-  members: Membres
-  nom: Nom
-  prenom: Prénom
-  roles: Rôles
+    group_name: 'Nom de l''équipe'
+    username: 'Nom d''utilisateur'
+    email: 'Adresse e-mail'
+    current_password: 'Mot de passe actuel'
+    password: 'Mot de passe'
+    password_confirmation: 'Confirmation mot de passe'
+    new_password: 'Nouveau mot de passe'
+    new_password_confirmation: 'Confirmation nouveau mot de passe'
+    members: 'Membres'
+    nom: 'Nom'
+    prenom: 'Prénom'
+    none: ""
+    roles:
+        label: Rôles
+        choices:
+            main: Hiérarchie
+            responsable: Responsabilités
+            special: ""

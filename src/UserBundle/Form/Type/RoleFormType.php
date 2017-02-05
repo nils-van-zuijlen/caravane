@@ -26,26 +26,32 @@ class RoleFormType extends AbstractType
 				'roles',
 				ChoiceType::class,
 				array(
-					'label'                     => 'form.roles',
+					'label'                     => 'form.roles.label',
 					'translation_domain'        => 'UserBundle',
 					'choice_translation_domain' => true,
-					'choice_label'              => function($value,$key,$index){return 'role.view.roles.'.$key;},
+					'choice_label'              => function($val,$key,$index) {
+						return 'role.view.roles.'.$val;
+					},
 					'expanded'                  => true,
 					'multiple'                  => true,
 					'choices'                   => array(
-						'Hiérarchie'     => array(
-							'PioK' => 'ROLE_PIOK',
-							'Chef' => 'ROLE_CHEF',
+						'form.roles.choices.main'     => array(
+							'ROLE_PIOK',
+							'ROLE_CHEF',
 							),
-						'Responsabilité' => array(
-							'Responsable Communication'   => 'ROLE_COMMUNICATION',
-							'Responsable Intendance'      => 'ROLE_INTENDANCE',
-							'Responsable Vie Spirituelle' => 'ROLE_VIE_SPI',
-							'Responsable Animation'       => 'ROLE_ANIMATION',
-							'Responsable Budget'          => 'ROLE_BUDGET',
-							'Responsable Matériel'        => 'ROLE_MATERIEL',
-							'Responsable Hébergement'     => 'ROLE_HEBERGEMENT',
-							'Responsable Santé'           => 'ROLE_SANTE',
+						'form.roles.choices.responsable' => array(
+							'ROLE_COMMUNICATION',
+							'ROLE_INTENDANCE',
+							'ROLE_VIE_SPI',
+							'ROLE_ANIMATION',
+							'ROLE_BUDGET',
+							'ROLE_MATERIEL',
+							'ROLE_HEBERGEMENT',
+							'ROLE_SANTE',
+							),
+						'form.roles.choices.special'         => array(
+							'ROLE_ADMIN',
+							'ROLE_SUPER_ADMIN',
 							),
 						),
 					)
