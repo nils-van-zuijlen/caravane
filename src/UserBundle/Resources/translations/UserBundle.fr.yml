@@ -1,13 +1,12 @@
 security:
-    login:
-        header: 'Se connecter'
-        username: 'Nom d''utilisateur'
-        password: 'Mot de passe'
-        remember_me: 'Se souvenir de moi'
-        submit: 'Connexion'
-        register: 'Je n''ai pas encore de compte'
-        reset: 'J''ai oublié mon mot de passe'
-
+  login:
+    header: Se connecter
+    username: Nom d'utilisateur
+    password: Mot de passe
+    remember_me: Se souvenir de moi
+    submit: Connexion
+    register: Je n'ai pas encore de compte
+    reset: J'ai oublié mon mot de passe
 role:
     edit:
         title: Rôles
@@ -21,6 +20,8 @@ role:
             name: Nom
             nickname: Prénom
             role: Rôles
+            ban: Banni
+            actions: Actions
         roles:
             ROLE_CHEF: Chef
             ROLE_PIOK: PioK
@@ -35,79 +36,79 @@ role:
             ROLE_VIE_SPI: Responsable Vie Spirituelle
             ROLE_ADMIN: Administrateur
             ROLE_SUPER_ADMIN: Super Administrateur
-
+            ROLE_USER: ""
+        banned:
+            "yes": Oui
+            "no": Non
+            ban: Bannir
+            deban: Rétablir
 resetting:
-    password_already_requested: 'Un nouveau mot de passe a déjà été demandé pour cet utilisateur dans les dernières 24 heures.'
-    check_email: |
-        Un e-mail a été envoyé. Il contient un lien sur lequel il vous faudra cliquer pour réinitialiser votre mot de passe.
-        Remarque : Vous ne pouvez demander un nouveau mot de passe que toutes les %tokenLifetime% heures.
-        
-        Si vous ne recevez pas un email, vérifiez votre dossier spam ou essayez à nouveau.
-    request:
-        username: 'Nom d''utilisateur ou adresse e-mail'
-        submit: 'Réinitialiser le mot de passe'
-    reset:
-        submit: 'Modifier le mot de passe'
-    email:
-        subject: 'Réinitialisation de votre mot de passe'
-        message: |
-            Bonjour %username% !
-            
-            Pour réinitialiser votre mot de passe, merci de vous rendre sur %confirmationUrl%
-            
-            Cordialement,
-            La caravane
+  password_already_requested: Un nouveau mot de passe a déjà été demandé pour cet utilisateur dans les dernières 24 heures.
+  check_email: |
+    Un e-mail a été envoyé. Il contient un lien sur lequel il vous faudra cliquer pour réinitialiser votre mot de passe.
+    Remarque : Vous ne pouvez demander un nouveau mot de passe que toutes les %tokenLifetime% heures.
 
+    Si vous ne recevez pas un email, vérifiez votre dossier spam ou essayez à nouveau.
+  request:
+    username: Nom d'utilisateur ou adresse e-mail
+    submit: Réinitialiser le mot de passe
+  reset:
+    submit: Modifier le mot de passe
+  email:
+    subject: Réinitialisation de votre mot de passe
+    message: |
+      Bonjour %username% !
+
+      Pour réinitialiser votre mot de passe, merci de vous rendre sur %confirmationUrl%
+
+      Cordialement,
+      La caravane
 registration:
-    check_email: 'Un e-mail a été envoyé à l''adresse %email%. Il contient un lien d''activation sur lequel il vous faudra cliquer afin d''activer votre compte.'
-    confirmed: 'Félicitations %username%, votre compte est maintenant activé.'
-    back: 'Retour à la page d''origine.'
-    submit: 'Créer un compte'
-    email:
-        subject: 'Bienvenue %username% !'
-        message: |
-            Bonjour %username% !
-            
-            Pour valider votre compte utilisateur, merci de vous rendre sur %confirmationUrl%
-            
-            Cordialement,
-            La caravane
+  check_email: Un e-mail a été envoyé à l'adresse %email%. Il contient un lien d'activation sur lequel il vous faudra cliquer afin d'activer votre compte.
+  confirmed: Félicitations %username%, votre compte est maintenant activé.
+  back: Retour à la page d'origine.
+  submit: Créer un compte
+  email:
+    subject: Bienvenue %username% !
+    message: |
+      Bonjour %username% !
 
+      Pour valider votre compte utilisateur, merci de vous rendre sur %confirmationUrl%
+
+      Cordialement,
+      La caravane
 profile:
-    show:
-        username: 'Nom d''utilisateur'
-        email: 'Adresse e-mail'
-        nom: Nom
-        prenom: Prénom
-        change_password: Modifier le mot de passe
-        edit: Modifier les informations
-    edit:
-        submit: 'Mettre à jour'
-        reset: Annuler les modifications
-
+  show:
+    username: Nom d'utilisateur
+    email: Adresse e-mail
+    nom: Nom
+    prenom: Prénom
+    change_password: Modifier le mot de passe
+    edit: Modifier les informations
+  edit:
+    submit: Mettre à jour
+    reset: Annuler les modifications
 group:
-    edit:
-        title: Équipes
-        header: 'Modifier le nom de l''équipe "%name%"'
-        submit: 'Mettre à jour l''équipe'
-    show:
-        name: 'Nom de l''équipe: %name%'
-        members: Membres
-        no_members: Pas (encore) de membres.
-        edit: Modifier
-        delete: Supprimer
-    new:
-        title: Équipes
-        header: Nouvelle équipe
-        submit: 'Créer l''équipe'
-    list:
-        title: Équipes
-        header: Liste des équipes ayant existé
-        new: Nouvelle équipe
-
+  edit:
+    title: Équipes
+    header: Modifier le nom de l'équipe "%name%"
+    submit: Mettre à jour l'équipe
+  show:
+    name: 'Nom de l''équipe: %name%'
+    members: Membres
+    no_members: Pas (encore) de membres.
+    edit: Modifier
+    delete: Supprimer
+  new:
+    title: Équipes
+    header: Nouvelle équipe
+    submit: Créer l'équipe
+  list:
+    title: Équipes
+    header: Liste des équipes ayant existé
+    new: Nouvelle équipe
 change_password:
-    submit: 'Modifier le mot de passe'
-
+  submit: Modifier le mot de passe
 form:
     group_name: 'Nom de l''équipe'
     username: 'Nom d''utilisateur'
@@ -120,4 +121,10 @@ form:
     members: 'Membres'
     nom: 'Nom'
     prenom: 'Prénom'
-    roles: Rôles
+    none: ""
+    roles:
+        label: Rôles
+        choices:
+            main: Hiérarchie
+            responsable: Responsabilités
+            special: ""

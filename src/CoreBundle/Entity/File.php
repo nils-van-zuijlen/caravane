@@ -143,7 +143,7 @@ class File
 	 */
 	public function preUpload()
 	{
-		if ($this->file == null)
+		if ($this->file === null)
 			return;
 
 		$this->mimeType = $this->file->getMimeType();
@@ -157,7 +157,7 @@ class File
 	 */
 	public function upload()
 	{
-		if ($this->file == null)
+		if ($this->file === null)
 			return;
 
 		$this->file->move(self::UPLOAD_ROOT_DIR, $this->id.'.'.$this->extension );

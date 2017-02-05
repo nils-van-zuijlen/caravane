@@ -80,7 +80,7 @@ class Chatbot
 		if ($this->authChecker->isGranted($this->parameters['role_admin'])) {
 			#effacer tout le chat en laissant un message (ou pas)
 			if (preg_match("#^@erase_all#", $message)) {
-				$message = preg_replace("#@erase_all(.*)#", $this->translator->trans("chatbot.erase_all")."$1", $message);
+				$message = preg_replace("#@erase_all(.*)#", $this->translator->trans("chatbot.admin.erase_all")."$1", $message);
 				$this->getChatRepository()->eraseAll();
 				$edited = true;
 			#utiliser un autre utilisateur quelconque
@@ -88,7 +88,7 @@ class Chatbot
 				$username = preg_replace("#@user\[(.+)\] .+#", "$1", $message);
 				$user2 = $this->getUserRepository()->findOneByUsername($username);
 				$message = preg_replace("#@user\[.+\] (.+)#", "$1", $message);
-				if ($user2 != null) {
+				if ($user2 !== null) {
 					$user = $user2;
 					$edited = true;
 				}
@@ -97,6 +97,40 @@ class Chatbot
 				$user = $this->getChatbotUser();
 				$message = preg_replace("#@chatbot (.+)#", "$1", $message);
 				$edited = true;
+			#bannir un utilisateur
+			} elseif (preg_match("#^@ban\[.+\]#", $message)) {
+				$username = preg_replace("#^@ban\[(.+)\].*$#", "$1", $message);
+				$user2 = $this->getUserRepository()->findOneByUsername($username);
+				if ($user2 != null) {
+					$user2->lock();
+					$message = $this->translator->trans(
+						'chatbot.admin.ban',
+						array(
+							'%by%' => $user->getDisplay(),
+							'%who%' => $user2->getDisplay(),
+							'%why%' => preg_replace("#^@ban\[.+\] (.+)$#", "$1", $message),
+							)
+						);
+					$user = $this->getChatbotUser();
+					$edited = true;
+				}
+			#rétablir un utilisateur
+			} elseif (preg_match("#^@deban\[.+\]#", $message)) {
+				$username = preg_replace("#^@deban\[(.+)\].*$#", "$1", $message);
+				$user2 = $this->getUserRepository()->findOneByUsername($username);
+				if ($user2 != null) {
+					$user2->unlock();
+					$message = $this->translator->trans(
+						'chatbot.admin.deban',
+						array(
+							'%by%' => $user->getDisplay(),
+							'%who%' => $user2->getDisplay(),
+							'%why%' => preg_replace("#^@deban\[.+] (.*)$#", "$1", $message),
+							)
+						);
+					$user = $this->getChatbotUser();
+					$edited = true;
+				}
 			}
 
 			if ($edited) {

@@ -28,14 +28,18 @@
 			<p>
 				{{ 'communication.index.description.temoigner.content'|trans|bbcode_filter('all') }}
 			</p>
-			<ul class="list-group">
-				{# liens vers les pages de la responsabilité #}
-				{% if is_granted('ROLE_COMMUNICATION') %}
+
+			{% if is_granted('ROLE_COMMUNICATION') %}
+				<ul class="list-group">
+					{# liens vers les pages de la responsabilité #}
 					<a class="list-group-item" href="{{ path('core_actus_add') }}">
 						{{ 'communication.index.pages.publier_actu'|trans }}
 					</a>
-				{% endif %}
-			</ul>
+					<a class="list-group-item" href="{{ path('discutea_forum_admin_dashboard') }}">
+						{{ 'communication.index.pages.forum_dashboard'|trans }}
+					</a>
+				</ul>
+			{% endif %}
 		</div>
 </div>
 {% endblock %}

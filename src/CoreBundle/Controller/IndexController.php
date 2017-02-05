@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 use CoreBundle\FormModels\ContactModel;
-use CoreBundle\Form\ContactType;
+use CoreBundle\Form\Type\ContactType;
 
 class IndexController extends Controller
 {

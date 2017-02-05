@@ -3,8 +3,9 @@
 {% block chefs_body %}
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2">
-			<p>{{ 'chefs.index.header.0'|trans }}</p>
-			<p>{{ 'chefs.index.header.1'|trans }}</p>
+			{% for index in 0..1 %}
+				<p>{{ ('chefs.index.header.' ~ index)|trans }}</p>
+			{% endfor %}
 			<ul>
 				<li>
 					<a href="{{ path('core_chefs_send_email') }}">
@@ -19,6 +20,11 @@
 				<li>
 					<a href="{{ path('user_role_view') }}">
 						{{ 'chefs.index.view_roles'|trans }}
+					</a>
+				</li>
+				<li>
+					<a href="{{ path('discutea_forum_admin_dashboard') }}">
+						{{ 'chefs.index.forum_dashboard'|trans }}
 					</a>
 				</li>
 			</ul>

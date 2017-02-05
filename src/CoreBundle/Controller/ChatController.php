@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\PreconditionRequiredHttpException;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 use CoreBundle\Entity\Chat;
 
@@ -13,11 +14,17 @@ class ChatController extends Controller
 {
 	const NB_MESSAGES_A_AFFICHER = 15;
 
+	/**
+	 * @Security("has_role('ROLE_PIOK')")
+	 */
 	public function viewAction()
 	{
 		return $this->render('CoreBundle:Chat:view.html.twig');
 	}
 
+	/**
+	 * @Security("has_role('ROLE_PIOK')")
+	 */
 	public function sendAction(Request $request)
 	{
 		#récupération des variables

@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Swift_Message;
 
 use CoreBundle\Mailer\ChefsEmail;
-use CoreBundle\Form\ChefsEmailFormType;
+use CoreBundle\Form\Type\ChefsEmailFormType;
 
 class ChefsController extends Controller
 {
