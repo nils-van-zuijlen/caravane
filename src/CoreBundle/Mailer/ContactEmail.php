@@ -3,10 +3,29 @@ namespace CoreBundle\Mailer;
 
 class ContactEmail implements EmailInterface
 {
+	/**
+	 * @Assert\Length(max=255, min=3, maxMessage="core.contact.objet.length.max", minMessage="core.contact.objet.length.min")
+	 */
 	private $subject;
+
+	/**
+	 * @Assert\Length(min=10, minMessage="core.contact.contenu.length.min")
+	 */
 	private $body;
+
+	/**
+	 * @Assert\Email(checkMX=true, message="core.contact.email.email")
+	 */
 	private $email;
+
+	/**
+	 * @Assert\Length(min=3, minMessage="core.contact.nom.length.min")
+	 */
 	private $nom;
+
+	/**
+	 * @Assert\Length(min=3, minMessage="core.contact.prenom.length.min")
+	 */
 	private $prenom;
 
 

@@ -5,7 +5,7 @@ namespace CoreBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-use CoreBundle\FormModels\ContactModel;
+use CoreBundle\Mailer\ContactEmail;
 use CoreBundle\Form\Type\ContactType;
 
 class IndexController extends Controller
@@ -29,22 +29,12 @@ class IndexController extends Controller
 
 	public function contactAction(Request $request)
 	{
-		$mail = new ContactModel();
+		$mail = new ContactEmail();
 		$form = $this->get('form.factory')->create(ContactType::class, $mail);
 
 		if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
 			
-			$email = new \Swift_Message;
-			$email->setSubject('Contact – '.$mail->getObjet());
-			$email->setReplyTo($mail->getEmail(), $mail->getNom().' '.$mail->getPrenom());
-			$email->setFrom($mail->getEmail());
-			$email->setBody('Envoyé par '.$mail->getNom().' '.$mail->getPrenom().'( '.$mail->getEmail().' )
-
-'.$mail->getContenu(), 'text/plain');
-			$email->setTo($this->container->getParameter('mailer_user'));
-			$email->setSender($this->container->getParameter('mailer_user'));
-
-			$this->get('mailer')->send($email);
+			$this->get('core.mailer')->sendContactEmail($mail);
 
 			$request->getSession()->getFlashBag()->add('success', 'index.contact.flash');
 			
