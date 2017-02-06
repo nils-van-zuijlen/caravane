@@ -113,8 +113,6 @@ class GroupController extends Controller
 	{
 		/** @var $groupManager \FOS\UserBundle\Model\GroupManagerInterface */
 		$groupManager = $this->get('fos_user.group_manager');
-		/** @var $formFactory \FOS\UserBundle\Form\Factory\FactoryInterface */
-		$formFactory = $this->get('fos_user.group.form.factory');
 		/** @var $dispatcher \Symfony\Component\EventDispatcher\EventDispatcherInterface */
 		$dispatcher = $this->get('event_dispatcher');
 
