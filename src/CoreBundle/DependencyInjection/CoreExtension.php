@@ -13,7 +13,7 @@ class CoreExtension extends Extension
 	{
 		$configuration = new Configuration();
 
-		$config = $this->processConfiguration($configuration, $configs);
+		/*$config = */$this->processConfiguration($configuration, $configs);
 
 		$loader = new Loader\YamlFileLoader(
 			$container,
