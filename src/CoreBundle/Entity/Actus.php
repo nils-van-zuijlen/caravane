@@ -69,7 +69,7 @@ class Actus
 	private $datePublication;
 
 
-	function __construct()
+	public function __construct()
 	{
 		$this->datePublication = new \DateTime;
 	}
