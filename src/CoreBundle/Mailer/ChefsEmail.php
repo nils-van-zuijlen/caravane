@@ -3,9 +3,6 @@
 namespace CoreBundle\Mailer;
 
 use CoreBundle\Mailer\EmailInterface;
-use UserBundle\Entity\User;
-use UserBundle\Entity\Group;
-
 
 class ChefsEmail implements EmailInterface
 {
