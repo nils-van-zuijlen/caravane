@@ -11,7 +11,7 @@ class NewActuEvent extends BaseEvent
 	protected $newActu;
 	protected $user;
 
-	function __construct(Actus $newActu, UserInterface $user)
+	public function __construct(Actus $newActu, UserInterface $user)
 	{
 		$this->newActu = $newActu;
 		$this->user    = $user;

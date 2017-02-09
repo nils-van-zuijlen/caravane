@@ -66,7 +66,7 @@ class Event
 	private $slug;
 
 
-	function __construct()
+	public function __construct()
 	{
 		$this->dateDebut = new \DateTime();
 		$this->dateFin   = new \DateTime('@'.(time()+3600*26));

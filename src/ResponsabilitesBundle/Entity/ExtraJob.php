@@ -52,7 +52,7 @@ class ExtraJob
 	 */
 	private $commentaires = '';
 
-	function __construct()
+	public function __construct()
 	{
 		$this->date = new \DateTime;
 	}
