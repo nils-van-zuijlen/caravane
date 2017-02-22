@@ -27,7 +27,7 @@ budget:
       delete_warning: 'Warning: Can not be canceled'
       delete: Remove
       no_extra: No extra jobs this year
-      cad: Let [em]%number%[/ em] extra job(s) who reported [strong]%amount% €[/ strong]
+      cad: Let [i]%number%[/i] extra job(s) who reported [b]%montant% €[/b]
   index:
     title: Budget
     header: Finance responsibility
@@ -47,13 +47,13 @@ budget:
       new_extra_job: Register a new extra job
     warning: |-
       Money is not a goal in itself, it is the way of the project and the caravan activities.
-      [strong]The caravan did not research funding if it has no concrete plans[/strong]
+      [b]The caravan did not research funding if it has no concrete plans[/b]
 communication:
   index:
     title: Communication
     header: Communication responsibility
     description:
-      chapeau: 'You are the spokesman for the caravan, internally and externally. As such, you hold the book of the caravan, prepare with the leaders communication for parents and territory. You write articles in local newspapers, in Oze. You update or [abbr=Code of the caravan website is available on GitHub: nils-van-zuijlen/caravane]got involved[/ abbr] in the caravan site.'
+      chapeau: 'You are the spokesman for the caravan, internally and externally. As such, you hold the book of the caravan, prepare with the leaders communication for parents and territory. You write articles in local newspapers, in Oze. You update or [abbr="Code of the caravan website is available on GitHub: nils-van-zuijlen/caravane"]got involved[/ abbr] in the caravan site.'
       livre:
         head: The caravan book
         content: This is the book of the unit, one finds month after month, year after year, the activities and Cape experienced by the caravan routes traveled by each pioneer or caravel with the actions performed. Think and imagine, to live for it to be a real memory box, track the caravan and camping decamp ...
@@ -122,7 +122,7 @@ materiel:
       title: '%nom% - Object'
       text: |-
         Of type %nom_type%, this object has the features:
-        %caractéristiques%
+        %caracteristiques%
       edit: Edit
       delete: Remove
   type:
@@ -177,6 +177,7 @@ index:
     communication: Communication responsibility
     intendance: Food responsibility
     materiel: Equipment responsibility
+    vie_spi: Spiritual life responsibility
 layout:
   title: Responsibilities
   header: Responsibilities

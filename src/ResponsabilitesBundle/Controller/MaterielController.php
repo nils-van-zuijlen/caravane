@@ -20,7 +20,7 @@ class MaterielController extends Controller
 	}
 
 	/**
-	 * @Security("has_role('ROLE_BUDGET')")
+	 * @Security("has_role('ROLE_MATERIEL')")
 	 */
 	public function newTypeAction(Request $request)
 	{
@@ -28,7 +28,7 @@ class MaterielController extends Controller
 		
 		$form = $this->createForm(TypeFormType::class, $type);
 		
-		if ($request->isType('POST') && $form->handleRequest($request)->isValid()) {
+		if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
 			$em = $this->getDoctrine()->getManager();
 			$em->persist($type);
 			$em->flush();
@@ -52,7 +52,7 @@ class MaterielController extends Controller
 	}
 
 	/**
-	 * @Security("has_role('ROLE_BUDGET')")
+	 * @Security("has_role('ROLE_MATERIEL')")
 	 */
 	public function newObjetAction(Request $request)
 	{
@@ -60,7 +60,7 @@ class MaterielController extends Controller
 		
 		$form = $this->createForm(ObjetFormType::class, $objet);
 		
-		if ($request->isType('POST') && $form->handleRequest($request)->isValid()) {
+		if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
 			$em = $this->getDoctrine()->getManager();
 			$em->persist($objet);
 			$em->flush();
@@ -154,7 +154,7 @@ class MaterielController extends Controller
 	}
 
 	/**
-	 * @Security("has_role('ROLE_BUDGET')")
+	 * @Security("has_role('ROLE_MATERIEL')")
 	 */
 	public function editTypeAction(Request $request, $type)
 	{
@@ -170,7 +170,7 @@ class MaterielController extends Controller
 		
 		$form = $this->createForm(TypeFormType::class, $type);
 		
-		if ($request->isType('POST') && $form->handleRequest($request)->isValid()) {
+		if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
 			$em->persist($type);
 			$em->flush();
 			
@@ -194,7 +194,7 @@ class MaterielController extends Controller
 	}
 
 	/**
-	 * @Security("has_role('ROLE_BUDGET')")
+	 * @Security("has_role('ROLE_MATERIEL')")
 	 */
 	public function editObjetAction(Request $request, $objet)
 	{
@@ -210,7 +210,7 @@ class MaterielController extends Controller
 		
 		$form = $this->createForm(ObjetFormType::class, $objet);
 		
-		if ($request->isType('POST') && $form->handleRequest($request)->isValid()) {
+		if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
 			$em->persist($objet);
 			$em->flush();
 			
@@ -234,7 +234,7 @@ class MaterielController extends Controller
 	}
 
 	/**
-	 * @Security("has_role('ROLE_BUDGET')")
+	 * @Security("has_role('ROLE_MATERIEL')")
 	 */
 	public function deleteTypeAction(Request $request, $type)
 	{
@@ -243,22 +243,31 @@ class MaterielController extends Controller
 
 		$type = $em
 			->getRepository('ResponsabilitesBundle:TypeObjet')
-			->find($type_id);
+			->getWithObjetsById($type_id);
 
 		if (null === $type)
 			throw $this->createNotFoundException("Le type d'objet n°".$type_id." n'existe pas.");
+
+		if (\count($type->getObjets()) != 0) {
+			$this->addFlash('danger', 'materiel.flash.type.delete_abort');
+			return $this->redirectToRoute(
+				'responsabilites_materiel_view_type',
+				array(
+					"type" => $type_id,
+			));
+		}
 		
 		$em->remove($type);
 		$em->flush();
 
 		$this->addFlash('success', 'materiel.flash.type.delete');
 		
-		return $this->redirectToRoute('responsabilites_materiel_view_type');
+		return $this->redirectToRoute('responsabilites_materiel_view_all_type');
 		
 	}
 
 	/**
-	 * @Security("has_role('ROLE_BUDGET')")
+	 * @Security("has_role('ROLE_MATERIEL')")
 	 */
 	public function deleteObjetAction(Request $request, $objet)
 	{

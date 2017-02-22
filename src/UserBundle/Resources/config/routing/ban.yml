@@ -2,10 +2,10 @@ user_ban_ban:
     path: /{user}/ban
     defaults:
         _controller: UserBundle:Ban:ban
-    method: GET
+    methods: GET
 
 user_ban_deban:
     path: /{user}/deban
     defaults:
         _controller: UserBundle:Ban:deban
-    method: GET
+    methods: GET

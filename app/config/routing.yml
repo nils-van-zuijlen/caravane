@@ -7,13 +7,8 @@ fos_comment_api:
     prefix: /api
     defaults: { _format: html }
 
-forum:
-    resource: "@ForumBundle/Resources/config/routing.yml"
-    prefix:   /forum
-
 user_role:
-    resource: "@UserBundle/Resources/config/routing/role.yml"
-    prefix:   /responsabilites
+    resource: "@UserBundle/Resources/config/routing/all.yml"
 
 responsabilites:
     resource: "@ResponsabilitesBundle/Resources/config/routing/all.yml"

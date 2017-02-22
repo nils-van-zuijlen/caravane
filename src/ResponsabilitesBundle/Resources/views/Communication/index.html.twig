@@ -22,7 +22,7 @@
 			</p>
 			<h5>{{ 'communication.index.description.informer.head'|trans }}</h5>
 			<p>
-				{{ 'communication.index.description.informer.content'|trans|bbcode_filter('all') }}
+				{{ 'communication.index.description.informer.content'|trans({"%actus_path%": path('core_actus_view')})|bbcode_filter('all') }}
 			</p>
 			<h5>{{ 'communication.index.description.temoigner.head'|trans }}</h5>
 			<p>

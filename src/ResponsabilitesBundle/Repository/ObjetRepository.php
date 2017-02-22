@@ -12,13 +12,13 @@ class ObjetRepository extends \Doctrine\ORM\EntityRepository
 {
 	public function getWithTypeById($id)
 	{
-		$qb = $this
-			->createQueryBuilder('o')
-			->leftJoin('o.type', 't')
+		$qb = $this->createQueryBuilder('o');
+
+		$qb->leftJoin('o.type', 't')
 			->addSelect('t')
 			->where($qb->expr()->eq('o.id', ':id'))
 			->setParameter('id', (int) $id);
 
-		return $qb->getQuery()->getResult();
+		return $qb->getQuery()->getOneOrNullResult();
 	}
 }

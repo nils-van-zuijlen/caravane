@@ -32,7 +32,9 @@
 
 		<input class="btn btn-lg btn-primary btn-block" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
 
-		<a href="{{ path('fos_user_registration_register') }}">{{ 'security.login.register'|trans }}</a>
-		<a href="{{ path('fos_user_resetting_request') }}">{{ 'security.login.reset'|trans }}</a>
+		<div class="btn-group-vertical btn-block">
+			<a href="{{ path('fos_user_registration_register') }}" class="btn btn-sm btn-danger">{{ 'security.login.register'|trans }}</a>
+			<a href="{{ path('fos_user_resetting_request') }}" class="btn btn-sm btn-default">{{ 'security.login.reset'|trans }}</a>
+		</div>
 	</form>
 {% endblock %}

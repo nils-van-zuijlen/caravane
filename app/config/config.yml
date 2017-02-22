@@ -113,16 +113,16 @@ stof_doctrine_extensions:
 assetic:
     debug: '%kernel.debug%'
     use_controller: '%kernel.debug%'
-    bundles: [ "FOSCommentBundle" ]
+    bundles: [ "FOSCommentBundle", "CoreBundle" ]
 
 #FMBbcodeBundle
 fm_bbcode:
     filter_sets:
         all:
-            strict: false
-            locale: "%locale%"
-            xhtml: false
-            hooks: [ emoticon, clickable ]
+            strict:  false
+            locale:  "%locale%"
+            xhtml:   false
+            hooks:   [ emoticon, clickable ]
             filters: [ default, block, code, email, image, list, quote, text, url, video, table ]
         actus_filter:
             strict:  false
@@ -149,10 +149,10 @@ fm_bbcode:
             hooks:   [ emoticon, clickable ]
             filters: [ default, url, email, block, code, image, list, quote, text, table, video ]
         responsabilites_filter:
-            strict: false
-            locale: "%locale%"
-            xhtml: false
-            hooks: [ emoticon, clickable ]
+            strict:  false
+            locale:  "%locale%"
+            xhtml:   false
+            hooks:   [ emoticon, clickable ]
             filters: [ default, url, email, code, list, quote ]
     emoticon:
         path:      /emoticons/
@@ -192,6 +192,7 @@ fos_comment:
             thread:  fos_comment.manager.thread.acl
             comment: fos_comment.manager.comment.acl
             vote:    fos_comment.manager.vote.acl
+        markup: core.comments_parser
 
 # KNPPaginatorBundle
 knp_paginator:

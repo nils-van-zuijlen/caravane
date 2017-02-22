@@ -35,7 +35,7 @@ class ObjetFormType extends AbstractType
 					)
 				)
 			->add(
-				'commentaires',
+				'caracteristiques',
 				TextareaType::class,
 				array(
 					'label'              => 'form.objet.commentaires',

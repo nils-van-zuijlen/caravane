@@ -2,8 +2,9 @@
 namespace UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
-class GroupController extends Controller
+class BanController extends Controller
 {
 	/**
 	 * Ban an user.
@@ -22,7 +23,7 @@ class GroupController extends Controller
 			return $this->createNotFoundHttpException('Attempted to ban a unexisting user');
 		}
 		
-		return $this->redirect('user_role_view');
+		return $this->redirectToRoute('user_role_view');
 	}
 
 	/**
@@ -42,6 +43,6 @@ class GroupController extends Controller
 			return $this->createNotFoundHttpException('Attempted to deban a unexisting user');
 		}
 		
-		return $this->redirect('user_role_view');
+		return $this->redirectToRoute('user_role_view');
 	}
 }
