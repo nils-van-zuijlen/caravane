@@ -113,7 +113,9 @@ stof_doctrine_extensions:
 assetic:
     debug: '%kernel.debug%'
     use_controller: '%kernel.debug%'
-    bundles: [ "FOSCommentBundle" ]
+    bundles: 
+        - FOSCommentBundle
+        - CoreBundle
 
 #FMBbcodeBundle
 fm_bbcode:

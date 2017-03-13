@@ -69,7 +69,7 @@ class ContactType extends AbstractType
 		$resolver
 			->setDefaults(
 				array(
-					'data_class' => 'CoreBundle\FMailer\ContactEmail',
+					'data_class' => 'CoreBundle\Mailer\ContactEmail',
 					)
 				);
 	}

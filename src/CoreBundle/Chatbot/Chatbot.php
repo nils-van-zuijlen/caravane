@@ -163,6 +163,7 @@ class Chatbot
 					'chatbot'    => 'Oui, c\'est moi.',
 					'nils'       => 'On parle de celui qui m\'a créé?',
 					'bonjour'    => 'Bonjour sujet de test n°'.$user->getId(),
+					'heure'      => 'Il est '.date('H:i').'.',
 				);
 
 			foreach ($eggs as $key => $value) {
