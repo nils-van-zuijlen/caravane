@@ -2,12 +2,8 @@
 
 {% block actus_body %}
 	<div class="row">
-		<div class="col-sm-12">
+		<div class="col-sm-12 col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 			<img class="image" src="{{ path('core_file_get', {id:actu.image.id}) }}" alt="{{ actu.image.originalName }}">
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2">
 			<h3>{{ actu.title }}</h3>
 			<p>{{ actu.content|bbcode_filter('actus_filter') }}</p>
 			<p class="help-block">{{ 'actus.viewone.date'|trans({'%date%': actu.datePublication|date('d/m/Y')}) }}</p>

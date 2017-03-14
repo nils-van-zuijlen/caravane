@@ -31,6 +31,7 @@ materiel.flash:
     add: Type d'objet créé
     edit: Type d'objet modifié
     delete: Type d'objet supprimé
+    delete_abort: Le type d'objet n'est pas vide
   objet:
     add: Objet enregistré
     edit: Modifications de l'objet enregistrées

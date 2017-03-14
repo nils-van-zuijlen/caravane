@@ -40,6 +40,17 @@ class User extends BaseUser
 	 */
 	protected $nom;
 
+	/**
+	 * @ORM\Column(name="locked", type="boolean")
+	 */
+	protected $locked;
+
+	public function __construct()
+	{
+		$this->locked = false;
+		parent::__construct();
+	}
+
 	public function getDisplay()
 	{
 		return $this->prenom.' '.$this->nom;
@@ -103,4 +114,36 @@ class User extends BaseUser
 		$this->setLocked(false);
 		return $this;
 	}
+
+	/**
+	 * Set locked
+	 *
+	 * @param boolean $locked
+	 *
+	 * @return User
+	 */
+	public function setLocked($locked)
+	{
+		$this->locked = $locked;
+
+		return $this;
+	}
+
+	/**
+	 * Get locked
+	 *
+	 * @return boolean
+	 */
+	public function getLocked()
+	{
+		return $this->locked;
+	}
+
+	/**
+     * {@inheritdoc}
+     */
+    public function isAccountNonLocked()
+    {
+        return !$this->locked;
+    }
 }

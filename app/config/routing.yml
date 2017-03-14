@@ -8,8 +8,7 @@ fos_comment_api:
     defaults: { _format: html }
 
 user_role:
-    resource: "@UserBundle/Resources/config/routing/role.yml"
-    prefix:   /responsabilites
+    resource: "@UserBundle/Resources/config/routing/all.yml"
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"

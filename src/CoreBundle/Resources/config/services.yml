@@ -40,3 +40,8 @@ services:
         tags:
             - { name: kernel.event_listener, event: caravane.new_actu,             method: newActu }
             - { name: kernel.event_listener, event: fos_user.registration.success, method: newUser }
+    core.comments_parser:
+        class: CoreBundle\CommentsParser
+        arguments:
+            - "@fm_bbcode.twig.extension"
+            - comments_filter

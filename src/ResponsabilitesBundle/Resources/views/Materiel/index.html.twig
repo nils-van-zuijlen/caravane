@@ -31,10 +31,10 @@
 			<ul class="list-group">
 				{# liens vers les pages de la responsabilité #}
 				{% if is_granted('ROLE_MATERIEL') %}
-					<a href="{{ path('responsabilites_materiel_new_objet') }}" class="list-group-item active">
+					<a href="{{ path('responsabilites_materiel_new_objet') }}" class="list-group-item">
 						{{ 'materiel.index.pages.new_objet'|trans }}
 					</a>
-					<a href="{{ path('responsabilites_materiel_new_type') }}" class="list-group-item active">
+					<a href="{{ path('responsabilites_materiel_new_type') }}" class="list-group-item">
 						{{ 'materiel.index.pages.new_type'|trans }}
 					</a>
 				{% endif %}

@@ -25,9 +25,9 @@
 				{{ 'budget.index.description.fonds.content'|trans|bbcode_filter('all') }}
 			</p>
 			<ul class="list-group">
-				<a href="{{ path('responsabilites_budget_extra_job_view') }}">{{ 'budget.index.pages.extra_job'|trans }}</a>
+				<a href="{{ path('responsabilites_budget_extra_job_view') }}" class="list-group-item">{{ 'budget.index.pages.extra_job'|trans }}</a>
 				{% if is_granted('ROLE_CHEF_EQUIPE') or is_granted('ROLE_BUDGET') %}
-					<a href="{{ path('responsabilites_budget_extra_job_add') }}">{{ 'budget.index.pages.new_extra_job'|trans }}</a>
+					<a href="{{ path('responsabilites_budget_extra_job_add') }}" class="list-group-item">{{ 'budget.index.pages.new_extra_job'|trans }}</a>
 				{% endif %}
 			</ul>
 		</div>

@@ -16,8 +16,8 @@
 						<th>{{ 'role.view.thead.nickname'|trans }}</th>
 						<th>{{ 'role.view.thead.role'|trans }}</th>
 						<th>{{ 'role.view.thead.ban'|trans }}</th>
-						{% if is_granted('ROLE_BANNIR') %}
-							<th>{{ 'role.view.actions'|trans }}</th>
+						{% if is_granted('ROLE_CHEF') %}
+							<th>{{ 'role.view.thead.actions'|trans }}</th>
 						{% endif %}
 					</tr>
 				</thead>
@@ -29,7 +29,7 @@
 						<th>{{ 'role.view.thead.role'|trans }}</th>
 						<th>{{ 'role.view.thead.ban'|trans }}</th>
 						{% if is_granted('ROLE_CHEF') %}
-							<th>{{ 'role.view.actions'|trans }}</th>
+							<th>{{ 'role.view.thead.actions'|trans }}</th>
 						{% endif %}
 					</tr>
 				</tfoot>

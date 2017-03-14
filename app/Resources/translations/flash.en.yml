@@ -31,6 +31,7 @@ materiel.flash:
     add: Object type created
     edit: Object type edited
     delete: Object type removed
+    delete_abort: Object type isn't empty
   objet:
     add: Object saved
     edit: Object's edits saved

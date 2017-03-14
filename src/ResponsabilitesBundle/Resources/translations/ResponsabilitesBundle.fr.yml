@@ -29,7 +29,7 @@ budget:
       delete_warning: 'Attention: Ne peut pas être annulé'
       delete: Supprimer
       no_extra: Pas d'extra jobs cette année
-      cad: Soit [em]%number%[/em] extra job(s) qui ont rapporté [strong]%montant% €[/strong]
+      cad: Soit [i]%number%[/i] extra job(s) qui ont rapporté [b]%montant% €[/b]
   index:
     title: Budget
     header: Responsable budget
@@ -51,28 +51,29 @@ budget:
       new_extra_job: Enregistrer un nouvel extra job
     warning: |
       L'argent n'est pas un but en soi, il est le moyen du projet et des activités de la caravane.
-      [strong]La caravane ne recherche pas de fonds si elle n'a pas de projet concret[/strong]
+      [b]La caravane ne recherche pas de fonds si elle n'a pas de projet concret[/b]
 communication:
   index:
     title: Communication
     header: Responsable communication
     description:
       chapeau: |
-        Tu es le porte-parole de la caravane, en interne et en externe. À ce titre, tu tiens le livre de la caravane, prépares avec la maîtrise la communication pour les parents, le territoire. Tu écris des articles dans les journaux locaux, dans Oze. Tu actualise ou [abbr=Le code du site de la caravane est disponible sur GitHub: nils-van-zuijlen/caravane]participe[/abbr] au site de la caravane.
+        Tu es le porte-parole de la caravane, en interne et en externe. À ce titre, tu tiens le livre de la caravane, prépares avec la maîtrise la communication pour les parents, le territoire. Tu écris des articles dans les journaux locaux, dans Oze. Tu actualise ou [url=//github.com/nils-van-zuijlen/caravane]participe[/abbr] au site de la caravane.
       livre:
         head: Le livre de la caravane
         content: |
           C'est le livre de l'unité, on y retrouve mois après mois, année après année, les activités et les Cap vécus par la caravane, les itinéraires parcourus par chaque pionnier ou caravelle avec les actions réalisées. Le penser et l'imaginer, le faire vivre pour qu'il soit une vraie boîte à souvenirs, la trace que la caravane campe et décampe...
-        informer:
-          head: Informer
-          content: |
-            Installer et tenir à jour un panneau d'informations au local et au camp avec les coordonnées de chacun, des parents et de la maîtrise et des numéros d'urgence. [url=//github.com/nils-van-zuijlen/caravane]Contribuer[/url] et mettre à jour le site internet : photos, [url=%actus_path%]actualités[/url], reportages, témoignages, déroulement des Cap et des activités.
-        temoigner:
-          head: Témoigner
-          content: |
-            Connaître la vie du groupe pour que la caravane y participe. Avec des personnes ressources, rédiger des communiqués sur les activités vécues : presse régionale écrite, TV, radio, presse spécialisée en fonction du Cap. Sans oublier des témoignages pour Oze ([email]oze@sgdf.fr[/email]) et sur le site internet des pionniers caravelles : [url=//caravane.sgdf.fr/temoigner]http://caravane.sgdf.fr[/url] rubrique Témoigner.
+      informer:
+        head: Informer
+        content: |
+          Installer et tenir à jour un panneau d'informations au local et au camp avec les coordonnées de chacun, des parents et de la maîtrise et des numéros d'urgence. [url=//github.com/nils-van-zuijlen/caravane]Contribuer[/url] et mettre à jour le site internet : photos, [url=%actus_path%]actualités[/url], reportages, témoignages, déroulement des Cap et des activités.
+      temoigner:
+        head: Témoigner
+        content: |
+          Connaître la vie du groupe pour que la caravane y participe. Avec des personnes ressources, rédiger des communiqués sur les activités vécues : presse régionale écrite, TV, radio, presse spécialisée en fonction du Cap. Sans oublier des témoignages pour Oze ([email]oze@sgdf.fr[/email]) et sur le site internet des pionniers caravelles : [url=//caravane.sgdf.fr/temoigner]http://caravane.sgdf.fr[/url] rubrique Témoigner.
     pages:
       publier_actu: Publier une actualité sur le site
+      forum_dashboard: Gestion du forum
 documentation:
   index:
     title: Documentation
@@ -95,6 +96,7 @@ documentation:
   search:
     title: Recherche avancée – Documentation
     header: Recherche avancée sur Internet
+    # There are other texts that are untranslated!!!
 intendance:
   menu:
     add:
@@ -155,7 +157,7 @@ materiel:
       title: '%nom% – Objet'
       text: |
         Du type %nom_type%, cet objet possède les caractéristiques:
-         %caractéristiques%
+         %caracteristiques%
       edit: Modifier
       delete: Supprimer
   type:
@@ -229,6 +231,7 @@ index:
     documentation: Responsable Documentation
     intendance: Responsable Intendance
     materiel: Responsable Matériel
+    vie_spi: Responsable Vie Spirituelle
 layout:
   title: Responsabilités
   header: Responsabilités

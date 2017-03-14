@@ -29,7 +29,7 @@ class Objet
 	private $nom;
 	
 	/**
-	 * @ORM\ManyToOne(targetEntity="ResponsabilitesBundle\Entity\TypeObjet", inversedBy="objets")
+	 * @ORM\ManyToOne(targetEntity="ResponsabilitesBundle\Entity\TypeObjet", inversedBy="objets", cascade="persist")
 	 * @ORM\JoinColumn(nullable=false)
 	 */
 	private $type;

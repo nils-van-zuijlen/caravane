@@ -17,6 +17,7 @@
 							<th>{{ 'budget.extra_job.view.thead.equipe'|trans }}</th>
 							<th>{{ 'budget.extra_job.view.thead.comments'|trans }}</th>
 							<th>{{ 'budget.extra_job.view.thead.montant'|trans }}</th>
+							{% if is_granted('ROLE_BUDGET') or is_granted('ROLE_CHEF') %}<th></th>{% endif %}
 						</tr>
 					</thead>
 					<tbody>
@@ -38,14 +39,14 @@
 							</tr>
 						{% else %}
 							<tr>
-								<td colspan="3">{{ 'budget.extra_job.view.no_extra'|trans }}</td>
+								<td colspan="{% if is_granted('ROLE_BUDGET') or is_granted('ROLE_CHEF') %}4{% else %}3{% endif %}">{{ 'budget.extra_job.view.no_extra'|trans }}</td>
 							</tr>
 						{% endfor %}
 					</tbody>
 					<tfoot class="panel-footer">
 						<tr>
-							<td colspan="3">
-								{{ 'budget.extra_job.view.cad'|trans({'%number%': nbExtraJobs, '%montant%': recettes}) }}
+							<td colspan="{% if is_granted('ROLE_BUDGET') or is_granted('ROLE_CHEF') %}4{% else %}3{% endif %}">
+								{{ 'budget.extra_job.view.cad'|trans({'%number%': nbExtraJobs, '%montant%': recettes})|bbcode_filter('all') }}
 							</td>
 						</tr>
 					</tfoot>
