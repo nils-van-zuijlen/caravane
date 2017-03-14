@@ -45,7 +45,7 @@ class Chat
 
 	public $ilYA;
 
-	function __construct()
+	public function __construct()
 	{
 		$this->sentTime = new \DateTime();
 	}

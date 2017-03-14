@@ -3,7 +3,6 @@
 namespace ResponsabilitesBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -52,7 +51,7 @@ class ExtraJob
 	 */
 	private $commentaires = '';
 
-	function __construct()
+	public function __construct()
 	{
 		$this->date = new \DateTime;
 	}

@@ -2,7 +2,6 @@
 namespace CoreBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -70,7 +69,7 @@ class ContactType extends AbstractType
 		$resolver
 			->setDefaults(
 				array(
-					'data_class' => 'CoreBundle\FMailer\ContactEmail',
+					'data_class' => 'CoreBundle\Mailer\ContactEmail',
 					)
 				);
 	}

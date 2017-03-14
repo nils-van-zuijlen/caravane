@@ -11,7 +11,7 @@ class BanController extends Controller
 	 *
 	 * @Security("has_role('ROLE_CHEF')")
 	 */
-	function banAction($user)
+	public function banAction($user)
 	{
 		$em = $this->getDoctrine()->getManager();
 		$userObject = $em->getRepository('UserBundle:User')->findOneByUsername($user);
@@ -31,7 +31,7 @@ class BanController extends Controller
 	 *
 	 * @Security("has_role('ROLE_CHEF')")
 	 */
-	function debanAction($user)
+	public function debanAction($user)
 	{
 		$em = $this->getDoctrine()->getManager();
 		$userObject = $em->getRepository('UserBundle:User')->findOneByUsername($user);

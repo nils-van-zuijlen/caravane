@@ -10,6 +10,9 @@ fos_comment_api:
 user_role:
     resource: "@UserBundle/Resources/config/routing/all.yml"
 
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
 responsabilites:
     resource: "@ResponsabilitesBundle/Resources/config/routing/all.yml"
     prefix:   /responsabilites

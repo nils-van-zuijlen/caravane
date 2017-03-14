@@ -101,7 +101,7 @@ class Chatbot
 			} elseif (preg_match("#^@ban\[.+\]#", $message)) {
 				$username = preg_replace("#^@ban\[(.+)\].*$#", "$1", $message);
 				$user2 = $this->getUserRepository()->findOneByUsername($username);
-				if ($user2 != null) {
+				if ($user2 !== null) {
 					$user2->lock();
 					$message = $this->translator->trans(
 						'chatbot.admin.ban',
@@ -118,7 +118,7 @@ class Chatbot
 			} elseif (preg_match("#^@deban\[.+\]#", $message)) {
 				$username = preg_replace("#^@deban\[(.+)\].*$#", "$1", $message);
 				$user2 = $this->getUserRepository()->findOneByUsername($username);
-				if ($user2 != null) {
+				if ($user2 !== null) {
 					$user2->unlock();
 					$message = $this->translator->trans(
 						'chatbot.admin.deban',
@@ -163,6 +163,7 @@ class Chatbot
 					'chatbot'    => 'Oui, c\'est moi.',
 					'nils'       => 'On parle de celui qui m\'a créé?',
 					'bonjour'    => 'Bonjour sujet de test n°'.$user->getId(),
+					'heure'      => 'Il est '.date('H:i').'.',
 				);
 
 			foreach ($eggs as $key => $value) {
