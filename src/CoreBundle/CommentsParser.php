@@ -9,7 +9,7 @@ class CommentsParser implements ParserInterface
 	protected $fm_bbcode;
 	protected $filter;
 
-	function __construct(BbcodeExtension $fm_bbcode, $filter)
+	public function __construct(BbcodeExtension $fm_bbcode, $filter)
 	{
 		$this->fm_bbcode = $fm_bbcode;
 		$this->filter    = $filter;
