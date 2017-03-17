@@ -16,14 +16,14 @@ class EventType extends AbstractType
 	{
 		$builder
 			->add(
-				'dateDebut',
+				'begin',
 				DateTimeType::class,
 				array(
 					'label' => 'event.form.date.debut',
 					)
 				)
 			->add(
-				'dateFin',
+				'end',
 				DateTimeType::class,
 				array(
 					'label' => 'event.form.date.fin',

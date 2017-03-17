@@ -132,8 +132,8 @@ class EventController extends Controller
 		if ($event === null)
 			throw $this->createNotFoundException("L'évenement ".$slug." n'existe pas.");
 
-		$month = $event->getDateDebut()->format('m');
-		$year  = $event->getDateDebut()->format('Y');
+		$month = $event->getBegin()->format('m');
+		$year  = $event->getBegin()->format('Y');
 
 		$em->remove($event);
 		$em->flush();
