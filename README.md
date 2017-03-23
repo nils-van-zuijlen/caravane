@@ -1,7 +1,7 @@
 Caravane
 ========
 
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/c895d8ed-5f0b-4b5d-88d1-7bef1d63b296/big.png)](https://insight.sensiolabs.com/projects/c895d8ed-5f0b-4b5d-88d1-7bef1d63b296)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/c895d8ed-5f0b-4b5d-88d1-7bef1d63b296/mini.png)](https://insight.sensiolabs.com/projects/c895d8ed-5f0b-4b5d-88d1-7bef1d63b296) [![Build Status](https://travis-ci.org/nils-van-zuijlen/caravane.svg?branch=master)](https://travis-ci.org/nils-van-zuijlen/caravane)
 
 A Symfony project created on August 8, 2016, 4:20 pm.
 
