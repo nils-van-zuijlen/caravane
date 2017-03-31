@@ -6,7 +6,7 @@ security:
     
     role_hierarchy:
         ROLE_COMMUNICATION: [ROLE_PIOK, ROLE_MODERATOR]
-        ROLE_ANIMATION:     [ROLE_PIOK]
+        ROLE_ANIMATION:     [ROLE_PIOK, ROLE_MODERATOR]
         ROLE_INTENDANCE:    [ROLE_PIOK]
         ROLE_BUDGET:        [ROLE_PIOK]
         ROLE_DOCUMENTATION: [ROLE_PIOK]

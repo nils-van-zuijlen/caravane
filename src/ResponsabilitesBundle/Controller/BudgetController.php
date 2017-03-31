@@ -66,7 +66,7 @@ class BudgetController extends Controller
 			$em->persist($extraJob);
 			$em->flush();
 
-			$request->getSession()->getFlashBag()->add('success', 'budget.extra_job.flash');
+			$request->getSession()->getFlashBag()->add('success', 'budget.extra_job.flash.add');
 
 			if ($extraJob->getDate()->format('m') >= 9) {
 				$year = $extraJob->getDate()->format('Y');

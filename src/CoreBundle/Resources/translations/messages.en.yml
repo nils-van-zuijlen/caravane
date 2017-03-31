@@ -6,7 +6,7 @@ layout:
       actus: News
       chat: Chat
       forum: Forum
-      
+      event: Events
       chefs: Leaders
       responsabilites: Responsibilities
       user:
@@ -75,14 +75,29 @@ event:
   layout:
     title: Calendar
     header: Calendar
-  view:
-    by:
-      new: New
-      date: From %debut% to %fin%
-    one:
-      date: From %debut% to %fin%
-      edit: Edit
-      delete: Remove
+  day:
+    new: New
+    date: From %debut% to %fin%
+    no_events: No events this day
+  one:
+    date: From %debut% to %fin%
+    edit: Edit
+    delete: Remove
+  year:
+    head: Year %year%
+    event_number: "{0}There aren't any event this month|{1}There is %count% event this month|[2,+Inf[There are %count% events this month"
+  month:
+    head: Year %year% – %month%
+    weekday:
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+      - Sunday
+    week_number: Week %number%
+    event_number: "{0}There aren't any event this day|{1}There is %count% event this day|[2,+Inf[There are %count% events this day"
 chefs:
   index:
     header:
@@ -114,6 +129,8 @@ chat:
     header: Chat between ventures
     send: Send
     actualize: Actualize
+    #sound: Sound notification
+    js.chat_err_msg: Message too short
   getmessages:
     user: The caravan
     message: Has not used her chat. Be the first to write a message.

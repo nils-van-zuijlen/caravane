@@ -46,12 +46,18 @@
 					<tfoot class="panel-footer">
 						<tr>
 							<td colspan="{% if is_granted('ROLE_BUDGET') or is_granted('ROLE_CHEF') %}4{% else %}3{% endif %}">
-								{{ 'budget.extra_job.view.cad'|trans({'%number%': nbExtraJobs, '%montant%': recettes})|bbcode_filter('all') }}
+								{{ 'budget.extra_job.view.cad'|transchoice(nbExtraJobs, {'%montant%': recettes})|bbcode_filter('all') }}
 							</td>
 						</tr>
 					</tfoot>
 				</table>
 			</div>
+			{% if is_granted('ROLE_BUDGET') or is_granted('ROLE_CHEF') %}
+				<a href="{{ path('responsabilites_budget_extra_job_add') }}" class="btn btn-info">
+					{{ 'budget.extra_job.view.new'|trans }}
+				</a>
+				<br>
+			{% endif %}
 			<ul class="pagination">
 				<li>
 					<a href="{{ path('responsabilites_budget_extra_job_view', {year: year - 1}) }}">

@@ -29,7 +29,8 @@ budget:
       delete_warning: 'Attention: Ne peut pas être annulé'
       delete: Supprimer
       no_extra: Pas d'extra jobs cette année
-      cad: Soit [i]%number%[/i] extra job(s) qui ont rapporté [b]%montant% €[/b]
+      cad: '[0,1]Soit [i]%count%[/i] extra job(s) qui a rapporté [b]%montant% €[/b]|[2,+Inf[Soit [i]%count%[/i] extra job(s) qui ont rapporté [b]%montant% €[/b]'
+      new: Enregistrer un nouvel extra-job
   index:
     title: Budget
     header: Responsable budget

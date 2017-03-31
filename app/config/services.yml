@@ -12,3 +12,7 @@ services:
         class: UserBundle\Form\Type\ProfileFormType
         tags:
             - { name: form.type, alias: user_profile }
+    twig.extension.intl:
+        class: Twig_Extensions_Extension_Intl
+        tags:
+            - { name: twig.extension }

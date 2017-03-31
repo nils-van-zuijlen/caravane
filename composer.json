@@ -2,7 +2,7 @@
     "name": "nils/caravane",
     "license": "proprietary",
     "type": "project",
-    "description": "Ceci est le site de la caravane de Quimper.",
+    "description": "Ceci est le site de la Caravane de Quimper.",
     "autoload": {
         "psr-4": {
             "": "src/"
@@ -36,7 +36,8 @@
         "doctrine/doctrine-fixtures-bundle": "^2.3",
         "knplabs/knp-paginator-bundle": "^2.5.3",
         "discutea/forum-bundle": "^v1.0.4",
-        "frequence-web/calendr-bundle": "dev-patch-2"
+        "frequence-web/calendr-bundle": "dev-patch-2",
+        "twig/extensions": "^1.4"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

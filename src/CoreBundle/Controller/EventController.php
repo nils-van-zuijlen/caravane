@@ -11,28 +11,58 @@ use CoreBundle\Form\Type\EventType;
 
 class EventController extends Controller
 {
-	public function viewByYearAction($annee)
+	public function viewByYearAction($year)
 	{
-		$date1 = new \DateTime($annee.'/01/01');
-		$date2 = new \DateTime(($annee + 1).'/01/01');
+		$this->checkDate($year);
+		
+		$calendr = $this->get('calendr');
 
-		return $this->viewEventsByDateInterval($date1, $date2);
+		$cYear  = $calendr->getYear($year);
+		$events = $calendr->getEvents($cYear);
+
+		return $this->render(
+			'CoreBundle:Event:view_by_year.html.twig',
+			array(
+				'year'   => $cYear,
+				'events' => $events,
+		));
 	}
 
-	public function viewByMonthAction($annee, $mois)
+	public function viewByMonthAction($year, $month)
 	{
-		$date1 = new \DateTime($annee.'/'.$mois.'/01');
-		$date2 = new \DateTime($annee.'/'.($mois + 1).'/01');
+		$this->checkDate($year, $month);
+		
+		$calendr = $this->get('calendr');
 
-		return $this->viewEventsByDateInterval($date1, $date2);
+		$cMonth = $calendr->getMonth($year, $month);
+		$events = $calendr->getEvents($cMonth);
+
+		return $this->render(
+			'CoreBundle:Event:view_by_month.html.twig',
+			array(
+				'month'  => $cMonth,
+				'events' => $events,
+				)
+			);
 	}
 
-	public function viewByDayAction($annee, $mois, $jour)
+	public function viewByDayAction($year, $month, $day)
 	{
-		$date1 = new \DateTime($annee.'/'.$mois.'/'.$jour);
-		$date2 = new \DateTime($annee.'/'.$mois.'/'.($jour + 1));
+		$this->checkDate($year, $month, $day);
+		
+		$calendr = $this->get('calendr');
 
-		return $this->viewEventsByDateInterval($date1, $date2);
+		$cDay   = $calendr->getDay($year, $month, $day);
+		$cMonth = $calendr->getMonth($year, $month);
+		$events = $calendr->getEvents($cMonth)->find($cDay);
+
+		return $this->render(
+			'CoreBundle:Event:view_by_day.html.twig',
+			array(
+				'day'    => $cDay,
+				'events' => $events,
+				)
+			);
 	}
 
 	/**
@@ -54,7 +84,7 @@ class EventController extends Controller
 
 			return $this->redirectToRoute(
 				'core_event_viewone',
-				array('slug' => $event->getSlug())
+				array('slug' => $event->getUid())
 				);
 		}
 
@@ -66,14 +96,14 @@ class EventController extends Controller
 			);
 	}
 
-	public function viewOneAction(Request $request, $slug)
+	public function viewOneAction(Request $request, $uid)
 	{
 		$em = $this->getDoctrine()->getManager();
 		$repository = $em->getRepository('CoreBundle:Event');
-		$event = $repository->findOneBySlug((string) $slug);
+		$event = $repository->findOneByUid((string) $uid);
 
 		if (null === $event)
-			throw $this->createNotFoundException("L'évenement ".$slug." n'existe pas.");
+			throw $this->createNotFoundException("L'évenement ".$uid." n'existe pas.");
 
 		return $this->render(
 			'CoreBundle:Event:view_one.html.twig',
@@ -86,15 +116,15 @@ class EventController extends Controller
 	/**
 	 * @Security("has_role('ROLE_COMMUNICATION')")
 	 */
-	public function editAction(Request $request, $slug)
+	public function editAction(Request $request, $uid)
 	{
 		$em = $this->getDoctrine()->getManager();
 		$repository = $em->getRepository('CoreBundle:Event');
 
-		$event = $repository->findOneBySlug((string) $slug);
+		$event = $repository->findOneByUid((string) $uid);
 
 		if ($event === null)
-			throw $this->createNotFoundException("L'évenement ".$slug." n'existe pas.");
+			throw $this->createNotFoundException("L'évenement ".$uid." n'existe pas.");
 
 		$form = $this->createForm(EventType::class, $event);
 
@@ -106,7 +136,7 @@ class EventController extends Controller
 
 			return $this->redirectToRoute(
 				'core_event_viewone',
-				array('slug' => $event->getSlug())
+				array('uid' => $event->getUid())
 				);
 		}
 
@@ -122,15 +152,15 @@ class EventController extends Controller
 	/**
 	 * @Security("has_role('ROLE_COMMUNICATION')")
 	 */
-	public function deleteAction($slug, Request $request)
+	public function deleteAction($uid, Request $request)
 	{
 		$em = $this->getDoctrine()->getManager();
 		$repository = $em->getRepository('CoreBundle:Event');
 
-		$event = $repository->findOneBySlug((string) $slug);
+		$event = $repository->findOneByUid((string) $uid);
 
 		if ($event === null)
-			throw $this->createNotFoundException("L'évenement ".$slug." n'existe pas.");
+			throw $this->createNotFoundException("L'évenement ".$uid." n'existe pas.");
 
 		$month = $event->getBegin()->format('m');
 		$year  = $event->getBegin()->format('Y');
@@ -149,19 +179,10 @@ class EventController extends Controller
 			);
 	}
 
-	protected function viewEventsByDateInterval($from, $to)
+	protected function checkDate(int $year, int $month = 1, int $day = 1)
 	{
-		$events = $this
-			->getDoctrine()
-			->getManager()
-			->getRepository('CoreBundle:Event')
-			->getByDateInterval($from, $to);
-
-		return $this->render(
-			'CoreBundle:Event:view_by_xxx.html.twig',
-			array(
-				'events' => $events,
-				)
-			);
+		if (!checkdate($month, $day, $year)) {
+			throw $this->createNotFoundException('Date '.$day.'/'.$month.'/'.$year.' is not valid.');
+		}
 	}
 }

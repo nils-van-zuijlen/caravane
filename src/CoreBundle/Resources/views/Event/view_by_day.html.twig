@@ -1,0 +1,46 @@
+{% extends 'CoreBundle:Event:layout.html.twig' %}
+
+{% block event_body %}
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<h3>
+				{{ day.begin|localizeddate('full', 'none')|capitalize }}
+			</h3>
+			<div class="btn-group">
+				{#<a class="btn btn-primary" href="{{ path('core_event_view_by_day', {'year': day.format('Y')-1, 'month': day.format('m'), 'day': day.format('d')}) }}">&lt;&lt;&lt;</a>
+				<a class="btn btn-primary" href="{{ path('core_event_view_by_day', {'year': day.format('Y'), 'month': day.format('m')-1, 'day': day.format('d')}) }}">&lt;&lt;</a>#}
+				<a class="btn btn-primary" href="{{ path('core_event_view_by_day', {'year': day.previous.format('Y'), 'month': day.previous.format('m'), 'day': day.previous.format('d')}) }}">&lt;</a>
+				<a class="btn btn-primary" href="{{ path('core_event_view_by_month', {'year': day.format('Y'), 'month': day.format('m')}) }}">
+					<span class="glyphicon glyphicon-chevron-up"></span>
+				</a>
+				<a class="btn btn-primary" href="{{ path('core_event_view_by_day', {'year': day.next.format('Y'), 'month': day.next.format('m'), 'day': day.next.format('d')}) }}">&gt;</a>
+				{#<a class="btn btn-primary" href="{{ path('core_event_view_by_day', {'year': day.format('Y'), 'month': day.format('m')+1, 'day': day.format('d')}) }}">&gt;&gt;</a>
+				<a class="btn btn-primary" href="{{ path('core_event_view_by_day', {'year': day.format('Y')+1, 'month': day.format('m'), 'day': day.format('d')}) }}">&gt;&gt;&gt;</a>#}
+			</div>
+			<br><br>
+			<ul class="list-group">
+				{% for event in events %}
+					<li class="list-group-item">
+						<h5>
+							<a href="{{ path('core_event_viewone', {uid: event.uid}) }}">
+								{{ event.title }}
+							</a>
+						</h5>
+						<p class="help-block">
+							{{ 'event.day.date'|trans({'%debut%': event.begin|date('d/m/Y à H:i'), '%fin%': event.end|date('d/m/Y à H:i')}) }}
+						</p>
+					</li>
+				{% else %}
+					<li class="list-group-item">
+						{{ 'event.day.no_events'|trans }}
+					</li>
+				{% endfor %}
+			</ul>
+			{% if is_granted('ROLE_COMMUNICATION') %}
+				<a href="{{ path('core_event_add') }}" class="btn btn-primary">
+					{{ 'event.day.new'|trans }}
+				</a>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}

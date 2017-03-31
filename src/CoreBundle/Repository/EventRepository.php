@@ -35,6 +35,9 @@ class EventRepository extends EntityRepository implements ProviderInterface
 		return $qb->getQuery()->getResult();
 	}
 
+	/**
+	 * @inheritdoc
+	 */
 	public function getEvents(\DateTime $begin, \DateTime $end, array $options = array())
 	{
 		$qb = $this->createQueryBuilder('e');
@@ -44,10 +47,10 @@ class EventRepository extends EntityRepository implements ProviderInterface
 				$qb->expr()->orX(
 					$qb->expr()->andX(
 						$qb->expr()->gte('e.begin', ':begin'),
-						$qb->expr()->lt('e.begin', ':end')
+						$qb->expr()->lte('e.begin', ':end')
 						),
 					$qb->expr()->andX(
-						$qb->expr()->gt('e.end', ':begin'),
+						$qb->expr()->gte('e.end', ':begin'),
 						$qb->expr()->lte('e.end', ':end')
 						),
 					$qb->expr()->andX(
@@ -56,7 +59,7 @@ class EventRepository extends EntityRepository implements ProviderInterface
 						),
 					$qb->expr()->andX(
 						$qb->expr()->lte('e.begin', ':begin'),
-						$qb->expr()->lte('e.end', ':end')
+						$qb->expr()->gte('e.end', ':end')
 						)
 					)
 				)

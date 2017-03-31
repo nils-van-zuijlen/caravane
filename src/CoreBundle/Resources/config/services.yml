@@ -47,8 +47,7 @@ services:
             - comments_filter
     core.calendr_event_provider:
         class: CoreBundle\Repository\EventRepository
-        factory_service: doctrine.orm.default_entity_manager
-        factory_method: getRepository
+        factory: 'doctrine.orm.default_entity_manager:getRepository'
         arguments: ['CoreBundle:Event']
         tags:
             - { name: calendr.event_provider }

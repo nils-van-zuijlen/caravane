@@ -1,28 +1,50 @@
 core:
     resource: "@CoreBundle/Resources/config/routing/all.yml"
+    prefix: /{_locale}
+    requirements: 
+        _locale: '%allowed_locales%'
 
 fos_comment_api:
-    type: rest
+    type:     rest
     resource: "@FOSCommentBundle/Resources/config/routing.yml"
-    prefix: /api
+    prefix:   /{_locale}/api
     defaults: { _format: html }
+    requirements: 
+        _locale: '%allowed_locales%'
 
 user_role:
     resource: "@UserBundle/Resources/config/routing/all.yml"
+    prefix: /{_locale}
+    requirements: 
+        _locale: '%allowed_locales%'
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    prefix: /{_locale}
+    requirements: 
+        _locale: '%allowed_locales%'
 
 responsabilites:
     resource: "@ResponsabilitesBundle/Resources/config/routing/all.yml"
-    prefix:   /responsabilites
+    prefix:   /{_locale}/responsabilites
+    requirements: 
+        _locale: '%allowed_locales%'
 
 discutea_forum:
     resource: "@DForumBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}
+    requirements: 
+        _locale: '%allowed_locales%'
+
+default_locale:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path:        /%locale%
+        permanent:   true
 
 remove_trailing_slash: # MUST BE LAST ROUTE
-    path: /{url}
+    path:     /{url}
     defaults: { _controller: CoreBundle:Redirecting:removeTrailingSlash }
     requirements:
         url: .*/$

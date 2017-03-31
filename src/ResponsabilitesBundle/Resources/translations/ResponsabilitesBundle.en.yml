@@ -27,7 +27,8 @@ budget:
       delete_warning: 'Warning: Can not be canceled'
       delete: Remove
       no_extra: No extra jobs this year
-      cad: Let [i]%number%[/i] extra job(s) who reported [b]%montant% €[/b]
+      cad: "[0,+Inf[Let [i]%count%[/i] extra job(s) who reported [b]%montant% €[/b]"
+      new: Register a new extra job
   index:
     title: Budget
     header: Finance responsibility
