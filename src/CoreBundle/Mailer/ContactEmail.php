@@ -1,6 +1,8 @@
 <?php
 namespace CoreBundle\Mailer;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 class ContactEmail implements EmailInterface
 {
 	/**
@@ -90,13 +92,14 @@ class ContactEmail implements EmailInterface
 			"to" => array(
 				"contact"
 				),
+			"bcc" => null,
 			);
 	}
 
 	public function getFrom()
 	{
 		return array(
-			$this->getDisplay() => $this->getEmail(),
+			$this->getEmail() => $this->getDisplay(),
 			);
 	}
 

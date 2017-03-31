@@ -5,6 +5,7 @@ namespace CoreBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
+use CalendR\Event\AbstractEvent;
 
 /**
  * Event
@@ -13,7 +14,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity(repositoryClass="CoreBundle\Repository\EventRepository")
  * @ORM\HasLifecycleCallbacks()
  */
-class Event
+class Event extends AbstractEvent
 {
 	/**
 	 * @var int
@@ -22,23 +23,23 @@ class Event
 	 * @ORM\Id
 	 * @ORM\GeneratedValue(strategy="AUTO")
 	 */
-	private $id;
+	protected $id;
 
 	/**
 	 * @var \DateTime
 	 *
-	 * @ORM\Column(name="date_debut", type="datetime")
+	 * @ORM\Column(name="begin", type="datetime")
 	 * @Assert\DateTime(message="core.event.date_debut.date_time")
 	 */
-	private $dateDebut;
+	protected $begin;
 
 	/**
 	 * @var \DateTime
 	 *
-	 * @ORM\Column(name="date_fin", type="datetime")
-	 * @Assert\DateTime(message="core.event.date_fin.date_time")
+	 * @ORM\Column(name="end", type="datetime")
+	 * @Assert\DateTime(message="core.event.end.date_time")
 	 */
-	private $dateFin;
+	protected $end;
 
 	/**
 	 * @var string
@@ -47,7 +48,7 @@ class Event
 	 * @Assert\Length(min=3, max=255, minMessage="core.event.title.length.min", maxMessage="core.event.title.length.max")
 	 * @Assert\NotBlank(message="core.event.title.not_blank")
 	 */
-	private $title;
+	protected $title;
 
 	/**
 	 * @var string
@@ -55,21 +56,21 @@ class Event
 	 * @ORM\Column(name="content", type="text", nullable=true)
 	 * @Assert\Type(type="string", message="core.event.content.string")
 	 */
-	private $content;
+	protected $content;
 
 	/**
 	 * @var string
 	 *
-	 * @ORM\Column(name="slug", type="string", length=255, unique=true)
+	 * @ORM\Column(name="uid", type="string", length=255, unique=true)
 	 * @Gedmo\Slug(fields={"title"}, updatable=false)
 	 */
-	private $slug;
+	protected $uid;
 
 
 	public function __construct()
 	{
-		$this->dateDebut = new \DateTime();
-		$this->dateFin   = new \DateTime('@'.(time()+3600*26));
+		$this->begin = new \DateTime();
+		$this->end   = new \DateTime('@'.(time()+3600*26));
 	}
 
 	/**
@@ -77,7 +78,7 @@ class Event
 	 */
 	public function isEventValid()
 	{
-		return $this->dateDebut->diff($this->dateFin)->invert == 0;
+		return $this->begin->diff($this->end)->invert == 0;
 	}
 
 	/**
@@ -139,75 +140,75 @@ class Event
 	}
 
 	/**
-	 * Set slug
+	 * Set uid (a slug)
 	 *
-	 * @param string $slug
+	 * @param string $uid
 	 *
 	 * @return Event
 	 */
-	public function setSlug($slug)
+	public function setUid($uid)
 	{
-		$this->slug = $slug;
+		$this->uid = $uid;
 
 		return $this;
 	}
 
 	/**
-	 * Get slug
+	 * Get uid (a slug)
 	 *
 	 * @return string
 	 */
-	public function getSlug()
+	public function getUid()
 	{
-		return $this->slug;
+		return $this->uid;
 	}
 
 	/**
-	 * Set dateDebut
+	 * Set begin
 	 *
-	 * @param \DateTime $dateDebut
+	 * @param \DateTime $begin
 	 *
 	 * @return Event
 	 */
-	public function setDateDebut($dateDebut)
+	public function setBegin($begin)
 	{
-		$this->dateDebut = $dateDebut;
+		$this->begin = $begin;
 
 		return $this;
 	}
 
 	/**
-	 * Get dateDebut
+	 * Get begin
 	 *
 	 * @return \DateTime
 	 */
-	public function getDateDebut()
+	public function getBegin()
 	{
-		return $this->dateDebut;
+		return $this->begin;
 	}
 
 	/**
-	 * Set dateFin
+	 * Set end
 	 *
-	 * @param \DateTime $dateFin
+	 * @param \DateTime $end
 	 *
 	 * @return Event
 	 */
-	public function setDateFin($dateFin)
+	public function setEnd($end)
 	{
-		$this->dateFin = $dateFin;
+		$this->end = $end;
 
 		return $this;
 	}
 
 	/**
-	 * Get dateFin
+	 * Get end
 	 *
 	 * @return \DateTime
 	 */
-	public function getDateFin()
+	public function getEnd()
 	{
-		return $this->dateFin;
+		return $this->end;
 	}
 
 	/**

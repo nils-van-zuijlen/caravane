@@ -1,0 +1,28 @@
+{% extends 'CoreBundle:Event:layout.html.twig' %}
+
+{% block event_body %}
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<h3>{{ 'event.year.head'|trans({'%year%': year}) }}</h3>
+			<div class="btn-group">
+				<a class="btn btn-primary" href="{{ path('core_event_view_by_year', {'year': year.previous.format('Y')}) }}">&lt;&lt;</a>
+				<a class="btn btn-primary" href="{{ path('core_event_view_by_year', {'year': year.next.format('Y')}) }}">&gt;&gt;</a>
+			</div>
+			<br><br>
+			<div class="row">
+				{% for month in year %}
+					<div
+						class="has-tooltip col-lg-2 col-md-2 col-sm-4 col-xs-6 alert {% if not events.find(month) is empty %}alert-success{% else %}alert-info{% endif %}"
+						title="{{ 'event.year.event_number'|transchoice(events.find(month)|length) }}"
+						data-toggle="tooltip">
+							<a
+								class="alert-link"
+								href="{{ path('core_event_view_by_month', {'year': month.format('Y'), 'month': month.format('m')}) }}">
+									{{ month.format('F') }}
+							</a>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -45,3 +45,9 @@ services:
         arguments:
             - "@fm_bbcode.twig.extension"
             - comments_filter
+    core.calendr_event_provider:
+        class: CoreBundle\Repository\EventRepository
+        factory: 'doctrine.orm.default_entity_manager:getRepository'
+        arguments: ['CoreBundle:Event']
+        tags:
+            - { name: calendr.event_provider }

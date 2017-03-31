@@ -6,6 +6,7 @@ layout:
       actus: Actualités
       chat: Chat
       forum: Forum
+      event: Évenements
       chefs: Chefs
       responsabilites: Responsabilités
       user:
@@ -74,14 +75,29 @@ event:
   layout:
     title: Planning
     header: Planning
-  view:
-    by:
-      new: Nouveau
-      date: Du %debut% au %fin%
-    one:
-      date: Du %debut% au %fin%.
-      edit: Modifier
-      delete: Supprimer
+  day:
+    new: Nouveau
+    date: Du %debut% au %fin%
+    no_events: Pas d'évenements ce jour ci
+  one:
+    date: Du %debut% au %fin%.
+    edit: Modifier
+    delete: Supprimer
+  year:
+    head: Année %year%
+    event_number: "{0}Il n'y a pas d'évenements ce mois ci|{1}Il y a %count% évenement ce mois ci|[2,+Inf[Il y a %count% évenements ce mois ci"
+  month:
+    head: Année %year% – %month%
+    weekday:
+      - Lundi
+      - Mardi
+      - Mercredi
+      - Jeudi
+      - Vendredi
+      - Samedi
+      - Dimanche
+    week_number: Semaine %number%
+    event_number: "{0}Il n'y a pas d'évenements ce jour ci|{1}Il y a %count% évenement ce jour ci|[2,+Inf[Il y a %count% évenements ce jour ci"
 chefs:
   index:
     header:
@@ -113,6 +129,8 @@ chat:
     header: Chat entre PiosK
     send: Envoyer
     actualize: Actualiser
+    #sound: Notification sonore
+    js.chat_err_msg: Message trop court
   getmessages:
     user: La caravane
     message: N'a pas encore utilisé son chat. Sois le premier à écrire un message.

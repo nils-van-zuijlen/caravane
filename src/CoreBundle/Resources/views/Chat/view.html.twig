@@ -9,36 +9,32 @@
 						{{ 'chat.view.header'|trans }}
 					</div>
 				</div>
-				<ul class="list-group" id="message-list">
-					<li class="list-group-item">
-						<span class="label label-info">username</span>
-						<span class="badge">12s</span>
-						Message
-					</li>
+				<ul class="list-group" id="chat-message-list">
+					{{ render(controller("CoreBundle:Chat:getmessages")) }}
 				</ul>
 				<div class="panel-footer">
-					<form class="input-group">
-						<span class="control-label" id="msg-error"></span>
-						<input id="message" type="text" class="form-control" autofocus required>
+					<form class="input-group" id="chat-form">
+						<span class="control-label" id="chat-msg-error"></span>
+						<input id="chat-message" type="text" class="form-control" autofocus required>
 						<div class="input-group-btn">
-							<button class="btn btn-default" id="btn-send" type="submit">
+							<button class="btn btn-default" id="chat-btn-send" type="submit">
 								<span class="glyphicon glyphicon-send"></span>
 								<span class="sr-only">{{ 'chat.view.send'|trans }}</span>
 							</button>
-							<button class="btn btn-default" id="btn-loading" type="button">
-								<span class="glyphicon glyphicon-refresh" id="loading-icon"></span>
+							<button class="btn btn-default" id="chat-btn-loading" type="button">
+								<span class="glyphicon glyphicon-refresh" id="chat-loading-icon"></span>
 								<span class="sr-only">{{ 'chat.view.actualize'|trans }}</span>
 							</button>
-							<!--
-								<button class="btn btn-default" type="button" id="btn-sound">
-									<span class="glyphicon glyphicon-volume-off" id="sound-icon"></span>
-									<span class="sr-only">Notification sonore</span>
+							{#
+								<button class="btn btn-default" type="button" id="chat-btn-sound">
+									<span class="glyphicon glyphicon-volume-off" id="chat-sound-icon"></span>
+									<span class="sr-only">{{ 'chat.view.sound'|trans }}</span>
 									<audio id="chat-notification" preload="auto">
-										<source src="{{ asset('bundles/core/Chat/notification.mp3') }}" type="audio/mp3">
-										<source src="{{ asset('bundles/core/Chat/notification.ogg') }}" type="audio/ogg">
+										<source src="{{ asset('bundles/core/media/notification.mp3') }}" type="audio/mp3">
+										<source src="{{ asset('bundles/core/media/notification.ogg') }}" type="audio/ogg">
 									</audio>
 								</button>
-							-->
+							#}
 						</div>
 					</form>
 				</div>
@@ -47,12 +43,14 @@
 	</div>
 {% endblock %}
 
-{% block styles %}
-	{{ parent() }}
-	<link type="stylesheet" href="{{ asset('bundles/core/css/chat.css') }}" />
-{% endblock %}
-
 {% block scripts %}
 	{{ parent() }}
+	<script type="text/javascript">
+	var chat = {
+		errMsg: "{{ 'chat.view.js.chat_err_msg'|trans }}",
+		getUrl: "{{ path('core_chat_getmessages') }}",
+		sendUrl: "{{ path('core_chat_send') }}"
+	}
+	</script>
 	<script type="text/javascript" src="{{ asset('bundles/core/js/chat.js') }}"></script>
 {% endblock %}

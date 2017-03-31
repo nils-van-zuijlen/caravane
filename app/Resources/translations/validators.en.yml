@@ -10,9 +10,9 @@ core:
     image:
       is_image: The format of the image sent is incorrect
   event:
-    date_debut:
+    begin:
       date_time: Must be a date
-    date_fin:
+    end:
       date_time: Must be a date
     title:
       length:

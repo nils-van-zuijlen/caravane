@@ -86,3 +86,20 @@ body {
 .pointer {
 	cursor: pointer;
 }
+
+/* this is for the events component */
+.out-of-month {
+	color: gray;
+}
+
+/* this is for the chat */
+#chat-message-list {
+	margin-bottom: 0;
+}
+
+/* this is for the home page */
+.carousel-caption {
+	padding: 5px;
+	border-radius: 4px;
+	background-color: rgba(0,0,0,0.5);
+}

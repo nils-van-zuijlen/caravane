@@ -3,13 +3,3 @@
 {% block body %}
 	{% block index_body %}{% endblock index_body %}
 {% endblock %}
-
-{% block styles %}
-	{{ parent() }}
-	<link rel="stylesheet" href="{{ asset('bundles/core/css/index.css') }}">
-{% endblock %}
-
-{% block scripts %}
-	{{ parent() }}
-	<script type="text/javascript" src="{{ asset('bundles/core/js/index.js') }}"></script>
-{% endblock %}

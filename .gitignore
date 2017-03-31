@@ -12,3 +12,5 @@
 /src/CoreBundle/Files/*
 Caravane.sublime-workspace
 terminal.glue
+/web/css/
+/web/js/

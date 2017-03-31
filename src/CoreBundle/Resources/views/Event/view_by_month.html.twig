@@ -1,0 +1,57 @@
+{% extends 'CoreBundle:Event:layout.html.twig' %}
+
+{% block event_body %}
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 table-responsive">
+			<h3>{{ 'event.month.head'|trans({'%year%': month.format('Y'), '%month%': month.format('F')}) }}</h3>
+			<div class="btn-group">
+				{#<a class="btn btn-primary" href="{{ path('core_event_view_by_month', {'year': month.format('Y')-1, 'month': month.format('m')}) }}">&lt;&lt;</a>#}
+				<a class="btn btn-primary" href="{{ path('core_event_view_by_month', {'year': month.previous.format('Y'), 'month': month.previous.format('m')}) }}">&lt;</a>
+				<a class="btn btn-primary" href="{{ path('core_event_view_by_year', {'year': month.format('Y')}) }}">
+					<span class="glyphicon glyphicon-chevron-up"></span>
+				</a>
+				<a class="btn btn-primary" href="{{ path('core_event_view_by_month', {'year': month.next.format('Y'), 'month': month.next.format('m')}) }}">&gt;</a>
+				{#<a class="btn btn-primary" href="{{ path('core_event_view_by_month', {'year': month.format('Y')+1, 'month': month.format('m')}) }}">&gt;&gt;</a>#}
+			</div>
+			<br><br>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th></th>
+						{% for index in 0..6 %}
+							<th>{{ ('event.month.weekday.'~index)|trans }}</th>
+						{% endfor %}
+					</tr>
+				</thead>
+				<tbody>
+					{% for week in month %}
+						<tr>
+							<th>
+								{{ 'event.month.week_number'|trans({'%number%': week.format('W')}) }}
+							</th>
+							{% for day in week %}
+								{% set daily_e = events.find(day) %}
+								<td>
+									<a href="{{ path('core_event_view_by_day', {'year': day.format('Y'), 'month': day.format('m'), 'day': day.format('d')}) }}" class="label {% if month.includes(day) %}label-{% if not daily_e is empty %}success{% else %}info{% endif %}{% else %}label-default{% endif %}">
+										{{ day.format('j') }}
+									</a>
+									{% if not daily_e is empty %}
+										<ul class="list-unstyled">
+											{% for event in daily_e %}
+												<li>
+													<a href="{{ path('core_event_viewone', {'uid': event.uid}) }}">
+														{{ event.title }}
+													</a>
+												</li>
+											{% endfor %}
+										</ul>
+									{% endif %}
+								</td>
+							{% endfor %}
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+{% endblock %}

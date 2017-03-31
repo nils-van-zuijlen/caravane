@@ -2,7 +2,7 @@
     "name": "nils/caravane",
     "license": "proprietary",
     "type": "project",
-    "description": "Ceci est le site de la caravane de Quimper.",
+    "description": "Ceci est le site de la Caravane de Quimper.",
     "autoload": {
         "psr-4": {
             "": "src/"
@@ -33,14 +33,16 @@
         "friendsofsymfony/comment-bundle": "dev-master",
         "stof/doctrine-extensions-bundle": "^1.2.2",
         "helios-ag/fm-bbcode-bundle": "^7.0",
-        "coresphere/console-bundle": "^0.4.0",
         "doctrine/doctrine-fixtures-bundle": "^2.3",
         "knplabs/knp-paginator-bundle": "^2.5.3",
-        "discutea/forum-bundle": "^v1.0.4"
+        "discutea/forum-bundle": "^v1.0.4",
+        "frequence-web/calendr-bundle": "dev-patch-2",
+        "twig/extensions": "^1.4"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
-        "symfony/phpunit-bridge": "^3.0"
+        "symfony/phpunit-bridge": "^3.0",
+        "coresphere/console-bundle": "^0.4.0"
     },
     "scripts": {
         "post-install-cmd": [
@@ -70,5 +72,11 @@
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
         }
-    }
+    },
+    "repositories": [
+    	{
+    		"type": "vcs",
+    		"url": "https://github.com/garak/FrequenceWebCalendRBundle"
+    	}
+    ]
 }

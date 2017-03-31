@@ -28,6 +28,7 @@ class AppKernel extends Kernel
 			new JMS\SerializerBundle\JMSSerializerBundle($this),
 			new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
 			new Discutea\DForumBundle\DForumBundle(),
+			new FrequenceWeb\Bundle\CalendRBundle\FrequenceWebCalendRBundle(),
 		];
 
 		if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

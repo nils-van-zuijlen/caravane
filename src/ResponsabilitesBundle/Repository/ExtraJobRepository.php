@@ -42,14 +42,14 @@ class ExtraJobRepository extends \Doctrine\ORM\EntityRepository
 		return $this;
 	}
 
-	/*private function joinEquipe($qb)
+	private function joinEquipe($qb)
 	{
 		$qb
 			->innerJoin('e.equipe', 'g')
 			->addSelect('g');
 
 		return $this;
-	}*/
+	}
 
 	public function getBySchoolYear($firstYearOfSchoolYear)
 	{
