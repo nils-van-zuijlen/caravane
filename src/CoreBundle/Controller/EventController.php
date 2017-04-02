@@ -84,7 +84,7 @@ class EventController extends Controller
 
 			return $this->redirectToRoute(
 				'core_event_viewone',
-				array('slug' => $event->getUid())
+				array('uid' => $event->getUid())
 				);
 		}
 

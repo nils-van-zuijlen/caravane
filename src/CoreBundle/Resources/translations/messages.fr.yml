@@ -119,8 +119,8 @@ chefs:
         groups: Aux groupes
       is_bcc:
         label: Mode d'envoi
-        true: Copie cachée
-        false: À
+        'true': Copie cachée
+        'false': À
       subject: Objet
       body: Contenu
       submit: Envoyer

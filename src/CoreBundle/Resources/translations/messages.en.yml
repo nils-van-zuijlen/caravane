@@ -119,8 +119,8 @@ chefs:
         groups: To groups
       is_bcc:
         label: Send mode
-        true: Hidden copy
-        false: To
+        'true': Hidden copy
+        'false': To
       subject: Subject
       body: Content
       submit: Send

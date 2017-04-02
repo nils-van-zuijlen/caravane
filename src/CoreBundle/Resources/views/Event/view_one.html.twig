@@ -10,10 +10,10 @@
 			<p>{{ event.content|bbcode_filter('events_filter') }}</p>
 			{% if is_granted('ROLE_COMMUNICATION') %}
 				<div class="btn-group">
-					<a href="{{ path('core_event_edit', {slug: event.uid}) }}" class="btn btn-warning">
+					<a href="{{ path('core_event_edit', {uid: event.uid}) }}" class="btn btn-warning">
 						{{ 'event.one.edit'|trans }}
 					</a>
-					<a href="{{ path('core_event_delete', {slug: event.uid}) }}" class="btn btn-danger">
+					<a href="{{ path('core_event_delete', {uid: event.uid}) }}" class="btn btn-danger">
 						{{ 'event.one.delete'|trans }}
 					</a>
 				</div>
