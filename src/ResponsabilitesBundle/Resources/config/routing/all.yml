@@ -31,3 +31,7 @@ responsabilites_vie_spi:
 responsabilites_documentation:
     prefix:   /documentation
     resource: documentation.yml
+
+responsabilites_sante:
+    prefix:   /sante
+    resource: sante.yml
