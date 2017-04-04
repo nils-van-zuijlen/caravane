@@ -1,0 +1,4 @@
+responsabilites_sante_index:
+    path: /
+    defaults:
+        _controller: ResponsabilitesBundle:Sante:index
