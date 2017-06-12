@@ -101,19 +101,19 @@ documentation:
 intendance:
     menu:
         add:
-            title: Nouveau – Menus
+            title: Nouveau – Menus – Intendance
             header: Nouveau menu
         edit:
-            title: Édition – Menus
+            title: Édition – Menus – Intendance
             header: Édition du menu %name%
         view_all:
-            title: Menus
+            title: Menus – Intendance
             header: Menus
             new: Nouveau
             date: Le %date%
             no_menu: Il n'y a pas encore de menus.
         view_one:
-            title: '%title% – Menus'
+            title: '%title% – Menus – Intendance'
             header: Menu %title%
             date: Menu du %date%.
             entree: Entrée
@@ -122,6 +122,7 @@ intendance:
             edit: Modifier
             delete: Supprimer
     index:
+        title: Responsable Intendance
         header: Responsable Intendance
         description:
             chapeau: |
@@ -143,19 +144,19 @@ intendance:
 materiel:
     objet:
         add:
-            title: Nouvel Objet
+            title: Nouvel – Objet – Matériel
             header: Nouvel objet
         edit:
-            title: Éditer l'objet
+            title: Éditer – Objet – Matériel
             header: 'Éditer l''objet %nom%'
         view_all:
-            title: Objets
+            title: Objet – Matériel
             header: Les objets enregistrés
             new: Nouvel objet
             view_type: Voir les types d'objets
             existing: 'Les objets existants :'
         view_one:
-            title: '%nom% – Objet'
+            title: '%nom% – Objet – Matériel'
             text: |
                 Du type %nom_type%, cet objet possède les caractéristiques:
                  %caracteristiques%
@@ -163,19 +164,19 @@ materiel:
             delete: Supprimer
     type:
         add:
-            title: Nouveau Type d'Objet
+            title: Nouveau – Type – Matériel
             header: Nouveau type d'objet
         edit:
-            title: Éditer le Type d'Objet
+            title: Éditer – Type – Matériel
             header: 'Éditer le type d''objet %nom%'
         view_all:
-            title: Types
+            title: Type – Matériel
             header: Types d'objets
             new: Nouveau type d'objets
             view_objet: Voir tous les objets
             existing: 'Les types existants :'
         view_one:
-            title: '%nom% – Type'
+            title: '%nom% – Type – Matériel'
             edit: Modifier
             delete: Supprimer
             objets: 'Les objets du type :'

@@ -2,6 +2,8 @@
 
 {% trans_default_domain 'ResponsabilitesBundle' %}
 
+{% block title %}{{ 'intendance.index.title'|trans }} – {{ parent() }}{% endblock %}
+
 {% block resp_body %}
 	<div class="row">
 		<div class="col-lg-10 col-lg-offset-1">
@@ -14,19 +16,20 @@
 				{# description de la responsabilité #}
 				{{ 'intendance.index.description.chapeau'|trans|bbcode_filter('all') }}
 			</p>
-			<h5>{{ 'intendance.index.description.menus.head'|trans }}</h5>
+			<h4>{{ 'intendance.index.description.menus.head'|trans }}</h4>
 			<p>
 				{{ 'intendance.index.description.menus.content'|trans|bbcode_filter('all') }}
 			</p>
-			<h5>{{ 'intendance.index.description.approvisionnement.head'|trans }}</h5>
+			<h4>{{ 'intendance.index.description.approvisionnement.head'|trans }}</h4>
 			<p>
 				{{ 'intendance.index.description.approvisionnement.content'|trans|bbcode_filter('all') }}
 			</p>
-			<h5>{{ 'intendance.index.description.proprete.head'|trans }}</h5>
+			<h4>{{ 'intendance.index.description.proprete.head'|trans }}</h4>
 			<p>
 				{{ 'intendance.index.description.proprete.content'|trans|bbcode_filter('all') }}
 			</p>
 			<ul class="list-group">
+				{# liens vers les pages de la responsabilité #}
 				<a href="{{ path('responsabilites_intendance_view_all_menu') }}" class="list-group-item">
 					{{ 'intendance.index.pages.menus'|trans }}
 				</a>
