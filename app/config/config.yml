@@ -116,6 +116,8 @@ assetic:
     bundles: 
         - FOSCommentBundle
         - CoreBundle
+    filters:
+        cssrewrite: ~
 
 #FMBbcodeBundle
 fm_bbcode:
