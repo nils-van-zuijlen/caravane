@@ -10,10 +10,11 @@
 	<title>{% block title %}{{ 'layout.title'|trans }}{% endblock title %}</title>
 
 	{% block styles %}
-		<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
-		<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap-theme.min.css') }}">
-		<link rel="stylesheet" href="{{ asset('bundles/core/css/layout.css') }}" />
-		{% stylesheets '@FOSCommentBundle/Resources/public/css/comments.css' %}
+		{% stylesheets filter='cssrewrite'
+			'bootstrap/css/bootstrap.css'
+			'bootstrap/css/bootstrap-theme.css'
+			'@FOSCommentBundle/Resources/public/css/comments.css'
+			'@CoreBundle/Resources/public/css/layout.css' %}
 			<link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
 		{% endstylesheets %}
 	{% endblock styles %}
@@ -162,10 +163,14 @@
 	</footer>
 
 	{% block scripts %}
-		<script type="text/javascript" src="{{ asset('bootstrap/jquery-3.1.0.min.js') }}"></script>
-		<script type="text/javascript" src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
-		<script type="text/javascript" src="{{ asset('bundles/foscomment/js/comments.js') }}"></script>
-		<script type="text/javascript" src="{{ asset('bundles/core/js/layout.js') }}"></script>
+		{% javascripts
+			'bootstrap/jquery-3.1.0.js'
+			'bootstrap/js/bootstrap.js'
+			'@FOSCommentBundle/Resources/public/js/comments.js'
+			'@CoreBundle/Resources/public/js/jquery.transform2d.js'
+			'@CoreBundle/Resources/public/js/layout.js' %}
+			<script type="text/javascript" src="{{ asset_url }}"></script>
+		{% endjavascripts %}
 		<!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>

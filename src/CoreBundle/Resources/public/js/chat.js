@@ -3,10 +3,11 @@ window.chat.intervalID = null;
 //window.chat.volume = 0;
 
 window.chat.afficheConversation = function() {
-	if (window.chat.loading)
+	if (window.chat.loading !== false) {
+		window.chat.loading += 45;
 		$('#chat-loading-icon')
-			.animate({right: '-=200'}, 2500, 'linear')
-			.animate({right: '+=200'}, 2500, 'linear');
+			.animate({transform: 'rotate('+window.chat.loading+'deg)'}, 'slow', 'linear');
+	}
 
 	$('#chat-message-list').load(window.chat.getUrl);
 }
@@ -40,7 +41,7 @@ $(function() {
 				.attr('style', '')
 				.addClass('glyphicon-ban-circle');
 		} else {
-			window.chat.loading = true;
+			window.chat.loading = 0;
 			window.chat.intervalID = setInterval(window.chat.afficheConversation, 5000);
 			$('#chat-loading-icon')
 				.removeClass('glyphicon-ban-circle')
@@ -74,6 +75,6 @@ $(function() {
 		})
 	*/
 
-	window.chat.loading = true;
+	window.chat.loading = 0;
 	window.chat.intervalID = setInterval(window.chat.afficheConversation, 5000);
 });
